@@ -1,0 +1,402 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+/*---------------------BODY---------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    color: $black;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+#app {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/*---------------------TEXT---------------------*/
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    color: $dark-grey;
+
+    @media screen and (max-width: 992px) {
+        font-size: 1.2rem;
+    }
+}
+
+h5 {
+    letter-spacing: 0.03rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.fancy-text {
+    color: $main-clr;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.03rem;
+    text-transform: uppercase;
+}
+
+h6 {
+    color: $main-clr;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.03rem;
+    text-transform: uppercase;
+}
+
+.text-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $dark-grey;
+    width: 210px;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+.text-small {
+    font-size: 0.82rem;
+    margin-top: 12px;
+    white-space: nowrap;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.text-main {
+    color: $black;
+}
+
+/*---------------------DASHBOARD---------------------*/
+
+.dashboard-card {
+    background-color: white !important;
+}
+
+/*---------------------FORM---------------------*/
+.card {
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+.title-2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.02rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 0.5rem;
+}
+.col-form-label {
+    margin-bottom: 0.3rem;
+}
+
+.input-form {
+    label {
+        font-size: 0.8rem;
+        letter-spacing: 0.02rem;
+        color: $dark-grey;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="number"],
+    select,
+    optgroup,
+    textarea {
+        border: none;
+        box-shadow: $shadow-grey 0 0 0 0.05rem;
+        border-radius: 0.3rem;
+        resize: none;
+        background-color: $light-grey;
+
+        &:focus {
+            border: none;
+            outline: none;
+            box-shadow: $light-main-clr 0 0 0 0.07rem;
+            color: $black;
+            background-color: white;
+            transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+        }
+    }
+}
+
+.custom-file-label {
+    padding: 9px 12px !important;
+    height: auto !important;
+    font-weight: 500 !important;
+    color: #888888 !important;
+    border: none !important;
+    box-shadow: $shadow-grey 0 0 0 0.05rem !important;
+    border-radius: 0.3rem !important;
+    margin: 0 !important;
+}
+
+.custom-file-label::after {
+    padding: 9px 12px !important;
+    height: auto !important;
+    font-weight: 600 !important;
+    color: $main-clr !important;
+    text-transform: uppercase;
+    display: block;
+    content: "Browse";
+    background-color: $light-grey;
+    border-left: inherit;
+    border: none !important;
+    box-shadow: $shadow-grey 0 0 0 0.05rem !important;
+    border-radius: 0.3rem !important;
+    margin: 0 !important;
+}
+
+.vertical-line {
+    border-right: 1px solid $shadow-grey;
+
+    @media only screen and (max-width: 992px) {
+        border-right: none;
+    }
+}
+
+/*---------------------BUTTON---------------------*/
+.btn-submit {
+    padding: 0.7rem 1.2rem;
+    letter-spacing: 0.04rem;
+    font-weight: 500;
+    min-width: 140px;
+    border-radius: 0.6rem;
+    background-color: $main-clr;
+    color: white;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover {
+        color: white;
+        background: $dark-main-clr;
+    }
+}
+
+.btn-new {
+    color: $main-clr;
+    font-weight: 500;
+}
+
+.btn-control {
+    padding: 0.4rem 1.2rem;
+    min-width: 60px;
+}
+
+.btn-icon {
+    color: $main-clr;
+    &:focus {
+        box-shadow: none;
+        color: $light-main-clr;
+    }
+}
+
+/*---------------------ICONS---------------------*/
+.fas,
+.far {
+    font-size: 1rem;
+}
+
+.table-fa {
+    font-size: 1.04rem;
+    text-decoration: none;
+    color: $main-clr;
+}
+
+.back-fa {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: $main-clr;
+
+    &:hover {
+        color: darken($main-clr, 15%);
+    }
+}
+
+.link-fa {
+    width: 1.2rem;
+}
+
+/*---------------------TABLE---------------------*/
+.card-table {
+    border-radius: 15px;
+    padding: 1.6rem 1.4rem;
+}
+table {
+    margin: 0 !important;
+    color: $dark-grey !important;
+}
+
+thead {
+    color: $dark-grey;
+}
+
+.table thead th {
+    border-bottom: none;
+    border-top: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+.th-sm {
+    min-width: 120px !important;
+}
+
+.th-lg {
+    min-width: 230px;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    background: $light-grey;
+}
+
+/*---------------------BREADCRUMBS---------------------*/
+
+.breadcrumb {
+    background-color: $light-grey;
+}
+
+.breadcrumb-item {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+    color: $dark-main-clr;
+
+    a {
+        color: $main-clr;
+    }
+}
+
+/*---------------------NAVIGATION---------------------*/
+.sidenav {
+    min-height: 100vh;
+    background-color: $light-grey;
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    .nav-link {
+        text-decoration: none;
+        color: $dark-main-clr;
+        padding: 0.9rem 1.5rem 0.5rem 1.5rem;
+        /*font-size: 0.9rem;*/
+        font-weight: 400;
+        letter-spacing: 0.03rem;
+
+        i {
+            color: $light-main-clr;
+        }
+
+        &:hover {
+            color: $main-clr;
+
+            .link-fa {
+                color: $dark-main-clr;
+            }
+        }
+    }
+}
+
+.sidebar-heading {
+    padding: 0.1rem 1.5rem;
+    margin-top: 1.2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#main {
+    margin-left: 300px;
+    transition: 0.5s;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+    color: $light-main-clr;
+    padding: 0.9rem 1.5rem 0.5rem 1.5rem;
+    font-size: 24px;
+
+    &:hover {
+        color: $main-clr;
+    }
+}
+
+.navbar .opennav-btn {
+    color: $main-clr !important;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 0 !important;
+
+    &:hover {
+        color: $dark-main-clr !important;
+    }
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-width: 992px) {
+    .sidenav {
+        width: 0;
+    }
+
+    #main {
+        margin-left: 0;
+    }
+}
+
+/*---------------BOOTSTRAP-PAGINATION---------------*/
+
+.paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.page-link {
+    color: $main-clr !important;
+}
+
+.page-item.active .page-link {
+    background-color: $shadow-grey !important;
+    color: $dark-main-clr !important;
+    border-color: $shadow-grey !important;
+}
