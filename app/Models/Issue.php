@@ -17,14 +17,23 @@ class Issue extends Model
         'description',
         'type',
         'severity',
-        'flag',
         'dueDate',
         'status',
-        'tag',
         'user_id',
         'project_id',
         'assignee_id',
     ];
+
+    //eloquent mutator to capitalize 'status' field
+    public function getStatusAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    // public function getCreatedAtAttribute($value)
+    // {
+    //     return Verta($value)->format('%d %B %Y');
+    // }
 
     //issue:user M:1
     public function user()

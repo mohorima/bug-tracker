@@ -12,10 +12,10 @@
         </li>
     
         <li class="nav-item">
-            <a class="nav-link" href="{{route('home')}}">
-            <i class="fas fa-tachometer-alt mr-2 link-fa"></i>
-            Dashboard
-            </a>
+            <router-link to="/dashboard" class="nav-link">
+                <i class="fas fa-tachometer-alt mr-2 link-fa"></i>
+                Dashboard
+            </router-link>
         </li>  
     
         <li class="nav-item">
@@ -33,10 +33,10 @@
         </li> 
   
         <li class="nav-item">
-            <a class="nav-link" href="{{route('issueindex')}}">
-            <i class="fas fa-bug mr-2 link-fa"></i>
+            <router-link to="/issue" class="nav-link">
+                <i class="fas fa-bug mr-2 link-fa"></i>
             Issues
-            </a>
+            </router-link>
         </li> 
   
         <li class="nav-item">

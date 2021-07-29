@@ -98,7 +98,7 @@ Route::put('/invoice/{id}', [InvoiceController::class, 'update']);
 Route::delete('/invoice/{id}', [InvoiceController::class, 'destroy']);
 
 /* ISSUE */
-Route::get('/issue', [IssueController::class, 'index'])->name('issueindex');
+// Route::get('/issue', [IssueController::class, 'index'])->name('issueindex');
 //create
 Route::get('/issue/create', [IssueController::class, 'create'])->name(
     'issuecreate'
@@ -309,7 +309,9 @@ Route::get('/home', [
     'index',
 ])->name('home');
 
+Route::get('/{path}', [
+    App\Http\Controllers\HomeController::class,
+    'index',
+])->where('path', '.*');
+
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-

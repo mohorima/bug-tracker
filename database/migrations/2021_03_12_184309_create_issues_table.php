@@ -20,10 +20,8 @@ class CreateIssuesTable extends Migration
             $table->string('description')->nullable();
             $table->string('type', 50);
             $table->string('severity', 50);
-            $table->string('flag', 50);
             $table->datetime('dueDate');
             $table->string('status', 50);
-            $table->string('tag', 50)->nullable();
             $table->foreignId('project_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->unsignedBigInteger('assignee_id');

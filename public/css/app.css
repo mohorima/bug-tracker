@@ -10980,7 +10980,7 @@ h5 {
 }
 
 .fancy-text {
-  color: #be8f5f;
+  color: #829769;
   font-weight: 600;
   font-size: 1.5rem;
   letter-spacing: 0.03rem;
@@ -10988,7 +10988,7 @@ h5 {
 }
 
 h6 {
-  color: #be8f5f;
+  color: #829769;
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.03rem;
@@ -11078,7 +11078,7 @@ h6 {
 .input-form textarea:focus {
   border: none;
   outline: none;
-  box-shadow: #e4d5b1 0 0 0 0.07rem;
+  box-shadow: #dde7ca 0 0 0 0.07rem;
   color: #242424;
   background-color: white;
   transition: all 0.3s ease;
@@ -11103,7 +11103,7 @@ h6 {
   padding: 9px 12px !important;
   height: auto !important;
   font-weight: 600 !important;
-  color: #be8f5f !important;
+  color: #829769 !important;
   text-transform: uppercase;
   display: block;
   content: "Browse";
@@ -11133,7 +11133,7 @@ h6 {
   font-weight: 500;
   min-width: 140px;
   border-radius: 0.6rem;
-  background-color: #be8f5f;
+  background-color: #829769;
   color: white;
 }
 
@@ -11144,11 +11144,11 @@ h6 {
 
 .btn-submit:hover {
   color: white;
-  background: #aa6d38;
+  background: #5a6e49;
 }
 
 .btn-new {
-  color: #be8f5f;
+  color: #829769;
   font-weight: 500;
 }
 
@@ -11158,12 +11158,12 @@ h6 {
 }
 
 .btn-icon {
-  color: #be8f5f;
+  color: #829769;
 }
 
 .btn-icon:focus {
   box-shadow: none;
-  color: #e4d5b1;
+  color: #dde7ca;
 }
 
 /*---------------------ICONS---------------------*/
@@ -11176,17 +11176,17 @@ h6 {
 .table-fa {
   font-size: 1.04rem;
   text-decoration: none;
-  color: #be8f5f;
+  color: #829769;
 }
 
 .back-fa {
   font-size: 1.8rem;
   text-decoration: none;
-  color: #be8f5f;
+  color: #829769;
 }
 
 .back-fa:hover {
-  color: #94693c;
+  color: #5b6a49;
 }
 
 .link-fa {
@@ -11242,11 +11242,11 @@ thead {
   font-weight: 500;
   letter-spacing: 0.04rem;
   text-transform: uppercase;
-  color: #aa6d38;
+  color: #5a6e49;
 }
 
 .breadcrumb-item a {
-  color: #be8f5f;
+  color: #829769;
 }
 
 /*---------------------NAVIGATION---------------------*/
@@ -11265,7 +11265,7 @@ thead {
 
 .sidenav .nav-link {
   text-decoration: none;
-  color: #aa6d38;
+  color: #5a6e49;
   padding: 0.9rem 1.5rem 0.5rem 1.5rem;
   /*font-size: 0.9rem;*/
   font-weight: 400;
@@ -11273,15 +11273,23 @@ thead {
 }
 
 .sidenav .nav-link i {
-  color: #e4d5b1;
+  color: #dde7ca;
 }
 
 .sidenav .nav-link:hover {
-  color: #be8f5f;
+  color: #829769;
 }
 
 .sidenav .nav-link:hover .link-fa {
-  color: #aa6d38;
+  color: #5a6e49;
+}
+
+.active {
+  font-weight: 500 !important;
+}
+
+.active .link-fa {
+  color: #829769 !important;
 }
 
 .sidebar-heading {
@@ -11302,24 +11310,24 @@ thead {
 /* Position and style the close button (top right corner) */
 
 .closebtn {
-  color: #e4d5b1;
+  color: #dde7ca;
   padding: 0.9rem 1.5rem 0.5rem 1.5rem;
   font-size: 24px;
 }
 
 .closebtn:hover {
-  color: #be8f5f;
+  color: #829769;
 }
 
 .navbar .opennav-btn {
-  color: #be8f5f !important;
+  color: #829769 !important;
   cursor: pointer;
   font-size: 24px;
   padding: 0 !important;
 }
 
 .navbar .opennav-btn:hover {
-  color: #aa6d38 !important;
+  color: #5a6e49 !important;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -11345,12 +11353,12 @@ thead {
 }
 
 .page-link {
-  color: #be8f5f !important;
+  color: #829769 !important;
 }
 
 .page-item.active .page-link {
   background-color: #f5f4f1 !important;
-  color: #aa6d38 !important;
+  color: #5a6e49 !important;
   border-color: #f5f4f1 !important;
 }
 

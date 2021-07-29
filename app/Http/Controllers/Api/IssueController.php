@@ -1,0 +1,92 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests\IssueRequest;
+use App\Models\Issue;
+use Illuminate\Http\Request;
+
+class IssueController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('api');
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return Issue::with('project')
+            ->with('assignee')
+            ->latest()
+            ->paginate(25);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(IssueRequest $request)
+    {
+        return Issue::create([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'type' => $request->input('type'),
+            'severity' => $request->input('severity'),
+            'dueDate' => $request->input('dueDate'),
+            'status' => $request->input('status'),
+            'user_id' => $request->input('user_id'),
+            'project_id' => $request->input('project_id'),
+            'assignee_id' => $request->input('assignee_id'),
+        ]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(IssueRequest $request, $id)
+    {
+        $issue = Issue::findOrFail($id);
+        $issue->update($request->all());
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $issue = Issue::findOrFail($id);
+        $issue->delete();
+
+        return ['msg' => 'Issue deleted'];
+    }
+}

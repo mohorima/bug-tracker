@@ -115,7 +115,6 @@
                                     <div class="text-small">
                                         {{ $project->description }}
                                     </div>
-                                    
                                 </td>
                                 <td>
                                     {{ $project->startDate }} to <br> {{ $project->endDate }}

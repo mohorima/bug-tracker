@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\IssueController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:api')->get('/issue', function (Request $request) {
+    return $request->issue();
+});
+
+//this single-handedly attaches routes to all the methods in IssueController e.g. show, store etc
+Route::apiResource('issue', IssueController::class);

@@ -1,36 +1,48 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+require("./bootstrap");
 
-require('./bootstrap');
+window.Vue = require("vue").default;
 
-window.Vue = require('vue').default;
+//VueRouter
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+let routes = [
+    {
+        path: "/dashboard",
+        component: require("./components/Dashboard.vue").default,
+    },
+    {
+        path: "/issue",
+        component: require("./components/Issue.vue").default,
+    },
+];
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-const app = new Vue({
-    el: '#app',
+const router = new VueRouter({
+    mode: "history",
+    linkActiveClass: "active",
+    routes,
 });
 
+// Register Vue components.
+
+//Fire is a new instance of vue which will be used as a bus, register Fire globally so its accessible everywhere in app. Long version:
+// let Fire = new Vue();
+// window.Fire = Fire;
+
+window.Fire = new Vue();
+
+Vue.component(
+    "example-component",
+    require("./components/ExampleComponent.vue").default
+);
+
+// Create a fresh Vue application instance and attach it to the page
+
+const app = new Vue({
+    el: "#app",
+    router,
+});
 
 // APPLICATION CODE
 
@@ -40,27 +52,27 @@ $("#delete").on("click", function () {
 });
 
 //check all checkboxes
-$('.container .toggle-button').on("click", function () {
-    $('.container input[type="checkbox"]').prop('checked', this.checked)
+$(".container .toggle-button").on("click", function () {
+    $('.container input[type="checkbox"]').prop("checked", this.checked);
 });
 
 //SIDE-NAV
 /* Set the width of the side navigation to 300px and the left margin of the page content to 300px */
 $("#hamburger").on("click", function () {
     $("#mySidenav").css({
-        "width": "300px"
+        width: "300px",
     });
     $("#main").css({
-        "margin-left": "300px"
+        "margin-left": "300px",
     });
 });
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 $("#closesidenav").on("click", function () {
     $("#mySidenav").css({
-        "width": "0"
+        width: "0",
     });
     $("#main").css({
-        "margin-left": "0"
+        "margin-left": "0",
     });
 });

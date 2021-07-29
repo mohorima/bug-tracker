@@ -32,7 +32,10 @@
 
                 {{-- content --}}
                 <main class="py-4 px-3">
-                    @yield('content')
+                    <!-- @yield('content') -->
+                    <!-- route outlet -->
+                    <!-- component matched by the route will render here -->
+                    <router-view></router-view>
                 </main>  
 
             </div>

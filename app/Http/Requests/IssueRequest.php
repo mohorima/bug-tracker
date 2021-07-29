@@ -25,12 +25,11 @@ class IssueRequest extends FormRequest
     {
         return [
             'title' => 'required|max:250',
+            'description' => 'nullable|max:250',
             'type' => 'required|max:50',
             'severity' => 'required|max:50',
-            'flag' => 'required|max:50',
             'dueDate' => 'required|date',
             'status' => 'required|max:50',
-            'tag' => 'max:50|nullable',
             'user_id' => 'required',
             'project_id' => 'required',
             'assignee_id' => 'required',

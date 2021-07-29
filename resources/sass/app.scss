@@ -333,6 +333,14 @@ thead {
     }
 }
 
+.active {
+    font-weight: 500 !important;
+
+    .link-fa {
+        color: $main-clr !important;
+    }
+}
+
 .sidebar-heading {
     padding: 0.1rem 1.5rem;
     margin-top: 1.2rem;
