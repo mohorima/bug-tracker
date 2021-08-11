@@ -19,17 +19,17 @@
         </li>  
     
         <li class="nav-item">
-            <a class="nav-link" href="{{route('projectindex')}}">
-            <i class="fas fa-briefcase mr-2 link-fa"></i>
-            Projects
-            </a>
+            <router-link to="/project" class="nav-link">
+                <i class="fas fa-briefcase mr-2 link-fa"></i>
+                Projects
+            </router-link>
         </li> 
   
         <li class="nav-item">
-            <a class="nav-link" href="{{route('taskindex')}}">
-            <i class="fas fa-tasks mr-2 link-fa"></i>
-            Tasks
-            </a>
+            <router-link to="/task" class="nav-link">
+                <i class="fas fa-tasks mr-2 link-fa"></i>
+                Tasks
+            </router-link>
         </li> 
   
         <li class="nav-item">

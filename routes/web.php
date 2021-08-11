@@ -97,30 +97,30 @@ Route::put('/invoice/{id}', [InvoiceController::class, 'update']);
 //destroy
 Route::delete('/invoice/{id}', [InvoiceController::class, 'destroy']);
 
-/* ISSUE */
-// Route::get('/issue', [IssueController::class, 'index'])->name('issueindex');
-//create
-Route::get('/issue/create', [IssueController::class, 'create'])->name(
-    'issuecreate'
-);
-//store
-Route::post('/issue', [IssueController::class, 'store']);
-//show
-Route::get('/issue/{id}/show', [IssueController::class, 'show'])->name(
-    'issueshow'
-);
-//edit
-Route::get('/issue/{id}/edit', [IssueController::class, 'edit'])->name(
-    'issueedit'
-);
-//update
-Route::put('/issue/{id}', [IssueController::class, 'update']);
-//destroy
-Route::delete('/issue/{id}', [IssueController::class, 'destroy']);
-//import
-Route::post('/issue/import', [IssueController::class, 'import'])->name(
-    'import'
-);
+// /* ISSUE */
+// // Route::get('/issue', [IssueController::class, 'index'])->name('issueindex');
+// //create
+// Route::get('/issue/create', [IssueController::class, 'create'])->name(
+//     'issuecreate'
+// );
+// //store
+// Route::post('/issue', [IssueController::class, 'store']);
+// //show
+// Route::get('/issue/{id}/show', [IssueController::class, 'show'])->name(
+//     'issueshow'
+// );
+// //edit
+// Route::get('/issue/{id}/edit', [IssueController::class, 'edit'])->name(
+//     'issueedit'
+// );
+// //update
+// Route::put('/issue/{id}', [IssueController::class, 'update']);
+// //destroy
+// Route::delete('/issue/{id}', [IssueController::class, 'destroy']);
+// //import
+// Route::post('/issue/import', [IssueController::class, 'import'])->name(
+//     'import'
+// );
 
 /* NOTE */
 Route::get('/note', [NoteController::class, 'index'])->name('noteindex');
@@ -191,32 +191,32 @@ Route::put('/permission/{id}', [PermissionController::class, 'update']);
 //destroy
 Route::delete('/permission/{id}', [PermissionController::class, 'destroy']);
 
-/* PROJECT */
-Route::get('/project', [ProjectController::class, 'index'])->name(
-    'projectindex'
-);
-//create
-Route::get('/project/create', [ProjectController::class, 'create'])->name(
-    'projectcreate'
-);
-//store
-Route::post('/project', [ProjectController::class, 'store']);
-//show
-Route::get('/project/{id}/show', [ProjectController::class, 'show'])->name(
-    'projectshow'
-);
-//edit
-Route::get('/project/{id}/edit', [ProjectController::class, 'edit'])->name(
-    'projectedit'
-);
-//update
-Route::put('/project/{id}', [ProjectController::class, 'update']);
-//destroy
-Route::delete('/project/{id}', [ProjectController::class, 'destroy']);
-//import
-Route::post('/project/import', [ProjectController::class, 'import'])->name(
-    'import'
-);
+// /* PROJECT */
+// Route::get('/project', [ProjectController::class, 'index'])->name(
+//     'projectindex'
+// );
+// //create
+// Route::get('/project/create', [ProjectController::class, 'create'])->name(
+//     'projectcreate'
+// );
+// //store
+// Route::post('/project', [ProjectController::class, 'store']);
+// //show
+// Route::get('/project/{id}/show', [ProjectController::class, 'show'])->name(
+//     'projectshow'
+// );
+// //edit
+// Route::get('/project/{id}/edit', [ProjectController::class, 'edit'])->name(
+//     'projectedit'
+// );
+// //update
+// Route::put('/project/{id}', [ProjectController::class, 'update']);
+// //destroy
+// Route::delete('/project/{id}', [ProjectController::class, 'destroy']);
+// //import
+// Route::post('/project/import', [ProjectController::class, 'import'])->name(
+//     'import'
+// );
 
 /* ROLE */
 Route::get('/role', [RoleController::class, 'index'])->name('roleindex');
@@ -239,26 +239,26 @@ Route::put('/role/{id}', [RoleController::class, 'update']);
 //destroy
 Route::delete('/role/{id}', [RoleController::class, 'destroy']);
 
-/* TASK */
-Route::get('/task', [TaskController::class, 'index'])->name('taskindex');
-//create
-Route::get('/task/create', [TaskController::class, 'create'])->name(
-    'taskcreate'
-);
-//store
-Route::post('/task', [TaskController::class, 'store']);
-//show
-Route::get('/task/{id}/show', [TaskController::class, 'show'])->name(
-    'taskshow'
-);
-//edit
-Route::get('/task/{id}/edit', [TaskController::class, 'edit'])->name(
-    'taskedit'
-);
-//update
-Route::put('/task/{id}', [TaskController::class, 'update']);
-//destroy
-Route::delete('/task/{id}', [TaskController::class, 'destroy']);
+// /* TASK */
+// Route::get('/task', [TaskController::class, 'index'])->name('taskindex');
+// //create
+// Route::get('/task/create', [TaskController::class, 'create'])->name(
+//     'taskcreate'
+// );
+// //store
+// Route::post('/task', [TaskController::class, 'store']);
+// //show
+// Route::get('/task/{id}/show', [TaskController::class, 'show'])->name(
+//     'taskshow'
+// );
+// //edit
+// Route::get('/task/{id}/edit', [TaskController::class, 'edit'])->name(
+//     'taskedit'
+// );
+// //update
+// Route::put('/task/{id}', [TaskController::class, 'update']);
+// //destroy
+// Route::delete('/task/{id}', [TaskController::class, 'destroy']);
 
 /* USER */
 Route::get('/user', [UserController::class, 'index'])->name('userindex');

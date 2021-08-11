@@ -16,6 +16,14 @@ let routes = [
         path: "/issue",
         component: require("./components/Issue.vue").default,
     },
+    {
+        path: "/project",
+        component: require("./components/Project.vue").default,
+    },
+    {
+        path: "/task",
+        component: require("./components/Task.vue").default,
+    },
 ];
 
 const router = new VueRouter({
@@ -26,10 +34,7 @@ const router = new VueRouter({
 
 // Register Vue components.
 
-//Fire is a new instance of vue which will be used as a bus, register Fire globally so its accessible everywhere in app. Long version:
-// let Fire = new Vue();
-// window.Fire = Fire;
-
+//Fire is a new instance of vue which will be used as a bus
 window.Fire = new Vue();
 
 Vue.component(

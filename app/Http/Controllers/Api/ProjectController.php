@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\IssueRequest;
-use App\Models\Issue;
+use App\Http\Requests\ProjectRequest;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
-class IssueController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -16,7 +16,7 @@ class IssueController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api');
+        $this->middleware('api');
     }
     /**
      * Display a listing of the resource.
@@ -25,8 +25,7 @@ class IssueController extends Controller
      */
     public function index()
     {
-        return Issue::with('project')
-            ->with('assignee')
+        return Project::with('client')
             ->latest()
             ->paginate(25);
     }
@@ -37,18 +36,19 @@ class IssueController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(IssueRequest $request)
+    public function store(ProjectRequest $request)
     {
-        return Issue::create([
+        return Project::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
-            'type' => $request->input('type'),
-            'severity' => $request->input('severity'),
-            'dueDate' => $request->input('dueDate'),
+            'startDate' => $request->input('startDate'),
+            'endDate' => $request->input('endDate'),
+            'billingType' => $request->input('billingType'),
+            'cost' => $request->input('cost'),
+            'estHours' => $request->input('estHours'),
+            'tag' => $request->input('tag'),
             'status' => $request->input('status'),
-            'user_id' => $request->input('user_id'),
-            'project_id' => $request->input('project_id'),
-            'assignee_id' => $request->input('assignee_id'),
+            'client_id' => $request->input('client_id'),
         ]);
     }
 
@@ -70,10 +70,10 @@ class IssueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(IssueRequest $request, $id)
+    public function update(ProjectRequest $request, $id)
     {
-        $issue = Issue::findOrFail($id);
-        $issue->update($request->all());
+        $project = Project::findOrFail($id);
+        $project->update($request->all());
     }
 
     /**
@@ -84,9 +84,9 @@ class IssueController extends Controller
      */
     public function destroy($id)
     {
-        $issue = Issue::findOrFail($id);
-        $issue->delete();
+        $project = Project::findOrFail($id);
+        $project->delete();
 
-        return ['msg' => 'Issue deleted'];
+        return ['msg' => 'Project deleted'];
     }
 }

@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\IssueRequest;
-use App\Models\Issue;
+use App\Http\Requests\TaskRequest;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
-class IssueController extends Controller
+class TaskController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -16,7 +16,7 @@ class IssueController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api');
+        $this->middleware('api');
     }
     /**
      * Display a listing of the resource.
@@ -25,8 +25,8 @@ class IssueController extends Controller
      */
     public function index()
     {
-        return Issue::with('project')
-            ->with('assignee')
+        return Task::with('project')
+            ->with('collaborator')
             ->latest()
             ->paginate(25);
     }
@@ -37,18 +37,20 @@ class IssueController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(IssueRequest $request)
+    public function store(TaskRequest $request)
     {
-        return Issue::create([
-            'title' => $request->input('title'),
+        return Task::create([
+            'subject' => $request->input('subject'),
             'description' => $request->input('description'),
-            'type' => $request->input('type'),
-            'severity' => $request->input('severity'),
-            'dueDate' => $request->input('dueDate'),
+            'priority' => $request->input('priority'),
             'status' => $request->input('status'),
+            'tag' => $request->input('tag'),
+            'milestone' => $request->input('milestone'),
+            'startDate' => $request->input('startDate'),
+            'endDate' => $request->input('endDate'),
             'user_id' => $request->input('user_id'),
             'project_id' => $request->input('project_id'),
-            'assignee_id' => $request->input('assignee_id'),
+            'collaborator_id' => $request->input('collaborator_id'),
         ]);
     }
 
@@ -70,10 +72,10 @@ class IssueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(IssueRequest $request, $id)
+    public function update(TaskRequest $request, $id)
     {
-        $issue = Issue::findOrFail($id);
-        $issue->update($request->all());
+        $task = Task::findOrFail($id);
+        $task->update($request->all());
     }
 
     /**
@@ -84,9 +86,9 @@ class IssueController extends Controller
      */
     public function destroy($id)
     {
-        $issue = Issue::findOrFail($id);
-        $issue->delete();
+        $task = Task::findOrFail($id);
+        $task->delete();
 
-        return ['msg' => 'Issue deleted'];
+        return ['msg' => 'Task deleted'];
     }
 }
