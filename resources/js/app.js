@@ -13,6 +13,14 @@ let routes = [
         component: require("./components/Dashboard.vue").default,
     },
     {
+        path: "/client",
+        component: require("./components/Client.vue").default,
+    },
+    {
+        path: "/invoice",
+        component: require("./components/Invoice.vue").default,
+    },
+    {
         path: "/issue",
         component: require("./components/Issue.vue").default,
     },
@@ -23,6 +31,10 @@ let routes = [
     {
         path: "/task",
         component: require("./components/Task.vue").default,
+    },
+    {
+        path: "/user",
+        component: require("./components/User.vue").default,
     },
 ];
 

@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\Api\ClientController;
+use App\Http\Controllers\Api\InvoiceController;
 use App\Http\Controllers\Api\IssueController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\TaskController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +20,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* USER */
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::apiResource('user', UserController::class);
+
+/* CLIENT */
+Route::middleware('auth:api')->get('/client', function (Request $request) {
+    return $request->client();
+});
+Route::apiResource('client', ClientController::class);
+
+/* INVOICE */
+Route::middleware('auth:api')->get('/invoice', function (Request $request) {
+    return $request->invoice();
+});
+Route::apiResource('invoice', InvoiceController::class);
 
 /* ISSUE */
 Route::middleware('auth:api')->get('/issue', function (Request $request) {

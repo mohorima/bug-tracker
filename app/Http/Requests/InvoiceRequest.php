@@ -29,7 +29,6 @@ class InvoiceRequest extends FormRequest
             'tax' => 'required|numeric',
             'recurring' => 'required|boolean',
             'note' => 'max:250|nullable',
-            'tag' => 'max:50|nullable',
             'project_id' => 'required',
         ];
     }

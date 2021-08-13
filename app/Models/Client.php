@@ -16,21 +16,11 @@ class Client extends Model
         'company',
         'owner',
         'address',
-        'city',
-        'state',
-        'zip',
         'country',
         'contactPerson',
         'email',
         'phone',
         'website',
-        'clientGroup',
-        'vatNumber',
-        'billingAddress',
-        'billingCity',
-        'billingState',
-        'billingZip',
-        'billingCountry',
     ];
 
     //project:client M:1

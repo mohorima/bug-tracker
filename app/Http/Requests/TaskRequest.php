@@ -28,8 +28,6 @@ class TaskRequest extends FormRequest
             'description' => 'max:500|nullable',
             'priority' => 'required|max:50',
             'status' => 'required|max:50',
-            'tag' => 'max:50|nullable',
-            'milestone' => 'max:100|nullable',
             'startDate' => 'required|date',
             'endDate' => 'required|date',
             'user_id' => 'required',

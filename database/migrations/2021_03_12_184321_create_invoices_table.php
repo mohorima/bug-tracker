@@ -21,7 +21,6 @@ class CreateInvoicesTable extends Migration
             $table->decimal('tax', 14, 2);
             $table->boolean('recurring');
             $table->string('note', 250)->nullable();
-            $table->string('tag', 50)->nullable();
             $table->foreignId('project_id')->constrained()->onDelete('cascade');
         });
     }

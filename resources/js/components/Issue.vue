@@ -70,9 +70,43 @@
                                         >
                                     </td>
                                     <td>
-                                        {{ issue.severity }}
+                                        <span
+                                            v-if="issue.severity === 'low'"
+                                            class="badge bg-primary text-white"
+                                            >LOW</span
+                                        >
+                                        <span
+                                            v-else-if="
+                                                issue.severity === 'medium'
+                                            "
+                                            class="badge bg-warning text-white"
+                                            >HIGH</span
+                                        >
+                                        <span
+                                            v-else-if="
+                                                issue.severity === 'high'
+                                            "
+                                            class="badge bg-danger text-white"
+                                            >HIGH</span
+                                        >
                                     </td>
-                                    <td>{{ issue.status }}</td>
+                                    <td>
+                                        <span
+                                            class="badge text-white"
+                                            :class="{
+                                                'bg-warning':
+                                                    issue.status === 'Active',
+                                                'bg-success':
+                                                    issue.status != 'Active',
+                                            }"
+                                        >
+                                            {{
+                                                issue.status === "Active"
+                                                    ? "ACTIVE"
+                                                    : "Solved"
+                                            }}
+                                        </span>
+                                    </td>
                                     <td>{{ issue.dueDate }}</td>
                                     <td>{{ issue.project.title }}</td>
                                     <td>{{ issue.assignee.name }}</td>

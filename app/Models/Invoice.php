@@ -18,7 +18,6 @@ class Invoice extends Model
         'tax',
         'recurring',
         'note',
-        'tag',
         'project_id',
     ];
 

@@ -20,8 +20,6 @@ class CreateTasksTable extends Migration
             $table->string('description')->nullable();
             $table->string('priority', 50);
             $table->string('status', 50);
-            $table->string('tag', 50)->nullable();
-            $table->string('milestone', 100)->nullable();
             $table->datetime('startDate');
             $table->datetime('endDate');
             $table->foreignId('user_id')->constrained();

@@ -69,53 +69,56 @@
                                         {{ project.startDate }} to <br />
                                         {{ project.endDate }}
                                         <br />
-                                        // @if(project.estHours != null)
-                                        // {{ project.estHours }} hours @endif
+                                        {{ estimatedHours(project.estHours) }}
                                     </td>
                                     <td>
-                                        {{ project.cost }}
+                                        <strong>
+                                            {{ "$ " + project.cost }}
+                                        </strong>
                                     </td>
-                                    // <td>
-                                    //     @if(project.status === 'in-progress')
-                                    //     <span
-                                    //         class="badge bg-success text-white"
-                                    //         >IN PROGRESS</span
-                                    //     >
-                                    //     @elseif(project.status ===
-                                    //     'not-started')
-                                    //     <span class="badge bg-dark text-white"
-                                    //         >NOT STARTED</span
-                                    //     >
-                                    //     @elseif(project.status === 'on-hold')
-                                    //     <span
-                                    //         class="badge bg-warning text-white"
-                                    //         >ON HOLD</span
-                                    //     >
-                                    //     @elseif(project.status ===
-                                    //     'cancelled')
-                                    //     <span class="badge bg-danger text-white"
-                                    //         >CANCELLED</span
-                                    //     >
-                                    //     @elseif(project.status ===
-                                    //     'completed')
-                                    //     <span
-                                    //         class="badge bg-secondary text-white"
-                                    //         >COMPLETED</span
-                                    //     >
-                                    //     @endif
-                                    // </td>
-                                    // <td>
-                                    //     <span class="badge bg-light text-faded">
-                                    //         @switch(project.tag)
-                                    //         @case("web-app") Web App @break
-                                    //         @case("mobile-app") Mobile App
-                                    //         @break @case("spa") SPA @break
-                                    //         @case("illustration") Illustration
-                                    //         @break @case("video") Video @break
-                                    //         @case("branding") Branding @break
-                                    //         @default @endswitch
-                                    //     </span>
-                                    // </td>
+                                    <td>
+                                        <span
+                                            v-if="
+                                                project.status === 'in-progress'
+                                            "
+                                            class="badge bg-success text-white"
+                                            >IN PROGRESS</span
+                                        >
+                                        <span
+                                            v-else-if="
+                                                project.status === 'not-started'
+                                            "
+                                            class="badge bg-dark text-white"
+                                            >NOT STARTED</span
+                                        >
+                                        <span
+                                            v-else-if="
+                                                project.status === 'on-hold'
+                                            "
+                                            class="badge bg-warning text-white"
+                                            >ON HOLD</span
+                                        >
+                                        <span
+                                            v-else-if="
+                                                project.status === 'cancelled'
+                                            "
+                                            class="badge bg-danger text-white"
+                                            >CANCELLED</span
+                                        >
+                                        <span
+                                            v-else-if="
+                                                project.status === 'completed'
+                                            "
+                                            class="badge bg-secondary text-white"
+                                            >COMPLETED</span
+                                        >
+                                    </td>
+
+                                    <td>
+                                        <span class="badge bg-light text-faded">
+                                            {{ projectTags(project.tag) }}
+                                        </span>
+                                    </td>
                                     <td>
                                         {{ project.client.company }}
                                     </td>
@@ -190,171 +193,6 @@
                                     <HasError :form="form" field="title" />
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="description"
-                                    >Description
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="description"
-                                        v-model="form.description"
-                                        type="text"
-                                        name="description"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError
-                                        :form="form"
-                                        field="description"
-                                    />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="type"
-                                    >Type
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="type"
-                                        v-model="form.type"
-                                        type="text"
-                                        name="type"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="type" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="severity"
-                                    >Severity
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="severity"
-                                        v-model="form.severity"
-                                        type="text"
-                                        name="severity"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="severity" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="dueDate"
-                                    >Due Date
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="dueDate"
-                                        v-model="form.dueDate"
-                                        type="date"
-                                        name="dueDate"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="dueDate" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="status"
-                                    >Status
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="status"
-                                        v-model="form.status"
-                                        type="text"
-                                        name="status"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="status" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="user_id"
-                                    >User ID
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="user_id"
-                                        v-model="form.user_id"
-                                        type="text"
-                                        name="user_id"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="user_id" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="project_id"
-                                    >Project ID
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="project_id"
-                                        v-model="form.project_id"
-                                        type="text"
-                                        name="project_id"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="project_id" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="assignee_id"
-                                    >Assignee ID
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="assignee_id"
-                                        v-model="form.assignee_id"
-                                        type="text"
-                                        name="assignee_id"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError
-                                        :form="form"
-                                        field="assignee_id"
-                                    />
-                                </div>
-                            </div>
                         </div>
                         <div class="modal-footer">
                             <button
@@ -409,7 +247,38 @@ export default {
         }),
     }),
 
+    computed: {},
+
     methods: {
+        estimatedHours(hour) {
+            return hour != null ? `${hour} hours` : "";
+        },
+
+        projectTags(tag) {
+            switch (tag) {
+                case "web-app":
+                    return "Web-App";
+                    break;
+                case "mobile-app":
+                    return "Mobile App";
+                    break;
+                case "spa":
+                    return "SPA";
+                    break;
+                case "illustration":
+                    return "Illustration";
+                    break;
+                case "video":
+                    return "Video";
+                    break;
+                case "branding":
+                    return "Branding";
+                    break;
+                default:
+                    console.log(`No tags`);
+            }
+        },
+
         newModal() {
             this.editMode = false;
             this.form.clear();

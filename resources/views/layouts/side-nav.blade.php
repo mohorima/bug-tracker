@@ -35,22 +35,22 @@
         <li class="nav-item">
             <router-link to="/issue" class="nav-link">
                 <i class="fas fa-bug mr-2 link-fa"></i>
-            Issues
+                Issues
             </router-link>
         </li> 
   
         <li class="nav-item">
-            <a class="nav-link" href="{{route('noteindex')}}">
-            <i class="fas fa-sticky-note mr-2 link-fa"></i>
-            Notes
-            </a>
+            <router-link to="/client" class="nav-link">
+                <i class="fas fa-handshake mr-2 link-fa"></i>
+                Clients
+            </router-link>
         </li> 
   
         <li class="nav-item">
-            <a class="nav-link" href="{{route('clientindex')}}">
-            <i class="fas fa-handshake mr-2 link-fa"></i>
-            Clients
-            </a>
+            <router-link to="/invoice" class="nav-link">
+                <i class="fas fa-file-invoice-dollar mr-2 link-fa"></i>
+                Invoices
+            </router-link>
         </li> 
 
         <li class="nav-item">
@@ -62,42 +62,6 @@
   
     </ul>
 
-    <h6 class="sidebar-heading d-flex justify-content-between"  data-toggle="collapse" data-target="#collapseExpenses" aria-expanded="true" aria-controls="collapseExpenses">
-      <span>Expenses</span>
-      <i class="fas fa-angle-down ml-2"></i>
-    </h6>
-    <div  class="collapse" id="collapseExpenses">
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('expenseindex')}}">
-                <i class="fas fa-coins mr-2 link-fa"></i>
-                Expenses
-                </a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('invoiceindex')}}">
-                <i class="fas fa-file-invoice-dollar mr-2 link-fa"></i>
-                Invoices
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('paymentindex')}}">
-                <i class="fas fa-credit-card mr-2 link-fa"></i>
-                Payments
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('vendorindex')}}">
-                <i class="fas fa-dolly-flatbed mr-2 link-fa"></i>
-                Vendors
-                </a>
-            </li>
-
-        </ul>
-    </div>
 
     <h6 class="sidebar-heading d-flex justify-content-between"  data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
       <span>Users</span>
@@ -109,11 +73,11 @@
         <ul class="nav flex-column mb-2">
 
         <li class="nav-item">
-            <a class="nav-link" href="{{route('userindex')}}">
-            <i class="fas fa-user-friends mr-2 link-fa"></i>
-            Users
-            </a>
-        </li>
+            <router-link to="/user" class="nav-link">
+                <i class="fas fa-user-friends mr-2 link-fa"></i>
+                Users
+            </router-link>
+        </li> 
 
         <li class="nav-item">
             <a class="nav-link" href="{{route('roleindex')}}">
