@@ -46,7 +46,7 @@ class IssueController extends Controller
             'severity' => $request->input('severity'),
             'dueDate' => $request->input('dueDate'),
             'status' => $request->input('status'),
-            'user_id' => $request->input('user_id'),
+            'user_id' => auth()->user()->id,
             'project_id' => $request->input('project_id'),
             'assignee_id' => $request->input('assignee_id'),
         ]);

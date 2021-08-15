@@ -66,29 +66,29 @@
                                         </div>
                                         <span
                                             class="badge bg-secondary text-white"
-                                            >{{ issue.type }}</span
-                                        >
+                                            >{{ issue.type }}
+                                        </span>
                                     </td>
                                     <td>
                                         <span
                                             v-if="issue.severity === 'low'"
                                             class="badge bg-primary text-white"
-                                            >LOW</span
-                                        >
+                                            >LOW
+                                        </span>
                                         <span
                                             v-else-if="
                                                 issue.severity === 'medium'
                                             "
                                             class="badge bg-warning text-white"
-                                            >HIGH</span
-                                        >
+                                            >HIGH
+                                        </span>
                                         <span
                                             v-else-if="
                                                 issue.severity === 'high'
                                             "
                                             class="badge bg-danger text-white"
-                                            >HIGH</span
-                                        >
+                                            >HIGH
+                                        </span>
                                     </td>
                                     <td>
                                         <span
@@ -286,26 +286,6 @@
                             <div class="form-group row">
                                 <label
                                     class="col-md-4 col-form-label"
-                                    for="user_id"
-                                    >User ID
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="user_id"
-                                        v-model="form.user_id"
-                                        type="text"
-                                        name="user_id"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="user_id" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
                                     for="project_id"
                                     >Project ID
                                     <strong class="text-danger"> *</strong>
@@ -393,7 +373,6 @@ export default {
             severity: "",
             dueDate: "",
             status: "",
-            user_id: "",
             project_id: "",
             assignee_id: "",
         }),

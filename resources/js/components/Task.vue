@@ -19,20 +19,20 @@
                             <thead>
                                 <tr>
                                     <th class="th-sm" scope="col">Actions</th>
-                                    <th class="th-lg" scope="col">Title</th>
-                                    <th class="th-sm" scope="col">Severity</th>
+                                    <th class="th-lg" scope="col">Subject</th>
+                                    <th class="th-sm" scope="col">Priority</th>
                                     <th class="th-sm" scope="col">Status</th>
-                                    <th class="th-sm" scope="col">Due Date</th>
+                                    <th class="th-sm" scope="col">Duration</th>
                                     <th class="th-sm" scope="col">Project</th>
-                                    <th class="th-sm" scope="col">Assignee</th>
+                                    <th class="th-sm" scope="col">Users</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="issue in issues">
+                                <tr v-for="task in tasks">
                                     <th scope="row">
                                         <a
                                             href=""
-                                            @click.prevent="editModal(issue)"
+                                            @click.prevent="editModal(task)"
                                             data-toggle="tooltip"
                                             data-placement="top"
                                             title="Edit"
@@ -44,9 +44,7 @@
                                         </a>
                                         <a
                                             href=""
-                                            @click.prevent="
-                                                deleteIssue(issue.id)
-                                            "
+                                            @click.prevent="deleteTask(task.id)"
                                             data-toggle="tooltip"
                                             data-placement="top"
                                             title="Delete"
@@ -59,23 +57,57 @@
                                     </th>
                                     <td>
                                         <div class="text-title">
-                                            {{ issue.title }}
+                                            {{ task.subject }}
                                         </div>
                                         <div class="text-small">
-                                            {{ issue.description }}
+                                            {{ task.description }}
                                         </div>
-                                        <span
-                                            class="badge bg-secondary text-white"
-                                            >{{ issue.type }}</span
-                                        >
                                     </td>
                                     <td>
-                                        {{ issue.severity }}
+                                        <span
+                                            v-if="task.priority === 'low'"
+                                            class="badge bg-primary text-white"
+                                            >LOW
+                                        </span>
+                                        <span
+                                            v-else-if="
+                                                task.priority === 'medium'
+                                            "
+                                            class="badge bg-warning text-white"
+                                            >HIGH
+                                        </span>
+                                        <span
+                                            v-else-if="task.priority === 'high'"
+                                            class="badge bg-danger text-white"
+                                            >HIGH
+                                        </span>
                                     </td>
-                                    <td>{{ issue.status }}</td>
-                                    <td>{{ issue.dueDate }}</td>
-                                    <td>{{ issue.project.title }}</td>
-                                    <td>{{ issue.assignee.name }}</td>
+                                    <td>
+                                        <span
+                                            class="badge text-white"
+                                            :class="{
+                                                'bg-warning':
+                                                    task.status === 'Active',
+                                                'bg-success':
+                                                    task.status != 'Active',
+                                            }"
+                                        >
+                                            {{
+                                                task.status === "Active"
+                                                    ? "ACTIVE"
+                                                    : "CLOSED"
+                                            }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {{ task.startDate }} -
+                                        {{ task.endDate }}
+                                    </td>
+                                    <td>{{ task.project.title }}</td>
+                                    <td>
+                                        {{ task.collaborator.name }} +
+                                        {{ task.user.name }}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -100,14 +132,14 @@
                             class="modal-title"
                             id="addRecordLabel"
                         >
-                            Update the Issue
+                            Update the Task
                         </h5>
                         <h5
                             v-show="!editMode"
                             class="modal-title"
                             id="addRecordLabel"
                         >
-                            Add New Issue
+                            Add New Task
                         </h5>
                         <button
                             type="button"
@@ -122,194 +154,27 @@
                     <!-- FORM START -->
 
                     <form
-                        @submit.prevent="
-                            editMode ? updateIssue() : createIssue()
-                        "
+                        @submit.prevent="editMode ? updateTask() : createTask()"
                     >
                         <div class="modal-body">
                             <div class="form-group row">
                                 <label
                                     class="col-md-4 col-form-label"
-                                    for="title"
-                                    >Title
+                                    for="subject"
+                                    >Subject
                                     <strong class="text-danger"> *</strong>
                                 </label>
 
                                 <div class="col-md-8">
                                     <input
-                                        id="title"
-                                        v-model="form.title"
+                                        id="subject"
+                                        v-model="form.subject"
                                         type="text"
-                                        name="title"
+                                        name="subject"
                                         class="form-control"
                                         placeholder="Title"
                                     />
-                                    <HasError :form="form" field="title" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="description"
-                                    >Description
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="description"
-                                        v-model="form.description"
-                                        type="text"
-                                        name="description"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError
-                                        :form="form"
-                                        field="description"
-                                    />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="type"
-                                    >Type
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="type"
-                                        v-model="form.type"
-                                        type="text"
-                                        name="type"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="type" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="severity"
-                                    >Severity
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="severity"
-                                        v-model="form.severity"
-                                        type="text"
-                                        name="severity"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="severity" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="dueDate"
-                                    >Due Date
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="dueDate"
-                                        v-model="form.dueDate"
-                                        type="date"
-                                        name="dueDate"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="dueDate" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="status"
-                                    >Status
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="status"
-                                        v-model="form.status"
-                                        type="text"
-                                        name="status"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="status" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="user_id"
-                                    >User ID
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="user_id"
-                                        v-model="form.user_id"
-                                        type="text"
-                                        name="user_id"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="user_id" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="project_id"
-                                    >Project ID
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="project_id"
-                                        v-model="form.project_id"
-                                        type="text"
-                                        name="project_id"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="project_id" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="assignee_id"
-                                    >Assignee ID
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
-                                        id="assignee_id"
-                                        v-model="form.assignee_id"
-                                        type="text"
-                                        name="assignee_id"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError
-                                        :form="form"
-                                        field="assignee_id"
-                                    />
+                                    <HasError :form="form" field="subject" />
                                 </div>
                             </div>
                         </div>
@@ -350,18 +215,17 @@ export default {
 
     data: () => ({
         editMode: false,
-        issues: {},
+        tasks: {},
         form: new Form({
             id: "",
-            title: "",
+            subject: "",
             description: "",
-            type: "",
-            severity: "",
-            dueDate: "",
+            priority: "",
             status: "",
-            user_id: "",
+            startDate: "",
+            endDate: "",
             project_id: "",
-            assignee_id: "",
+            collaborator_id: "",
         }),
     }),
 
@@ -373,23 +237,21 @@ export default {
             $("#addRecord").modal("show");
         },
 
-        editModal(issue) {
+        editModal(task) {
             this.editMode = true;
             this.form.clear();
             this.form.reset();
             $("#addRecord").modal("show");
-            this.form.fill(issue);
+            this.form.fill(task);
         },
 
-        loadIssues() {
-            axios
-                .get("/api/issue")
-                .then(({ data }) => (this.issues = data.data));
+        loadTasks() {
+            axios.get("/api/task").then(({ data }) => (this.tasks = data.data));
         },
 
-        createIssue() {
+        createTask() {
             this.form
-                .post("/api/issue")
+                .post("/api/task")
                 .then(() => {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
@@ -397,10 +259,10 @@ export default {
                 .catch(() => {});
         },
 
-        deleteIssue(id) {
+        deleteTask(id) {
             if (confirm("Are you sure you want to delete?")) {
                 axios
-                    .delete("/api/issue/" + id)
+                    .delete("/api/task/" + id)
                     .then(() => {
                         Fire.$emit("reloadRecords");
                     })
@@ -410,9 +272,9 @@ export default {
             }
         },
 
-        updateIssue() {
+        updateTask() {
             this.form
-                .put("/api/issue/" + this.form.id)
+                .put("/api/task/" + this.form.id)
                 .then(() => {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
@@ -424,9 +286,9 @@ export default {
     },
 
     mounted() {
-        this.loadIssues();
+        this.loadTasks();
         Fire.$on("reloadRecords", () => {
-            this.loadIssues();
+            this.loadTasks();
         });
     },
 };

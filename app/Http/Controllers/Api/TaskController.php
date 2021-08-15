@@ -17,6 +17,7 @@ class TaskController extends Controller
     public function index()
     {
         return Task::with('project')
+            ->with('user')
             ->with('collaborator')
             ->latest()
             ->paginate(25);
@@ -31,7 +32,7 @@ class TaskController extends Controller
             'status' => $request->input('status'),
             'startDate' => $request->input('startDate'),
             'endDate' => $request->input('endDate'),
-            'user_id' => $request->input('user_id'),
+            'user_id' => auth()->user()->id,
             'project_id' => $request->input('project_id'),
             'collaborator_id' => $request->input('collaborator_id'),
         ]);

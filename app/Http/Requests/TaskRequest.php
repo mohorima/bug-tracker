@@ -30,7 +30,6 @@ class TaskRequest extends FormRequest
             'status' => 'required|max:50',
             'startDate' => 'required|date',
             'endDate' => 'required|date',
-            'user_id' => 'required',
             'project_id' => 'required',
             'collaborator_id' => 'required',
         ];

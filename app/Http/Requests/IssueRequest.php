@@ -30,7 +30,6 @@ class IssueRequest extends FormRequest
             'severity' => 'required|max:50',
             'dueDate' => 'required|date',
             'status' => 'required|max:50',
-            'user_id' => 'required',
             'project_id' => 'required',
             'assignee_id' => 'required',
         ];
