@@ -23,9 +23,15 @@ class InvoiceController extends Controller
 
     public function store(InvoiceRequest $request)
     {
+        $number = auth()->user()->id;
+        $prefix = str_pad($number, 4, '0', STR_PAD_LEFT);
+
         return Invoice::create([
+            'invoiceNum' => $prefix . random_int(100000000, 999999999),
             'billDate' => $request->input('billDate'),
             'dueDate' => $request->input('dueDate'),
+            'amount' => $request->input('amount'),
+            'paymentMode' => $request->input('paymentMode'),
             'tax' => $request->input('tax'),
             'recurring' => $request->input('recurring'),
             'note' => $request->input('note'),

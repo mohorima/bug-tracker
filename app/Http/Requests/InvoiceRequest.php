@@ -26,6 +26,8 @@ class InvoiceRequest extends FormRequest
         return [
             'billDate' => 'required|date',
             'dueDate' => 'required|date',
+            'amount' => 'required|numeric',
+            'paymentMode' => 'required|max:50',
             'tax' => 'required|numeric',
             'recurring' => 'required|boolean',
             'note' => 'max:250|nullable',

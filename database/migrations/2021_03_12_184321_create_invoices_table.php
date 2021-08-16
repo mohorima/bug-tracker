@@ -16,12 +16,18 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('invoiceNum', 10);
             $table->datetime('billDate');
             $table->datetime('dueDate');
+            $table->decimal('amount', 14, 2);
+            $table->string('paymentMode', 50);
             $table->decimal('tax', 14, 2);
             $table->boolean('recurring');
             $table->string('note', 250)->nullable();
-            $table->foreignId('project_id')->constrained()->onDelete('cascade');
+            $table
+                ->foreignId('project_id')
+                ->constrained()
+                ->onDelete('cascade');
         });
     }
 

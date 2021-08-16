@@ -13,8 +13,11 @@ class Invoice extends Model
     protected $table = 'invoices';
 
     protected $fillable = [
+        'invoiceNum',
         'billDate',
         'dueDate',
+        'amount',
+        'paymentMode',
         'tax',
         'recurring',
         'note',

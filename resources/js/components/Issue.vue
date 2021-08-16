@@ -80,7 +80,7 @@
                                                 issue.severity === 'medium'
                                             "
                                             class="badge bg-warning text-white"
-                                            >HIGH
+                                            >MEDIUM
                                         </span>
                                         <span
                                             v-else-if="
