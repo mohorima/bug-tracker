@@ -21,9 +21,7 @@
                                     <th class="th-sm" scope="col">Actions</th>
                                     <th class="th-lg" scope="col">Company</th>
                                     <th class="th-sm" scope="col">Address</th>
-                                    <th class="th-lg" scope="col">
-                                        Contact Person
-                                    </th>
+                                    <th class="th-lg" scope="col">Contact</th>
                                     <th class="th-sm" scope="col">Website</th>
                                 </tr>
                             </thead>
@@ -221,7 +219,8 @@ export default {
         loadClients() {
             axios
                 .get("/api/client")
-                .then(({ data }) => (this.clients = data.data));
+                .then(({ data }) => (this.clients = data.data))
+                .catch((error) => console.log(error));
         },
 
         createClient() {
@@ -231,7 +230,7 @@ export default {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
                 })
-                .catch(() => {});
+                .catch((error) => console.log(error));
         },
 
         deleteClient(id) {
@@ -241,9 +240,7 @@ export default {
                     .then(() => {
                         Fire.$emit("reloadRecords");
                     })
-                    .catch((error) => {
-                        console.log(error);
-                    });
+                    .catch((error) => console.log(error));
             }
         },
 
@@ -254,9 +251,7 @@ export default {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
                 })
-                .catch((error) => {
-                    console.log(error);
-                });
+                .catch((error) => console.log(error));
         },
     },
 

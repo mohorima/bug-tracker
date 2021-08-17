@@ -236,7 +236,8 @@ export default {
         loadInvoices() {
             axios
                 .get("/api/invoice")
-                .then(({ data }) => (this.invoices = data.data));
+                .then(({ data }) => (this.invoices = data.data))
+                .catch((error) => console.log(error));
         },
 
         createInvoice() {
@@ -246,7 +247,7 @@ export default {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
                 })
-                .catch(() => {});
+                .catch((error) => console.log(error));
         },
 
         deleteInvoice(id) {

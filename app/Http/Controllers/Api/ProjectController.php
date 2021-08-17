@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
+use App\Models\Client;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,9 @@ class ProjectController extends Controller
     {
         return Project::with('client')
             ->latest()
-            ->paginate(25);
+            ->paginate();
+
+        //$clients = Client::select('id', 'company')->get();
     }
 
     public function store(ProjectRequest $request)

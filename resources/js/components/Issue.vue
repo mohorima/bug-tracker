@@ -397,7 +397,8 @@ export default {
         loadIssues() {
             axios
                 .get("/api/issue")
-                .then(({ data }) => (this.issues = data.data));
+                .then(({ data }) => (this.issues = data.data))
+                .catch((error) => console.log(error));
         },
 
         createIssue() {
@@ -407,7 +408,7 @@ export default {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
                 })
-                .catch(() => {});
+                .catch((error) => console.log(error));
         },
 
         deleteIssue(id) {
@@ -417,9 +418,7 @@ export default {
                     .then(() => {
                         Fire.$emit("reloadRecords");
                     })
-                    .catch((error) => {
-                        console.log(error);
-                    });
+                    .catch((error) => console.log(error));
             }
         },
 
@@ -430,9 +429,7 @@ export default {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
                 })
-                .catch((error) => {
-                    console.log(error);
-                });
+                .catch((error) => console.log(error));
         },
     },
 

@@ -246,7 +246,10 @@ export default {
         },
 
         loadTasks() {
-            axios.get("/api/task").then(({ data }) => (this.tasks = data.data));
+            axios
+                .get("/api/task")
+                .then(({ data }) => (this.tasks = data.data))
+                .catch((error) => console.log(error));
         },
 
         createTask() {
@@ -256,7 +259,7 @@ export default {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
                 })
-                .catch(() => {});
+                .catch((error) => console.log(error));
         },
 
         deleteTask(id) {
@@ -266,9 +269,7 @@ export default {
                     .then(() => {
                         Fire.$emit("reloadRecords");
                     })
-                    .catch((error) => {
-                        console.log(error);
-                    });
+                    .catch((error) => console.log(error));
             }
         },
 
@@ -279,9 +280,7 @@ export default {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
                 })
-                .catch((error) => {
-                    console.log(error);
-                });
+                .catch((error) => console.log(error));
         },
     },
 
