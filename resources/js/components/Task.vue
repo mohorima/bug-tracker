@@ -153,7 +153,7 @@
 
                     <!-- FORM START -->
 
-                    <form
+                    <form class="input-form"
                         @submit.prevent="editMode ? updateTask() : createTask()"
                     >
                         <div class="modal-body">

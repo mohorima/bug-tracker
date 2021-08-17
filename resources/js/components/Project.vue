@@ -139,7 +139,7 @@
             aria-hidden="true"
         >
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
+                <div class="modal-content px-2">
                     <div class="modal-header">
                         <h5
                             v-show="editMode"
@@ -168,6 +168,7 @@
                     <!-- FORM START -->
 
                     <form
+                        class="input-form"
                         @submit.prevent="
                             editMode ? updateProject() : createProject()
                         "
@@ -175,13 +176,13 @@
                         <div class="modal-body">
                             <div class="form-group row">
                                 <label
-                                    class="col-md-4 col-form-label"
+                                    class="col-md-3 col-form-label"
                                     for="title"
                                     >Title
                                     <strong class="text-danger"> *</strong>
                                 </label>
 
-                                <div class="col-md-8">
+                                <div class="col-md-9">
                                     <input
                                         id="title"
                                         v-model="form.title"
@@ -195,41 +196,69 @@
                             </div>
                             <div class="form-group row">
                                 <label
-                                    class="col-md-4 col-form-label"
-                                    for="startDate"
-                                    >Date
-                                    <strong class="text-danger"> *</strong>
+                                    class="col-md-3 col-form-label"
+                                    for="description"
+                                    >Description
                                 </label>
 
-                                <div class="col-md-4">
+                                <div class="col-md-9">
+                                    <textarea
+                                        id="description"
+                                        class="form-control"
+                                        name="description"
+                                        rows="3"
+                                        cols="50"
+                                        v-model="form.description"
+                                    >
+                                    </textarea>
+                                    <HasError
+                                        :form="form"
+                                        field="description"
+                                    />
+                                </div>
+                            </div>
+                            <hr class="mt-4" />
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label
+                                        class="col-form-label"
+                                        for="startDate"
+                                        >Start Date
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
                                     <input
                                         id="startDate"
                                         v-model="form.startDate"
                                         type="date"
                                         name="startDate"
                                         class="form-control"
-                                        placeholder="Title"
                                     />
                                     <HasError :form="form" field="startDate" />
                                 </div>
-                                <div class="col-md-4">
+                                <!--.form-group -->
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="endDate"
+                                        >End Date
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
                                     <input
                                         id="endDate"
                                         v-model="form.endDate"
                                         type="date"
                                         name="endDate"
                                         class="form-control"
-                                        placeholder="Title"
                                     />
                                     <HasError :form="form" field="endDate" />
                                 </div>
+                                <!--.form-group -->
                             </div>
 
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label class="col-form-label" for="status"
-                                        >Status</label
-                                    >
+                                        >Status
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
 
                                     <select
                                         class="form-control"
@@ -264,8 +293,8 @@
 
                                 <div class="form-group col-md-6">
                                     <label class="col-form-label" for="tag"
-                                        >Tag</label
-                                    >
+                                        >Tag
+                                    </label>
 
                                     <select
                                         class="form-control"
@@ -301,14 +330,14 @@
                                 <!--.form-group -->
                             </div>
 
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="billingType"
-                                    >Billing Type
-                                </label>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label
+                                        class="col-form-label"
+                                        for="billingType"
+                                        >Billing Type
+                                    </label>
 
-                                <div class="col-md-8">
                                     <select
                                         class="form-control"
                                         name="billingType"
@@ -338,53 +367,15 @@
                                         field="billingType"
                                     />
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="cost"
-                                    >Cost
-                                </label>
 
-                                <div class="col-md-8">
-                                    <input
-                                        id="cost"
-                                        v-model="form.cost"
-                                        type="text"
-                                        name="cost"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="cost" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="estHours"
-                                    >Estimated Hours
-                                </label>
+                                <div class="form-group col-md-6">
+                                    <label
+                                        class="col-form-label"
+                                        for="client_id"
+                                        >Client
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
 
-                                <div class="col-md-8">
-                                    <input
-                                        id="estHours"
-                                        v-model="form.estHours"
-                                        type="text"
-                                        name="estHours"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="estHours" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="client_id"
-                                    >Client
-                                </label>
-
-                                <div class="col-md-8">
                                     <select
                                         class="form-control"
                                         name="client_id"
@@ -408,26 +399,35 @@
                                     <HasError :form="form" field="client_id" />
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="description"
-                                    >Description
-                                </label>
 
-                                <div class="col-md-8">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="cost"
+                                        >Cost
+                                    </label>
                                     <input
-                                        id="description"
-                                        v-model="form.description"
+                                        id="cost"
+                                        v-model="form.cost"
                                         type="text"
-                                        name="description"
+                                        name="cost"
                                         class="form-control"
-                                        placeholder="Title"
+                                        placeholder="Cost"
                                     />
-                                    <HasError
-                                        :form="form"
-                                        field="description"
+                                    <HasError :form="form" field="cost" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="estHours"
+                                        >Estimated Hours
+                                    </label>
+                                    <input
+                                        id="estHours"
+                                        v-model="form.estHours"
+                                        type="text"
+                                        name="estHours"
+                                        class="form-control"
+                                        placeholder="Estimated Hours"
                                     />
+                                    <HasError :form="form" field="estHours" />
                                 </div>
                             </div>
                         </div>

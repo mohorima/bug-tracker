@@ -137,7 +137,7 @@
 
                     <!-- FORM START -->
 
-                    <form
+                    <form class="input-form"
                         @submit.prevent="
                             editMode ? updateInvoice() : createInvoice()
                         "

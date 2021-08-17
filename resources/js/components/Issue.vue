@@ -77,17 +77,17 @@
                                         </span>
                                         <span
                                             v-else-if="
-                                                issue.severity === 'medium'
+                                                issue.severity === 'high'
                                             "
                                             class="badge bg-warning text-white"
-                                            >MEDIUM
+                                            >HIGH
                                         </span>
                                         <span
                                             v-else-if="
-                                                issue.severity === 'high'
+                                                issue.severity === 'critical'
                                             "
                                             class="badge bg-danger text-white"
-                                            >HIGH
+                                            >CRITICAL
                                         </span>
                                     </td>
                                     <td>
@@ -95,15 +95,15 @@
                                             class="badge text-white"
                                             :class="{
                                                 'bg-warning':
-                                                    issue.status === 'Active',
+                                                    issue.status === 'open',
                                                 'bg-success':
-                                                    issue.status != 'Active',
+                                                    issue.status != 'open',
                                             }"
                                         >
                                             {{
-                                                issue.status === "Active"
-                                                    ? "ACTIVE"
-                                                    : "Solved"
+                                                issue.status === "open"
+                                                    ? "OPEN"
+                                                    : "CLOSED"
                                             }}
                                         </span>
                                     </td>
@@ -126,8 +126,8 @@
             aria-labelledby="addRecordLabel"
             aria-hidden="true"
         >
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content px-2">
                     <div class="modal-header">
                         <h5
                             v-show="editMode"
@@ -156,6 +156,7 @@
                     <!-- FORM START -->
 
                     <form
+                        class="input-form"
                         @submit.prevent="
                             editMode ? updateIssue() : createIssue()
                         "
@@ -163,13 +164,13 @@
                         <div class="modal-body">
                             <div class="form-group row">
                                 <label
-                                    class="col-md-4 col-form-label"
+                                    class="col-md-3 col-form-label"
                                     for="title"
                                     >Title
                                     <strong class="text-danger"> *</strong>
                                 </label>
 
-                                <div class="col-md-8">
+                                <div class="col-md-9">
                                     <input
                                         id="title"
                                         v-model="form.title"
@@ -183,148 +184,210 @@
                             </div>
                             <div class="form-group row">
                                 <label
-                                    class="col-md-4 col-form-label"
+                                    class="col-md-3 col-form-label"
                                     for="description"
                                     >Description
                                 </label>
 
-                                <div class="col-md-8">
-                                    <input
+                                <div class="col-md-9">
+                                    <textarea
                                         id="description"
-                                        v-model="form.description"
-                                        type="text"
-                                        name="description"
                                         class="form-control"
-                                        placeholder="Title"
-                                    />
+                                        name="description"
+                                        rows="3"
+                                        cols="50"
+                                        v-model="form.description"
+                                    >
+                                    </textarea>
                                     <HasError
                                         :form="form"
                                         field="description"
                                     />
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="type"
-                                    >Type
-                                    <strong class="text-danger"> *</strong>
-                                </label>
 
-                                <div class="col-md-8">
-                                    <input
+                            <hr class="mt-4" />
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="type"
+                                        >Type
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <select
+                                        class="form-control"
+                                        name="type"
                                         id="type"
                                         v-model="form.type"
-                                        type="text"
-                                        name="type"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                        >
+                                            Select Type
+                                        </option>
+                                        <option value="bug">
+                                            Bug
+                                        </option>
+                                        <option value="frontend">
+                                            Front-End
+                                        </option>
+                                        <option value="backend">
+                                            Back-End
+                                        </option>
+                                        <option value="database">
+                                            Database
+                                        </option>
+                                    </select>
                                     <HasError :form="form" field="type" />
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="severity"
-                                    >Severity
-                                    <strong class="text-danger"> *</strong>
-                                </label>
+                                <!--.form-group -->
 
-                                <div class="col-md-8">
-                                    <input
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="severity"
+                                        >Severity
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <select
+                                        class="form-control"
+                                        name="severity"
                                         id="severity"
                                         v-model="form.severity"
-                                        type="text"
-                                        name="severity"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                        >
+                                            Select Severity
+                                        </option>
+                                        <option value="low">
+                                            Low
+                                        </option>
+                                        <option value="high">
+                                            High
+                                        </option>
+                                        <option value="critical">
+                                            Critical
+                                        </option>
+                                        <option value="database">
+                                            Database
+                                        </option>
+                                    </select>
                                     <HasError :form="form" field="severity" />
                                 </div>
+                                <!--.form-group -->
                             </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="dueDate"
-                                    >Due Date
-                                    <strong class="text-danger"> *</strong>
-                                </label>
 
-                                <div class="col-md-8">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="status"
+                                        >Status
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <select
+                                        class="form-control"
+                                        name="status"
+                                        id="status"
+                                        v-model="form.status"
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                        >
+                                            Select Status
+                                        </option>
+                                        <option value="open">
+                                            Open
+                                        </option>
+                                        <option value="closed">
+                                            Closed
+                                        </option>
+                                    </select>
+                                    <HasError :form="form" field="status" />
+                                </div>
+                                <!--.form-group -->
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="dueDate"
+                                        >Due Date
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
                                     <input
                                         id="dueDate"
                                         v-model="form.dueDate"
                                         type="date"
                                         name="dueDate"
                                         class="form-control"
-                                        placeholder="Title"
                                     />
                                     <HasError :form="form" field="dueDate" />
                                 </div>
+                                <!--.form-group -->
                             </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="status"
-                                    >Status
-                                    <strong class="text-danger"> *</strong>
-                                </label>
 
-                                <div class="col-md-8">
-                                    <input
-                                        id="status"
-                                        v-model="form.status"
-                                        type="text"
-                                        name="status"
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label
+                                        class="col-form-label"
+                                        for="project_id"
+                                        >Project
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <select
                                         class="form-control"
-                                        placeholder="Title"
-                                    />
-                                    <HasError :form="form" field="status" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="project_id"
-                                    >Project ID
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-8">
-                                    <input
+                                        name="project_id"
                                         id="project_id"
                                         v-model="form.project_id"
-                                        type="text"
-                                        name="project_id"
-                                        class="form-control"
-                                        placeholder="Title"
-                                    />
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                        >
+                                            Select Project
+                                        </option>
+                                        <option
+                                            v-for="project in projects"
+                                            :value="project.id"
+                                        >
+                                            {{ project.title }}
+                                        </option>
+                                    </select>
                                     <HasError :form="form" field="project_id" />
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="assignee_id"
-                                    >Assignee ID
-                                    <strong class="text-danger"> *</strong>
-                                </label>
+                                <!--.form-group -->
+                                <div class="form-group col-md-6">
+                                    <label
+                                        class="col-form-label"
+                                        for="assignee_id"
+                                    >
+                                        Assignee ID
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
 
-                                <div class="col-md-8">
                                     <input
                                         id="assignee_id"
                                         v-model="form.assignee_id"
                                         type="text"
                                         name="assignee_id"
                                         class="form-control"
-                                        placeholder="Title"
                                     />
                                     <HasError
                                         :form="form"
                                         field="assignee_id"
                                     />
                                 </div>
+                                <!--.form-group -->
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -364,7 +427,8 @@ export default {
 
     data: () => ({
         editMode: false,
-        issues: {},
+        projects: [],
+        issues: [],
         form: new Form({
             id: "",
             title: "",
@@ -383,6 +447,7 @@ export default {
             this.editMode = false;
             this.form.clear();
             this.form.reset();
+            this.loadProjects();
             $("#addRecord").modal("show");
         },
 
@@ -390,6 +455,7 @@ export default {
             this.editMode = true;
             this.form.clear();
             this.form.reset();
+            this.loadProjects();
             $("#addRecord").modal("show");
             this.form.fill(issue);
         },
@@ -398,6 +464,13 @@ export default {
             axios
                 .get("/api/issue")
                 .then(({ data }) => (this.issues = data.data))
+                .catch((error) => console.log(error));
+        },
+
+        loadProjects() {
+            axios
+                .get("/api/project")
+                .then(({ data }) => (this.projects = data.data))
                 .catch((error) => console.log(error));
         },
 
