@@ -178,176 +178,204 @@
                                     <HasError :form="form" field="subject" />
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label
-                                class="col-md-3 col-form-label"
-                                for="description"
-                                >Description
-                            </label>
 
-                            <div class="col-md-9">
-                                <textarea
-                                    id="description"
-                                    class="form-control"
-                                    name="description"
-                                    rows="3"
-                                    cols="50"
-                                    v-model="form.description"
-                                >
-                                </textarea>
-                                <HasError :form="form" field="description" />
-                            </div>
-                        </div>
-                        <hr class="mt-4" />
-
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label class="col-form-label" for="status"
-                                    >Status
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <select
-                                    class="custom-select form-control"
-                                    name="status"
-                                    id="status"
-                                    v-model="form.status"
-                                >
-                                    <option value="" disabled selected hidden
-                                        >Select Status
-                                    </option>
-                                    <option value="not-started"
-                                        >Not Started
-                                    </option>
-                                    <option value="in-progress"
-                                        >In Progress
-                                    </option>
-                                    <option value="on-hold">On Hold</option>
-                                    <option value="cancelled"
-                                        >Cancelled
-                                    </option>
-                                    <option value="completed"
-                                        >Completed
-                                    </option>
-                                </select>
-                                <HasError :form="form" field="status" />
-                            </div>
-                            <!--.form-group -->
-
-                            <div class="form-group col-md-6">
-                                <label class="col-form-label" for="priority"
-                                    >Priority
-                                </label>
-
-                                <select
-                                    class="custom-select form-control"
-                                    name="priority"
-                                    id="priority"
-                                    v-model="form.priority"
-                                >
-                                    <option value="" disabled selected hidden
-                                        >Select Priority
-                                    </option>
-                                    <option value="video">Video</option>
-                                    <option value="branding">Branding </option>
-                                </select>
-
-                                <HasError :form="form" field="priority" />
-                            </div>
-                            <!--.form-group -->
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label class="col-form-label" for="startDate"
-                                    >Start Date
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-                                <input
-                                    id="startDate"
-                                    v-model="form.startDate"
-                                    type="date"
-                                    name="startDate"
-                                    class="form-control"
-                                />
-                                <HasError :form="form" field="startDate" />
-                            </div>
-                            <!--.form-group -->
-                            <div class="form-group col-md-6">
-                                <label class="col-form-label" for="endDate"
-                                    >End Date
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-                                <input
-                                    id="endDate"
-                                    v-model="form.endDate"
-                                    type="date"
-                                    name="endDate"
-                                    class="form-control"
-                                />
-                                <HasError :form="form" field="endDate" />
-                            </div>
-                            <!--.form-group -->
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label class="col-form-label" for="project_id"
-                                    >Project
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <select
-                                    class="custom-select form-control"
-                                    name="project_id"
-                                    id="project_id"
-                                    v-model="form.project_id"
-                                >
-                                    <option value="" disabled selected hidden>
-                                        Select Project
-                                    </option>
-                                    <option
-                                        v-for="project in projects"
-                                        :value="project.id"
-                                    >
-                                        {{ project.title }}
-                                    </option>
-                                </select>
-                                <HasError :form="form" field="project_id" />
-                            </div>
-                            <!--.form-group -->
-                            <div class="form-group col-md-6">
+                            <div class="form-group row">
                                 <label
-                                    class="col-form-label"
-                                    for="collaborator_id"
-                                >
-                                    Collaborator
-                                    <strong class="text-danger"> *</strong>
+                                    class="col-md-3 col-form-label"
+                                    for="description"
+                                    >Description
                                 </label>
 
-                                <select
-                                    class="custom-select form-control"
-                                    name="collaborator_id"
-                                    id="collaborator_id"
-                                    v-model="form.collaborator_id"
-                                >
-                                    <option value="" disabled selected hidden>
-                                        Select Collaborator
-                                    </option>
-                                    <option
-                                        v-for="collaborator in collaborators"
-                                        :value="collaborator.id"
+                                <div class="col-md-9">
+                                    <textarea
+                                        id="description"
+                                        class="form-control"
+                                        name="description"
+                                        rows="3"
+                                        cols="50"
+                                        v-model="form.description"
                                     >
-                                        {{ collaborator.name }}
-                                    </option>
-                                </select>
-                                <HasError
-                                    :form="form"
-                                    field="collaborator_id"
-                                />
+                                    </textarea>
+                                    <HasError
+                                        :form="form"
+                                        field="description"
+                                    />
+                                </div>
                             </div>
-                            <!--.form-group -->
+                            <hr class="mt-4" />
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="status"
+                                        >Status
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <select
+                                        class="custom-select form-control"
+                                        name="status"
+                                        id="status"
+                                        v-model="form.status"
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                            >Select Status
+                                        </option>
+                                        <option value="not-started"
+                                            >Not Started
+                                        </option>
+                                        <option value="in-progress"
+                                            >In Progress
+                                        </option>
+                                        <option value="on-hold">On Hold</option>
+                                        <option value="cancelled"
+                                            >Cancelled
+                                        </option>
+                                        <option value="completed"
+                                            >Completed
+                                        </option>
+                                    </select>
+                                    <HasError :form="form" field="status" />
+                                </div>
+                                <!--.form-group -->
+
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="priority"
+                                        >Priority
+                                    </label>
+
+                                    <select
+                                        class="custom-select form-control"
+                                        name="priority"
+                                        id="priority"
+                                        v-model="form.priority"
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                            >Select Priority
+                                        </option>
+                                        <option value="video">Video</option>
+                                        <option value="branding"
+                                            >Branding
+                                        </option>
+                                    </select>
+
+                                    <HasError :form="form" field="priority" />
+                                </div>
+                                <!--.form-group -->
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label
+                                        class="col-form-label"
+                                        for="startDate"
+                                        >Start Date
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+                                    <input
+                                        id="startDate"
+                                        v-model="form.startDate"
+                                        type="date"
+                                        name="startDate"
+                                        class="form-control"
+                                    />
+                                    <HasError :form="form" field="startDate" />
+                                </div>
+                                <!--.form-group -->
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="endDate"
+                                        >End Date
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+                                    <input
+                                        id="endDate"
+                                        v-model="form.endDate"
+                                        type="date"
+                                        name="endDate"
+                                        class="form-control"
+                                    />
+                                    <HasError :form="form" field="endDate" />
+                                </div>
+                                <!--.form-group -->
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label
+                                        class="col-form-label"
+                                        for="project_id"
+                                        >Project
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <select
+                                        class="custom-select form-control"
+                                        name="project_id"
+                                        id="project_id"
+                                        v-model="form.project_id"
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                        >
+                                            Select Project
+                                        </option>
+                                        <option
+                                            v-for="project in projects"
+                                            :value="project.id"
+                                        >
+                                            {{ project.title }}
+                                        </option>
+                                    </select>
+                                    <HasError :form="form" field="project_id" />
+                                </div>
+                                <!--.form-group -->
+                                <div class="form-group col-md-6">
+                                    <label
+                                        class="col-form-label"
+                                        for="collaborator_id"
+                                    >
+                                        Collaborator
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <select
+                                        class="custom-select form-control"
+                                        name="collaborator_id"
+                                        id="collaborator_id"
+                                        v-model="form.collaborator_id"
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                        >
+                                            Select Collaborator
+                                        </option>
+                                        <option
+                                            v-for="collaborator in collaborators"
+                                            :value="collaborator.id"
+                                        >
+                                            {{ collaborator.name }}
+                                        </option>
+                                    </select>
+                                    <HasError
+                                        :form="form"
+                                        field="collaborator_id"
+                                    />
+                                </div>
+                                <!--.form-group -->
+                            </div>
                         </div>
 
                         <div class="modal-footer">

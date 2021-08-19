@@ -17,7 +17,9 @@ class UserController extends Controller
 
     public function index()
     {
-        return User::latest()->paginate(25);
+        return User::with('role')
+            ->latest()
+            ->paginate(25);
     }
 
     public function store(UserRequest $request)
