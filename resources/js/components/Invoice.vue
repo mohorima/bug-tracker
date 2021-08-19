@@ -108,8 +108,8 @@
             aria-labelledby="addRecordLabel"
             aria-hidden="true"
         >
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content px-2">
                     <div class="modal-header">
                         <h5
                             v-show="editMode"
@@ -137,30 +137,215 @@
 
                     <!-- FORM START -->
 
-                    <form class="input-form"
+                    <form
+                        class="input-form"
                         @submit.prevent="
                             editMode ? updateInvoice() : createInvoice()
                         "
                     >
                         <div class="modal-body">
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-4 col-form-label"
-                                    for="amount"
-                                    >Amount
-                                    <strong class="text-danger"> *</strong>
-                                </label>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label class="col-form-label" for="amount"
+                                        >Amount
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
 
-                                <div class="col-md-8">
                                     <input
                                         id="amount"
                                         v-model="form.amount"
                                         type="text"
                                         name="amount"
                                         class="form-control"
-                                        placeholder="Title"
+                                        placeholder="$Amount"
                                     />
                                     <HasError :form="form" field="amount" />
+                                </div>
+                                <!--.form-group -->
+                                <div class="form-group col-md-4">
+                                    <label class="col-form-label" for="tax"
+                                        >Tax
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <input
+                                        id="tax"
+                                        v-model="form.tax"
+                                        type="text"
+                                        name="tax"
+                                        class="form-control"
+                                        placeholder="$Tax"
+                                    />
+                                    <HasError :form="form" field="tax" />
+                                </div>
+                                <!--.form-group -->
+                                <div class="form-group col-md-4">
+                                    <label
+                                        class="col-form-label"
+                                        for="paymentMode"
+                                        >Payment Mode
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <select
+                                        class="custom-select form-control"
+                                        name="paymentMode"
+                                        id="paymentMode"
+                                        v-model="form.paymentMode"
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                            >Select Payment Mode
+                                        </option>
+                                        <option value="on-hold">Cash</option>
+                                        <option value="on-hold">Cheque</option>
+                                        <option value="on-hold">Paypal</option>
+                                        <option value="on-hold"
+                                            >Wire Transfer</option
+                                        >
+                                    </select>
+                                    <HasError
+                                        :form="form"
+                                        field="paymentMode"
+                                    />
+                                </div>
+                                <!--.form-group -->
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="billDate"
+                                        >Bill Date
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+                                    <input
+                                        id="billDate"
+                                        v-model="form.billDate"
+                                        type="date"
+                                        name="billDate"
+                                        class="form-control"
+                                    />
+                                    <HasError :form="form" field="billDate" />
+                                </div>
+                                <!--.form-group -->
+                                <div class="form-group col-md-6">
+                                    <label class="col-form-label" for="dueDate"
+                                        >Due Date
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+                                    <input
+                                        id="dueDate"
+                                        v-model="form.dueDate"
+                                        type="date"
+                                        name="dueDate"
+                                        class="form-control"
+                                    />
+                                    <HasError :form="form" field="dueDate" />
+                                </div>
+                                <!--.form-group -->
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label
+                                        class="col-form-label"
+                                        for="project_id"
+                                        >Project
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <select
+                                        class="custom-select form-control"
+                                        name="project_id"
+                                        id="project_id"
+                                        v-model="form.project_id"
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                        >
+                                            Select Project
+                                        </option>
+                                        <option
+                                            v-for="project in projects"
+                                            :value="project.id"
+                                        >
+                                            {{ project.title }}
+                                        </option>
+                                    </select>
+                                    <HasError :form="form" field="project_id" />
+                                </div>
+                                <!--.form-group -->
+                                <div class="form-group col-md-6">
+                                    <label
+                                        class="col-form-label"
+                                        for="recurring"
+                                    >
+                                        Recurring
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="recurring"
+                                            id="recurring1"
+                                            v-model="form.recurring"
+                                            value="yes"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="recurring1"
+                                            >Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="recurring"
+                                            id="recurring2"
+                                            v-model="form.recurring"
+                                            value="no"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="recurring2"
+                                            >No
+                                        </label>
+                                    </div>
+                                    <HasError :form="form" field="recurring" />
+                                </div>
+                                <!--.form-group -->
+                            </div>
+
+                            <div class="form-group row mt-4">
+                                <label
+                                    class="col-md-3 col-form-label"
+                                    for="note"
+                                    >Note
+                                </label>
+
+                                <div class="col-md-9">
+                                    <textarea
+                                        id="note"
+                                        class="form-control"
+                                        name="note"
+                                        rows="3"
+                                        cols="50"
+                                        v-model="form.note"
+                                    >
+                                    </textarea>
+                                    <HasError
+                                        :form="form"
+                                        field="note"
+                                    />
                                 </div>
                             </div>
                         </div>

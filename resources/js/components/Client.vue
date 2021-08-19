@@ -152,7 +152,6 @@
                                     class="col-md-4 col-form-label"
                                     for="owner"
                                     >Owner
-                                    <strong class="text-danger"> *</strong>
                                 </label>
 
                                 <div class="col-md-8">
@@ -162,7 +161,7 @@
                                         type="text"
                                         name="owner"
                                         class="form-control"
-                                        placeholder="Title"
+                                        placeholder="Owner"
                                     />
                                     <HasError :form="form" field="owner" />
                                 </div>
@@ -597,7 +596,6 @@
                                     class="col-md-4 col-form-label"
                                     for="contactPerson"
                                     >Contact Person
-                                    <strong class="text-danger"> *</strong>
                                 </label>
 
                                 <div class="col-md-8">
@@ -660,7 +658,6 @@
                                     class="col-md-4 col-form-label"
                                     for="website"
                                     >Website
-                                    <strong class="text-danger"> *</strong>
                                 </label>
 
                                 <div class="col-md-8">

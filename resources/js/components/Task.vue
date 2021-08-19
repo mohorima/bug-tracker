@@ -124,8 +124,8 @@
             aria-labelledby="addRecordLabel"
             aria-hidden="true"
         >
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content px-2">
                     <div class="modal-header">
                         <h5
                             v-show="editMode"
@@ -153,31 +153,203 @@
 
                     <!-- FORM START -->
 
-                    <form class="input-form"
+                    <form
+                        class="input-form"
                         @submit.prevent="editMode ? updateTask() : createTask()"
                     >
                         <div class="modal-body">
                             <div class="form-group row">
                                 <label
-                                    class="col-md-4 col-form-label"
+                                    class="col-md-3 col-form-label"
                                     for="subject"
                                     >Subject
                                     <strong class="text-danger"> *</strong>
                                 </label>
 
-                                <div class="col-md-8">
+                                <div class="col-md-9">
                                     <input
                                         id="subject"
                                         v-model="form.subject"
                                         type="text"
                                         name="subject"
                                         class="form-control"
-                                        placeholder="Title"
+                                        placeholder="Subject"
                                     />
                                     <HasError :form="form" field="subject" />
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label
+                                class="col-md-3 col-form-label"
+                                for="description"
+                                >Description
+                            </label>
+
+                            <div class="col-md-9">
+                                <textarea
+                                    id="description"
+                                    class="form-control"
+                                    name="description"
+                                    rows="3"
+                                    cols="50"
+                                    v-model="form.description"
+                                >
+                                </textarea>
+                                <HasError :form="form" field="description" />
+                            </div>
+                        </div>
+                        <hr class="mt-4" />
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label class="col-form-label" for="status"
+                                    >Status
+                                    <strong class="text-danger"> *</strong>
+                                </label>
+
+                                <select
+                                    class="custom-select form-control"
+                                    name="status"
+                                    id="status"
+                                    v-model="form.status"
+                                >
+                                    <option value="" disabled selected hidden
+                                        >Select Status
+                                    </option>
+                                    <option value="not-started"
+                                        >Not Started
+                                    </option>
+                                    <option value="in-progress"
+                                        >In Progress
+                                    </option>
+                                    <option value="on-hold">On Hold</option>
+                                    <option value="cancelled"
+                                        >Cancelled
+                                    </option>
+                                    <option value="completed"
+                                        >Completed
+                                    </option>
+                                </select>
+                                <HasError :form="form" field="status" />
+                            </div>
+                            <!--.form-group -->
+
+                            <div class="form-group col-md-6">
+                                <label class="col-form-label" for="priority"
+                                    >Priority
+                                </label>
+
+                                <select
+                                    class="custom-select form-control"
+                                    name="priority"
+                                    id="priority"
+                                    v-model="form.priority"
+                                >
+                                    <option value="" disabled selected hidden
+                                        >Select Priority
+                                    </option>
+                                    <option value="video">Video</option>
+                                    <option value="branding">Branding </option>
+                                </select>
+
+                                <HasError :form="form" field="priority" />
+                            </div>
+                            <!--.form-group -->
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label class="col-form-label" for="startDate"
+                                    >Start Date
+                                    <strong class="text-danger"> *</strong>
+                                </label>
+                                <input
+                                    id="startDate"
+                                    v-model="form.startDate"
+                                    type="date"
+                                    name="startDate"
+                                    class="form-control"
+                                />
+                                <HasError :form="form" field="startDate" />
+                            </div>
+                            <!--.form-group -->
+                            <div class="form-group col-md-6">
+                                <label class="col-form-label" for="endDate"
+                                    >End Date
+                                    <strong class="text-danger"> *</strong>
+                                </label>
+                                <input
+                                    id="endDate"
+                                    v-model="form.endDate"
+                                    type="date"
+                                    name="endDate"
+                                    class="form-control"
+                                />
+                                <HasError :form="form" field="endDate" />
+                            </div>
+                            <!--.form-group -->
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label class="col-form-label" for="project_id"
+                                    >Project
+                                    <strong class="text-danger"> *</strong>
+                                </label>
+
+                                <select
+                                    class="custom-select form-control"
+                                    name="project_id"
+                                    id="project_id"
+                                    v-model="form.project_id"
+                                >
+                                    <option value="" disabled selected hidden>
+                                        Select Project
+                                    </option>
+                                    <option
+                                        v-for="project in projects"
+                                        :value="project.id"
+                                    >
+                                        {{ project.title }}
+                                    </option>
+                                </select>
+                                <HasError :form="form" field="project_id" />
+                            </div>
+                            <!--.form-group -->
+                            <div class="form-group col-md-6">
+                                <label
+                                    class="col-form-label"
+                                    for="collaborator_id"
+                                >
+                                    Collaborator
+                                    <strong class="text-danger"> *</strong>
+                                </label>
+
+                                <select
+                                    class="custom-select form-control"
+                                    name="collaborator_id"
+                                    id="collaborator_id"
+                                    v-model="form.collaborator_id"
+                                >
+                                    <option value="" disabled selected hidden>
+                                        Select Collaborator
+                                    </option>
+                                    <option
+                                        v-for="collaborator in collaborators"
+                                        :value="collaborator.id"
+                                    >
+                                        {{ collaborator.name }}
+                                    </option>
+                                </select>
+                                <HasError
+                                    :form="form"
+                                    field="collaborator_id"
+                                />
+                            </div>
+                            <!--.form-group -->
+                        </div>
+
                         <div class="modal-footer">
                             <button
                                 v-show="editMode"
@@ -215,7 +387,9 @@ export default {
 
     data: () => ({
         editMode: false,
-        tasks: {},
+        tasks: [],
+        projects: [],
+        collaborators: [],
         form: new Form({
             id: "",
             subject: "",
@@ -234,6 +408,8 @@ export default {
             this.editMode = false;
             this.form.clear();
             this.form.reset();
+            this.loadProjects();
+            this.loadCollaborators();
             $("#addRecord").modal("show");
         },
 
@@ -241,6 +417,8 @@ export default {
             this.editMode = true;
             this.form.clear();
             this.form.reset();
+            this.loadProjects();
+            this.loadCollaborators();
             $("#addRecord").modal("show");
             this.form.fill(task);
         },
@@ -249,6 +427,20 @@ export default {
             axios
                 .get("/api/task")
                 .then(({ data }) => (this.tasks = data.data))
+                .catch((error) => console.log(error));
+        },
+
+        loadProjects() {
+            axios
+                .get("/api/project")
+                .then(({ data }) => (this.projects = data.data))
+                .catch((error) => console.log(error));
+        },
+
+        loadCollaborators() {
+            axios
+                .get("/api/user")
+                .then(({ data }) => (this.collaborators = data.data))
                 .catch((error) => console.log(error));
         },
 
