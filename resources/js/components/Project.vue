@@ -261,7 +261,7 @@
                                     </label>
 
                                     <select
-                                        class="form-control"
+                                        class="custom-select form-control"
                                         name="status"
                                         id="status"
                                         v-model="form.status"
@@ -297,7 +297,7 @@
                                     </label>
 
                                     <select
-                                        class="form-control"
+                                        class="custom-select form-control"
                                         name="tag"
                                         id="tag"
                                         v-model="form.tag"
@@ -339,7 +339,7 @@
                                     </label>
 
                                     <select
-                                        class="form-control"
+                                        class="custom-select form-control"
                                         name="billingType"
                                         id="billingType"
                                         v-model="form.billingType"
@@ -377,7 +377,7 @@
                                     </label>
 
                                     <select
-                                        class="form-control"
+                                        class="custom-select form-control"
                                         name="client_id"
                                         id="client_id"
                                         v-model="form.client_id"

@@ -216,7 +216,7 @@
                                     </label>
 
                                     <select
-                                        class="form-control"
+                                        class="custom-select form-control"
                                         name="type"
                                         id="type"
                                         v-model="form.type"
@@ -253,7 +253,7 @@
                                     </label>
 
                                     <select
-                                        class="form-control"
+                                        class="custom-select form-control"
                                         name="severity"
                                         id="severity"
                                         v-model="form.severity"
@@ -292,7 +292,7 @@
                                     </label>
 
                                     <select
-                                        class="form-control"
+                                        class="custom-select form-control"
                                         name="status"
                                         id="status"
                                         v-model="form.status"
@@ -343,7 +343,7 @@
                                     </label>
 
                                     <select
-                                        class="form-control"
+                                        class="custom-select form-control"
                                         name="project_id"
                                         id="project_id"
                                         v-model="form.project_id"
