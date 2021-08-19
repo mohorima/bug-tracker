@@ -11,6 +11,11 @@ Bug-track is a multi-purpose web application for Project Management & Issue (Bug
 -   Axios & Ajax requests.
 -   Authorization using Passport for API & Middlewares.
 -   Relational Database.
+-   Styling using SASS & Bootstrap.
+-   CRUD & Search functionalities.
+-   Multi-level User Access.
+-   Charts & Audit Log.
+
 
 ## License
 
