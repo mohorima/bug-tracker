@@ -4458,6 +4458,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -48077,32 +48085,40 @@ var render = function() {
                             [_vm._v("Cost\n                                ")]
                           ),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.form.cost,
-                                expression: "form.cost"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              id: "cost",
-                              type: "text",
-                              name: "cost",
-                              placeholder: "Cost"
-                            },
-                            domProps: { value: _vm.form.cost },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                          _c("div", { staticClass: "input-group mb-2" }, [
+                            _vm._m(7),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.cost,
+                                  expression: "form.cost"
                                 }
-                                _vm.$set(_vm.form, "cost", $event.target.value)
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                id: "cost",
+                                type: "text",
+                                name: "cost",
+                                placeholder: ""
+                              },
+                              domProps: { value: _vm.form.cost },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.form,
+                                    "cost",
+                                    $event.target.value
+                                  )
+                                }
                               }
-                            }
-                          }),
+                            })
+                          ]),
                           _vm._v(" "),
                           _c("HasError", {
                             attrs: { form: _vm.form, field: "cost" }
@@ -48338,6 +48354,18 @@ var staticRenderFns = [
         _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("div", { staticClass: "input-group-text" }, [
+        _vm._v(
+          "\n                                            $\n                                        "
+        )
+      ])
+    ])
   }
 ]
 render._withStripped = true

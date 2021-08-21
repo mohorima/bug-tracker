@@ -403,14 +403,22 @@
                                     <label class="col-form-label" for="cost"
                                         >Cost
                                     </label>
-                                    <input
-                                        id="cost"
-                                        v-model="form.cost"
-                                        type="text"
-                                        name="cost"
-                                        class="form-control"
-                                        placeholder="Cost"
-                                    />
+
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                $
+                                            </div>
+                                        </div>
+                                        <input
+                                            id="cost"
+                                            v-model="form.cost"
+                                            type="text"
+                                            name="cost"
+                                            class="form-control"
+                                            placeholder=""
+                                        />
+                                    </div>
                                     <HasError :form="form" field="cost" />
                                 </div>
                                 <div class="form-group col-md-6">
