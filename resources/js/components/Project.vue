@@ -72,9 +72,7 @@
                                         {{ estimatedHours(project.estHours) }}
                                     </td>
                                     <td>
-                                        <strong>
-                                            {{ "$ " + project.cost }}
-                                        </strong>
+                                        <strong> $ {{ project.cost }} </strong>
                                     </td>
                                     <td>
                                         <span

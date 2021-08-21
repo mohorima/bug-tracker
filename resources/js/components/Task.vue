@@ -86,21 +86,22 @@
                                         <span
                                             class="badge text-white"
                                             :class="{
-                                                'bg-warning':
-                                                    task.status === 'Active',
+                                                'bg-primary':
+                                                    task.status === 'active',
                                                 'bg-success':
-                                                    task.status != 'Active',
+                                                    task.status != 'active',
                                             }"
                                         >
                                             {{
-                                                task.status === "Active"
+                                                task.status === "active"
                                                     ? "ACTIVE"
                                                     : "CLOSED"
                                             }}
                                         </span>
                                     </td>
                                     <td>
-                                        {{ task.startDate }} -
+                                        {{ task.startDate }}
+                                        <br />
                                         {{ task.endDate }}
                                     </td>
                                     <td>{{ task.project.title }}</td>
@@ -224,19 +225,8 @@
                                             hidden
                                             >Select Status
                                         </option>
-                                        <option value="not-started"
-                                            >Not Started
-                                        </option>
-                                        <option value="in-progress"
-                                            >In Progress
-                                        </option>
-                                        <option value="on-hold">On Hold</option>
-                                        <option value="cancelled"
-                                            >Cancelled
-                                        </option>
-                                        <option value="completed"
-                                            >Completed
-                                        </option>
+                                        <option value="active">Active</option>
+                                        <option value="closed">Closed</option>
                                     </select>
                                     <HasError :form="form" field="status" />
                                 </div>
@@ -260,10 +250,9 @@
                                             hidden
                                             >Select Priority
                                         </option>
-                                        <option value="video">Video</option>
-                                        <option value="branding"
-                                            >Branding
-                                        </option>
+                                        <option value="low">Low</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="high">High</option>
                                     </select>
 
                                     <HasError :form="form" field="priority" />

@@ -65,7 +65,7 @@
                                             {{ issue.description }}
                                         </div>
                                         <span
-                                            class="badge bg-secondary text-white"
+                                            class="badge bg-light text-faded to-uppercase"
                                             >{{ issue.type }}
                                         </span>
                                     </td>

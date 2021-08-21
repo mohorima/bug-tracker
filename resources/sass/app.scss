@@ -21,6 +21,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     background-color: white;
+    font-family: "Poppins", sans-serif;
 }
 
 #app {
@@ -81,7 +82,9 @@ h6 {
 .text-main {
     color: $black;
 }
-
+.to-uppercase {
+    text-transform: uppercase;
+}
 /*---------------------DASHBOARD---------------------*/
 
 .dashboard-card {

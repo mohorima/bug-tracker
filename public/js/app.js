@@ -2022,6 +2022,535 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2631,6 +3160,204 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2641,7 +3368,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       editMode: false,
-      invoices: {},
+      invoices: [],
+      projects: [],
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         billDate: "",
@@ -2661,12 +3389,14 @@ __webpack_require__.r(__webpack_exports__);
       this.editMode = false;
       this.form.clear();
       this.form.reset();
+      this.loadProjects();
       $("#addRecord").modal("show");
     },
     editModal: function editModal(invoice) {
       this.editMode = true;
       this.form.clear();
       this.form.reset();
+      this.loadProjects();
       $("#addRecord").modal("show");
       this.form.fill(invoice);
     },
@@ -2676,6 +3406,16 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/invoice").then(function (_ref) {
         var data = _ref.data;
         return _this.invoices = data.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    loadProjects: function loadProjects() {
+      var _this2 = this;
+
+      axios.get("/api/project").then(function (_ref2) {
+        var data = _ref2.data;
+        return _this2.projects = data.data;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -2707,11 +3447,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this3 = this;
 
     this.loadInvoices();
     Fire.$on("reloadRecords", function () {
-      _this2.loadInvoices();
+      _this3.loadInvoices();
     });
   }
 });
@@ -3718,8 +4458,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -4074,6 +4812,195 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4084,7 +5011,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       editMode: false,
-      tasks: {},
+      tasks: [],
+      projects: [],
+      collaborators: [],
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         subject: "",
@@ -4103,12 +5032,16 @@ __webpack_require__.r(__webpack_exports__);
       this.editMode = false;
       this.form.clear();
       this.form.reset();
+      this.loadProjects();
+      this.loadCollaborators();
       $("#addRecord").modal("show");
     },
     editModal: function editModal(task) {
       this.editMode = true;
       this.form.clear();
       this.form.reset();
+      this.loadProjects();
+      this.loadCollaborators();
       $("#addRecord").modal("show");
       this.form.fill(task);
     },
@@ -4118,6 +5051,26 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/task").then(function (_ref) {
         var data = _ref.data;
         return _this.tasks = data.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    loadProjects: function loadProjects() {
+      var _this2 = this;
+
+      axios.get("/api/project").then(function (_ref2) {
+        var data = _ref2.data;
+        return _this2.projects = data.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    loadCollaborators: function loadCollaborators() {
+      var _this3 = this;
+
+      axios.get("/api/user").then(function (_ref3) {
+        var data = _ref3.data;
+        return _this3.collaborators = data.data;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -4149,11 +5102,319 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this4 = this;
 
     this.loadTasks();
     Fire.$on("reloadRecords", function () {
-      _this2.loadTasks();
+      _this4.loadTasks();
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.es.js");
+/* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    HasError: vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_1__.HasError,
+    AlertError: vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_1__.AlertError
+  },
+  data: function data() {
+    return {
+      editMode: false,
+      users: [],
+      form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
+        id: "",
+        name: "",
+        email: "",
+        password: "",
+        role_id: ""
+      })
+    };
+  },
+  methods: {
+    newModal: function newModal() {
+      this.editMode = false;
+      this.form.clear();
+      this.form.reset();
+      $("#addRecord").modal("show");
+    },
+    editModal: function editModal(user) {
+      this.editMode = true;
+      this.form.clear();
+      this.form.reset();
+      $("#addRecord").modal("show");
+      this.form.fill(user);
+    },
+    loadCollaborators: function loadCollaborators() {
+      var _this = this;
+
+      axios.get("/api/user").then(function (_ref) {
+        var data = _ref.data;
+        return _this.collaborators = data.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    createUser: function createUser() {
+      this.form.post("/api/user").then(function () {
+        $("#addRecord").modal("hide");
+        Fire.$emit("reloadRecords");
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    deleteUser: function deleteUser(id) {
+      if (confirm("Are you sure you want to delete?")) {
+        axios["delete"]("/api/user/" + id).then(function () {
+          Fire.$emit("reloadRecords");
+        })["catch"](function (error) {
+          return console.log(error);
+        });
+      }
+    },
+    updateUser: function updateUser() {
+      this.form.put("/api/user/" + this.form.id).then(function () {
+        $("#addRecord").modal("hide");
+        Fire.$emit("reloadRecords");
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    this.loadUsers();
+    Fire.$on("reloadRecords", function () {
+      _this2.loadUsers();
     });
   }
 });
@@ -40935,17 +42196,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
+/* harmony import */ var _User_vue_vue_type_template_id_d884f594___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./User.vue?vue&type=template&id=d884f594& */ "./resources/js/components/User.vue?vue&type=template&id=d884f594&");
+/* harmony import */ var _User_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./User.vue?vue&type=script&lang=js& */ "./resources/js/components/User.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
 
 
 /* normalize component */
 ;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__.default)(
-  script,
-  render,
-  staticRenderFns,
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _User_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _User_vue_vue_type_template_id_d884f594___WEBPACK_IMPORTED_MODULE_0__.render,
+  _User_vue_vue_type_template_id_d884f594___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -40953,6 +42217,8 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
   
 )
 
+/* hot reload */
+if (false) { var api; }
 component.options.__file = "resources/js/components/User.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
@@ -41067,6 +42333,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Task_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Task.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Task.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Task_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/components/User.vue?vue&type=script&lang=js&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/User.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_User_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./User.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_User_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -41363,6 +42645,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Task_vue_vue_type_template_id_e9a53c20___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Task_vue_vue_type_template_id_e9a53c20___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Task.vue?vue&type=template&id=e9a53c20& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Task.vue?vue&type=template&id=e9a53c20&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/User.vue?vue&type=template&id=d884f594&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/User.vue?vue&type=template&id=d884f594& ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_User_vue_vue_type_template_id_d884f594___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_User_vue_vue_type_template_id_d884f594___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_User_vue_vue_type_template_id_d884f594___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./User.vue?vue&type=template&id=d884f594& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User.vue?vue&type=template&id=d884f594&");
 
 
 /***/ }),
@@ -41786,7 +43085,19 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(client.website))])
+                    _c("td", [
+                      _c(
+                        "a",
+                        { attrs: { href: "https://" + client.website } },
+                        [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(client.website) +
+                              "\n                                    "
+                          )
+                        ]
+                      )
+                    ])
                   ])
                 }),
                 0
@@ -41891,7 +43202,7 @@ var render = function() {
                             id: "company",
                             type: "text",
                             name: "company",
-                            placeholder: "Title"
+                            placeholder: "Company Name"
                           },
                           domProps: { value: _vm.form.company },
                           on: {
@@ -41906,6 +43217,1335 @@ var render = function() {
                         _vm._v(" "),
                         _c("HasError", {
                           attrs: { form: _vm.form, field: "company" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-md-4 col-form-label",
+                        attrs: { for: "owner" }
+                      },
+                      [_vm._v("Owner\n                            ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-8" },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.owner,
+                              expression: "form.owner"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "owner",
+                            type: "text",
+                            name: "owner",
+                            placeholder: "Owner"
+                          },
+                          domProps: { value: _vm.form.owner },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "owner", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("HasError", {
+                          attrs: { form: _vm.form, field: "owner" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-8" },
+                      [
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.address,
+                              expression: "form.address"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "address",
+                            name: "address",
+                            rows: "3",
+                            cols: "50"
+                          },
+                          domProps: { value: _vm.form.address },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "address", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("HasError", {
+                          attrs: { form: _vm.form, field: "address" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-8" },
+                      [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.country,
+                                expression: "form.country"
+                              }
+                            ],
+                            staticClass: "custom-select form-control",
+                            attrs: { name: "country", id: "country" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.$set(
+                                  _vm.form,
+                                  "country",
+                                  $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "option",
+                              {
+                                attrs: {
+                                  value: "",
+                                  disabled: "",
+                                  selected: "",
+                                  hidden: ""
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Select Country\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "--" } }, [
+                              _vm._v("Not Specified")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AF" } }, [
+                              _vm._v("Afghanistan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AL" } }, [
+                              _vm._v("Albania")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "DZ" } }, [
+                              _vm._v("Algeria")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AS" } }, [
+                              _vm._v("American Samoa")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AD" } }, [
+                              _vm._v("Andorra")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AO" } }, [
+                              _vm._v("Angola")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AI" } }, [
+                              _vm._v("Anguilla")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AQ" } }, [
+                              _vm._v("Antarctica")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AG" } }, [
+                              _vm._v("Antigua and Barbuda")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AR" } }, [
+                              _vm._v("Argentina")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AM" } }, [
+                              _vm._v("Armenia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AW" } }, [
+                              _vm._v("Aruba")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AU" } }, [
+                              _vm._v("Australia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AT" } }, [
+                              _vm._v("Austria")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AZ" } }, [
+                              _vm._v("Azerbaijan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BS" } }, [
+                              _vm._v("Bahamas")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BH" } }, [
+                              _vm._v("Bahrain")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BD" } }, [
+                              _vm._v("Bangladesh")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BB" } }, [
+                              _vm._v("Barbados")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BY" } }, [
+                              _vm._v("Belarus")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BE" } }, [
+                              _vm._v("Belgium")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BZ" } }, [
+                              _vm._v("Belize")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BJ" } }, [
+                              _vm._v("Benin")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BM" } }, [
+                              _vm._v("Bermuda")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BT" } }, [
+                              _vm._v("Bhutan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BO" } }, [
+                              _vm._v("Bolivia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BA" } }, [
+                              _vm._v("Bosnia and Herzegowina")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BW" } }, [
+                              _vm._v("Botswana")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BV" } }, [
+                              _vm._v("Bouvet Island")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BR" } }, [
+                              _vm._v("Brazil")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "IO" } }, [
+                              _vm._v(
+                                "British Indian Ocean\n                                        Territory"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BN" } }, [
+                              _vm._v("Brunei Darussalam")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BG" } }, [
+                              _vm._v("Bulgaria")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BF" } }, [
+                              _vm._v("Burkina Faso")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BI" } }, [
+                              _vm._v("Burundi")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KH" } }, [
+                              _vm._v("Cambodia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CM" } }, [
+                              _vm._v("Cameroon")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CA" } }, [
+                              _vm._v("Canada")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CV" } }, [
+                              _vm._v("Cape Verde")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KY" } }, [
+                              _vm._v("Cayman Islands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CF" } }, [
+                              _vm._v("Central African Republic")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TD" } }, [
+                              _vm._v("Chad")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CL" } }, [
+                              _vm._v("Chile")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CN" } }, [
+                              _vm._v("China")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CX" } }, [
+                              _vm._v("Christmas Island")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CC" } }, [
+                              _vm._v("Cocos (Keeling) Islands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CO" } }, [
+                              _vm._v("Colombia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KM" } }, [
+                              _vm._v("Comoros")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CG" } }, [
+                              _vm._v("Congo")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CD" } }, [
+                              _vm._v(
+                                "Congo, the Democratic Republic of\n                                        the"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CK" } }, [
+                              _vm._v("Cook Islands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CR" } }, [
+                              _vm._v("Costa Rica")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CI" } }, [
+                              _vm._v("Cote d'Ivoire")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "HR" } }, [
+                              _vm._v("Croatia (Hrvatska)")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CU" } }, [
+                              _vm._v("Cuba")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CY" } }, [
+                              _vm._v("Cyprus")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CZ" } }, [
+                              _vm._v("Czech Republic")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "DK" } }, [
+                              _vm._v("Denmark")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "DJ" } }, [
+                              _vm._v("Djibouti")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "DM" } }, [
+                              _vm._v("Dominica")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "DO" } }, [
+                              _vm._v("Dominican Republic")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TP" } }, [
+                              _vm._v("East Timor")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "EC" } }, [
+                              _vm._v("Ecuador")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "EG" } }, [
+                              _vm._v("Egypt")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SV" } }, [
+                              _vm._v("El Salvador")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GQ" } }, [
+                              _vm._v("Equatorial Guinea")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "ER" } }, [
+                              _vm._v("Eritrea")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "EE" } }, [
+                              _vm._v("Estonia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "ET" } }, [
+                              _vm._v("Ethiopia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "FK" } }, [
+                              _vm._v("Falkland Islands (Malvinas)")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "FO" } }, [
+                              _vm._v("Faroe Islands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "FJ" } }, [
+                              _vm._v("Fiji")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "FI" } }, [
+                              _vm._v("Finland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "FR" } }, [
+                              _vm._v("France")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "FX" } }, [
+                              _vm._v("France, Metropolitan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GF" } }, [
+                              _vm._v("French Guiana")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PF" } }, [
+                              _vm._v("French Polynesia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TF" } }, [
+                              _vm._v("French Southern Territories")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GA" } }, [
+                              _vm._v("Gabon")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GM" } }, [
+                              _vm._v("Gambia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GE" } }, [
+                              _vm._v("Georgia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "DE" } }, [
+                              _vm._v("Germany")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GH" } }, [
+                              _vm._v("Ghana")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GI" } }, [
+                              _vm._v("Gibraltar")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GR" } }, [
+                              _vm._v("Greece")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GL" } }, [
+                              _vm._v("Greenland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GD" } }, [
+                              _vm._v("Grenada")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GP" } }, [
+                              _vm._v("Guadeloupe")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GU" } }, [
+                              _vm._v("Guam")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GT" } }, [
+                              _vm._v("Guatemala")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GN" } }, [
+                              _vm._v("Guinea")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GW" } }, [
+                              _vm._v("Guinea-Bissau")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GY" } }, [
+                              _vm._v("Guyana")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "HT" } }, [
+                              _vm._v("Haiti")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "HM" } }, [
+                              _vm._v("Heard and Mc Donald Islands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "VA" } }, [
+                              _vm._v(
+                                "Holy See (Vatican City\n                                        State)"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "HN" } }, [
+                              _vm._v("Honduras")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "HK" } }, [
+                              _vm._v("Hong Kong")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "HU" } }, [
+                              _vm._v("Hungary")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "IS" } }, [
+                              _vm._v("Iceland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "IN" } }, [
+                              _vm._v("India")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "ID" } }, [
+                              _vm._v("Indonesia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "IR" } }, [
+                              _vm._v("Iran (Islamic Republic of)")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "IQ" } }, [
+                              _vm._v("Iraq")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "IE" } }, [
+                              _vm._v("Ireland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "IL" } }, [
+                              _vm._v("Israel")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "IT" } }, [
+                              _vm._v("Italy")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "JM" } }, [
+                              _vm._v("Jamaica")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "JP" } }, [
+                              _vm._v("Japan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "JO" } }, [
+                              _vm._v("Jordan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KZ" } }, [
+                              _vm._v("Kazakhstan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KE" } }, [
+                              _vm._v("Kenya")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KI" } }, [
+                              _vm._v("Kiribati")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KP" } }, [
+                              _vm._v(
+                                "Korea, Democratic People's Republic\n                                        of"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KR" } }, [
+                              _vm._v("Korea, Republic of")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KW" } }, [
+                              _vm._v("Kuwait")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KG" } }, [
+                              _vm._v("Kyrgyzstan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LA" } }, [
+                              _vm._v(
+                                "Lao People's Democratic\n                                        Republic"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LV" } }, [
+                              _vm._v("Latvia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LB" } }, [
+                              _vm._v("Lebanon")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LS" } }, [
+                              _vm._v("Lesotho")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LR" } }, [
+                              _vm._v("Liberia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LY" } }, [
+                              _vm._v("Libyan Arab Jamahiriya")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LI" } }, [
+                              _vm._v("Liechtenstein")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LT" } }, [
+                              _vm._v("Lithuania")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LU" } }, [
+                              _vm._v("Luxembourg")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MO" } }, [
+                              _vm._v("Macau")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MK" } }, [
+                              _vm._v(
+                                "Macedonia, The Former Yugoslav\n                                        Republic of"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MG" } }, [
+                              _vm._v("Madagascar")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MW" } }, [
+                              _vm._v("Malawi")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MY" } }, [
+                              _vm._v("Malaysia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MV" } }, [
+                              _vm._v("Maldives")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "ML" } }, [
+                              _vm._v("Mali")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MT" } }, [
+                              _vm._v("Malta")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MH" } }, [
+                              _vm._v("Marshall Islands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MQ" } }, [
+                              _vm._v("Martinique")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MR" } }, [
+                              _vm._v("Mauritania")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MU" } }, [
+                              _vm._v("Mauritius")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "YT" } }, [
+                              _vm._v("Mayotte")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MX" } }, [
+                              _vm._v("Mexico")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "FM" } }, [
+                              _vm._v(
+                                "Micronesia, Federated States\n                                        of"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MD" } }, [
+                              _vm._v("Moldova, Republic of")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MC" } }, [
+                              _vm._v("Monaco")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MN" } }, [
+                              _vm._v("Mongolia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MS" } }, [
+                              _vm._v("Montserrat")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MA" } }, [
+                              _vm._v("Morocco")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MZ" } }, [
+                              _vm._v("Mozambique")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MM" } }, [
+                              _vm._v("Myanmar")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NA" } }, [
+                              _vm._v("Namibia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NR" } }, [
+                              _vm._v("Nauru")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NP" } }, [
+                              _vm._v("Nepal")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NL" } }, [
+                              _vm._v("Netherlands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AN" } }, [
+                              _vm._v("Netherlands Antilles")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NC" } }, [
+                              _vm._v("New Caledonia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NZ" } }, [
+                              _vm._v("New Zealand")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NI" } }, [
+                              _vm._v("Nicaragua")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NE" } }, [
+                              _vm._v("Niger")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NG" } }, [
+                              _vm._v("Nigeria")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NU" } }, [
+                              _vm._v("Niue")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NF" } }, [
+                              _vm._v("Norfolk Island")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MP" } }, [
+                              _vm._v("Northern Mariana Islands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NO" } }, [
+                              _vm._v("Norway")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "OM" } }, [
+                              _vm._v("Oman")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PK" } }, [
+                              _vm._v("Pakistan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PW" } }, [
+                              _vm._v("Palau")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PA" } }, [
+                              _vm._v("Panama")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PG" } }, [
+                              _vm._v("Papua New Guinea")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PY" } }, [
+                              _vm._v("Paraguay")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PE" } }, [
+                              _vm._v("Peru")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PH" } }, [
+                              _vm._v("Philippines")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PN" } }, [
+                              _vm._v("Pitcairn")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PL" } }, [
+                              _vm._v("Poland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PT" } }, [
+                              _vm._v("Portugal")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PR" } }, [
+                              _vm._v("Puerto Rico")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "QA" } }, [
+                              _vm._v("Qatar")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "RE" } }, [
+                              _vm._v("Reunion")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "RO" } }, [
+                              _vm._v("Romania")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "RU" } }, [
+                              _vm._v("Russian Federation")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "RW" } }, [
+                              _vm._v("Rwanda")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "KN" } }, [
+                              _vm._v("Saint Kitts and Nevis")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LC" } }, [
+                              _vm._v("Saint LUCIA")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "VC" } }, [
+                              _vm._v(
+                                "Saint Vincent and the\n                                        Grenadines"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "WS" } }, [
+                              _vm._v("Samoa")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SM" } }, [
+                              _vm._v("San Marino")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "ST" } }, [
+                              _vm._v("Sao Tome and Principe")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SA" } }, [
+                              _vm._v("Saudi Arabia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SN" } }, [
+                              _vm._v("Senegal")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SC" } }, [
+                              _vm._v("Seychelles")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SL" } }, [
+                              _vm._v("Sierra Leone")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SG" } }, [
+                              _vm._v("Singapore")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SK" } }, [
+                              _vm._v("Slovakia (Slovak Republic)")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SI" } }, [
+                              _vm._v("Slovenia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SB" } }, [
+                              _vm._v("Solomon Islands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SO" } }, [
+                              _vm._v("Somalia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "ZA" } }, [
+                              _vm._v("South Africa")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GS" } }, [
+                              _vm._v(
+                                "South Georgia and the South\n                                        Sandwich Islands"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "ES" } }, [
+                              _vm._v("Spain")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LK" } }, [
+                              _vm._v("Sri Lanka")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SH" } }, [
+                              _vm._v("St. Helena")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PM" } }, [
+                              _vm._v("St. Pierre and Miquelon")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SD" } }, [
+                              _vm._v("Sudan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SR" } }, [
+                              _vm._v("Suriname")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SJ" } }, [
+                              _vm._v(
+                                "Svalbard and Jan Mayen\n                                        Islands"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SZ" } }, [
+                              _vm._v("Swaziland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SE" } }, [
+                              _vm._v("Sweden")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CH" } }, [
+                              _vm._v("Switzerland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SY" } }, [
+                              _vm._v("Syrian Arab Republic")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TW" } }, [
+                              _vm._v("Taiwan, Province of China")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TJ" } }, [
+                              _vm._v("Tajikistan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TZ" } }, [
+                              _vm._v(
+                                "Tanzania, United Republic\n                                        of"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TH" } }, [
+                              _vm._v("Thailand")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TG" } }, [
+                              _vm._v("Togo")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TK" } }, [
+                              _vm._v("Tokelau")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TO" } }, [
+                              _vm._v("Tonga")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TT" } }, [
+                              _vm._v("Trinidad and Tobago")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TN" } }, [
+                              _vm._v("Tunisia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TR" } }, [
+                              _vm._v("Turkey")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TM" } }, [
+                              _vm._v("Turkmenistan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TC" } }, [
+                              _vm._v("Turks and Caicos Islands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "TV" } }, [
+                              _vm._v("Tuvalu")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "UG" } }, [
+                              _vm._v("Uganda")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "UA" } }, [
+                              _vm._v("Ukraine")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AE" } }, [
+                              _vm._v("United Arab Emirates")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GB" } }, [
+                              _vm._v("United Kingdom")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "US" } }, [
+                              _vm._v("United States")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "UM" } }, [
+                              _vm._v(
+                                "United States Minor Outlying\n                                        Islands"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "UY" } }, [
+                              _vm._v("Uruguay")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "UZ" } }, [
+                              _vm._v("Uzbekistan")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "VU" } }, [
+                              _vm._v("Vanuatu")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "VE" } }, [
+                              _vm._v("Venezuela")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "VN" } }, [
+                              _vm._v("Viet Nam")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "VG" } }, [
+                              _vm._v("Virgin Islands (British)")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "VI" } }, [
+                              _vm._v("Virgin Islands (U.S.)")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "WF" } }, [
+                              _vm._v("Wallis and Futuna Islands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "EH" } }, [
+                              _vm._v("Western Sahara")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "YE" } }, [
+                              _vm._v("Yemen")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "YU" } }, [
+                              _vm._v("Yugoslavia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "ZM" } }, [
+                              _vm._v("Zambia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "ZW" } }, [
+                              _vm._v("Zimbabwe")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("HasError", {
+                          attrs: { form: _vm.form, field: "country" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-md-4 col-form-label",
+                        attrs: { for: "contactPerson" }
+                      },
+                      [_vm._v("Contact Person\n                            ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-8" },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.contactPerson,
+                              expression: "form.contactPerson"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "contactPerson",
+                            type: "text",
+                            name: "contactPerson",
+                            placeholder: "Full Name"
+                          },
+                          domProps: { value: _vm.form.contactPerson },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.form,
+                                "contactPerson",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("HasError", {
+                          attrs: { form: _vm.form, field: "contactPerson" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _vm._m(5),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-8" },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.email,
+                              expression: "form.email"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "email",
+                            type: "email",
+                            name: "email",
+                            placeholder: "email@domain.com"
+                          },
+                          domProps: { value: _vm.form.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "email", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("HasError", {
+                          attrs: { form: _vm.form, field: "email" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _vm._m(6),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-8" },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.phone,
+                              expression: "form.phone"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "phone",
+                            type: "number",
+                            name: "phone",
+                            placeholder: "Phone"
+                          },
+                          domProps: { value: _vm.form.phone },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "phone", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("HasError", {
+                          attrs: { form: _vm.form, field: "phone" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-md-4 col-form-label",
+                        attrs: { for: "website" }
+                      },
+                      [_vm._v("Website\n                            ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-8" },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.website,
+                              expression: "form.website"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "website",
+                            type: "text",
+                            name: "website",
+                            placeholder: "www.website.com"
+                          },
+                          domProps: { value: _vm.form.website },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "website", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("HasError", {
+                          attrs: { form: _vm.form, field: "website" }
                         })
                       ],
                       1
@@ -42019,6 +44659,58 @@ var staticRenderFns = [
       { staticClass: "col-md-4 col-form-label", attrs: { for: "company" } },
       [
         _vm._v("Company Name\n                                "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-md-4 col-form-label", attrs: { for: "address" } },
+      [
+        _vm._v("Address\n                                "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-md-4 col-form-label", attrs: { for: "country" } },
+      [
+        _vm._v("Country\n                                "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-md-4 col-form-label", attrs: { for: "email" } },
+      [
+        _vm._v("Email\n                                "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-md-4 col-form-label", attrs: { for: "phone" } },
+      [
+        _vm._v("Phone\n                                "),
         _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
       ]
     )
@@ -42606,45 +45298,37 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _c("span", { staticClass: "badge bg-light text-faded" }, [
-                        _vm._v(
-                          "\n                                        " +
-                            _vm._s(
-                              invoice.recurring === "yes"
-                                ? "RECURRING"
-                                : "SINGLE-TIME"
-                            ) +
-                            "\n                                    "
-                        )
-                      ]),
-                      _vm._v(" "),
                       _c("div", { staticClass: "text-small" }, [
                         _vm._v(
                           "\n                                        " +
                             _vm._s(invoice.note) +
                             "\n                                    "
                         )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "badge bg-light text-faded" }, [
+                        _vm._v(
+                          "\n                                        " +
+                            _vm._s(
+                              invoice.recurring === "1"
+                                ? "RECURRING"
+                                : "SINGLE-TIME"
+                            ) +
+                            "\n                                    "
+                        )
                       ])
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "\n                                    Bill - " +
-                          _vm._s(invoice.billDate)
-                      ),
-                      _c("br"),
-                      _vm._v(
-                        "\n                                    Due - " +
-                          _vm._s(invoice.dueDate) +
-                          "\n                                "
-                      )
                     ]),
                     _vm._v(" "),
                     _c("td", [
                       _c("strong", [
                         _vm._v(
-                          "\n                                        " +
-                            _vm._s("$ " + invoice.amount + invoice.tax) +
+                          "\n                                        $\n                                        " +
+                            _vm._s(
+                              (
+                                +parseFloat(invoice.amount).toFixed(2) +
+                                +parseFloat(invoice.tax)
+                              ).toFixed(2)
+                            ) +
                             "\n                                    "
                         )
                       ]),
@@ -42663,13 +45347,32 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _c("span", { staticClass: "badge bg-light text-faded" }, [
-                        _vm._v(
-                          "\n                                        " +
-                            _vm._s(invoice.paymentMode) +
-                            "\n                                    "
-                        )
-                      ])
+                      _c(
+                        "span",
+                        {
+                          staticClass: "badge bg-light text-faded to-uppercase"
+                        },
+                        [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(invoice.paymentMode) +
+                              "\n                                    "
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _vm._v(
+                        "\n                                    Bill - " +
+                          _vm._s(invoice.billDate)
+                      ),
+                      _c("br"),
+                      _vm._v(
+                        "\n                                    Due - " +
+                          _vm._s(invoice.dueDate) +
+                          "\n                                "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(invoice.project.title))])
@@ -42695,157 +45398,612 @@ var render = function() {
         }
       },
       [
-        _c("div", { staticClass: "modal-dialog modal-dialog-centered" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.editMode,
-                      expression: "editMode"
-                    }
-                  ],
-                  staticClass: "modal-title",
-                  attrs: { id: "addRecordLabel" }
-                },
-                [
-                  _vm._v(
-                    "\n                        Update the Invoice\n                    "
-                  )
-                ]
-              ),
+        _c(
+          "div",
+          { staticClass: "modal-dialog modal-dialog-centered modal-lg" },
+          [
+            _c("div", { staticClass: "modal-content px-2" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.editMode,
+                        expression: "editMode"
+                      }
+                    ],
+                    staticClass: "modal-title",
+                    attrs: { id: "addRecordLabel" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Update the Invoice\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: !_vm.editMode,
+                        expression: "!editMode"
+                      }
+                    ],
+                    staticClass: "modal-title",
+                    attrs: { id: "addRecordLabel" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Add New Invoice\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(1)
+              ]),
               _vm._v(" "),
               _c(
-                "h5",
+                "form",
                 {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: !_vm.editMode,
-                      expression: "!editMode"
+                  staticClass: "input-form",
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      _vm.editMode ? _vm.updateInvoice() : _vm.createInvoice()
                     }
-                  ],
-                  staticClass: "modal-title",
-                  attrs: { id: "addRecordLabel" }
-                },
-                [
-                  _vm._v(
-                    "\n                        Add New Invoice\n                    "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _vm._m(1)
-            ]),
-            _vm._v(" "),
-            _c(
-              "form",
-              {
-                staticClass: "input-form",
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    _vm.editMode ? _vm.updateInvoice() : _vm.createInvoice()
                   }
-                }
-              },
-              [
-                _c("div", { staticClass: "modal-body" }, [
-                  _c("div", { staticClass: "form-group row" }, [
-                    _vm._m(2),
+                },
+                [
+                  _c("div", { staticClass: "modal-body" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-4" },
+                        [
+                          _vm._m(2),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "input-group mb-2" }, [
+                            _vm._m(3),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.amount,
+                                  expression: "form.amount"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                id: "amount",
+                                type: "text",
+                                name: "amount",
+                                placeholder: "00000"
+                              },
+                              domProps: { value: _vm.form.amount },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.form,
+                                    "amount",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "amount" }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-4" },
+                        [
+                          _vm._m(4),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "input-group mb-2" }, [
+                            _vm._m(5),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.tax,
+                                  expression: "form.tax"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                id: "tax",
+                                type: "text",
+                                name: "tax",
+                                placeholder: "0000"
+                              },
+                              domProps: { value: _vm.form.tax },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(_vm.form, "tax", $event.target.value)
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "tax" }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-4" },
+                        [
+                          _vm._m(6),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.paymentMode,
+                                  expression: "form.paymentMode"
+                                }
+                              ],
+                              staticClass: "custom-select form-control",
+                              attrs: { name: "paymentMode", id: "paymentMode" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.form,
+                                    "paymentMode",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "",
+                                    disabled: "",
+                                    selected: "",
+                                    hidden: ""
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Select Payment Mode\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "cash" } }, [
+                                _vm._v("Cash")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "cheque" } }, [
+                                _vm._v("Cheque")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "paypal" } }, [
+                                _vm._v("Paypal")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "wire" } }, [
+                                _vm._v(
+                                  "\n                                        Wire Transfer\n                                    "
+                                )
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "paymentMode" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-6" },
+                        [
+                          _vm._m(7),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.billDate,
+                                expression: "form.billDate"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "billDate",
+                              type: "date",
+                              name: "billDate"
+                            },
+                            domProps: { value: _vm.form.billDate },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.form,
+                                  "billDate",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "billDate" }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-6" },
+                        [
+                          _vm._m(8),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.dueDate,
+                                expression: "form.dueDate"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "dueDate",
+                              type: "date",
+                              name: "dueDate"
+                            },
+                            domProps: { value: _vm.form.dueDate },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.form,
+                                  "dueDate",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "dueDate" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-6" },
+                        [
+                          _vm._m(9),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.project_id,
+                                  expression: "form.project_id"
+                                }
+                              ],
+                              staticClass: "custom-select form-control",
+                              attrs: { name: "project_id", id: "project_id" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.form,
+                                    "project_id",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "",
+                                    disabled: "",
+                                    selected: "",
+                                    hidden: ""
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        Select Project\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _vm._l(_vm.projects, function(project) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: project.id } },
+                                  [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(project.title) +
+                                        "\n                                    "
+                                    )
+                                  ]
+                                )
+                              })
+                            ],
+                            2
+                          ),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "project_id" }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-6" },
+                        [
+                          _vm._m(10),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-check" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.recurring,
+                                  expression: "form.recurring"
+                                }
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                name: "recurring",
+                                id: "recurring1",
+                                value: "1"
+                              },
+                              domProps: {
+                                checked: _vm._q(_vm.form.recurring, "1")
+                              },
+                              on: {
+                                change: function($event) {
+                                  return _vm.$set(_vm.form, "recurring", "1")
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "form-check-label",
+                                attrs: { for: "recurring1" }
+                              },
+                              [
+                                _vm._v(
+                                  "Yes\n                                    "
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-check" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.recurring,
+                                  expression: "form.recurring"
+                                }
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                name: "recurring",
+                                id: "recurring2",
+                                value: "0"
+                              },
+                              domProps: {
+                                checked: _vm._q(_vm.form.recurring, "0")
+                              },
+                              on: {
+                                change: function($event) {
+                                  return _vm.$set(_vm.form, "recurring", "0")
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "form-check-label",
+                                attrs: { for: "recurring2" }
+                              },
+                              [
+                                _vm._v(
+                                  "No\n                                    "
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "recurring" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
                     _vm._v(" "),
                     _c(
                       "div",
-                      { staticClass: "col-md-8" },
+                      { staticClass: "form-group" },
                       [
-                        _c("input", {
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "note" }
+                          },
+                          [_vm._v("Note\n                            ")]
+                        ),
+                        _vm._v(" "),
+                        _c("textarea", {
                           directives: [
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.form.amount,
-                              expression: "form.amount"
+                              value: _vm.form.note,
+                              expression: "form.note"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: {
-                            id: "amount",
-                            type: "text",
-                            name: "amount",
-                            placeholder: "Title"
+                            id: "note",
+                            name: "note",
+                            rows: "2",
+                            cols: "50"
                           },
-                          domProps: { value: _vm.form.amount },
+                          domProps: { value: _vm.form.note },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.$set(_vm.form, "amount", $event.target.value)
+                              _vm.$set(_vm.form, "note", $event.target.value)
                             }
                           }
                         }),
                         _vm._v(" "),
                         _c("HasError", {
-                          attrs: { form: _vm.form, field: "amount" }
+                          attrs: { form: _vm.form, field: "note" }
                         })
                       ],
                       1
                     )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "modal-footer" }, [
-                  _c(
-                    "button",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.editMode,
-                          expression: "editMode"
-                        }
-                      ],
-                      staticClass: "btn btn-submit",
-                      attrs: { type: "submit" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                            Update\n                        "
-                      )
-                    ]
-                  ),
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: !_vm.editMode,
-                          expression: "!editMode"
-                        }
-                      ],
-                      staticClass: "btn btn-submit",
-                      attrs: { type: "submit" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                            Create\n                        "
-                      )
-                    ]
-                  )
-                ])
-              ]
-            )
-          ])
-        ])
+                  _c("div", { staticClass: "modal-footer" }, [
+                    _c(
+                      "button",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.editMode,
+                            expression: "editMode"
+                          }
+                        ],
+                        staticClass: "btn btn-submit",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Update\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: !_vm.editMode,
+                            expression: "!editMode"
+                          }
+                        ],
+                        staticClass: "btn btn-submit",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Create\n                        "
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
       ]
     )
   ])
@@ -42866,14 +46024,14 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
-          _vm._v("Date")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
           _vm._v("Amount")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+          _vm._v("Date")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "th-lg", attrs: { scope: "col" } }, [
           _vm._v("Project")
         ])
       ])
@@ -42902,9 +46060,113 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "label",
-      { staticClass: "col-md-4 col-form-label", attrs: { for: "amount" } },
+      { staticClass: "col-form-label", attrs: { for: "amount" } },
       [
-        _vm._v("Amount\n                                "),
+        _vm._v("Amount\n                                    "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("div", { staticClass: "input-group-text" }, [
+        _vm._v(
+          "\n                                            $\n                                        "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "tax" } },
+      [
+        _vm._v("Tax\n                                    "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("div", { staticClass: "input-group-text" }, [
+        _vm._v(
+          "\n                                            $\n                                        "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "paymentMode" } },
+      [
+        _vm._v("Payment Mode\n                                    "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "billDate" } },
+      [
+        _vm._v("Bill Date\n                                    "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "dueDate" } },
+      [
+        _vm._v("Due Date\n                                    "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "project_id" } },
+      [
+        _vm._v("Project\n                                    "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "recurring" } },
+      [
+        _vm._v(
+          "\n                                    Recurring\n                                    "
+        ),
         _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
       ]
     )
@@ -43040,7 +46302,9 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "span",
-                        { staticClass: "badge bg-secondary text-white" },
+                        {
+                          staticClass: "badge bg-light text-faded to-uppercase"
+                        },
                         [
                           _vm._v(
                             _vm._s(issue.type) +
@@ -43312,7 +46576,7 @@ var render = function() {
                                   expression: "form.type"
                                 }
                               ],
-                              staticClass: "form-control",
+                              staticClass: "custom-select form-control",
                               attrs: { name: "type", id: "type" },
                               on: {
                                 change: function($event) {
@@ -43403,7 +46667,7 @@ var render = function() {
                                   expression: "form.severity"
                                 }
                               ],
-                              staticClass: "form-control",
+                              staticClass: "custom-select form-control",
                               attrs: { name: "severity", id: "severity" },
                               on: {
                                 change: function($event) {
@@ -43496,7 +46760,7 @@ var render = function() {
                                   expression: "form.status"
                                 }
                               ],
-                              staticClass: "form-control",
+                              staticClass: "custom-select form-control",
                               attrs: { name: "status", id: "status" },
                               on: {
                                 change: function($event) {
@@ -43620,7 +46884,7 @@ var render = function() {
                                   expression: "form.project_id"
                                 }
                               ],
-                              staticClass: "form-control",
+                              staticClass: "custom-select form-control",
                               attrs: { name: "project_id", id: "project_id" },
                               on: {
                                 change: function($event) {
@@ -44080,13 +47344,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("td", [
-                      _c("strong", [
-                        _vm._v(
-                          "\n                                        " +
-                            _vm._s("$ " + project.cost) +
-                            "\n                                    "
-                        )
-                      ])
+                      _c("strong", [_vm._v(" $ " + _vm._s(project.cost) + " ")])
                     ]),
                     _vm._v(" "),
                     _c("td", [
@@ -44429,7 +47687,7 @@ var render = function() {
                                   expression: "form.status"
                                 }
                               ],
-                              staticClass: "form-control",
+                              staticClass: "custom-select form-control",
                               attrs: { name: "status", id: "status" },
                               on: {
                                 change: function($event) {
@@ -44539,7 +47797,7 @@ var render = function() {
                                   expression: "form.tag"
                                 }
                               ],
-                              staticClass: "form-control",
+                              staticClass: "custom-select form-control",
                               attrs: { name: "tag", id: "tag" },
                               on: {
                                 change: function($event) {
@@ -44651,7 +47909,7 @@ var render = function() {
                                   expression: "form.billingType"
                                 }
                               ],
-                              staticClass: "form-control",
+                              staticClass: "custom-select form-control",
                               attrs: { name: "billingType", id: "billingType" },
                               on: {
                                 change: function($event) {
@@ -44740,7 +47998,7 @@ var render = function() {
                                   expression: "form.client_id"
                                 }
                               ],
-                              staticClass: "form-control",
+                              staticClass: "custom-select form-control",
                               attrs: { name: "client_id", id: "client_id" },
                               on: {
                                 change: function($event) {
@@ -45251,15 +48509,15 @@ var render = function() {
                         {
                           staticClass: "badge text-white",
                           class: {
-                            "bg-warning": task.status === "Active",
-                            "bg-success": task.status != "Active"
+                            "bg-primary": task.status === "active",
+                            "bg-success": task.status != "active"
                           }
                         },
                         [
                           _vm._v(
                             "\n                                        " +
                               _vm._s(
-                                task.status === "Active" ? "ACTIVE" : "CLOSED"
+                                task.status === "active" ? "ACTIVE" : "CLOSED"
                               ) +
                               "\n                                    "
                           )
@@ -45271,7 +48529,11 @@ var render = function() {
                       _vm._v(
                         "\n                                    " +
                           _vm._s(task.startDate) +
-                          " -\n                                    " +
+                          "\n                                    "
+                      ),
+                      _c("br"),
+                      _vm._v(
+                        "\n                                    " +
                           _vm._s(task.endDate) +
                           "\n                                "
                       )
@@ -45310,157 +48572,644 @@ var render = function() {
         }
       },
       [
-        _c("div", { staticClass: "modal-dialog modal-dialog-centered" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.editMode,
-                      expression: "editMode"
-                    }
-                  ],
-                  staticClass: "modal-title",
-                  attrs: { id: "addRecordLabel" }
-                },
-                [
-                  _vm._v(
-                    "\n                        Update the Task\n                    "
-                  )
-                ]
-              ),
+        _c(
+          "div",
+          { staticClass: "modal-dialog modal-dialog-centered modal-lg" },
+          [
+            _c("div", { staticClass: "modal-content px-2" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.editMode,
+                        expression: "editMode"
+                      }
+                    ],
+                    staticClass: "modal-title",
+                    attrs: { id: "addRecordLabel" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Update the Task\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: !_vm.editMode,
+                        expression: "!editMode"
+                      }
+                    ],
+                    staticClass: "modal-title",
+                    attrs: { id: "addRecordLabel" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Add New Task\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(1)
+              ]),
               _vm._v(" "),
               _c(
-                "h5",
+                "form",
                 {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: !_vm.editMode,
-                      expression: "!editMode"
+                  staticClass: "input-form",
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      _vm.editMode ? _vm.updateTask() : _vm.createTask()
                     }
-                  ],
-                  staticClass: "modal-title",
-                  attrs: { id: "addRecordLabel" }
-                },
-                [
-                  _vm._v(
-                    "\n                        Add New Task\n                    "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _vm._m(1)
-            ]),
-            _vm._v(" "),
-            _c(
-              "form",
-              {
-                staticClass: "input-form",
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    _vm.editMode ? _vm.updateTask() : _vm.createTask()
                   }
-                }
-              },
-              [
-                _c("div", { staticClass: "modal-body" }, [
-                  _c("div", { staticClass: "form-group row" }, [
-                    _vm._m(2),
+                },
+                [
+                  _c("div", { staticClass: "modal-body" }, [
+                    _c("div", { staticClass: "form-group row" }, [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-9" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.subject,
+                                expression: "form.subject"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "subject",
+                              type: "text",
+                              name: "subject",
+                              placeholder: "Subject"
+                            },
+                            domProps: { value: _vm.form.subject },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.form,
+                                  "subject",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "subject" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-3 col-form-label",
+                          attrs: { for: "description" }
+                        },
+                        [_vm._v("Description\n                            ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-9" },
+                        [
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.description,
+                                expression: "form.description"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "description",
+                              name: "description",
+                              rows: "3",
+                              cols: "50"
+                            },
+                            domProps: { value: _vm.form.description },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.form,
+                                  "description",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "description" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("hr", { staticClass: "mt-4" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-6" },
+                        [
+                          _vm._m(3),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.status,
+                                  expression: "form.status"
+                                }
+                              ],
+                              staticClass: "custom-select form-control",
+                              attrs: { name: "status", id: "status" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.form,
+                                    "status",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "",
+                                    disabled: "",
+                                    selected: "",
+                                    hidden: ""
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Select Status\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "active" } }, [
+                                _vm._v("Active")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "closed" } }, [
+                                _vm._v("Closed")
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "status" }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-6" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-form-label",
+                              attrs: { for: "priority" }
+                            },
+                            [
+                              _vm._v(
+                                "Priority\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.priority,
+                                  expression: "form.priority"
+                                }
+                              ],
+                              staticClass: "custom-select form-control",
+                              attrs: { name: "priority", id: "priority" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.form,
+                                    "priority",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "",
+                                    disabled: "",
+                                    selected: "",
+                                    hidden: ""
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Select Priority\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "low" } }, [
+                                _vm._v("Low")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "medium" } }, [
+                                _vm._v("Medium")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "high" } }, [
+                                _vm._v("High")
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "priority" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-6" },
+                        [
+                          _vm._m(4),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.startDate,
+                                expression: "form.startDate"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "startDate",
+                              type: "date",
+                              name: "startDate"
+                            },
+                            domProps: { value: _vm.form.startDate },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.form,
+                                  "startDate",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "startDate" }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-6" },
+                        [
+                          _vm._m(5),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.endDate,
+                                expression: "form.endDate"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "endDate",
+                              type: "date",
+                              name: "endDate"
+                            },
+                            domProps: { value: _vm.form.endDate },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.form,
+                                  "endDate",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "endDate" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-6" },
+                        [
+                          _vm._m(6),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.project_id,
+                                  expression: "form.project_id"
+                                }
+                              ],
+                              staticClass: "custom-select form-control",
+                              attrs: { name: "project_id", id: "project_id" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.form,
+                                    "project_id",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "",
+                                    disabled: "",
+                                    selected: "",
+                                    hidden: ""
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        Select Project\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _vm._l(_vm.projects, function(project) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: project.id } },
+                                  [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(project.title) +
+                                        "\n                                    "
+                                    )
+                                  ]
+                                )
+                              })
+                            ],
+                            2
+                          ),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "project_id" }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "form-group col-md-6" },
+                        [
+                          _vm._m(7),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.collaborator_id,
+                                  expression: "form.collaborator_id"
+                                }
+                              ],
+                              staticClass: "custom-select form-control",
+                              attrs: {
+                                name: "collaborator_id",
+                                id: "collaborator_id"
+                              },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.form,
+                                    "collaborator_id",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "",
+                                    disabled: "",
+                                    selected: "",
+                                    hidden: ""
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        Select Collaborator\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _vm._l(_vm.collaborators, function(collaborator) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: collaborator.id } },
+                                  [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(collaborator.name) +
+                                        "\n                                    "
+                                    )
+                                  ]
+                                )
+                              })
+                            ],
+                            2
+                          ),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "collaborator_id" }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "modal-footer" }, [
+                    _c(
+                      "button",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.editMode,
+                            expression: "editMode"
+                          }
+                        ],
+                        staticClass: "btn btn-submit",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Update\n                        "
+                        )
+                      ]
+                    ),
                     _vm._v(" "),
                     _c(
-                      "div",
-                      { staticClass: "col-md-8" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.form.subject,
-                              expression: "form.subject"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            id: "subject",
-                            type: "text",
-                            name: "subject",
-                            placeholder: "Title"
-                          },
-                          domProps: { value: _vm.form.subject },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(_vm.form, "subject", $event.target.value)
-                            }
+                      "button",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: !_vm.editMode,
+                            expression: "!editMode"
                           }
-                        }),
-                        _vm._v(" "),
-                        _c("HasError", {
-                          attrs: { form: _vm.form, field: "subject" }
-                        })
-                      ],
-                      1
+                        ],
+                        staticClass: "btn btn-submit",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Create\n                        "
+                        )
+                      ]
                     )
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "modal-footer" }, [
-                  _c(
-                    "button",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.editMode,
-                          expression: "editMode"
-                        }
-                      ],
-                      staticClass: "btn btn-submit",
-                      attrs: { type: "submit" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                            Update\n                        "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: !_vm.editMode,
-                          expression: "!editMode"
-                        }
-                      ],
-                      staticClass: "btn btn-submit",
-                      attrs: { type: "submit" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                            Create\n                        "
-                      )
-                    ]
-                  )
-                ])
-              ]
-            )
-          ])
-        ])
+                ]
+              )
+            ])
+          ]
+        )
       ]
     )
   ])
@@ -45525,9 +49274,601 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "label",
-      { staticClass: "col-md-4 col-form-label", attrs: { for: "subject" } },
+      { staticClass: "col-md-3 col-form-label", attrs: { for: "subject" } },
       [
         _vm._v("Subject\n                                "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "status" } },
+      [
+        _vm._v("Status\n                                    "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "startDate" } },
+      [
+        _vm._v("Start Date\n                                    "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "endDate" } },
+      [
+        _vm._v("End Date\n                                    "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "project_id" } },
+      [
+        _vm._v("Project\n                                    "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-form-label", attrs: { for: "collaborator_id" } },
+      [
+        _vm._v(
+          "\n                                    Collaborator\n                                    "
+        ),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User.vue?vue&type=template&id=d884f594&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User.vue?vue&type=template&id=d884f594& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-12 mt-4 mb-5" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "d-flex justify-content-between align-items-center mb-4"
+          },
+          [
+            _c("h3", [_vm._v("Users")]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-new",
+                attrs: { type: "button" },
+                on: { click: _vm.newModal }
+              },
+              [
+                _c("i", {
+                  staticClass: "fas fa-plus mr-1",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v("\n                    Add\n                ")
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "card card-table" }, [
+          _c("div", { staticClass: "table-responsive" }, [
+            _c("table", { staticClass: "table table-hover" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.users, function(user) {
+                  return _c("tr", [
+                    _c("th", { attrs: { scope: "row" } }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "",
+                            "data-toggle": "tooltip",
+                            "data-placement": "top",
+                            title: "Edit"
+                          },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.editModal(user)
+                            }
+                          }
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "fas fa-pen-nib mr-3 table-fa",
+                            attrs: { "aria-hidden": "true" }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "",
+                            "data-toggle": "tooltip",
+                            "data-placement": "top",
+                            title: "Delete"
+                          },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.deleteUser(user.id)
+                            }
+                          }
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "fas fa-trash table-fa",
+                            attrs: { "aria-hidden": "true" }
+                          })
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(user.name))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(user.email))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(user.role.name))])
+                  ])
+                }),
+                0
+              )
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "addRecord",
+          tabindex: "-1",
+          "aria-labelledby": "addRecordLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog modal-dialog-centered modal-lg" },
+          [
+            _c("div", { staticClass: "modal-content px-2" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.editMode,
+                        expression: "editMode"
+                      }
+                    ],
+                    staticClass: "modal-title",
+                    attrs: { id: "addRecordLabel" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Update the User\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: !_vm.editMode,
+                        expression: "!editMode"
+                      }
+                    ],
+                    staticClass: "modal-title",
+                    attrs: { id: "addRecordLabel" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Add New User\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(1)
+              ]),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  staticClass: "input-form",
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      _vm.editMode ? _vm.updateUser() : _vm.createUser()
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "modal-body" }, [
+                    _c("div", { staticClass: "form-group row" }, [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-9" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.name,
+                                expression: "form.name"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "name",
+                              type: "text",
+                              name: "name",
+                              placeholder: "Name"
+                            },
+                            domProps: { value: _vm.form.name },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(_vm.form, "name", $event.target.value)
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "name" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-9" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.email,
+                                expression: "form.email"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "email",
+                              type: "email",
+                              name: "email",
+                              placeholder: "Email"
+                            },
+                            domProps: { value: _vm.form.email },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(_vm.form, "email", $event.target.value)
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "email" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-9" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.password,
+                                expression: "form.password"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "password",
+                              type: "password",
+                              name: "password",
+                              placeholder: "min length: 8"
+                            },
+                            domProps: { value: _vm.form.password },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.form,
+                                  "password",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "password" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-9" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.role_id,
+                                expression: "form.role_id"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "role_id",
+                              type: "text",
+                              name: "role_id"
+                            },
+                            domProps: { value: _vm.form.role_id },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.form,
+                                  "role_id",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "role_id" }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "modal-footer" }, [
+                    _c(
+                      "button",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.editMode,
+                            expression: "editMode"
+                          }
+                        ],
+                        staticClass: "btn btn-submit",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Update\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: !_vm.editMode,
+                            expression: "!editMode"
+                          }
+                        ],
+                        staticClass: "btn btn-submit",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Create\n                        "
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+          _vm._v("Actions")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "th-lg", attrs: { scope: "col" } }, [
+          _vm._v("Name")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "th-lg", attrs: { scope: "col" } }, [
+          _vm._v("Email")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+          _vm._v("Role")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "modal",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-md-3 col-form-label", attrs: { for: "name" } },
+      [
+        _vm._v("Name\n                                "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-md-3 col-form-label", attrs: { for: "email" } },
+      [
+        _vm._v("Email\n                                "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-md-3 col-form-label", attrs: { for: "password" } },
+      [
+        _vm._v("Password\n                                "),
+        _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "col-md-3 col-form-label", attrs: { for: "role_id" } },
+      [
+        _vm._v("Role\n                                "),
         _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
       ]
     )

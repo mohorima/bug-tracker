@@ -1,6 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;
-
-0,400;0,500;0,600;0,700;1,400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap);
 @charset "UTF-8";
 
 :root {
@@ -10951,6 +10949,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: white;
+  font-family: "Poppins", sans-serif;
 }
 
 #app {
@@ -11017,6 +11016,10 @@ h6 {
   color: #242424;
 }
 
+.to-uppercase {
+  text-transform: uppercase;
+}
+
 /*---------------------DASHBOARD---------------------*/
 
 .dashboard-card {
@@ -11065,7 +11068,7 @@ h6 {
   box-shadow: #f5f4f1 0 0 0 0.05rem;
   border-radius: 0.3rem;
   resize: none;
-  background-color: #fcfbf8;
+  background-color: #fcfcfc;
 }
 
 .input-form input[type=text]:focus,
@@ -11107,7 +11110,7 @@ h6 {
   text-transform: uppercase;
   display: block;
   content: "Browse";
-  background-color: #fcfbf8;
+  background-color: #fcfcfc;
   border-left: inherit;
   border: none !important;
   box-shadow: #f5f4f1 0 0 0 0.05rem !important;
@@ -11228,13 +11231,13 @@ thead {
 
 .table-hover tbody tr:hover td,
 .table-hover tbody tr:hover th {
-  background: #fcfbf8;
+  background: #fcfcfc;
 }
 
 /*---------------------BREADCRUMBS---------------------*/
 
 .breadcrumb {
-  background-color: #fcfbf8;
+  background-color: #fcfcfc;
 }
 
 .breadcrumb-item {
@@ -11253,7 +11256,7 @@ thead {
 
 .sidenav {
   min-height: 100vh;
-  background-color: #fcfbf8;
+  background-color: #fcfcfc;
   height: 100%;
   width: 300px;
   position: fixed;

@@ -74,7 +74,11 @@
                                         <br />{{ client.email }} <br />
                                         {{ client.phone }}
                                     </td>
-                                    <td>{{ client.website }}</td>
+                                    <td>
+                                        <a :href="'https://' + client.website">
+                                            {{ client.website }}
+                                        </a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

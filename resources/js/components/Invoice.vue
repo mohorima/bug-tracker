@@ -20,9 +20,9 @@
                                 <tr>
                                     <th class="th-sm" scope="col">Actions</th>
                                     <th class="th-sm" scope="col">Invoice #</th>
-                                    <th class="th-sm" scope="col">Date</th>
                                     <th class="th-sm" scope="col">Amount</th>
-                                    <th class="th-sm" scope="col">Project</th>
+                                    <th class="th-sm" scope="col">Date</th>
+                                    <th class="th-lg" scope="col">Project</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,27 +59,27 @@
                                         <div class="text-title">
                                             {{ invoice.invoiceNum }}
                                         </div>
+                                        <div class="text-small">
+                                            {{ invoice.note }}
+                                        </div>
                                         <span class="badge bg-light text-faded">
                                             {{
-                                                invoice.recurring === "yes"
+                                                invoice.recurring === "1"
                                                     ? "RECURRING"
                                                     : "SINGLE-TIME"
                                             }}
                                         </span>
-                                        <div class="text-small">
-                                            {{ invoice.note }}
-                                        </div>
-                                    </td>
-                                    <td>
-                                        Bill - {{ invoice.billDate }}<br />
-                                        Due - {{ invoice.dueDate }}
                                     </td>
                                     <td>
                                         <strong>
+                                            $
                                             {{
-                                                "$ " +
-                                                invoice.amount +
-                                                invoice.tax
+                                                (
+                                                    +parseFloat(
+                                                        invoice.amount
+                                                    ).toFixed(2) +
+                                                    +parseFloat(invoice.tax)
+                                                ).toFixed(2)
                                             }}
                                         </strong>
                                         <div class="text-small">
@@ -87,9 +87,15 @@
                                             <br />
                                             Tax - {{ "$ " + invoice.tax }}
                                         </div>
-                                        <span class="badge bg-light text-faded">
+                                        <span
+                                            class="badge bg-light text-faded to-uppercase"
+                                        >
                                             {{ invoice.paymentMode }}
                                         </span>
+                                    </td>
+                                    <td>
+                                        Bill - {{ invoice.billDate }}<br />
+                                        Due - {{ invoice.dueDate }}
                                     </td>
                                     <td>{{ invoice.project.title }}</td>
                                 </tr>
@@ -151,14 +157,21 @@
                                         <strong class="text-danger"> *</strong>
                                     </label>
 
-                                    <input
-                                        id="amount"
-                                        v-model="form.amount"
-                                        type="text"
-                                        name="amount"
-                                        class="form-control"
-                                        placeholder="$Amount"
-                                    />
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                $
+                                            </div>
+                                        </div>
+                                        <input
+                                            id="amount"
+                                            v-model="form.amount"
+                                            type="text"
+                                            name="amount"
+                                            class="form-control"
+                                            placeholder="00000"
+                                        />
+                                    </div>
                                     <HasError :form="form" field="amount" />
                                 </div>
                                 <!--.form-group -->
@@ -168,14 +181,21 @@
                                         <strong class="text-danger"> *</strong>
                                     </label>
 
-                                    <input
-                                        id="tax"
-                                        v-model="form.tax"
-                                        type="text"
-                                        name="tax"
-                                        class="form-control"
-                                        placeholder="$Tax"
-                                    />
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                $
+                                            </div>
+                                        </div>
+                                        <input
+                                            id="tax"
+                                            v-model="form.tax"
+                                            type="text"
+                                            name="tax"
+                                            class="form-control"
+                                            placeholder="0000"
+                                        />
+                                    </div>
                                     <HasError :form="form" field="tax" />
                                 </div>
                                 <!--.form-group -->
@@ -200,12 +220,12 @@
                                             hidden
                                             >Select Payment Mode
                                         </option>
-                                        <option value="on-hold">Cash</option>
-                                        <option value="on-hold">Cheque</option>
-                                        <option value="on-hold">Paypal</option>
-                                        <option value="on-hold"
-                                            >Wire Transfer</option
-                                        >
+                                        <option value="cash">Cash</option>
+                                        <option value="cheque">Cheque</option>
+                                        <option value="paypal">Paypal</option>
+                                        <option value="wire">
+                                            Wire Transfer
+                                        </option>
                                     </select>
                                     <HasError
                                         :form="form"
@@ -290,14 +310,14 @@
                                         <strong class="text-danger"> *</strong>
                                     </label>
 
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check">
                                         <input
                                             class="form-check-input"
                                             type="radio"
                                             name="recurring"
                                             id="recurring1"
                                             v-model="form.recurring"
-                                            value="yes"
+                                            value="1"
                                         />
                                         <label
                                             class="form-check-label"
@@ -305,14 +325,14 @@
                                             >Yes
                                         </label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check">
                                         <input
                                             class="form-check-input"
                                             type="radio"
                                             name="recurring"
                                             id="recurring2"
                                             v-model="form.recurring"
-                                            value="no"
+                                            value="0"
                                         />
                                         <label
                                             class="form-check-label"
@@ -325,28 +345,21 @@
                                 <!--.form-group -->
                             </div>
 
-                            <div class="form-group row mt-4">
-                                <label
-                                    class="col-md-3 col-form-label"
-                                    for="note"
+                            <div class="form-group">
+                                <label class="col-form-label" for="note"
                                     >Note
                                 </label>
 
-                                <div class="col-md-9">
-                                    <textarea
-                                        id="note"
-                                        class="form-control"
-                                        name="note"
-                                        rows="3"
-                                        cols="50"
-                                        v-model="form.note"
-                                    >
-                                    </textarea>
-                                    <HasError
-                                        :form="form"
-                                        field="note"
-                                    />
-                                </div>
+                                <textarea
+                                    id="note"
+                                    class="form-control"
+                                    name="note"
+                                    rows="2"
+                                    cols="50"
+                                    v-model="form.note"
+                                >
+                                </textarea>
+                                <HasError :form="form" field="note" />
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -386,7 +399,8 @@ export default {
 
     data: () => ({
         editMode: false,
-        invoices: {},
+        invoices: [],
+        projects: [],
         form: new Form({
             id: "",
             billDate: "",
@@ -407,6 +421,7 @@ export default {
             this.editMode = false;
             this.form.clear();
             this.form.reset();
+            this.loadProjects();
             $("#addRecord").modal("show");
         },
 
@@ -414,6 +429,7 @@ export default {
             this.editMode = true;
             this.form.clear();
             this.form.reset();
+            this.loadProjects();
             $("#addRecord").modal("show");
             this.form.fill(invoice);
         },
@@ -422,6 +438,13 @@ export default {
             axios
                 .get("/api/invoice")
                 .then(({ data }) => (this.invoices = data.data))
+                .catch((error) => console.log(error));
+        },
+
+        loadProjects() {
+            axios
+                .get("/api/project")
+                .then(({ data }) => (this.projects = data.data))
                 .catch((error) => console.log(error));
         },
 
