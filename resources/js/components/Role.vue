@@ -5,7 +5,7 @@
                 <div
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
-                    <h3>Users</h3>
+                    <h3>Roles</h3>
 
                     <button type="button" class="btn btn-new" @click="newModal">
                         <i class="fas fa-plus mr-1" aria-hidden="true"></i>
@@ -20,16 +20,17 @@
                                 <tr>
                                     <th class="th-sm" scope="col">Actions</th>
                                     <th class="th-lg" scope="col">Name</th>
-                                    <th class="th-lg" scope="col">Email</th>
-                                    <th class="th-sm" scope="col">Role</th>
+                                    <th class="th-lg" scope="col">
+                                        Description
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="user in users">
+                                <tr v-for="role in roles">
                                     <th scope="row">
                                         <a
                                             href=""
-                                            @click.prevent="editModal(user)"
+                                            @click.prevent="editModal(role)"
                                             data-toggle="tooltip"
                                             data-placement="top"
                                             title="Edit"
@@ -41,7 +42,7 @@
                                         </a>
                                         <a
                                             href=""
-                                            @click.prevent="deleteUser(user.id)"
+                                            @click.prevent="deleteRole(role.id)"
                                             data-toggle="tooltip"
                                             data-placement="top"
                                             title="Delete"
@@ -52,9 +53,8 @@
                                             ></i>
                                         </a>
                                     </th>
-                                    <td>{{ user.name }}</td>
-                                    <td>{{ user.email }}</td>
-                                    <td>{{ user.role.name }}</td>
+                                    <td>{{ role.name }}</td>
+                                    <td>{{ role.description }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -79,14 +79,14 @@
                             class="modal-title"
                             id="addRecordLabel"
                         >
-                            Update the User
+                            Update the Role
                         </h5>
                         <h5
                             v-show="!editMode"
                             class="modal-title"
                             id="addRecordLabel"
                         >
-                            Add New User
+                            Add New Role
                         </h5>
                         <button
                             type="button"
@@ -102,7 +102,7 @@
 
                     <form
                         class="input-form"
-                        @submit.prevent="editMode ? updateUser() : createUser()"
+                        @submit.prevent="editMode ? updateRole() : createRole()"
                     >
                         <div class="modal-body">
                             <div class="form-group row">
@@ -128,73 +128,25 @@
                             <div class="form-group row">
                                 <label
                                     class="col-md-3 col-form-label"
-                                    for="email"
-                                    >Email
+                                    for="description"
+                                    >Description
                                     <strong class="text-danger"> *</strong>
                                 </label>
 
                                 <div class="col-md-9">
-                                    <input
-                                        id="email"
-                                        v-model="form.email"
-                                        type="email"
-                                        name="email"
+                                    <textarea
+                                        id="description"
                                         class="form-control"
-                                        placeholder="Email"
-                                    />
-                                    <HasError :form="form" field="email" />
-                                </div>
-                            </div>
-                            <div v-show="!editMode" class="form-group row">
-                                <label
-                                    class="col-md-3 col-form-label"
-                                    for="password"
-                                    >Password
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-9">
-                                    <input
-                                        id="password"
-                                        v-model="form.password"
-                                        type="password"
-                                        name="password"
-                                        class="form-control"
-                                    />
-                                    <HasError :form="form" field="password" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    class="col-md-3 col-form-label"
-                                    for="role_id"
-                                    >Role
-                                    <strong class="text-danger"> *</strong>
-                                </label>
-
-                                <div class="col-md-9">
-                                    <select
-                                        class="custom-select form-control"
-                                        name="role_id"
-                                        id="role_id"
-                                        v-model="form.role_id"
+                                        name="description"
+                                        rows="3"
+                                        cols="50"
+                                        v-model="form.description"
                                     >
-                                        <option
-                                            value=""
-                                            disabled
-                                            selected
-                                            hidden
-                                        >
-                                            Select Role
-                                        </option>
-                                        <option
-                                            v-for="role in roles"
-                                            :value="role.id"
-                                        >
-                                            {{ role.name }}
-                                        </option>
-                                    </select>
-                                    <HasError :form="form" field="role_id" />
+                                    </textarea>
+                                    <HasError
+                                        :form="form"
+                                        field="description"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -236,14 +188,11 @@ export default {
 
     data: () => ({
         editMode: false,
-        users: [],
         roles: [],
         form: new Form({
             id: "",
             name: "",
-            email: "",
-            password: "",
-            role_id: "",
+            description: "",
         }),
     }),
 
@@ -256,32 +205,25 @@ export default {
             $("#addRecord").modal("show");
         },
 
-        editModal(user) {
+        editModal(role) {
             this.editMode = true;
             this.form.clear();
             this.form.reset();
             this.loadRoles();
             $("#addRecord").modal("show");
-            this.form.fill(user);
-        },
-
-        loadUsers() {
-            axios
-                .get("/api/user")
-                .then(({ data }) => (this.users = data.data))
-                .catch((error) => console.log(error));
+            this.form.fill(role);
         },
 
         loadRoles() {
             axios
                 .get("/api/role")
-                .then(({ data }) => (this.roles = data.data))
+                .then((response) => (this.roles = response.data.roles))
                 .catch((error) => console.log(error));
         },
 
-        createUser() {
+        createRole() {
             this.form
-                .post("/api/user")
+                .post("/api/role")
                 .then(() => {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
@@ -289,10 +231,10 @@ export default {
                 .catch((error) => console.log(error));
         },
 
-        deleteUser(id) {
+        deleteRole(id) {
             if (confirm("Are you sure you want to delete?")) {
                 axios
-                    .delete("/api/user/" + id)
+                    .delete("/api/role/" + id)
                     .then(() => {
                         Fire.$emit("reloadRecords");
                     })
@@ -300,9 +242,9 @@ export default {
             }
         },
 
-        updateUser() {
+        updateRole() {
             this.form
-                .put("/api/user/" + this.form.id)
+                .put("/api/role/" + this.form.id)
                 .then(() => {
                     $("#addRecord").modal("hide");
                     Fire.$emit("reloadRecords");
@@ -312,9 +254,9 @@ export default {
     },
 
     mounted() {
-        this.loadUsers();
+        this.loadRoles();
         Fire.$on("reloadRecords", () => {
-            this.loadUsers();
+            this.loadRoles();
         });
     },
 };

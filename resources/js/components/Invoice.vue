@@ -115,7 +115,7 @@
             aria-hidden="true"
         >
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content px-2">
+                <div class="modal-content">
                     <div class="modal-header">
                         <h5
                             v-show="editMode"

@@ -3,7 +3,9 @@
 use App\Http\Controllers\Api\ClientController;
 use App\Http\Controllers\Api\InvoiceController;
 use App\Http\Controllers\Api\IssueController;
+use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\TaskController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
@@ -51,6 +53,18 @@ Route::middleware('auth:api')->get('/project', function (Request $request) {
     return $request->project();
 });
 Route::apiResource('project', ProjectController::class);
+
+/* PERMISSION */
+Route::middleware('auth:api')->get('/permission', function (Request $request) {
+    return $request->permission();
+});
+Route::apiResource('permission', PermissionController::class);
+
+/* ROLE */
+Route::middleware('auth:api')->get('/role', function (Request $request) {
+    return $request->role();
+});
+Route::apiResource('role', RoleController::class);
 
 /* TASK */
 Route::middleware('auth:api')->get('/task', function (Request $request) {

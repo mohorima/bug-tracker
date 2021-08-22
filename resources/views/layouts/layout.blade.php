@@ -10,11 +10,15 @@
     <title>@yield('title','Bugtrack')</title>
 
     <!-- Icons -->
-    <!-- <link rel="icon" href="{{ asset('/images/logo-sm-m.png') }}" type="image/x-icon"> -->
+    <link rel="icon" href="{{ asset('/images/logo.svg') }}" type="image/x-icon">
     <script src="https://kit.fontawesome.com/e74b9436ab.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body>

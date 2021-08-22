@@ -13,6 +13,16 @@
                     </button>
                 </div>
 
+                <div class="row">
+                    <div class="col-md-2">
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            class="form-control"
+                        />
+                    </div>
+                </div>
+
                 <div class="card card-table">
                     <div class="table-responsive">
                         <table class="table table-hover">
@@ -127,7 +137,7 @@
             aria-hidden="true"
         >
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content px-2">
+                <div class="modal-content">
                     <div class="modal-header">
                         <h5
                             v-show="editMode"

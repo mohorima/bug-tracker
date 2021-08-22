@@ -13,49 +13,49 @@
     
         <li class="nav-item">
             <router-link to="/dashboard" class="nav-link">
-                <i class="fas fa-tachometer-alt mr-2 link-fa"></i>
+                <i class="fas fa-tachometer-alt mr-3 link-fa"></i>
                 Dashboard
             </router-link>
         </li>  
     
         <li class="nav-item">
             <router-link to="/project" class="nav-link">
-                <i class="fas fa-briefcase mr-2 link-fa"></i>
+                <i class="fas fa-briefcase mr-3 link-fa"></i>
                 Projects
             </router-link>
         </li> 
   
         <li class="nav-item">
             <router-link to="/task" class="nav-link">
-                <i class="fas fa-tasks mr-2 link-fa"></i>
+                <i class="fas fa-tasks mr-3 link-fa"></i>
                 Tasks
             </router-link>
         </li> 
   
         <li class="nav-item">
             <router-link to="/issue" class="nav-link">
-                <i class="fas fa-bug mr-2 link-fa"></i>
+                <i class="fas fa-bug mr-3 link-fa"></i>
                 Issues
             </router-link>
         </li> 
   
         <li class="nav-item">
             <router-link to="/client" class="nav-link">
-                <i class="fas fa-handshake mr-2 link-fa"></i>
+                <i class="fas fa-handshake mr-3 link-fa"></i>
                 Clients
             </router-link>
         </li> 
   
         <li class="nav-item">
             <router-link to="/invoice" class="nav-link">
-                <i class="fas fa-file-invoice-dollar mr-2 link-fa"></i>
+                <i class="fas fa-file-invoice-dollar mr-3 link-fa"></i>
                 Invoices
             </router-link>
         </li> 
 
         <li class="nav-item">
             <a class="nav-link" href="">
-              <i class="fas fa-chart-pie mr-2 link-fa"></i>
+              <i class="fas fa-chart-pie mr-3 link-fa"></i>
               Analytics
             </a>
         </li>
@@ -74,23 +74,23 @@
 
         <li class="nav-item">
             <router-link to="/user" class="nav-link">
-                <i class="fas fa-user-friends mr-2 link-fa"></i>
+                <i class="fas fa-user-friends mr-3 link-fa"></i>
                 Users
             </router-link>
         </li> 
 
         <li class="nav-item">
-            <a class="nav-link" href="{{route('roleindex')}}">
-            <i class="fas fa-user-shield mr-2 link-fa"></i>
-            Roles
-            </a>
+            <router-link to="/role" class="nav-link">
+                <i class="fas fa-user-shield mr-3 link-fa"></i>
+                Roles
+            </router-link>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{route('permissionindex')}}">
-            <i class="fas fa-shield-alt mr-2 link-fa"></i>
-            Permissions
-            </a>
+            <router-link to="/permission" class="nav-link">
+                <i class="fas fa-shield-alt mr-3 link-fa"></i>
+                Permissions
+            </router-link>
         </li>
 
         </ul>

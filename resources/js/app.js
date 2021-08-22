@@ -29,6 +29,14 @@ let routes = [
         component: require("./components/Project.vue").default,
     },
     {
+        path: "/permission",
+        component: require("./components/Permission.vue").default,
+    },
+    {
+        path: "/role",
+        component: require("./components/Role.vue").default,
+    },
+    {
         path: "/task",
         component: require("./components/Task.vue").default,
     },

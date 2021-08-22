@@ -42,9 +42,10 @@ h3 {
 }
 
 h5 {
-    letter-spacing: 0.03rem;
+    letter-spacing: 0.04rem;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.09rem;
+    color: $dark-main-clr;
 }
 
 .fancy-text {
@@ -106,17 +107,18 @@ h6 {
 }
 
 .form-group {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 .col-form-label {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 .input-form {
     label {
         font-size: 0.8rem;
-        letter-spacing: 0.02rem;
-        color: $dark-grey;
+        letter-spacing: 0.03rem;
+        color: $main-clr;
+        font-weight: 600;
     }
 
     input[type="text"],
@@ -145,6 +147,13 @@ h6 {
             -ms-transition: all 0.3s ease;
             -o-transition: all 0.3s ease;
         }
+    }
+
+    .input-group-text {
+        background-color: $shadow-grey;
+        border: none;
+        box-shadow: $shadow-grey 0 0 0 0.05rem;
+        border-radius: 0.3rem;
     }
 }
 
@@ -183,15 +192,25 @@ h6 {
     }
 }
 
+/*---------------------MODAL---------------------*/
+.modal-content {
+    padding: 0.8rem;
+}
+.modal-footer,
+.modal-header {
+    border: none;
+}
+
 /*---------------------BUTTON---------------------*/
 .btn-submit {
     padding: 0.7rem 1.2rem;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.05rem;
     font-weight: 500;
     min-width: 140px;
-    border-radius: 0.6rem;
+    border-radius: 0.8rem;
     background-color: $main-clr;
     color: white;
+    text-transform: uppercase;
 
     a {
         text-decoration: none;
@@ -302,10 +321,14 @@ thead {
     }
 }
 
+hr {
+    border-top: 1px solid rgba(149, 182, 138, 0.137);
+}
+
 /*---------------------NAVIGATION---------------------*/
 .sidenav {
     min-height: 100vh;
-    background-color: $light-grey;
+    background-color: $dark-main-clr;
     height: 100%;
     width: 300px;
     position: fixed;
@@ -316,18 +339,18 @@ thead {
 
     .nav-link {
         text-decoration: none;
-        color: $dark-main-clr;
-        padding: 0.9rem 1.5rem 0.5rem 1.5rem;
-        /*font-size: 0.9rem;*/
+        color: $shadow-grey;
+        padding: 1rem 1.6rem;
+        border-radius: 0 30px 30px 0;
+        margin-right: 30px;
+        font-size: 0.8rem;
         font-weight: 400;
-        letter-spacing: 0.03rem;
-
-        i {
-            color: $light-main-clr;
-        }
+        letter-spacing: 0.04rem;
+        transition: all 250ms ease;
 
         &:hover {
-            color: $main-clr;
+            color: $dark-main-clr;
+            background-color: $light-grey;
 
             .link-fa {
                 color: $dark-main-clr;
@@ -337,7 +360,9 @@ thead {
 }
 
 .active {
-    font-weight: 500 !important;
+    font-weight: 600 !important;
+    color: $main-clr !important;
+    background-color: $light-grey;
 
     .link-fa {
         color: $main-clr !important;
@@ -351,6 +376,7 @@ thead {
     letter-spacing: 0.05rem;
     text-transform: uppercase;
     font-weight: 400;
+    color: $shadow-grey;
     cursor: pointer;
 }
 

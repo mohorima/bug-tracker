@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;
+
+0,400;0,500;0,600;0,700;1,400&display=swap);
 @charset "UTF-8";
 
 :root {
@@ -10963,7 +10965,7 @@ h3 {
   margin: 0;
   padding: 0;
   font-size: 1.5rem;
-  color: #535153;
+  color: #4f664f;
 }
 
 @media screen and (max-width: 992px) {
@@ -10973,9 +10975,10 @@ h3 {
 }
 
 h5 {
-  letter-spacing: 0.03rem;
+  letter-spacing: 0.04rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.09rem;
+  color: #596152;
 }
 
 .fancy-text {
@@ -10997,7 +11000,7 @@ h6 {
 .text-title {
   font-size: 1rem;
   font-weight: 500;
-  color: #535153;
+  color: #4f664f;
   width: 210px;
   word-wrap: break-word;
   word-break: keep-all;
@@ -11043,17 +11046,18 @@ h6 {
 }
 
 .form-group {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .col-form-label {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .input-form label {
   font-size: 0.8rem;
-  letter-spacing: 0.02rem;
-  color: #535153;
+  letter-spacing: 0.03rem;
+  color: #829769;
+  font-weight: 600;
 }
 
 .input-form input[type=text],
@@ -11065,7 +11069,7 @@ h6 {
 .input-form optgroup,
 .input-form textarea {
   border: none;
-  box-shadow: #f5f4f1 0 0 0 0.05rem;
+  box-shadow: #f0f1f0 0 0 0 0.05rem;
   border-radius: 0.3rem;
   resize: none;
   background-color: #fcfcfc;
@@ -11091,13 +11095,20 @@ h6 {
   -o-transition: all 0.3s ease;
 }
 
+.input-form .input-group-text {
+  background-color: #f0f1f0;
+  border: none;
+  box-shadow: #f0f1f0 0 0 0 0.05rem;
+  border-radius: 0.3rem;
+}
+
 .custom-file-label {
   padding: 9px 12px !important;
   height: auto !important;
   font-weight: 500 !important;
   color: #888888 !important;
   border: none !important;
-  box-shadow: #f5f4f1 0 0 0 0.05rem !important;
+  box-shadow: #f0f1f0 0 0 0 0.05rem !important;
   border-radius: 0.3rem !important;
   margin: 0 !important;
 }
@@ -11113,13 +11124,13 @@ h6 {
   background-color: #fcfcfc;
   border-left: inherit;
   border: none !important;
-  box-shadow: #f5f4f1 0 0 0 0.05rem !important;
+  box-shadow: #f0f1f0 0 0 0 0.05rem !important;
   border-radius: 0.3rem !important;
   margin: 0 !important;
 }
 
 .vertical-line {
-  border-right: 1px solid #f5f4f1;
+  border-right: 1px solid #f0f1f0;
 }
 
 @media only screen and (max-width: 992px) {
@@ -11128,16 +11139,28 @@ h6 {
   }
 }
 
+/*---------------------MODAL---------------------*/
+
+.modal-content {
+  padding: 0.8rem;
+}
+
+.modal-footer,
+.modal-header {
+  border: none;
+}
+
 /*---------------------BUTTON---------------------*/
 
 .btn-submit {
   padding: 0.7rem 1.2rem;
-  letter-spacing: 0.04rem;
+  letter-spacing: 0.05rem;
   font-weight: 500;
   min-width: 140px;
-  border-radius: 0.6rem;
+  border-radius: 0.8rem;
   background-color: #829769;
   color: white;
+  text-transform: uppercase;
 }
 
 .btn-submit a {
@@ -11147,7 +11170,7 @@ h6 {
 
 .btn-submit:hover {
   color: white;
-  background: #5a6e49;
+  background: #596152;
 }
 
 .btn-new {
@@ -11205,11 +11228,11 @@ h6 {
 
 table {
   margin: 0 !important;
-  color: #535153 !important;
+  color: #4f664f !important;
 }
 
 thead {
-  color: #535153;
+  color: #4f664f;
 }
 
 .table thead th {
@@ -11245,18 +11268,22 @@ thead {
   font-weight: 500;
   letter-spacing: 0.04rem;
   text-transform: uppercase;
-  color: #5a6e49;
+  color: #596152;
 }
 
 .breadcrumb-item a {
   color: #829769;
 }
 
+hr {
+  border-top: 1px solid rgba(149, 182, 138, 0.137);
+}
+
 /*---------------------NAVIGATION---------------------*/
 
 .sidenav {
   min-height: 100vh;
-  background-color: #fcfcfc;
+  background-color: #596152;
   height: 100%;
   width: 300px;
   position: fixed;
@@ -11268,27 +11295,29 @@ thead {
 
 .sidenav .nav-link {
   text-decoration: none;
-  color: #5a6e49;
-  padding: 0.9rem 1.5rem 0.5rem 1.5rem;
-  /*font-size: 0.9rem;*/
+  color: #f0f1f0;
+  padding: 1rem 1.6rem;
+  border-radius: 0 30px 30px 0;
+  margin-right: 30px;
+  font-size: 0.8rem;
   font-weight: 400;
-  letter-spacing: 0.03rem;
-}
-
-.sidenav .nav-link i {
-  color: #dde7ca;
+  letter-spacing: 0.04rem;
+  transition: all 250ms ease;
 }
 
 .sidenav .nav-link:hover {
-  color: #829769;
+  color: #596152;
+  background-color: #fcfcfc;
 }
 
 .sidenav .nav-link:hover .link-fa {
-  color: #5a6e49;
+  color: #596152;
 }
 
 .active {
-  font-weight: 500 !important;
+  font-weight: 600 !important;
+  color: #829769 !important;
+  background-color: #fcfcfc;
 }
 
 .active .link-fa {
@@ -11302,6 +11331,7 @@ thead {
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   font-weight: 400;
+  color: #f0f1f0;
   cursor: pointer;
 }
 
@@ -11330,7 +11360,7 @@ thead {
 }
 
 .navbar .opennav-btn:hover {
-  color: #5a6e49 !important;
+  color: #596152 !important;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -11360,9 +11390,9 @@ thead {
 }
 
 .page-item.active .page-link {
-  background-color: #f5f4f1 !important;
-  color: #5a6e49 !important;
-  border-color: #f5f4f1 !important;
+  background-color: #f0f1f0 !important;
+  color: #596152 !important;
+  border-color: #f0f1f0 !important;
 }
 
 
