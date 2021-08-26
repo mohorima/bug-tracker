@@ -25,8 +25,12 @@ class IssueController extends Controller
      */
     public function index()
     {
+        $searchTerm = request('keywords');
         return Issue::with('project')
             ->with('assignee')
+            ->when($searchTerm, function ($query, $searchTerm) {
+                return $query->where('title', 'LIKE', '%' . $searchTerm . '%');
+            })
             ->latest()
             ->paginate(25);
     }

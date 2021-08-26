@@ -7,19 +7,34 @@
                 >
                     <h3>Issues</h3>
 
-                    <button type="button" class="btn btn-new" @click="newModal">
-                        <i class="fas fa-plus mr-1" aria-hidden="true"></i>
-                        Add
-                    </button>
-                </div>
+                    <div class="d-flex align-items-center">
+                        <div class="input-group input-group-search">
+                            <div class="input-group-prepend">
+                                <div
+                                    class="input-group-text input-group-prepend-search"
+                                >
+                                    <i
+                                        class="fas fa-search"
+                                        aria-hidden="true"
+                                    ></i>
+                                </div>
+                            </div>
+                            <input
+                                type="text"
+                                placeholder="Search"
+                                class="form-control search-box"
+                                v-model="keywords"
+                            />
+                        </div>
 
-                <div class="row">
-                    <div class="col-md-2">
-                        <input
-                            type="text"
-                            placeholder="Search"
-                            class="form-control"
-                        />
+                        <button
+                            type="button"
+                            class="btn btn-new"
+                            @click="newModal"
+                        >
+                            <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                            New Issue
+                        </button>
                     </div>
                 </div>
 
@@ -32,13 +47,14 @@
                                     <th class="th-lg" scope="col">Title</th>
                                     <th class="th-sm" scope="col">Severity</th>
                                     <th class="th-sm" scope="col">Status</th>
+                                    <th class="th-sm" scope="col">Type</th>
                                     <th class="th-sm" scope="col">Due Date</th>
                                     <th class="th-sm" scope="col">Project</th>
                                     <th class="th-sm" scope="col">Assignee</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="issue in issues">
+                                <tr class="trow" v-for="issue in issues">
                                     <th scope="row">
                                         <a
                                             href=""
@@ -74,10 +90,6 @@
                                         <div class="text-small">
                                             {{ issue.description }}
                                         </div>
-                                        <span
-                                            class="badge bg-light text-faded to-uppercase"
-                                            >{{ issue.type }}
-                                        </span>
                                     </td>
                                     <td>
                                         <span
@@ -115,6 +127,13 @@
                                                     ? "OPEN"
                                                     : "CLOSED"
                                             }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span
+                                            class="badge bg-light text-faded to-uppercase"
+                                        >
+                                            {{ issue.type }}
                                         </span>
                                     </td>
                                     <td>{{ issue.dueDate }}</td>
@@ -159,7 +178,10 @@
                             data-dismiss="modal"
                             aria-label="Close"
                         >
-                            <span aria-hidden="true">&times;</span>
+                            <i
+                                class="fas fa-times-circle"
+                                aria-hidden="true"
+                            ></i>
                         </button>
                     </div>
 
@@ -439,6 +461,7 @@ export default {
         editMode: false,
         projects: [],
         issues: [],
+        keywords: null,
         form: new Form({
             id: "",
             title: "",
@@ -452,7 +475,20 @@ export default {
         }),
     }),
 
+    watch: {
+        keywords(after, before) {
+            this.loadIssues();
+        },
+    },
+
     methods: {
+        // fetch() {
+        //     axios
+        //         .get("/api/issue", { params: { keywords: this.keywords } })
+        //         .then(({ data }) => (this.issues = data.data))
+        //         .catch((error) => {});
+        // },
+
         newModal() {
             this.editMode = false;
             this.form.clear();
@@ -472,7 +508,7 @@ export default {
 
         loadIssues() {
             axios
-                .get("/api/issue")
+                .get("/api/issue", { params: { keywords: this.keywords } })
                 .then(({ data }) => (this.issues = data.data))
                 .catch((error) => console.log(error));
         },

@@ -3358,6 +3358,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3898,6 +3904,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3910,6 +3938,7 @@ __webpack_require__.r(__webpack_exports__);
       editMode: false,
       projects: [],
       issues: [],
+      keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         title: "",
@@ -3923,7 +3952,18 @@ __webpack_require__.r(__webpack_exports__);
       })
     };
   },
+  watch: {
+    keywords: function keywords(after, before) {
+      this.loadIssues();
+    }
+  },
   methods: {
+    // fetch() {
+    //     axios
+    //         .get("/api/issue", { params: { keywords: this.keywords } })
+    //         .then(({ data }) => (this.issues = data.data))
+    //         .catch((error) => {});
+    // },
     newModal: function newModal() {
       this.editMode = false;
       this.form.clear();
@@ -3942,7 +3982,11 @@ __webpack_require__.r(__webpack_exports__);
     loadIssues: function loadIssues() {
       var _this = this;
 
-      axios.get("/api/issue").then(function (_ref) {
+      axios.get("/api/issue", {
+        params: {
+          keywords: this.keywords
+        }
+      }).then(function (_ref) {
         var data = _ref.data;
         return _this.issues = data.data;
       })["catch"](function (error) {
@@ -43712,10 +43756,10 @@ var render = function() {
               },
               [
                 _c("i", {
-                  staticClass: "fas fa-plus mr-1",
+                  staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    Add\n                ")
+                _vm._v("\n                    New Client\n                ")
               ]
             )
           ]
@@ -45392,7 +45436,12 @@ var staticRenderFns = [
           "aria-label": "Close"
         }
       },
-      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      [
+        _c("i", {
+          staticClass: "fas fa-times-circle",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
     )
   },
   function() {
@@ -45966,10 +46015,10 @@ var render = function() {
               },
               [
                 _c("i", {
-                  staticClass: "fas fa-plus mr-1",
+                  staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    Add\n                ")
+                _vm._v("\n                    New Invoice\n                ")
               ]
             )
           ]
@@ -46108,13 +46157,24 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("td", [
+                      _c("span", { staticClass: "badge bg-light text-faded" }, [
+                        _vm._v(
+                          "\n                                        BILL\n                                    "
+                        )
+                      ]),
                       _vm._v(
-                        "\n                                    Bill - " +
+                        "\n                                    " +
                           _vm._s(invoice.billDate)
                       ),
                       _c("br"),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "badge bg-light text-faded" }, [
+                        _vm._v(
+                          "\n                                        DUE\n                                    "
+                        )
+                      ]),
                       _vm._v(
-                        "\n                                    Due - " +
+                        "\n                                    " +
                           _vm._s(invoice.dueDate) +
                           "\n                                "
                       )
@@ -46796,7 +46856,12 @@ var staticRenderFns = [
           "aria-label": "Close"
         }
       },
-      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      [
+        _c("i", {
+          staticClass: "fas fa-times-circle",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
     )
   },
   function() {
@@ -46951,25 +47016,53 @@ var render = function() {
           [
             _c("h3", [_vm._v("Issues")]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-new",
-                attrs: { type: "button" },
-                on: { click: _vm.newModal }
-              },
-              [
-                _c("i", {
-                  staticClass: "fas fa-plus mr-1",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v("\n                    Add\n                ")
-              ]
-            )
+            _c("div", { staticClass: "d-flex align-items-center" }, [
+              _c("div", { staticClass: "input-group input-group-search" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.keywords,
+                      expression: "keywords"
+                    }
+                  ],
+                  staticClass: "form-control search-box",
+                  attrs: { type: "text", placeholder: "Search" },
+                  domProps: { value: _vm.keywords },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.keywords = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-new",
+                  attrs: { type: "button" },
+                  on: { click: _vm.newModal }
+                },
+                [
+                  _c("i", {
+                    staticClass: "fas fa-plus mr-2",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(
+                    "\n                        New Issue\n                    "
+                  )
+                ]
+              )
+            ])
           ]
         ),
-        _vm._v(" "),
-        _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "card card-table" }, [
           _c("div", { staticClass: "table-responsive" }, [
@@ -46979,7 +47072,7 @@ var render = function() {
               _c(
                 "tbody",
                 _vm._l(_vm.issues, function(issue) {
-                  return _c("tr", [
+                  return _c("tr", { staticClass: "trow" }, [
                     _c("th", { attrs: { scope: "row" } }, [
                       _c(
                         "a",
@@ -47045,20 +47138,7 @@ var render = function() {
                             _vm._s(issue.description) +
                             "\n                                    "
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "span",
-                        {
-                          staticClass: "badge bg-light text-faded to-uppercase"
-                        },
-                        [
-                          _vm._v(
-                            _vm._s(issue.type) +
-                              "\n                                    "
-                          )
-                        ]
-                      )
+                      ])
                     ]),
                     _vm._v(" "),
                     _c("td", [
@@ -47111,6 +47191,22 @@ var render = function() {
                               _vm._s(
                                 issue.status === "open" ? "OPEN" : "CLOSED"
                               ) +
+                              "\n                                    "
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c(
+                        "span",
+                        {
+                          staticClass: "badge bg-light text-faded to-uppercase"
+                        },
+                        [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(issue.type) +
                               "\n                                    "
                           )
                         ]
@@ -47798,13 +47894,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-2" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", placeholder: "Search" }
-        })
-      ])
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c(
+        "div",
+        { staticClass: "input-group-text input-group-prepend-search" },
+        [
+          _c("i", {
+            staticClass: "fas fa-search",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
     ])
   },
   function() {
@@ -47827,6 +47927,10 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
           _vm._v("Status")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+          _vm._v("Type")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
@@ -47857,7 +47961,12 @@ var staticRenderFns = [
           "aria-label": "Close"
         }
       },
-      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      [
+        _c("i", {
+          staticClass: "fas fa-times-circle",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
     )
   },
   function() {
@@ -47997,10 +48106,10 @@ var render = function() {
               },
               [
                 _c("i", {
-                  staticClass: "fas fa-plus mr-1",
+                  staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    Add\n                ")
+                _vm._v("\n                    New Permission\n                ")
               ]
             )
           ]
@@ -48334,7 +48443,12 @@ var staticRenderFns = [
           "aria-label": "Close"
         }
       },
-      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      [
+        _c("i", {
+          staticClass: "fas fa-times-circle",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
     )
   },
   function() {
@@ -48407,10 +48521,10 @@ var render = function() {
               },
               [
                 _c("i", {
-                  staticClass: "fas fa-plus mr-1",
+                  staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    Add\n                ")
+                _vm._v("\n                    New Project\n                ")
               ]
             )
           ]
@@ -49449,7 +49563,12 @@ var staticRenderFns = [
           "aria-label": "Close"
         }
       },
-      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      [
+        _c("i", {
+          staticClass: "fas fa-times-circle",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
     )
   },
   function() {
@@ -49573,10 +49692,10 @@ var render = function() {
               },
               [
                 _c("i", {
-                  staticClass: "fas fa-plus mr-1",
+                  staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    Add\n                ")
+                _vm._v("\n                    New Role\n                ")
               ]
             )
           ]
@@ -49908,7 +50027,12 @@ var staticRenderFns = [
           "aria-label": "Close"
         }
       },
-      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      [
+        _c("i", {
+          staticClass: "fas fa-times-circle",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
     )
   },
   function() {
@@ -49981,10 +50105,10 @@ var render = function() {
               },
               [
                 _c("i", {
-                  staticClass: "fas fa-plus mr-1",
+                  staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    Add\n                ")
+                _vm._v("\n                    New Task\n                ")
               ]
             )
           ]
@@ -50863,7 +50987,12 @@ var staticRenderFns = [
           "aria-label": "Close"
         }
       },
-      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      [
+        _c("i", {
+          staticClass: "fas fa-times-circle",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
     )
   },
   function() {
@@ -50990,10 +51119,10 @@ var render = function() {
               },
               [
                 _c("i", {
-                  staticClass: "fas fa-plus mr-1",
+                  staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    Add\n                ")
+                _vm._v("\n                    New User\n                ")
               ]
             )
           ]
@@ -51468,7 +51597,12 @@ var staticRenderFns = [
           "aria-label": "Close"
         }
       },
-      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      [
+        _c("i", {
+          staticClass: "fas fa-times-circle",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
     )
   },
   function() {

@@ -10950,8 +10950,8 @@ body {
   padding: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: white;
   font-family: "Poppins", sans-serif;
+  background-color: #f6f7f2;
 }
 
 #app {
@@ -10982,7 +10982,7 @@ h5 {
 }
 
 .fancy-text {
-  color: #829769;
+  color: #8ca86a;
   font-weight: 600;
   font-size: 1.5rem;
   letter-spacing: 0.03rem;
@@ -10990,7 +10990,7 @@ h5 {
 }
 
 h6 {
-  color: #829769;
+  color: #8ca86a;
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.03rem;
@@ -11033,6 +11033,9 @@ h6 {
 
 .card {
   border-radius: 1rem;
+  background-color: #fafafa;
+  border: none;
+  box-shadow: 0px 0px 15px -6px #e9e9e9;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
@@ -11056,7 +11059,7 @@ h6 {
 .input-form label {
   font-size: 0.8rem;
   letter-spacing: 0.03rem;
-  color: #829769;
+  color: #8ca86a;
   font-weight: 600;
 }
 
@@ -11069,7 +11072,7 @@ h6 {
 .input-form optgroup,
 .input-form textarea {
   border: none;
-  box-shadow: #f0f1f0 0 0 0 0.05rem;
+  box-shadow: #f6f7f2 0 0 0 0.05rem;
   border-radius: 0.3rem;
   resize: none;
   background-color: #fcfcfc;
@@ -11096,9 +11099,9 @@ h6 {
 }
 
 .input-form .input-group-text {
-  background-color: #f0f1f0;
+  background-color: #f6f7f2;
   border: none;
-  box-shadow: #f0f1f0 0 0 0 0.05rem;
+  box-shadow: #f6f7f2 0 0 0 0.05rem;
   border-radius: 0.3rem;
 }
 
@@ -11108,7 +11111,7 @@ h6 {
   font-weight: 500 !important;
   color: #888888 !important;
   border: none !important;
-  box-shadow: #f0f1f0 0 0 0 0.05rem !important;
+  box-shadow: #f6f7f2 0 0 0 0.05rem !important;
   border-radius: 0.3rem !important;
   margin: 0 !important;
 }
@@ -11117,32 +11120,58 @@ h6 {
   padding: 9px 12px !important;
   height: auto !important;
   font-weight: 600 !important;
-  color: #829769 !important;
+  color: #8ca86a !important;
   text-transform: uppercase;
   display: block;
   content: "Browse";
   background-color: #fcfcfc;
   border-left: inherit;
   border: none !important;
-  box-shadow: #f0f1f0 0 0 0 0.05rem !important;
+  box-shadow: #f6f7f2 0 0 0 0.05rem !important;
   border-radius: 0.3rem !important;
   margin: 0 !important;
 }
 
-.vertical-line {
-  border-right: 1px solid #f0f1f0;
+.search-box {
+  min-width: 200px;
+  border-radius: 15px;
+  resize: none;
+  background-color: #fafafa;
+  border: none;
+  box-shadow: 0px 0px 15px -6px #e9e9e9;
+  padding: 1rem;
 }
 
-@media only screen and (max-width: 992px) {
-  .vertical-line {
-    border-right: none;
-  }
+.search-box:focus {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: none;
+  color: #242424;
+  background-color: white !important;
+}
+
+.input-group-search:focus-within {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: #dde7ca 0 0 0 0.07rem !important;
+  color: #242424;
+  background-color: white !important;
+}
+
+.input-group-prepend-search {
+  background-color: #fafafa;
+  border: none;
+  box-shadow: 0px 0px 15px -6px #e9e9e9;
+  border-radius: 15px;
 }
 
 /*---------------------MODAL---------------------*/
 
 .modal-content {
-  padding: 0.8rem;
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 .modal-footer,
@@ -11157,8 +11186,8 @@ h6 {
   letter-spacing: 0.05rem;
   font-weight: 500;
   min-width: 140px;
-  border-radius: 0.8rem;
-  background-color: #829769;
+  border-radius: 1.5rem;
+  background-color: #8ca86a;
   color: white;
   text-transform: uppercase;
 }
@@ -11174,8 +11203,12 @@ h6 {
 }
 
 .btn-new {
-  color: #829769;
+  color: #8ca86a;
   font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 140px;
 }
 
 .btn-control {
@@ -11184,7 +11217,7 @@ h6 {
 }
 
 .btn-icon {
-  color: #829769;
+  color: #8ca86a;
 }
 
 .btn-icon:focus {
@@ -11199,20 +11232,25 @@ h6 {
   font-size: 1rem;
 }
 
+.fa-times-circle {
+  font-size: 1.3rem;
+  color: #596152;
+}
+
 .table-fa {
   font-size: 1.04rem;
   text-decoration: none;
-  color: #829769;
+  color: #8ca86a;
 }
 
 .back-fa {
   font-size: 1.8rem;
   text-decoration: none;
-  color: #829769;
+  color: #8ca86a;
 }
 
 .back-fa:hover {
-  color: #5b6a49;
+  color: #657d49;
 }
 
 .link-fa {
@@ -11229,18 +11267,38 @@ h6 {
 table {
   margin: 0 !important;
   color: #4f664f !important;
+  border-collapse: separate;
+  border-spacing: 0 10px;
 }
 
 thead {
   color: #4f664f;
 }
 
+th:first-child {
+  padding-left: 30px !important;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+td:last-child {
+  padding-right: 30px !important;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.table tbody th,
+.table tbody td {
+  border: none;
+  padding: 20px 10px;
+  background-color: white;
+}
+
 .table thead th {
   border-bottom: none;
   border-top: none;
   font-size: 0.8rem;
-  letter-spacing: 0.05rem;
-  font-weight: 400;
+  letter-spacing: 0.04rem;
   vertical-align: middle;
 }
 
@@ -11252,9 +11310,8 @@ thead {
   min-width: 230px;
 }
 
-.table-hover tbody tr:hover td,
-.table-hover tbody tr:hover th {
-  background: #fcfcfc;
+.table-hover tbody tr:hover {
+  box-shadow: 0px 0px 15px -8px #dadada;
 }
 
 /*---------------------BREADCRUMBS---------------------*/
@@ -11272,7 +11329,7 @@ thead {
 }
 
 .breadcrumb-item a {
-  color: #829769;
+  color: #8ca86a;
 }
 
 hr {
@@ -11295,7 +11352,7 @@ hr {
 
 .sidenav .nav-link {
   text-decoration: none;
-  color: #f0f1f0;
+  color: #f6f7f2;
   padding: 1rem 1.6rem;
   border-radius: 0 30px 30px 0;
   margin-right: 30px;
@@ -11316,12 +11373,12 @@ hr {
 
 .active {
   font-weight: 600 !important;
-  color: #829769 !important;
+  color: #8ca86a !important;
   background-color: #fcfcfc;
 }
 
 .active .link-fa {
-  color: #829769 !important;
+  color: #8ca86a !important;
 }
 
 .sidebar-heading {
@@ -11331,7 +11388,7 @@ hr {
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   font-weight: 400;
-  color: #f0f1f0;
+  color: #f6f7f2;
   cursor: pointer;
 }
 
@@ -11349,11 +11406,11 @@ hr {
 }
 
 .closebtn:hover {
-  color: #829769;
+  color: #8ca86a;
 }
 
 .navbar .opennav-btn {
-  color: #829769 !important;
+  color: #8ca86a !important;
   cursor: pointer;
   font-size: 24px;
   padding: 0 !important;
@@ -11386,13 +11443,13 @@ hr {
 }
 
 .page-link {
-  color: #829769 !important;
+  color: #8ca86a !important;
 }
 
 .page-item.active .page-link {
-  background-color: #f0f1f0 !important;
+  background-color: #f6f7f2 !important;
   color: #596152 !important;
-  border-color: #f0f1f0 !important;
+  border-color: #f6f7f2 !important;
 }
 
 

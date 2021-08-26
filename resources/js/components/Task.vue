@@ -8,8 +8,8 @@
                     <h3>Tasks</h3>
 
                     <button type="button" class="btn btn-new" @click="newModal">
-                        <i class="fas fa-plus mr-1" aria-hidden="true"></i>
-                        Add
+                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                        New Task
                     </button>
                 </div>
 
@@ -148,7 +148,7 @@
                             data-dismiss="modal"
                             aria-label="Close"
                         >
-                            <span aria-hidden="true">&times;</span>
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
                         </button>
                     </div>
 

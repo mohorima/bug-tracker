@@ -8,8 +8,8 @@
                     <h3>Invoices</h3>
 
                     <button type="button" class="btn btn-new" @click="newModal">
-                        <i class="fas fa-plus mr-1" aria-hidden="true"></i>
-                        Add
+                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                        New Invoice
                     </button>
                 </div>
 
@@ -94,8 +94,14 @@
                                         </span>
                                     </td>
                                     <td>
-                                        Bill - {{ invoice.billDate }}<br />
-                                        Due - {{ invoice.dueDate }}
+                                        <span class="badge bg-light text-faded">
+                                            BILL
+                                        </span>
+                                        {{ invoice.billDate }}<br />
+                                        <span class="badge bg-light text-faded">
+                                            DUE
+                                        </span>
+                                        {{ invoice.dueDate }}
                                     </td>
                                     <td>{{ invoice.project.title }}</td>
                                 </tr>
@@ -137,7 +143,7 @@
                             data-dismiss="modal"
                             aria-label="Close"
                         >
-                            <span aria-hidden="true">&times;</span>
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
                         </button>
                     </div>
 
