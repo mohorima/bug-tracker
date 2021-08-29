@@ -16,7 +16,13 @@ class RoleController extends Controller
 
     public function index()
     {
-        $role = Role::orderBy('id', 'ASC')->get();
+        $searchTerm = request('keywords');
+
+        $role = Role::orderBy('id', 'ASC')
+            ->when($searchTerm, function ($query, $searchTerm) {
+                return $query->where('name', 'LIKE', '%' . $searchTerm . '%');
+            })
+            ->get();
 
         return response()->json([
             'roles' => $role,

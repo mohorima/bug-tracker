@@ -16,7 +16,15 @@ class InvoiceController extends Controller
 
     public function index()
     {
+        $searchTerm = request('keywords');
         return Invoice::with('project')
+            ->when($searchTerm, function ($query, $searchTerm) {
+                return $query->where(
+                    'invoiceNum',
+                    'LIKE',
+                    '%' . $searchTerm . '%'
+                );
+            })
             ->latest()
             ->paginate(25);
     }

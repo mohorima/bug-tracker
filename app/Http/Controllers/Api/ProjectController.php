@@ -19,7 +19,14 @@ class ProjectController extends Controller
 
     public function index()
     {
+        $searchTerm = request('keywords');
+
         return Project::with('client')
+            ->when($searchTerm, function ($query, $searchTerm) {
+                return $query
+                    ->where('title', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
+            })
             ->latest()
             ->paginate();
 

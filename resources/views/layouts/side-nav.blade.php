@@ -2,7 +2,7 @@
   
     <ul class="nav flex-column">
   
-        <li class="nav-item d-flex align-items-center justify-content-between my-3">
+        <li class="nav-item d-flex align-items-center justify-content-between my-1">
             <a class="nav-link" href="{{ url('/') }}">
             <img src="{{ asset('/images/logo.svg') }}" alt="" height="30rem">
             </a>

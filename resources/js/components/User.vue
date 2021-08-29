@@ -1,16 +1,37 @@
 <template>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-lg-12 mt-4 mb-5">
+            <div class="col-lg-12 mt-3 mb-5">
                 <div
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
-                    <h3>Users</h3>
+                        <div class="input-group input-group-search">
+                            <div class="input-group-prepend">
+                                <div
+                                    class="input-group-text input-group-prepend-search"
+                                >
+                                    <i
+                                        class="fas fa-search"
+                                        aria-hidden="true"
+                                    ></i>
+                                </div>
+                            </div>
+                            <input
+                                type="text"
+                                placeholder="Search"
+                                class="form-control search-box"
+                                v-model="keywords"
+                            />
+                        </div>
 
-                    <button type="button" class="btn btn-new" @click="newModal">
-                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
-                        New User
-                    </button>
+                        <button
+                            type="button"
+                            class="btn btn-new"
+                            @click="newModal"
+                        >
+                            <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                            New User
+                        </button>
                 </div>
 
                 <div class="card card-table">
@@ -94,7 +115,10 @@
                             data-dismiss="modal"
                             aria-label="Close"
                         >
-                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                            <i
+                                class="fas fa-times-circle"
+                                aria-hidden="true"
+                            ></i>
                         </button>
                     </div>
 
@@ -238,6 +262,7 @@ export default {
         editMode: false,
         users: [],
         roles: [],
+        keywords: null,
         form: new Form({
             id: "",
             name: "",
@@ -246,6 +271,12 @@ export default {
             role_id: "",
         }),
     }),
+
+    watch: {
+        keywords(after, before) {
+            this.loadUsers();
+        },
+    },
 
     methods: {
         newModal() {
@@ -267,7 +298,7 @@ export default {
 
         loadUsers() {
             axios
-                .get("/api/user")
+                .get("/api/user", { params: { keywords: this.keywords } })
                 .then(({ data }) => (this.users = data.data))
                 .catch((error) => console.log(error));
         },

@@ -1,11 +1,25 @@
 <template>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-lg-12 mt-4 mb-5">
+            <div class="col-lg-12 mt-3 mb-5">
                 <div
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
-                    <h3>Clients</h3>
+                    <div class="input-group input-group-search">
+                        <div class="input-group-prepend">
+                            <div
+                                class="input-group-text input-group-prepend-search"
+                            >
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            class="form-control search-box"
+                            v-model="keywords"
+                        />
+                    </div>
 
                     <button type="button" class="btn btn-new" @click="newModal">
                         <i class="fas fa-plus mr-2" aria-hidden="true"></i>
@@ -118,7 +132,10 @@
                             data-dismiss="modal"
                             aria-label="Close"
                         >
-                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                            <i
+                                class="fas fa-times-circle"
+                                aria-hidden="true"
+                            ></i>
                         </button>
                     </div>
 
@@ -714,7 +731,8 @@ export default {
 
     data: () => ({
         editMode: false,
-        clients: {},
+        clients: [],
+        keywords: null,
         form: new Form({
             id: "",
             company: "",
@@ -728,7 +746,11 @@ export default {
         }),
     }),
 
-    computed: {},
+    watch: {
+        keywords(after, before) {
+            this.loadClients();
+        },
+    },
 
     methods: {
         newModal() {
@@ -748,7 +770,7 @@ export default {
 
         loadClients() {
             axios
-                .get("/api/client")
+                .get("/api/client", { params: { keywords: this.keywords } })
                 .then(({ data }) => (this.clients = data.data))
                 .catch((error) => console.log(error));
         },

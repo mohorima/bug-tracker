@@ -16,7 +16,13 @@ class PermissionController extends Controller
 
     public function index()
     {
-        return Permission::latest()->paginate(20);
+        $searchTerm = request('keywords');
+
+        return Permission::when($searchTerm, function ($query, $searchTerm) {
+            return $query->where('slug', 'LIKE', '%' . $searchTerm . '%');
+        })
+            ->latest()
+            ->paginate(20);
     }
 
     public function store(PermissionRequest $request)

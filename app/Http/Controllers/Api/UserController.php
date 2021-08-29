@@ -17,7 +17,14 @@ class UserController extends Controller
 
     public function index()
     {
+        $searchTerm = request('keywords');
+
         return User::with('role')
+            ->when($searchTerm, function ($query, $searchTerm) {
+                return $query
+                    ->where('name', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('email', 'LIKE', '%' . $searchTerm . '%');
+            })
             ->latest()
             ->paginate(25);
     }

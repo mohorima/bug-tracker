@@ -16,9 +16,17 @@ class TaskController extends Controller
 
     public function index()
     {
+        $searchTerm = request('keywords');
+
         return Task::with('project')
             ->with('user')
             ->with('collaborator')
+            ->when($searchTerm, function ($query, $searchTerm) {
+                return $query
+                    ->where('subject', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('priority', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
+            })
             ->latest()
             ->paginate(25);
     }

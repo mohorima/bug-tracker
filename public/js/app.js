@@ -2551,6 +2551,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2561,7 +2578,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       editMode: false,
-      clients: {},
+      clients: [],
+      keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         company: "",
@@ -2575,7 +2593,11 @@ __webpack_require__.r(__webpack_exports__);
       })
     };
   },
-  computed: {},
+  watch: {
+    keywords: function keywords(after, before) {
+      this.loadClients();
+    }
+  },
   methods: {
     newModal: function newModal() {
       this.editMode = false;
@@ -2593,7 +2615,11 @@ __webpack_require__.r(__webpack_exports__);
     loadClients: function loadClients() {
       var _this = this;
 
-      axios.get("/api/client").then(function (_ref) {
+      axios.get("/api/client", {
+        params: {
+          keywords: this.keywords
+        }
+      }).then(function (_ref) {
         var data = _ref.data;
         return _this.clients = data.data;
       })["catch"](function (error) {
@@ -3364,6 +3390,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3376,6 +3426,7 @@ __webpack_require__.r(__webpack_exports__);
       editMode: false,
       invoices: [],
       projects: [],
+      keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         billDate: "",
@@ -3389,7 +3440,11 @@ __webpack_require__.r(__webpack_exports__);
       })
     };
   },
-  computed: {},
+  watch: {
+    keywords: function keywords(after, before) {
+      this.loadInvoices();
+    }
+  },
   methods: {
     newModal: function newModal() {
       this.editMode = false;
@@ -3409,7 +3464,11 @@ __webpack_require__.r(__webpack_exports__);
     loadInvoices: function loadInvoices() {
       var _this = this;
 
-      axios.get("/api/invoice").then(function (_ref) {
+      axios.get("/api/invoice", {
+        params: {
+          keywords: this.keywords
+        }
+      }).then(function (_ref) {
         var data = _ref.data;
         return _this.invoices = data.data;
       })["catch"](function (error) {
@@ -3922,10 +3981,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3958,12 +4013,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    // fetch() {
-    //     axios
-    //         .get("/api/issue", { params: { keywords: this.keywords } })
-    //         .then(({ data }) => (this.issues = data.data))
-    //         .catch((error) => {});
-    // },
     newModal: function newModal() {
       this.editMode = false;
       this.form.clear();
@@ -4238,6 +4287,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4249,12 +4322,18 @@ __webpack_require__.r(__webpack_exports__);
     return {
       editMode: false,
       permissions: [],
+      keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         slug: "",
         description: ""
       })
     };
+  },
+  watch: {
+    keywords: function keywords(after, before) {
+      this.loadPermissions();
+    }
   },
   methods: {
     newModal: function newModal() {
@@ -4275,7 +4354,11 @@ __webpack_require__.r(__webpack_exports__);
     loadPermissions: function loadPermissions() {
       var _this = this;
 
-      axios.get("/api/permission").then(function (_ref) {
+      axios.get("/api/permission", {
+        params: {
+          keywords: this.keywords
+        }
+      }).then(function (_ref) {
         var data = _ref.data;
         return _this.permissions = data.data;
       })["catch"](function (error) {
@@ -4799,6 +4882,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4812,6 +4919,7 @@ __webpack_require__.r(__webpack_exports__);
       editMode: false,
       projects: [],
       clients: [],
+      keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         title: "",
@@ -4827,7 +4935,11 @@ __webpack_require__.r(__webpack_exports__);
       })
     };
   },
-  computed: {},
+  watch: {
+    keywords: function keywords(after, before) {
+      this.loadProjects();
+    }
+  },
   methods: {
     estimatedHours: function estimatedHours(hour) {
       return hour != null ? "".concat(hour, " hours") : "";
@@ -4880,7 +4992,11 @@ __webpack_require__.r(__webpack_exports__);
     loadProjects: function loadProjects() {
       var _this = this;
 
-      axios.get("/api/project").then(function (_ref) {
+      axios.get("/api/project", {
+        params: {
+          keywords: this.keywords
+        }
+      }).then(function (_ref) {
         var data = _ref.data;
         return _this.projects = data.data;
       })["catch"](function (error) {
@@ -5126,6 +5242,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5137,12 +5277,18 @@ __webpack_require__.r(__webpack_exports__);
     return {
       editMode: false,
       roles: [],
+      keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         name: "",
         description: ""
       })
     };
+  },
+  watch: {
+    keywords: function keywords(after, before) {
+      this.loadRoles();
+    }
   },
   methods: {
     newModal: function newModal() {
@@ -5163,7 +5309,11 @@ __webpack_require__.r(__webpack_exports__);
     loadRoles: function loadRoles() {
       var _this = this;
 
-      axios.get("/api/role").then(function (response) {
+      axios.get("/api/role", {
+        params: {
+          keywords: this.keywords
+        }
+      }).then(function (response) {
         return _this.roles = response.data.roles;
       })["catch"](function (error) {
         return console.log(error);
@@ -5614,6 +5764,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5627,6 +5801,7 @@ __webpack_require__.r(__webpack_exports__);
       tasks: [],
       projects: [],
       collaborators: [],
+      keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         subject: "",
@@ -5639,6 +5814,11 @@ __webpack_require__.r(__webpack_exports__);
         collaborator_id: ""
       })
     };
+  },
+  watch: {
+    keywords: function keywords(after, before) {
+      this.loadTasks();
+    }
   },
   methods: {
     newModal: function newModal() {
@@ -5661,7 +5841,11 @@ __webpack_require__.r(__webpack_exports__);
     loadTasks: function loadTasks() {
       var _this = this;
 
-      axios.get("/api/task").then(function (_ref) {
+      axios.get("/api/task", {
+        params: {
+          keywords: this.keywords
+        }
+      }).then(function (_ref) {
         var data = _ref.data;
         return _this.tasks = data.data;
       })["catch"](function (error) {
@@ -5965,6 +6149,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5977,6 +6185,7 @@ __webpack_require__.r(__webpack_exports__);
       editMode: false,
       users: [],
       roles: [],
+      keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         name: "",
@@ -5985,6 +6194,11 @@ __webpack_require__.r(__webpack_exports__);
         role_id: ""
       })
     };
+  },
+  watch: {
+    keywords: function keywords(after, before) {
+      this.loadUsers();
+    }
   },
   methods: {
     newModal: function newModal() {
@@ -6005,7 +6219,11 @@ __webpack_require__.r(__webpack_exports__);
     loadUsers: function loadUsers() {
       var _this = this;
 
-      axios.get("/api/user").then(function (_ref) {
+      axios.get("/api/user", {
+        params: {
+          keywords: this.keywords
+        }
+      }).then(function (_ref) {
         var data = _ref.data;
         return _this.users = data.data;
       })["catch"](function (error) {
@@ -6077,35 +6295,66 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__.default);
 var routes = [{
   path: "/dashboard",
-  component: __webpack_require__(/*! ./components/Dashboard.vue */ "./resources/js/components/Dashboard.vue").default
+  component: __webpack_require__(/*! ./components/Dashboard.vue */ "./resources/js/components/Dashboard.vue").default,
+  meta: {
+    title: "Dashboard"
+  }
 }, {
   path: "/client",
-  component: __webpack_require__(/*! ./components/Client.vue */ "./resources/js/components/Client.vue").default
+  component: __webpack_require__(/*! ./components/Client.vue */ "./resources/js/components/Client.vue").default,
+  meta: {
+    title: "Clients"
+  }
 }, {
   path: "/invoice",
-  component: __webpack_require__(/*! ./components/Invoice.vue */ "./resources/js/components/Invoice.vue").default
+  component: __webpack_require__(/*! ./components/Invoice.vue */ "./resources/js/components/Invoice.vue").default,
+  meta: {
+    title: "Invoices"
+  }
 }, {
   path: "/issue",
-  component: __webpack_require__(/*! ./components/Issue.vue */ "./resources/js/components/Issue.vue").default
+  component: __webpack_require__(/*! ./components/Issue.vue */ "./resources/js/components/Issue.vue").default,
+  meta: {
+    title: "Issues"
+  }
 }, {
   path: "/project",
-  component: __webpack_require__(/*! ./components/Project.vue */ "./resources/js/components/Project.vue").default
+  component: __webpack_require__(/*! ./components/Project.vue */ "./resources/js/components/Project.vue").default,
+  meta: {
+    title: "Projects"
+  }
 }, {
   path: "/permission",
-  component: __webpack_require__(/*! ./components/Permission.vue */ "./resources/js/components/Permission.vue").default
+  component: __webpack_require__(/*! ./components/Permission.vue */ "./resources/js/components/Permission.vue").default,
+  meta: {
+    title: "Permissions"
+  }
 }, {
   path: "/role",
-  component: __webpack_require__(/*! ./components/Role.vue */ "./resources/js/components/Role.vue").default
+  component: __webpack_require__(/*! ./components/Role.vue */ "./resources/js/components/Role.vue").default,
+  meta: {
+    title: "Roles"
+  }
 }, {
   path: "/task",
-  component: __webpack_require__(/*! ./components/Task.vue */ "./resources/js/components/Task.vue").default
+  component: __webpack_require__(/*! ./components/Task.vue */ "./resources/js/components/Task.vue").default,
+  meta: {
+    title: "Tasks"
+  }
 }, {
   path: "/user",
-  component: __webpack_require__(/*! ./components/User.vue */ "./resources/js/components/User.vue").default
+  component: __webpack_require__(/*! ./components/User.vue */ "./resources/js/components/User.vue").default,
+  meta: {
+    title: "Users"
+  }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.default({
   mode: "history",
   linkActiveClass: "active",
+  beforeEach: function beforeEach(toRoute, fromRoute, next) {
+    window.document.title = toRoute.meta && toRoute.meta.title ? toRoute.meta.title : "BugTrack";
+    next();
+  },
   routes: routes
 }); // Register Vue components.
 //Fire is a new instance of vue which will be used as a bus
@@ -43737,7 +43986,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-12 mt-4 mb-5" }, [
+      _c("div", { staticClass: "col-lg-12 mt-3 mb-5" }, [
         _c(
           "div",
           {
@@ -43745,7 +43994,31 @@ var render = function() {
               "d-flex justify-content-between align-items-center mb-4"
           },
           [
-            _c("h3", [_vm._v("Clients")]),
+            _c("div", { staticClass: "input-group input-group-search" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.keywords,
+                    expression: "keywords"
+                  }
+                ],
+                staticClass: "form-control search-box",
+                attrs: { type: "text", placeholder: "Search" },
+                domProps: { value: _vm.keywords },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.keywords = $event.target.value
+                  }
+                }
+              })
+            ]),
             _vm._v(" "),
             _c(
               "button",
@@ -43768,7 +44041,7 @@ var render = function() {
         _c("div", { staticClass: "card card-table" }, [
           _c("div", { staticClass: "table-responsive" }, [
             _c("table", { staticClass: "table table-hover" }, [
-              _vm._m(0),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -43954,7 +44227,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(1)
+              _vm._m(2)
             ]),
             _vm._v(" "),
             _c(
@@ -43971,7 +44244,7 @@ var render = function() {
               [
                 _c("div", { staticClass: "modal-body" }, [
                   _c("div", { staticClass: "form-group row" }, [
-                    _vm._m(2),
+                    _vm._m(3),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -44062,7 +44335,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group row" }, [
-                    _vm._m(3),
+                    _vm._m(4),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -44104,7 +44377,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group row" }, [
-                    _vm._m(4),
+                    _vm._m(5),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -45209,7 +45482,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group row" }, [
-                    _vm._m(5),
+                    _vm._m(6),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -45251,7 +45524,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group row" }, [
-                    _vm._m(6),
+                    _vm._m(7),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -45394,6 +45667,23 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c(
+        "div",
+        { staticClass: "input-group-text input-group-prepend-search" },
+        [
+          _c("i", {
+            staticClass: "fas fa-search",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -45996,7 +46286,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-12 mt-4 mb-5" }, [
+      _c("div", { staticClass: "col-lg-12 mt-3 mb-5" }, [
         _c(
           "div",
           {
@@ -46004,7 +46294,31 @@ var render = function() {
               "d-flex justify-content-between align-items-center mb-4"
           },
           [
-            _c("h3", [_vm._v("Invoices")]),
+            _c("div", { staticClass: "input-group input-group-search" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.keywords,
+                    expression: "keywords"
+                  }
+                ],
+                staticClass: "form-control search-box",
+                attrs: { type: "text", placeholder: "Search" },
+                domProps: { value: _vm.keywords },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.keywords = $event.target.value
+                  }
+                }
+              })
+            ]),
             _vm._v(" "),
             _c(
               "button",
@@ -46018,7 +46332,9 @@ var render = function() {
                   staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    New Invoice\n                ")
+                _vm._v(
+                  "\n                        New Invoice\n                    "
+                )
               ]
             )
           ]
@@ -46027,7 +46343,7 @@ var render = function() {
         _c("div", { staticClass: "card card-table" }, [
           _c("div", { staticClass: "table-responsive" }, [
             _c("table", { staticClass: "table table-hover" }, [
-              _vm._m(0),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -46251,7 +46567,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(2)
               ]),
               _vm._v(" "),
               _c(
@@ -46272,10 +46588,10 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-4" },
                         [
-                          _vm._m(2),
+                          _vm._m(3),
                           _vm._v(" "),
                           _c("div", { staticClass: "input-group mb-2" }, [
-                            _vm._m(3),
+                            _vm._m(4),
                             _vm._v(" "),
                             _c("input", {
                               directives: [
@@ -46320,10 +46636,10 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-4" },
                         [
-                          _vm._m(4),
+                          _vm._m(5),
                           _vm._v(" "),
                           _c("div", { staticClass: "input-group mb-2" }, [
-                            _vm._m(5),
+                            _vm._m(6),
                             _vm._v(" "),
                             _c("input", {
                               directives: [
@@ -46364,7 +46680,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-4" },
                         [
-                          _vm._m(6),
+                          _vm._m(7),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -46451,7 +46767,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(7),
+                          _vm._m(8),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
@@ -46494,7 +46810,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(8),
+                          _vm._m(9),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
@@ -46539,7 +46855,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(9),
+                          _vm._m(10),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -46621,7 +46937,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(10),
+                          _vm._m(11),
                           _vm._v(" "),
                           _c("div", { staticClass: "form-check" }, [
                             _c("input", {
@@ -46818,6 +47134,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c(
+        "div",
+        { staticClass: "input-group-text input-group-prepend-search" },
+        [
+          _c("i", {
+            staticClass: "fas fa-search",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
@@ -47006,7 +47339,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-12 mt-4 mb-5" }, [
+      _c("div", { staticClass: "col-lg-12 mt-3 mb-5" }, [
         _c(
           "div",
           {
@@ -47014,53 +47347,49 @@ var render = function() {
               "d-flex justify-content-between align-items-center mb-4"
           },
           [
-            _c("h3", [_vm._v("Issues")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "d-flex align-items-center" }, [
-              _c("div", { staticClass: "input-group input-group-search" }, [
-                _vm._m(0),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.keywords,
-                      expression: "keywords"
-                    }
-                  ],
-                  staticClass: "form-control search-box",
-                  attrs: { type: "text", placeholder: "Search" },
-                  domProps: { value: _vm.keywords },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.keywords = $event.target.value
-                    }
-                  }
-                })
-              ]),
+            _c("div", { staticClass: "input-group input-group-search" }, [
+              _vm._m(0),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-new",
-                  attrs: { type: "button" },
-                  on: { click: _vm.newModal }
-                },
-                [
-                  _c("i", {
-                    staticClass: "fas fa-plus mr-2",
-                    attrs: { "aria-hidden": "true" }
-                  }),
-                  _vm._v(
-                    "\n                        New Issue\n                    "
-                  )
-                ]
-              )
-            ])
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.keywords,
+                    expression: "keywords"
+                  }
+                ],
+                staticClass: "form-control search-box",
+                attrs: { type: "text", placeholder: "Search" },
+                domProps: { value: _vm.keywords },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.keywords = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-new",
+                attrs: { type: "button" },
+                on: { click: _vm.newModal }
+              },
+              [
+                _c("i", {
+                  staticClass: "fas fa-plus mr-2",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(
+                  "\n                        New Issue\n                    "
+                )
+              ]
+            )
           ]
         ),
         _vm._v(" "),
@@ -48087,7 +48416,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-12 mt-4 mb-5" }, [
+      _c("div", { staticClass: "col-lg-12 mt-3 mb-5" }, [
         _c(
           "div",
           {
@@ -48095,7 +48424,31 @@ var render = function() {
               "d-flex justify-content-between align-items-center mb-4"
           },
           [
-            _c("h3", [_vm._v("Permissions")]),
+            _c("div", { staticClass: "input-group input-group-search" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.keywords,
+                    expression: "keywords"
+                  }
+                ],
+                staticClass: "form-control search-box",
+                attrs: { type: "text", placeholder: "Search" },
+                domProps: { value: _vm.keywords },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.keywords = $event.target.value
+                  }
+                }
+              })
+            ]),
             _vm._v(" "),
             _c(
               "button",
@@ -48109,7 +48462,9 @@ var render = function() {
                   staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    New Permission\n                ")
+                _vm._v(
+                  "\n                        New Permission\n                    "
+                )
               ]
             )
           ]
@@ -48118,7 +48473,7 @@ var render = function() {
         _c("div", { staticClass: "card card-table" }, [
           _c("div", { staticClass: "table-responsive" }, [
             _c("table", { staticClass: "table table-hover" }, [
-              _vm._m(0),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -48247,7 +48602,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(2)
               ]),
               _vm._v(" "),
               _c(
@@ -48266,7 +48621,7 @@ var render = function() {
                 [
                   _c("div", { staticClass: "modal-body" }, [
                     _c("div", { staticClass: "form-group row" }, [
-                      _vm._m(2),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -48308,7 +48663,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group row" }, [
-                      _vm._m(3),
+                      _vm._m(4),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -48411,6 +48766,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c(
+        "div",
+        { staticClass: "input-group-text input-group-prepend-search" },
+        [
+          _c("i", {
+            staticClass: "fas fa-search",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
@@ -48502,7 +48874,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-12 mt-4 mb-5" }, [
+      _c("div", { staticClass: "col-lg-12 mt-3 mb-5" }, [
         _c(
           "div",
           {
@@ -48510,7 +48882,31 @@ var render = function() {
               "d-flex justify-content-between align-items-center mb-4"
           },
           [
-            _c("h3", [_vm._v("Projects")]),
+            _c("div", { staticClass: "input-group input-group-search" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.keywords,
+                    expression: "keywords"
+                  }
+                ],
+                staticClass: "form-control search-box",
+                attrs: { type: "text", placeholder: "Search" },
+                domProps: { value: _vm.keywords },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.keywords = $event.target.value
+                  }
+                }
+              })
+            ]),
             _vm._v(" "),
             _c(
               "button",
@@ -48524,7 +48920,9 @@ var render = function() {
                   staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    New Project\n                ")
+                _vm._v(
+                  "\n                        New Project\n                    "
+                )
               ]
             )
           ]
@@ -48533,7 +48931,7 @@ var render = function() {
         _c("div", { staticClass: "card card-table" }, [
           _c("div", { staticClass: "table-responsive" }, [
             _c("table", { staticClass: "table table-hover" }, [
-              _vm._m(0),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -48752,7 +49150,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(2)
               ]),
               _vm._v(" "),
               _c(
@@ -48769,7 +49167,7 @@ var render = function() {
                 [
                   _c("div", { staticClass: "modal-body" }, [
                     _c("div", { staticClass: "form-group row" }, [
-                      _vm._m(2),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -48870,7 +49268,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(3),
+                          _vm._m(4),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
@@ -48913,7 +49311,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(4),
+                          _vm._m(5),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
@@ -48958,7 +49356,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(5),
+                          _vm._m(6),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -49269,7 +49667,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(6),
+                          _vm._m(7),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -49362,7 +49760,7 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("div", { staticClass: "input-group" }, [
-                            _vm._m(7),
+                            _vm._m(8),
                             _vm._v(" "),
                             _c("input", {
                               directives: [
@@ -49513,6 +49911,23 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c(
+        "div",
+        { staticClass: "input-group-text input-group-prepend-search" },
+        [
+          _c("i", {
+            staticClass: "fas fa-search",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -49673,7 +50088,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-12 mt-4 mb-5" }, [
+      _c("div", { staticClass: "col-lg-12 mt-3 mb-5" }, [
         _c(
           "div",
           {
@@ -49681,7 +50096,31 @@ var render = function() {
               "d-flex justify-content-between align-items-center mb-4"
           },
           [
-            _c("h3", [_vm._v("Roles")]),
+            _c("div", { staticClass: "input-group input-group-search" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.keywords,
+                    expression: "keywords"
+                  }
+                ],
+                staticClass: "form-control search-box",
+                attrs: { type: "text", placeholder: "Search" },
+                domProps: { value: _vm.keywords },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.keywords = $event.target.value
+                  }
+                }
+              })
+            ]),
             _vm._v(" "),
             _c(
               "button",
@@ -49695,7 +50134,9 @@ var render = function() {
                   staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    New Role\n                ")
+                _vm._v(
+                  "\n                        New Role\n                    "
+                )
               ]
             )
           ]
@@ -49704,7 +50145,7 @@ var render = function() {
         _c("div", { staticClass: "card card-table" }, [
           _c("div", { staticClass: "table-responsive" }, [
             _c("table", { staticClass: "table table-hover" }, [
-              _vm._m(0),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -49833,7 +50274,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(2)
               ]),
               _vm._v(" "),
               _c(
@@ -49850,7 +50291,7 @@ var render = function() {
                 [
                   _c("div", { staticClass: "modal-body" }, [
                     _c("div", { staticClass: "form-group row" }, [
-                      _vm._m(2),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -49892,7 +50333,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group row" }, [
-                      _vm._m(3),
+                      _vm._m(4),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -49995,6 +50436,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c(
+        "div",
+        { staticClass: "input-group-text input-group-prepend-search" },
+        [
+          _c("i", {
+            staticClass: "fas fa-search",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
@@ -50086,7 +50544,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-12 mt-4 mb-5" }, [
+      _c("div", { staticClass: "col-lg-12 mt-3 mb-5" }, [
         _c(
           "div",
           {
@@ -50094,7 +50552,31 @@ var render = function() {
               "d-flex justify-content-between align-items-center mb-4"
           },
           [
-            _c("h3", [_vm._v("Tasks")]),
+            _c("div", { staticClass: "input-group input-group-search" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.keywords,
+                    expression: "keywords"
+                  }
+                ],
+                staticClass: "form-control search-box",
+                attrs: { type: "text", placeholder: "Search" },
+                domProps: { value: _vm.keywords },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.keywords = $event.target.value
+                  }
+                }
+              })
+            ]),
             _vm._v(" "),
             _c(
               "button",
@@ -50108,7 +50590,9 @@ var render = function() {
                   staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    New Task\n                ")
+                _vm._v(
+                  "\n                        New Task\n                    "
+                )
               ]
             )
           ]
@@ -50117,7 +50601,7 @@ var render = function() {
         _c("div", { staticClass: "card card-table" }, [
           _c("div", { staticClass: "table-responsive" }, [
             _c("table", { staticClass: "table table-hover" }, [
-              _vm._m(0),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -50342,7 +50826,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(2)
               ]),
               _vm._v(" "),
               _c(
@@ -50359,7 +50843,7 @@ var render = function() {
                 [
                   _c("div", { staticClass: "modal-body" }, [
                     _c("div", { staticClass: "form-group row" }, [
-                      _vm._m(2),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -50464,7 +50948,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(3),
+                          _vm._m(4),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -50631,7 +51115,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(4),
+                          _vm._m(5),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
@@ -50674,7 +51158,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(5),
+                          _vm._m(6),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
@@ -50719,7 +51203,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(6),
+                          _vm._m(7),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -50801,7 +51285,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(7),
+                          _vm._m(8),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -50937,6 +51421,23 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c(
+        "div",
+        { staticClass: "input-group-text input-group-prepend-search" },
+        [
+          _c("i", {
+            staticClass: "fas fa-search",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -51100,7 +51601,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-12 mt-4 mb-5" }, [
+      _c("div", { staticClass: "col-lg-12 mt-3 mb-5" }, [
         _c(
           "div",
           {
@@ -51108,7 +51609,31 @@ var render = function() {
               "d-flex justify-content-between align-items-center mb-4"
           },
           [
-            _c("h3", [_vm._v("Users")]),
+            _c("div", { staticClass: "input-group input-group-search" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.keywords,
+                    expression: "keywords"
+                  }
+                ],
+                staticClass: "form-control search-box",
+                attrs: { type: "text", placeholder: "Search" },
+                domProps: { value: _vm.keywords },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.keywords = $event.target.value
+                  }
+                }
+              })
+            ]),
             _vm._v(" "),
             _c(
               "button",
@@ -51122,7 +51647,9 @@ var render = function() {
                   staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("\n                    New User\n                ")
+                _vm._v(
+                  "\n                        New User\n                    "
+                )
               ]
             )
           ]
@@ -51131,7 +51658,7 @@ var render = function() {
         _c("div", { staticClass: "card card-table" }, [
           _c("div", { staticClass: "table-responsive" }, [
             _c("table", { staticClass: "table table-hover" }, [
-              _vm._m(0),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -51262,7 +51789,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(2)
               ]),
               _vm._v(" "),
               _c(
@@ -51279,7 +51806,7 @@ var render = function() {
                 [
                   _c("div", { staticClass: "modal-body" }, [
                     _c("div", { staticClass: "form-group row" }, [
-                      _vm._m(2),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -51321,7 +51848,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group row" }, [
-                      _vm._m(3),
+                      _vm._m(4),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -51376,7 +51903,7 @@ var render = function() {
                         staticClass: "form-group row"
                       },
                       [
-                        _vm._m(4),
+                        _vm._m(5),
                         _vm._v(" "),
                         _c(
                           "div",
@@ -51422,7 +51949,7 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group row" }, [
-                      _vm._m(5),
+                      _vm._m(6),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -51559,6 +52086,23 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c(
+        "div",
+        { staticClass: "input-group-text input-group-prepend-search" },
+        [
+          _c("i", {
+            staticClass: "fas fa-search",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

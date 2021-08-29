@@ -29,7 +29,10 @@ class IssueController extends Controller
         return Issue::with('project')
             ->with('assignee')
             ->when($searchTerm, function ($query, $searchTerm) {
-                return $query->where('title', 'LIKE', '%' . $searchTerm . '%');
+                return $query
+                    ->where('title', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('severity', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
             })
             ->latest()
             ->paginate(25);

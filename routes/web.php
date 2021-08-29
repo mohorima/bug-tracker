@@ -30,52 +30,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/* PERMISSION */
-// Route::get('/permission', [PermissionController::class, 'index'])->name(
-//     'permissionindex'
-// );
-// //create
-// Route::get('/permission/create', [PermissionController::class, 'create'])->name(
-//     'permissioncreate'
-// );
-// //store
-// Route::post('/permission', [PermissionController::class, 'store']);
-// //show
-// Route::get('/permission/{id}/show', [
-//     PermissionController::class,
-//     'show',
-// ])->name('permissionshow');
-// //edit
-// Route::get('/permission/{id}/edit', [
-//     PermissionController::class,
-//     'edit',
-// ])->name('permissionedit');
-// //update
-// Route::put('/permission/{id}', [PermissionController::class, 'update']);
-// //destroy
-// Route::delete('/permission/{id}', [PermissionController::class, 'destroy']);
-
-/* ROLE */
-// Route::get('/role', [RoleController::class, 'index'])->name('roleindex');
-// //create
-// Route::get('/role/create', [RoleController::class, 'create'])->name(
-//     'rolecreate'
-// );
-// //store
-// Route::post('/role', [RoleController::class, 'store']);
-// //show
-// Route::get('/role/{id}/show', [RoleController::class, 'show'])->name(
-//     'roleshow'
-// );
-// //edit
-// Route::get('/role/{id}/edit', [RoleController::class, 'edit'])->name(
-//     'roleedit'
-// );
-// //update
-// Route::put('/role/{id}', [RoleController::class, 'update']);
-// //destroy
-// Route::delete('/role/{id}', [RoleController::class, 'destroy']);
-
 /* USER */
 // Route::get('/user', [UserController::class, 'index'])->name('userindex');
 // //create
@@ -97,7 +51,9 @@ Route::get('/', function () {
 // //destroy
 // Route::delete('/user/{id}', [UserController::class, 'destroy']);
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+]);
 
 Route::get('/home', [
     App\Http\Controllers\HomeController::class,
@@ -108,5 +64,3 @@ Route::get('/{path}', [
     App\Http\Controllers\HomeController::class,
     'index',
 ])->where('path', '.*');
-
-Auth::routes();

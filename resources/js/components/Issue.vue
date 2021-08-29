@@ -1,13 +1,10 @@
 <template>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-lg-12 mt-4 mb-5">
+            <div class="col-lg-12 mt-3 mb-5">
                 <div
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
-                    <h3>Issues</h3>
-
-                    <div class="d-flex align-items-center">
                         <div class="input-group input-group-search">
                             <div class="input-group-prepend">
                                 <div
@@ -35,7 +32,6 @@
                             <i class="fas fa-plus mr-2" aria-hidden="true"></i>
                             New Issue
                         </button>
-                    </div>
                 </div>
 
                 <div class="card card-table">
@@ -482,13 +478,6 @@ export default {
     },
 
     methods: {
-        // fetch() {
-        //     axios
-        //         .get("/api/issue", { params: { keywords: this.keywords } })
-        //         .then(({ data }) => (this.issues = data.data))
-        //         .catch((error) => {});
-        // },
-
         newModal() {
             this.editMode = false;
             this.form.clear();

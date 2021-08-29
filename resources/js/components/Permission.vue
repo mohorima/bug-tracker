@@ -1,16 +1,37 @@
 <template>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-lg-12 mt-4 mb-5">
+            <div class="col-lg-12 mt-3 mb-5">
                 <div
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
-                    <h3>Permissions</h3>
+                        <div class="input-group input-group-search">
+                            <div class="input-group-prepend">
+                                <div
+                                    class="input-group-text input-group-prepend-search"
+                                >
+                                    <i
+                                        class="fas fa-search"
+                                        aria-hidden="true"
+                                    ></i>
+                                </div>
+                            </div>
+                            <input
+                                type="text"
+                                placeholder="Search"
+                                class="form-control search-box"
+                                v-model="keywords"
+                            />
+                        </div>
 
-                    <button type="button" class="btn btn-new" @click="newModal">
-                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
-                        New Permission
-                    </button>
+                        <button
+                            type="button"
+                            class="btn btn-new"
+                            @click="newModal"
+                        >
+                            <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                            New Permission
+                        </button>
                 </div>
 
                 <div class="card card-table">
@@ -98,7 +119,10 @@
                             data-dismiss="modal"
                             aria-label="Close"
                         >
-                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                            <i
+                                class="fas fa-times-circle"
+                                aria-hidden="true"
+                            ></i>
                         </button>
                     </div>
 
@@ -195,12 +219,19 @@ export default {
     data: () => ({
         editMode: false,
         permissions: [],
+        keywords: null,
         form: new Form({
             id: "",
             slug: "",
             description: "",
         }),
     }),
+
+    watch: {
+        keywords(after, before) {
+            this.loadPermissions();
+        },
+    },
 
     methods: {
         newModal() {
@@ -222,7 +253,7 @@ export default {
 
         loadPermissions() {
             axios
-                .get("/api/permission")
+                .get("/api/permission", { params: { keywords: this.keywords } })
                 .then(({ data }) => (this.permissions = data.data))
                 .catch((error) => console.log(error));
         },
