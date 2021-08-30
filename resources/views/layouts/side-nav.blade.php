@@ -3,11 +3,10 @@
     <ul class="nav flex-column">
   
         <li class="nav-item d-flex align-items-center justify-content-between my-1">
-            <a class="nav-link" href="{{ url('/') }}">
-            <img src="{{ asset('/images/logo.svg') }}" alt="" height="30rem">
-            </a>
+            
+            <img src="{{ asset('/images/logo.svg') }}" alt="" height="30px" class="nav-logo">
             <a href="javascript:void(0)" onclick="closeNav()" id="closesidenav">
-            <i class="fas fa-times closebtn"></i>
+                <i class="fas fa-times closebtn"></i>
             </a>
         </li>
     

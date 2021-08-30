@@ -5,33 +5,26 @@
                 <div
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
-                        <div class="input-group input-group-search">
-                            <div class="input-group-prepend">
-                                <div
-                                    class="input-group-text input-group-prepend-search"
-                                >
-                                    <i
-                                        class="fas fa-search"
-                                        aria-hidden="true"
-                                    ></i>
-                                </div>
+                    <div class="input-group input-group-search">
+                        <div class="input-group-prepend">
+                            <div
+                                class="input-group-text input-group-prepend-search"
+                            >
+                                <i class="fas fa-search" aria-hidden="true"></i>
                             </div>
-                            <input
-                                type="text"
-                                placeholder="Search"
-                                class="form-control search-box"
-                                v-model="keywords"
-                            />
                         </div>
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            class="form-control search-box"
+                            v-model="keywords"
+                        />
+                    </div>
 
-                        <button
-                            type="button"
-                            class="btn btn-new"
-                            @click="newModal"
-                        >
-                            <i class="fas fa-plus mr-2" aria-hidden="true"></i>
-                            New Issue
-                        </button>
+                    <button type="button" class="btn btn-new" @click="newModal">
+                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                        New Issue
+                    </button>
                 </div>
 
                 <div class="card card-table">
@@ -40,7 +33,34 @@
                             <thead>
                                 <tr>
                                     <th class="th-sm" scope="col">Actions</th>
-                                    <th class="th-lg" scope="col">Title</th>
+                                    <th
+                                        class="th-lg d-flex align-items-center"
+                                        scope="col"
+                                    >
+                                        Title
+                                        <div class="sort">
+                                            <a
+                                                href=""
+                                                @click.prevent="
+                                                    changeOrderAsc('title')
+                                                "
+                                            >
+                                                <i
+                                                    class="fas fa-sort-up table-fa"
+                                                ></i>
+                                            </a>
+                                            <a
+                                                href=""
+                                                @click.prevent="
+                                                    changeOrderDesc('title')
+                                                "
+                                            >
+                                                <i
+                                                    class="fas fa-sort-down table-fa"
+                                                ></i>
+                                            </a>
+                                        </div>
+                                    </th>
                                     <th class="th-sm" scope="col">Severity</th>
                                     <th class="th-sm" scope="col">Status</th>
                                     <th class="th-sm" scope="col">Type</th>
@@ -424,6 +444,10 @@
                                 type="submit"
                                 class="btn btn-submit"
                             >
+                                <i
+                                    class="fas fa-pen-nib mr-2"
+                                    aria-hidden="true"
+                                ></i>
                                 Update
                             </button>
                             <button
@@ -431,6 +455,10 @@
                                 type="submit"
                                 class="btn btn-submit"
                             >
+                                <i
+                                    class="fas fa-save mr-2"
+                                    aria-hidden="true"
+                                ></i>
                                 Create
                             </button>
                         </div>
@@ -458,6 +486,8 @@ export default {
         projects: [],
         issues: [],
         keywords: null,
+        orderTermAsc: null,
+        orderTermDesc: null,
         form: new Form({
             id: "",
             title: "",
@@ -473,11 +503,27 @@ export default {
 
     watch: {
         keywords(after, before) {
-            this.loadIssues();
+            Fire.$emit("reloadRecords");
         },
     },
 
     methods: {
+        changeOrderAsc(term) {
+            this.orderTermDesc = null;
+            this.orderTermAsc == null
+                ? (this.orderTermAsc = term)
+                : (this.orderTermAsc = null);
+
+            Fire.$emit("reloadRecords");
+        },
+        changeOrderDesc(term) {
+            this.orderTermAsc = null;
+            this.orderTermDesc == null
+                ? (this.orderTermDesc = term)
+                : (this.orderTermDesc = null);
+
+            Fire.$emit("reloadRecords");
+        },
         newModal() {
             this.editMode = false;
             this.form.clear();
@@ -497,7 +543,13 @@ export default {
 
         loadIssues() {
             axios
-                .get("/api/issue", { params: { keywords: this.keywords } })
+                .get("/api/issue", {
+                    params: {
+                        keywords: this.keywords,
+                        orderTermAsc: this.orderTermAsc,
+                        orderTermDesc: this.orderTermDesc,
+                    },
+                })
                 .then(({ data }) => (this.issues = data.data))
                 .catch((error) => console.log(error));
         },

@@ -5,33 +5,26 @@
                 <div
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
-                        <div class="input-group input-group-search">
-                            <div class="input-group-prepend">
-                                <div
-                                    class="input-group-text input-group-prepend-search"
-                                >
-                                    <i
-                                        class="fas fa-search"
-                                        aria-hidden="true"
-                                    ></i>
-                                </div>
+                    <div class="input-group input-group-search">
+                        <div class="input-group-prepend">
+                            <div
+                                class="input-group-text input-group-prepend-search"
+                            >
+                                <i class="fas fa-search" aria-hidden="true"></i>
                             </div>
-                            <input
-                                type="text"
-                                placeholder="Search"
-                                class="form-control search-box"
-                                v-model="keywords"
-                            />
                         </div>
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            class="form-control search-box"
+                            v-model="keywords"
+                        />
+                    </div>
 
-                        <button
-                            type="button"
-                            class="btn btn-new"
-                            @click="newModal"
-                        >
-                            <i class="fas fa-plus mr-2" aria-hidden="true"></i>
-                            New User
-                        </button>
+                    <button type="button" class="btn btn-new" @click="newModal">
+                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                        New User
+                    </button>
                 </div>
 
                 <div class="card card-table">
@@ -229,6 +222,10 @@
                                 type="submit"
                                 class="btn btn-submit"
                             >
+                                <i
+                                    class="fas fa-pen-nib mr-2"
+                                    aria-hidden="true"
+                                ></i>
                                 Update
                             </button>
                             <button
@@ -236,6 +233,10 @@
                                 type="submit"
                                 class="btn btn-submit"
                             >
+                                <i
+                                    class="fas fa-save mr-2"
+                                    aria-hidden="true"
+                                ></i>
                                 Create
                             </button>
                         </div>

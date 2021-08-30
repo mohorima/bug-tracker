@@ -87,7 +87,13 @@
                                         </div>
                                     </td>
                                     <td>
-                                        {{ project.startDate }} to <br />
+                                    <span class="badge bg-light text-faded">
+                                            START
+                                        </span>
+                                        {{ project.startDate }}<br />
+                                        <span class="badge bg-light text-faded">
+                                            END
+                                        </span>
                                         {{ project.endDate }}
                                         <br />
                                         {{ estimatedHours(project.estHours) }}
@@ -467,6 +473,10 @@
                                 type="submit"
                                 class="btn btn-submit"
                             >
+                                <i
+                                    class="fas fa-pen-nib mr-2"
+                                    aria-hidden="true"
+                                ></i>
                                 Update
                             </button>
                             <button
@@ -474,6 +484,10 @@
                                 type="submit"
                                 class="btn btn-submit"
                             >
+                                <i
+                                    class="fas fa-save mr-2"
+                                    aria-hidden="true"
+                                ></i>
                                 Create
                             </button>
                         </div>

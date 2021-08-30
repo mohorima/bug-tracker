@@ -2568,6 +2568,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3414,6 +3422,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3428,6 +3437,7 @@ __webpack_require__.r(__webpack_exports__);
       projects: [],
       keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
+        invoiceNum: "",
         id: "",
         billDate: "",
         dueDate: "",
@@ -3981,6 +3991,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3994,6 +4032,8 @@ __webpack_require__.r(__webpack_exports__);
       projects: [],
       issues: [],
       keywords: null,
+      orderTermAsc: null,
+      orderTermDesc: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         title: "",
@@ -4009,10 +4049,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     keywords: function keywords(after, before) {
-      this.loadIssues();
+      Fire.$emit("reloadRecords");
     }
   },
   methods: {
+    changeOrderAsc: function changeOrderAsc(term) {
+      this.orderTermDesc = null;
+      this.orderTermAsc == null ? this.orderTermAsc = term : this.orderTermAsc = null;
+      Fire.$emit("reloadRecords");
+    },
+    changeOrderDesc: function changeOrderDesc(term) {
+      this.orderTermAsc = null;
+      this.orderTermDesc == null ? this.orderTermDesc = term : this.orderTermDesc = null;
+      Fire.$emit("reloadRecords");
+    },
     newModal: function newModal() {
       this.editMode = false;
       this.form.clear();
@@ -4033,7 +4083,9 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/issue", {
         params: {
-          keywords: this.keywords
+          keywords: this.keywords,
+          orderTermAsc: this.orderTermAsc,
+          orderTermDesc: this.orderTermDesc
         }
       }).then(function (_ref) {
         var data = _ref.data;
@@ -4103,6 +4155,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.es.js");
 /* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4418,6 +4478,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5266,6 +5340,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5370,6 +5452,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.es.js");
 /* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6173,6 +6263,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -6351,11 +6442,11 @@ var routes = [{
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.default({
   mode: "history",
   linkActiveClass: "active",
-  beforeEach: function beforeEach(toRoute, fromRoute, next) {
-    window.document.title = toRoute.meta && toRoute.meta.title ? toRoute.meta.title : "BugTrack";
-    next();
-  },
   routes: routes
+});
+router.beforeEach(function (to, from, next) {
+  window.document.title = to.meta && to.meta.title ? to.meta.title : "BugTrack";
+  next();
 }); // Register Vue components.
 //Fire is a new instance of vue which will be used as a bus
 
@@ -45631,6 +45722,10 @@ var render = function() {
                       attrs: { type: "submit" }
                     },
                     [
+                      _c("i", {
+                        staticClass: "fas fa-pen-nib mr-2",
+                        attrs: { "aria-hidden": "true" }
+                      }),
                       _vm._v(
                         "\n                            Update\n                        "
                       )
@@ -45652,6 +45747,10 @@ var render = function() {
                       attrs: { type: "submit" }
                     },
                     [
+                      _c("i", {
+                        staticClass: "fas fa-save mr-2",
+                        attrs: { "aria-hidden": "true" }
+                      }),
                       _vm._v(
                         "\n                            Create\n                        "
                       )
@@ -46332,9 +46431,7 @@ var render = function() {
                   staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v(
-                  "\n                        New Invoice\n                    "
-                )
+                _vm._v("\n                    New Invoice\n                ")
               ]
             )
           ]
@@ -46541,7 +46638,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n                        Update the Invoice\n                    "
+                      "\n                        Update Invoice #" +
+                        _vm._s(_vm.form.invoiceNum) +
+                        "\n                    "
                     )
                   ]
                 ),
@@ -47093,6 +47192,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-pen-nib mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Update\n                        "
                         )
@@ -47114,6 +47217,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-save mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Create\n                        "
                         )
@@ -47385,9 +47492,7 @@ var render = function() {
                   staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v(
-                  "\n                        New Issue\n                    "
-                )
+                _vm._v("\n                    New Issue\n                ")
               ]
             )
           ]
@@ -47396,7 +47501,83 @@ var render = function() {
         _c("div", { staticClass: "card card-table" }, [
           _c("div", { staticClass: "table-responsive" }, [
             _c("table", { staticClass: "table table-hover" }, [
-              _vm._m(1),
+              _c("thead", [
+                _c("tr", [
+                  _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+                    _vm._v("Actions")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "th",
+                    {
+                      staticClass: "th-lg d-flex align-items-center",
+                      attrs: { scope: "col" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                    Title\n                                    "
+                      ),
+                      _c("div", { staticClass: "sort" }, [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.changeOrderAsc("title")
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-sort-up table-fa" })]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.changeOrderDesc("title")
+                              }
+                            }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fas fa-sort-down table-fa"
+                            })
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+                    _vm._v("Severity")
+                  ]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+                    _vm._v("Status")
+                  ]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+                    _vm._v("Type")
+                  ]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+                    _vm._v("Due Date")
+                  ]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+                    _vm._v("Project")
+                  ]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+                    _vm._v("Assignee")
+                  ])
+                ])
+              ]),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -47617,7 +47798,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(2)
+                _vm._m(1)
               ]),
               _vm._v(" "),
               _c(
@@ -47634,7 +47815,7 @@ var render = function() {
                 [
                   _c("div", { staticClass: "modal-body" }, [
                     _c("div", { staticClass: "form-group row" }, [
-                      _vm._m(3),
+                      _vm._m(2),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -47735,7 +47916,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(4),
+                          _vm._m(3),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -47826,7 +48007,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(5),
+                          _vm._m(4),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -47919,7 +48100,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(6),
+                          _vm._m(5),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -47998,7 +48179,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(7),
+                          _vm._m(6),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
@@ -48043,7 +48224,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(8),
+                          _vm._m(7),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -48125,7 +48306,7 @@ var render = function() {
                         "div",
                         { staticClass: "form-group col-md-6" },
                         [
-                          _vm._m(9),
+                          _vm._m(8),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
@@ -48182,6 +48363,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-pen-nib mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Update\n                        "
                         )
@@ -48203,6 +48388,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-save mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Create\n                        "
                         )
@@ -48234,46 +48423,6 @@ var staticRenderFns = [
           })
         ]
       )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
-          _vm._v("Actions")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "th-lg", attrs: { scope: "col" } }, [
-          _vm._v("Title")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
-          _vm._v("Severity")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
-          _vm._v("Status")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
-          _vm._v("Type")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
-          _vm._v("Due Date")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
-          _vm._v("Project")
-        ]),
-        _vm._v(" "),
-        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
-          _vm._v("Assignee")
-        ])
-      ])
     ])
   },
   function() {
@@ -48725,6 +48874,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-pen-nib mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Update\n                        "
                         )
@@ -48746,6 +48899,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-save mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Create\n                        "
                         )
@@ -49006,12 +49163,22 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("td", [
+                      _c("span", { staticClass: "badge bg-light text-faded" }, [
+                        _vm._v(
+                          "\n                                        START\n                                    "
+                        )
+                      ]),
                       _vm._v(
                         "\n                                    " +
-                          _vm._s(project.startDate) +
-                          " to "
+                          _vm._s(project.startDate)
                       ),
                       _c("br"),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "badge bg-light text-faded" }, [
+                        _vm._v(
+                          "\n                                        END\n                                    "
+                        )
+                      ]),
                       _vm._v(
                         "\n                                    " +
                           _vm._s(project.endDate) +
@@ -49874,6 +50041,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-pen-nib mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Update\n                        "
                         )
@@ -49895,6 +50066,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-save mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Create\n                        "
                         )
@@ -50395,6 +50570,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-pen-nib mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Update\n                        "
                         )
@@ -50416,6 +50595,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-save mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Create\n                        "
                         )
@@ -51384,6 +51567,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-pen-nib mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Update\n                        "
                         )
@@ -51405,6 +51592,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-save mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Create\n                        "
                         )
@@ -51647,9 +51838,7 @@ var render = function() {
                   staticClass: "fas fa-plus mr-2",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v(
-                  "\n                        New User\n                    "
-                )
+                _vm._v("\n                    New User\n                ")
               ]
             )
           ]
@@ -52049,6 +52238,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-pen-nib mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Update\n                        "
                         )
@@ -52070,6 +52263,10 @@ var render = function() {
                         attrs: { type: "submit" }
                       },
                       [
+                        _c("i", {
+                          staticClass: "fas fa-save mr-2",
+                          attrs: { "aria-hidden": "true" }
+                        }),
                         _vm._v(
                           "\n                            Create\n                        "
                         )

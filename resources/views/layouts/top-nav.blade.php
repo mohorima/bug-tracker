@@ -2,7 +2,7 @@
     <div class="container-fluid mt-2">
         <div class="d-flex align-items-center">
             <i id="hamburger" class="fas fa-bars mr-4 opennav-btn" onclick="openNav()"></i>            
-            <h3>@{{ $route.meta.title }}</h3>
+            <h3>@{{ $route.meta.title ? $route.meta.title : "BugTrack" }}</h3>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

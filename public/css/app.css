@@ -10966,7 +10966,7 @@ h3 {
   padding: 0;
   font-weight: 600;
   font-size: 1.5rem;
-  color: #4f6664;
+  color: #665766;
 }
 
 @media screen and (max-width: 992px) {
@@ -10979,11 +10979,11 @@ h5 {
   letter-spacing: 0.04rem;
   font-weight: 600;
   font-size: 1.09rem;
-  color: #4f6664;
+  color: #a823a1;
 }
 
 .fancy-text {
-  color: #239fa8;
+  color: #a823a1;
   font-weight: 600;
   font-size: 1.5rem;
   letter-spacing: 0.03rem;
@@ -10991,7 +10991,7 @@ h5 {
 }
 
 h6 {
-  color: #239fa8;
+  color: #a823a1;
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.03rem;
@@ -11001,7 +11001,7 @@ h6 {
 .text-title {
   font-size: 1rem;
   font-weight: 500;
-  color: #526061;
+  color: #615261;
   width: 210px;
   word-wrap: break-word;
   word-break: keep-all;
@@ -11060,7 +11060,7 @@ h6 {
 .input-form label {
   font-size: 0.8rem;
   letter-spacing: 0.03rem;
-  color: #239fa8;
+  color: #b0acb1;
   font-weight: 600;
 }
 
@@ -11089,7 +11089,7 @@ h6 {
 .input-form textarea:focus {
   border: none;
   outline: none;
-  box-shadow: #cae6e7 0 0 0 0.07rem;
+  box-shadow: #e7cae6 0 0 0 0.07rem;
   color: #242424;
   background-color: white;
   transition: all 0.3s ease;
@@ -11121,7 +11121,7 @@ h6 {
   padding: 9px 12px !important;
   height: auto !important;
   font-weight: 600 !important;
-  color: #239fa8 !important;
+  color: #a823a1 !important;
   text-transform: uppercase;
   display: block;
   content: "Browse";
@@ -11132,6 +11132,8 @@ h6 {
   border-radius: 0.3rem !important;
   margin: 0 !important;
 }
+
+/*---------------------SEARCH---------------------*/
 
 .search-box {
   min-width: 200px;
@@ -11160,7 +11162,7 @@ h6 {
   border: none;
   outline: none;
   border-radius: 15px;
-  box-shadow: #cae6e7 0 0 0 0.07rem !important;
+  box-shadow: #e7cae6 0 0 0 0.07rem !important;
   color: #242424;
   background-color: white !important;
 }
@@ -11170,6 +11172,7 @@ h6 {
   border: none;
   box-shadow: 0px 0px 15px -6px #e9e9e9;
   border-radius: 15px;
+  color: #a823a1;
 }
 
 /*---------------------MODAL---------------------*/
@@ -11192,7 +11195,7 @@ h6 {
   font-weight: 500;
   min-width: 140px;
   border-radius: 1.5rem;
-  background-color: #239fa8;
+  background-color: #a823a1;
   color: white;
   text-transform: uppercase;
 }
@@ -11204,11 +11207,11 @@ h6 {
 
 .btn-submit:hover {
   color: white;
-  background: #4f6664;
+  background: #665766;
 }
 
 .btn-new {
-  color: #239fa8;
+  color: #a823a1;
   font-weight: 500;
   display: flex;
   flex-direction: row;
@@ -11222,12 +11225,23 @@ h6 {
 }
 
 .btn-icon {
-  color: #239fa8;
+  color: #a823a1;
 }
 
 .btn-icon:focus {
   box-shadow: none;
-  color: #cae6e7;
+  color: #e7cae6;
+}
+
+.sort {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.sort a,
+.sort i.fas {
+  line-height: 0.4rem;
 }
 
 /*---------------------ICONS---------------------*/
@@ -11239,23 +11253,23 @@ h6 {
 
 .fa-times-circle {
   font-size: 1.3rem;
-  color: #4f6664;
+  color: #665766;
 }
 
 .table-fa {
   font-size: 1.04rem;
   text-decoration: none;
-  color: #239fa8;
+  color: #a823a1;
 }
 
 .back-fa {
   font-size: 1.8rem;
   text-decoration: none;
-  color: #239fa8;
+  color: #a823a1;
 }
 
 .back-fa:hover {
-  color: #166369;
+  color: #691664;
 }
 
 .link-fa {
@@ -11266,18 +11280,18 @@ h6 {
 
 .card-table {
   border-radius: 15px;
-  padding: 1.6rem 1.4rem;
+  padding: 0.7rem 1.4rem 1.6rem 1.4rem;
 }
 
 table {
   margin: 0 !important;
-  color: #526061 !important;
+  color: #615261 !important;
   border-collapse: separate;
   border-spacing: 0 10px;
 }
 
 thead {
-  color: #526061;
+  color: #615261;
 }
 
 th:first-child {
@@ -11330,11 +11344,11 @@ td:last-child {
   font-weight: 500;
   letter-spacing: 0.04rem;
   text-transform: uppercase;
-  color: #4f6664;
+  color: #665766;
 }
 
 .breadcrumb-item a {
-  color: #239fa8;
+  color: #a823a1;
 }
 
 hr {
@@ -11345,7 +11359,7 @@ hr {
 
 .sidenav {
   min-height: 100vh;
-  background-color: #4f6664;
+  background-color: #665766;
   height: 100%;
   width: 300px;
   position: fixed;
@@ -11353,6 +11367,11 @@ hr {
   left: 0;
   overflow-x: hidden;
   transition: 0.5s;
+}
+
+.sidenav .nav-logo {
+  margin: 1rem 1.6rem;
+  height: 30px;
 }
 
 .sidenav .nav-link {
@@ -11368,22 +11387,22 @@ hr {
 }
 
 .sidenav .nav-link:hover {
-  color: #239fa8;
+  color: #a823a1;
   background-color: #fcfcfc;
 }
 
 .sidenav .nav-link:hover .link-fa {
-  color: #cae6e7;
+  color: #e7cae6;
 }
 
 .active {
   font-weight: 600 !important;
-  color: #239fa8 !important;
+  color: #a823a1 !important;
   background-color: #fcfcfc;
 }
 
 .active .link-fa {
-  color: #239fa8 !important;
+  color: #a823a1 !important;
 }
 
 .sidebar-heading {
@@ -11406,23 +11425,23 @@ hr {
 
 .closebtn {
   color: #fcfcfc;
-  padding: 0.9rem 1.5rem 0.5rem 1.5rem;
+  padding: 1rem 1.6rem;
   font-size: 24px;
 }
 
 .closebtn:hover {
-  color: #cae6e7;
+  color: #e7cae6;
 }
 
 .navbar .opennav-btn {
-  color: #239fa8 !important;
+  color: #a823a1 !important;
   cursor: pointer;
   font-size: 24px;
   padding: 0 !important;
 }
 
 .navbar .opennav-btn:hover {
-  color: #4f6664 !important;
+  color: #665766 !important;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -11448,12 +11467,12 @@ hr {
 }
 
 .page-link {
-  color: #239fa8 !important;
+  color: #a823a1 !important;
 }
 
 .page-item.active .page-link {
   background-color: #f7f7f7 !important;
-  color: #4f6664 !important;
+  color: #665766 !important;
   border-color: #f7f7f7 !important;
 }
 
@@ -11476,7 +11495,7 @@ hr {
 
 .login h1,
 .login h3 {
-  color: #239fa8;
+  color: #a823a1;
 }
 
 .login h3 {
@@ -11493,7 +11512,7 @@ hr {
 .login .forgot-pwd a {
   font-size: 0.8rem;
   letter-spacing: 0.03rem;
-  color: #239fa8;
+  color: #a823a1;
   font-weight: 600;
 }
 
@@ -11520,7 +11539,7 @@ hr {
   border-bottom-color: #b6c0bf6b;
   font-size: 1rem;
   letter-spacing: 0.03rem;
-  color: #b6c0bf;
+  color: #b0acb1;
   font-weight: 300;
 }
 

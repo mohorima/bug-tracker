@@ -26,6 +26,8 @@ class IssueController extends Controller
     public function index()
     {
         $searchTerm = request('keywords');
+        $orderTermAsc = request('orderTermAsc');
+        $orderTermDesc = request('orderTermDesc');
         return Issue::with('project')
             ->with('assignee')
             ->when($searchTerm, function ($query, $searchTerm) {
@@ -34,8 +36,16 @@ class IssueController extends Controller
                     ->orWhere('severity', 'LIKE', '%' . $searchTerm . '%')
                     ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
             })
+            ->when($orderTermAsc, function ($query, $orderTermAsc) {
+                return $query->orderBy($orderTermAsc, 'ASC');
+            })
+            ->when($orderTermDesc, function ($query, $orderTermDesc) {
+                return $query->orderBy($orderTermDesc, 'desc');
+            })
             ->latest()
             ->paginate(25);
+
+        //orderBy('id', 'ASC')
     }
 
     /**

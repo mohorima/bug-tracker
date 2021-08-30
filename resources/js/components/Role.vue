@@ -181,6 +181,10 @@
                                 type="submit"
                                 class="btn btn-submit"
                             >
+                                <i
+                                    class="fas fa-pen-nib mr-2"
+                                    aria-hidden="true"
+                                ></i>
                                 Update
                             </button>
                             <button
@@ -188,6 +192,10 @@
                                 type="submit"
                                 class="btn btn-submit"
                             >
+                                <i
+                                    class="fas fa-save mr-2"
+                                    aria-hidden="true"
+                                ></i>
                                 Create
                             </button>
                         </div>

@@ -76,14 +76,13 @@ let routes = [
 const router = new VueRouter({
     mode: "history",
     linkActiveClass: "active",
-    beforeEach(toRoute, fromRoute, next) {
-        window.document.title =
-            toRoute.meta && toRoute.meta.title
-                ? toRoute.meta.title
-                : "BugTrack";
-        next();
-    },
     routes,
+});
+
+router.beforeEach((to, from, next) => {
+    window.document.title =
+        to.meta && to.meta.title ? to.meta.title : "BugTrack";
+    next();
 });
 
 // Register Vue components.
