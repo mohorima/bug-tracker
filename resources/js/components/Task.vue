@@ -94,7 +94,7 @@
                                             v-else-if="
                                                 task.priority === 'medium'
                                             "
-                                            class="badge bg-warning text-white"
+                                            class="badge bg-warning text-dark"
                                             >MEDIUM
                                         </span>
                                         <span

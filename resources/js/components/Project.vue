@@ -91,7 +91,7 @@
                                             START
                                         </span>
                                         {{ project.startDate }}<br />
-                                        <span class="badge bg-light text-faded">
+                                        <span class="badge bg-light text-faded mt-1">
                                             END
                                         </span>
                                         {{ project.endDate }}
@@ -140,7 +140,7 @@
                                     </td>
 
                                     <td>
-                                        <span class="badge bg-light text-faded">
+                                        <span class="badge bg-light text-dark">
                                             {{ projectTags(project.tag) }}
                                         </span>
                                     </td>

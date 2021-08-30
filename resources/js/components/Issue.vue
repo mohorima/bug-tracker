@@ -117,7 +117,7 @@
                                             v-else-if="
                                                 issue.severity === 'high'
                                             "
-                                            class="badge bg-warning text-white"
+                                            class="badge bg-warning text-dark"
                                             >HIGH
                                         </span>
                                         <span
@@ -132,7 +132,7 @@
                                         <span
                                             class="badge text-white"
                                             :class="{
-                                                'bg-warning':
+                                                'bg-danger':
                                                     issue.status === 'open',
                                                 'bg-success':
                                                     issue.status != 'open',
@@ -147,7 +147,7 @@
                                     </td>
                                     <td>
                                         <span
-                                            class="badge bg-light text-faded to-uppercase"
+                                            class="badge bg-light text-dark to-uppercase"
                                         >
                                             {{ issue.type }}
                                         </span>

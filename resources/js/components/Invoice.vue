@@ -112,7 +112,7 @@
                                             BILL
                                         </span>
                                         {{ invoice.billDate }}<br />
-                                        <span class="badge bg-light text-faded">
+                                        <span class="badge bg-light text-faded mt-1">
                                             DUE
                                         </span>
                                         {{ invoice.dueDate }}

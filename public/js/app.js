@@ -46581,11 +46581,15 @@ var render = function() {
                       ),
                       _c("br"),
                       _vm._v(" "),
-                      _c("span", { staticClass: "badge bg-light text-faded" }, [
-                        _vm._v(
-                          "\n                                        DUE\n                                    "
-                        )
-                      ]),
+                      _c(
+                        "span",
+                        { staticClass: "badge bg-light text-faded mt-1" },
+                        [
+                          _vm._v(
+                            "\n                                        DUE\n                                    "
+                          )
+                        ]
+                      ),
                       _vm._v(
                         "\n                                    " +
                           _vm._s(invoice.dueDate) +
@@ -47665,7 +47669,7 @@ var render = function() {
                         : issue.severity === "high"
                         ? _c(
                             "span",
-                            { staticClass: "badge bg-warning text-white" },
+                            { staticClass: "badge bg-warning text-dark" },
                             [
                               _vm._v(
                                 "HIGH\n                                    "
@@ -47691,7 +47695,7 @@ var render = function() {
                         {
                           staticClass: "badge text-white",
                           class: {
-                            "bg-warning": issue.status === "open",
+                            "bg-danger": issue.status === "open",
                             "bg-success": issue.status != "open"
                           }
                         },
@@ -47711,7 +47715,7 @@ var render = function() {
                       _c(
                         "span",
                         {
-                          staticClass: "badge bg-light text-faded to-uppercase"
+                          staticClass: "badge bg-light text-dark to-uppercase"
                         },
                         [
                           _vm._v(
@@ -49174,11 +49178,15 @@ var render = function() {
                       ),
                       _c("br"),
                       _vm._v(" "),
-                      _c("span", { staticClass: "badge bg-light text-faded" }, [
-                        _vm._v(
-                          "\n                                        END\n                                    "
-                        )
-                      ]),
+                      _c(
+                        "span",
+                        { staticClass: "badge bg-light text-faded mt-1" },
+                        [
+                          _vm._v(
+                            "\n                                        END\n                                    "
+                          )
+                        ]
+                      ),
                       _vm._v(
                         "\n                                    " +
                           _vm._s(project.endDate) +
@@ -49231,7 +49239,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("td", [
-                      _c("span", { staticClass: "badge bg-light text-faded" }, [
+                      _c("span", { staticClass: "badge bg-light text-dark" }, [
                         _vm._v(
                           "\n                                        " +
                             _vm._s(_vm.projectTags(project.tag)) +
@@ -50872,7 +50880,7 @@ var render = function() {
                         : task.priority === "medium"
                         ? _c(
                             "span",
-                            { staticClass: "badge bg-warning text-white" },
+                            { staticClass: "badge bg-warning text-dark" },
                             [
                               _vm._v(
                                 "MEDIUM\n                                    "
