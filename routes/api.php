@@ -47,6 +47,7 @@ Route::middleware('auth:api')->get('/issue', function (Request $request) {
 
 //this single-handedly attaches routes to all the methods in IssueController e.g. show, store etc
 Route::apiResource('issue', IssueController::class);
+Route::get('assignee', [IssueController::class, 'assignee']);
 
 /* PROJECT */
 Route::middleware('auth:api')->get('/project', function (Request $request) {

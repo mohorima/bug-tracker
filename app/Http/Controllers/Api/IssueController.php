@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\IssueRequest;
 use App\Models\Issue;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class IssueController extends Controller
@@ -46,6 +47,11 @@ class IssueController extends Controller
             ->paginate(25);
 
         //orderBy('id', 'ASC')
+    }
+
+    public function assignee()
+    {
+        return User::latest()->paginate(25);
     }
 
     /**

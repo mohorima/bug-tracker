@@ -4019,6 +4019,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4029,8 +4049,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       editMode: false,
-      projects: [],
       issues: [],
+      projects: [],
+      users: [],
       keywords: null,
       orderTermAsc: null,
       orderTermDesc: null,
@@ -4068,6 +4089,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.clear();
       this.form.reset();
       this.loadProjects();
+      this.loadUsers();
       $("#addRecord").modal("show");
     },
     editModal: function editModal(issue) {
@@ -4075,6 +4097,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.clear();
       this.form.reset();
       this.loadProjects();
+      this.loadUsers();
       $("#addRecord").modal("show");
       this.form.fill(issue);
     },
@@ -4100,6 +4123,16 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/project").then(function (_ref2) {
         var data = _ref2.data;
         return _this2.projects = data.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    loadUsers: function loadUsers() {
+      var _this3 = this;
+
+      axios.get("/api/assignee").then(function (_ref3) {
+        var data = _ref3.data;
+        return _this3.users = data.data;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -4131,11 +4164,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    var _this3 = this;
+    var _this4 = this;
 
     this.loadIssues();
     Fire.$on("reloadRecords", function () {
-      _this3.loadIssues();
+      _this4.loadIssues();
     });
   }
 });
@@ -6013,6 +6046,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.es.js");
 /* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
+//
+//
 //
 //
 //
@@ -48081,12 +48116,6 @@ var render = function() {
                                 _vm._v(
                                   "\n                                        Critical\n                                    "
                                 )
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "database" } }, [
-                                _vm._v(
-                                  "\n                                        Database\n                                    "
-                                )
                               ])
                             ]
                           ),
@@ -48106,9 +48135,8 @@ var render = function() {
                         [
                           _vm._m(5),
                           _vm._v(" "),
-                          _c(
-                            "select",
-                            {
+                          _c("div", { staticClass: "form-check" }, [
+                            _c("input", {
                               directives: [
                                 {
                                   name: "model",
@@ -48117,60 +48145,77 @@ var render = function() {
                                   expression: "form.status"
                                 }
                               ],
-                              staticClass: "custom-select form-control",
-                              attrs: { name: "status", id: "status" },
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                name: "status",
+                                id: "status1",
+                                value: "open"
+                              },
+                              domProps: {
+                                checked: _vm._q(_vm.form.status, "open")
+                              },
                               on: {
                                 change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.form,
-                                    "status",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
+                                  return _vm.$set(_vm.form, "status", "open")
                                 }
                               }
-                            },
-                            [
-                              _c(
-                                "option",
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "form-check-label",
+                                attrs: { for: "status1" }
+                              },
+                              [
+                                _vm._v(
+                                  "Open\n                                    "
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-check" }, [
+                            _c("input", {
+                              directives: [
                                 {
-                                  attrs: {
-                                    value: "",
-                                    disabled: "",
-                                    selected: "",
-                                    hidden: ""
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                        Select Status\n                                    "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "open" } }, [
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.status,
+                                  expression: "form.status"
+                                }
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                name: "status",
+                                id: "status2",
+                                value: "closed"
+                              },
+                              domProps: {
+                                checked: _vm._q(_vm.form.status, "closed")
+                              },
+                              on: {
+                                change: function($event) {
+                                  return _vm.$set(_vm.form, "status", "closed")
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "form-check-label",
+                                attrs: { for: "status2" }
+                              },
+                              [
                                 _vm._v(
-                                  "\n                                        Open\n                                    "
+                                  "Closed\n                                    "
                                 )
-                              ]),
-                              _vm._v(" "),
-                              _c("option", { attrs: { value: "closed" } }, [
-                                _vm._v(
-                                  "\n                                        Closed\n                                    "
-                                )
-                              ])
-                            ]
-                          ),
+                              ]
+                            )
+                          ]),
                           _vm._v(" "),
                           _c("HasError", {
                             attrs: { form: _vm.form, field: "status" }
@@ -48312,35 +48357,74 @@ var render = function() {
                         [
                           _vm._m(8),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.form.assignee_id,
-                                expression: "form.assignee_id"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              id: "assignee_id",
-                              type: "text",
-                              name: "assignee_id"
-                            },
-                            domProps: { value: _vm.form.assignee_id },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.assignee_id,
+                                  expression: "form.assignee_id"
                                 }
-                                _vm.$set(
-                                  _vm.form,
-                                  "assignee_id",
-                                  $event.target.value
-                                )
+                              ],
+                              staticClass: "custom-select form-control",
+                              attrs: { name: "assignee_id", id: "assignee_id" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.form,
+                                    "assignee_id",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
                               }
-                            }
-                          }),
+                            },
+                            [
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "",
+                                    disabled: "",
+                                    selected: "",
+                                    hidden: ""
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        Select Assignee\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _vm._l(_vm.users, function(user) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: user.id } },
+                                  [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(user.name) +
+                                        "\n                                    "
+                                    )
+                                  ]
+                                )
+                              })
+                            ],
+                            2
+                          ),
                           _vm._v(" "),
                           _c("HasError", {
                             attrs: { form: _vm.form, field: "assignee_id" }
@@ -48416,18 +48500,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-prepend" }, [
-      _c(
-        "div",
-        { staticClass: "input-group-text input-group-prepend-search" },
-        [
-          _c("i", {
-            staticClass: "fas fa-search",
-            attrs: { "aria-hidden": "true" }
-          })
-        ]
-      )
-    ])
+    return _c(
+      "div",
+      { staticClass: "input-group-text input-group-prepend-search" },
+      [
+        _c("i", {
+          staticClass: "fas fa-search",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -51915,6 +51997,8 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(user.email))]),
                     _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(user.created_at))]),
+                    _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(user.role.name))])
                   ])
                 }),
@@ -52324,6 +52408,10 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { staticClass: "th-lg", attrs: { scope: "col" } }, [
           _vm._v("Email")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
+          _vm._v("Registered at")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [

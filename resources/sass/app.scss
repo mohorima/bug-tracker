@@ -20,7 +20,6 @@ body {
     padding: 0;
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: white;
     font-family: "Poppins", sans-serif;
     background-color: $shadow-grey;
 }
@@ -196,10 +195,8 @@ h6 {
     min-width: 200px;
     border-radius: 15px;
     resize: none;
-    background-color: #fafafa;
+    background-color: $light-grey;
     border: none;
-    -webkit-box-shadow: 0px 0px 15px -6px #e9e9e9;
-    box-shadow: 0px 0px 15px -6px #e9e9e9;
     padding: 1rem;
 
     &:focus {
@@ -207,12 +204,12 @@ h6 {
         outline: none;
         border-radius: 15px;
         box-shadow: none;
-        color: $black;
-        background-color: white !important;
     }
 }
 .input-group-search {
     width: 300px;
+    -webkit-box-shadow: 0px 0px 15px -6px #e9e9e9;
+    box-shadow: 0px 0px 15px -6px #e9e9e9;
 }
 .input-group-search:focus-within {
     border: none;
@@ -222,13 +219,12 @@ h6 {
     color: $black;
     background-color: white !important;
 }
-
 .input-group-prepend-search {
-    background-color: #fafafa;
+    background-color: $light-grey;
     border: none;
     -webkit-box-shadow: 0px 0px 15px -6px #e9e9e9;
     box-shadow: 0px 0px 15px -6px #e9e9e9;
-    border-radius: 15px;
+    border-radius: 15px 0 0 15px;
     color: $main-clr;
 }
 
@@ -286,18 +282,18 @@ h6 {
     }
 }
 
-
 .sort {
     display: flex;
     flex-direction: column;
     margin-left: 15px;
-    a, i.fas{
+    a,
+    i.fas {
         line-height: 0.4rem;
     }
 }
 
 /*---------------------BADGE---------------------*/
-.badge{
+.badge {
     padding: 0.5rem;
     font-weight: 500;
     letter-spacing: 0.03rem;
@@ -552,6 +548,10 @@ hr {
         font-size: 1.4rem;
     }
 
+    label {
+        color: $main-clr;
+    }
+
     .forgot-pwd {
         display: flex;
         justify-content: space-between;
@@ -575,7 +575,7 @@ hr {
     }
     .card {
         background-color: $shadow-grey;
-        border: 1px solid #239fa83f;
+        border: 1px solid #a8239d3f;
         padding: 8px 35px 25px 35px;
         box-shadow: none;
     }

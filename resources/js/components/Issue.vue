@@ -6,12 +6,10 @@
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
                     <div class="input-group input-group-search">
-                        <div class="input-group-prepend">
-                            <div
-                                class="input-group-text input-group-prepend-search"
-                            >
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                            </div>
+                        <div
+                            class="input-group-text input-group-prepend-search"
+                        >
+                            <i class="fas fa-search" aria-hidden="true"></i>
                         </div>
                         <input
                             type="text"
@@ -323,9 +321,6 @@
                                         <option value="critical">
                                             Critical
                                         </option>
-                                        <option value="database">
-                                            Database
-                                        </option>
                                     </select>
                                     <HasError :form="form" field="severity" />
                                 </div>
@@ -339,27 +334,37 @@
                                         <strong class="text-danger"> *</strong>
                                     </label>
 
-                                    <select
-                                        class="custom-select form-control"
-                                        name="status"
-                                        id="status"
-                                        v-model="form.status"
-                                    >
-                                        <option
-                                            value=""
-                                            disabled
-                                            selected
-                                            hidden
-                                        >
-                                            Select Status
-                                        </option>
-                                        <option value="open">
-                                            Open
-                                        </option>
-                                        <option value="closed">
-                                            Closed
-                                        </option>
-                                    </select>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="status"
+                                            id="status1"
+                                            v-model="form.status"
+                                            value="open"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="status1"
+                                            >Open
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="status"
+                                            id="status2"
+                                            v-model="form.status"
+                                            value="closed"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="status2"
+                                            >Closed
+                                        </label>
+                                    </div>
+
                                     <HasError :form="form" field="status" />
                                 </div>
                                 <!--.form-group -->
@@ -423,13 +428,28 @@
                                         <strong class="text-danger"> *</strong>
                                     </label>
 
-                                    <input
+                                    <select
+                                        class="custom-select form-control"
+                                        name="assignee_id"
                                         id="assignee_id"
                                         v-model="form.assignee_id"
-                                        type="text"
-                                        name="assignee_id"
-                                        class="form-control"
-                                    />
+                                    >
+                                        <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            hidden
+                                        >
+                                            Select Assignee
+                                        </option>
+                                        <option
+                                            v-for="user in users"
+                                            :value="user.id"
+                                        >
+                                            {{ user.name }}
+                                        </option>
+                                    </select>
+
                                     <HasError
                                         :form="form"
                                         field="assignee_id"
@@ -483,8 +503,9 @@ export default {
 
     data: () => ({
         editMode: false,
-        projects: [],
         issues: [],
+        projects: [],
+        users: [],
         keywords: null,
         orderTermAsc: null,
         orderTermDesc: null,
@@ -516,6 +537,7 @@ export default {
 
             Fire.$emit("reloadRecords");
         },
+
         changeOrderDesc(term) {
             this.orderTermAsc = null;
             this.orderTermDesc == null
@@ -524,11 +546,13 @@ export default {
 
             Fire.$emit("reloadRecords");
         },
+
         newModal() {
             this.editMode = false;
             this.form.clear();
             this.form.reset();
             this.loadProjects();
+            this.loadUsers();
             $("#addRecord").modal("show");
         },
 
@@ -537,6 +561,7 @@ export default {
             this.form.clear();
             this.form.reset();
             this.loadProjects();
+            this.loadUsers();
             $("#addRecord").modal("show");
             this.form.fill(issue);
         },
@@ -558,6 +583,13 @@ export default {
             axios
                 .get("/api/project")
                 .then(({ data }) => (this.projects = data.data))
+                .catch((error) => console.log(error));
+        },
+
+        loadUsers() {
+            axios
+                .get("/api/assignee")
+                .then(({ data }) => (this.users = data.data))
                 .catch((error) => console.log(error));
         },
 

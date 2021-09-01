@@ -35,6 +35,7 @@
                                     <th class="th-sm" scope="col">Actions</th>
                                     <th class="th-lg" scope="col">Name</th>
                                     <th class="th-lg" scope="col">Email</th>
+                                    <th class="th-sm" scope="col">Registered at</th>
                                     <th class="th-sm" scope="col">Role</th>
                                 </tr>
                             </thead>
@@ -68,6 +69,7 @@
                                     </th>
                                     <td>{{ user.name }}</td>
                                     <td>{{ user.email }}</td>
+                                    <td>{{ user.created_at }}</td>
                                     <td>{{ user.role.name }}</td>
                                 </tr>
                             </tbody>
