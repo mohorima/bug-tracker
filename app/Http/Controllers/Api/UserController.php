@@ -47,7 +47,11 @@ class UserController extends Controller
     public function update(UserRequest $request, $id)
     {
         $user = User::findOrFail($id);
-        $user->update($request->all());
+        $user->update([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'role_id' => $request->input('role_id'),
+        ]);
     }
 
     public function destroy($id)

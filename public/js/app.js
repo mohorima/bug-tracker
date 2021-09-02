@@ -6359,9 +6359,8 @@ __webpack_require__.r(__webpack_exports__);
     loadRoles: function loadRoles() {
       var _this2 = this;
 
-      axios.get("/api/role").then(function (_ref2) {
-        var data = _ref2.data;
-        return _this2.roles = data.data;
+      axios.get("/api/role").then(function (response) {
+        return _this2.roles = response.data.roles;
       })["catch"](function (error) {
         return console.log(error);
       });

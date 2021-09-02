@@ -309,7 +309,7 @@ export default {
         loadRoles() {
             axios
                 .get("/api/role")
-                .then(({ data }) => (this.roles = data.data))
+                .then((response) => (this.roles = response.data.roles))
                 .catch((error) => console.log(error));
         },
 
