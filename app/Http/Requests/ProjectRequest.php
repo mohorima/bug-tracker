@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProjectRequest extends FormRequest
 {
@@ -24,7 +25,11 @@ class ProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:250|unique:projects,title,' . $this->id,
+            'title' => [
+                'required',
+                'max:250',
+                Rule::unique('projects')->ignore($this->id),
+            ],
             'description' => 'max:500|nullable',
             'startDate' => 'required|date',
             'endDate' => 'required|date',

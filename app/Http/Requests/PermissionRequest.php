@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class PermissionRequest extends FormRequest
 {
@@ -24,7 +25,11 @@ class PermissionRequest extends FormRequest
     public function rules()
     {
         return [
-            'slug' => 'required|max:100|unique:permissions,slug,' . $this->id,
+            'slug' => [
+                'required',
+                'max:100',
+                Rule::unique('permissions')->ignore($this->id),
+            ],
             'description' => 'max:255|nullable',
         ];
     }
