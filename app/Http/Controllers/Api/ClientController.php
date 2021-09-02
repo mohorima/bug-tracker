@@ -17,13 +17,7 @@ class ClientController extends Controller
     public function index()
     {
         $searchTerm = request('keywords');
-        return Client::when($searchTerm, function ($query, $searchTerm) {
-            return $query
-                ->where('company', 'LIKE', '%' . $searchTerm . '%')
-                ->orWhere('owner', 'LIKE', '%' . $searchTerm . '%');
-        })
-            ->latest()
-            ->paginate(25);
+        return Client::latest()->paginate(25);
     }
 
     public function store(ClientRequest $request)
