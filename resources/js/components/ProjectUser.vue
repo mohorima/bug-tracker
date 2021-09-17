@@ -112,7 +112,7 @@ export default {
     methods: {
         loadUsers() {
             axios
-                .get("/api/project-member", {
+                .get("/api/project/member", {
                     params: { keywords: this.keywords },
                 })
                 .then(({ data }) => (this.users = data.data))
@@ -123,7 +123,7 @@ export default {
             //set form id property to route projectId parameter
 
             this.form
-                .post("/api/project-member")
+                .post("/api/project/member")
                 .then(() => {
                     Fire.$emit("reloadRecords");
                     //redirect to projects

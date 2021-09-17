@@ -72,7 +72,7 @@
                                         </a>
                                         <router-link
                                             :to="{
-                                                name: 'project-member',
+                                                name: 'project/member',
                                                 params: {
                                                     projectId: project.id,
                                                     projectTitle: project.title,

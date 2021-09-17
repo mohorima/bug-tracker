@@ -620,15 +620,67 @@ hr {
     .nav-tabs .nav-item.show .nav-link {
         background-color: $light-grey;
     }
+    .active {
+        font-weight: 400 !important;
+        color: $main-clr !important;
+        background-color: transparent;
+    }
 }
 .tab-content {
     color: $black;
     font-size: 1rem;
     padding: 2rem;
-
     .active {
-        font-weight: 400 !important;
         color: $black !important;
-        background-color: transparent;
+    }
+}
+
+/*---------------TABBED CARD---------------*/
+.profile-info {
+    position: relative;
+    h2 {
+        font-size: 1.6rem;
+        margin: 20px;
+        text-align: center;
+        @media screen and (max-width: 992px) {
+            font-size: 1.5rem;
+        }
+    }
+    p {
+        margin: 15px;
+    }
+}
+.profile-pic-section {
+    position: relative;
+    display: flex;
+    //width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: $light-main-clr;
+    background-image: url("../public/images/profilepic.jpg");
+    background-size: contain;
+}
+.profile-pic-btn {
+    position: absolute;
+    margin-left: 120px;
+    bottom: 0;
+    background-color: $main-clr;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .fas {
+        color: #ffffff;
+        font-size: 1.4rem;
     }
 }

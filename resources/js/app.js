@@ -37,6 +37,13 @@ let routes = [
         },
     },
     {
+        path: "/profile",
+        component: require("./components/Profile.vue").default,
+        meta: {
+            title: "User Profile",
+        },
+    },
+    {
         path: "/project",
         component: require("./components/Project.vue").default,
         meta: {
@@ -44,8 +51,8 @@ let routes = [
         },
     },
     {
-        path: "/project-member/:projectId/:projectTitle",
-        name: "project-member",
+        path: "/project/member/:projectId/:projectTitle",
+        name: "project/member",
         component: require("./components/ProjectUser.vue").default,
         meta: {
             title: "Project Members",

@@ -57,4 +57,18 @@ class UserController extends Controller
     {
         $user->delete();
     }
+
+    public function profile()
+    {
+        //
+    }
+
+    public function updateProfile(UserRequest $request, User $user)
+    {
+        $user->update([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'role_id' => $request->input('role_id'),
+        ]);
+    }
 }

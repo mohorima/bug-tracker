@@ -75,7 +75,7 @@ class ProjectController extends Controller
             ->paginate(25);
     }
 
-    public function memberStore()
+    public function storeMember()
     {
         //get project_id and all selected user_id from project_user array
 

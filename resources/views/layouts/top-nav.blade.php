@@ -15,14 +15,21 @@
                 <!-- Authentication Links -->
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <i class="fas fa-user-circle mr-2 link-fa"></i>
                         {{ ucwords(Auth::user()->name) }}
                     </a>
 
                     @auth
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
+                        <router-link to="/profile" class="dropdown-item">
+                            <i class="fas fa-user-circle mr-2 link-fa"></i>
+                            Profile
+                        </router-link>
+
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
+                            <i class="fas fa-door-open mr-2 link-fa"></i>
                             {{ __('Logout') }}
                         </a>
 

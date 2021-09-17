@@ -11588,6 +11588,12 @@ hr {
   background-color: #fbfaf9;
 }
 
+.tab-card .active {
+  font-weight: 400 !important;
+  color: #5BC43A !important;
+  background-color: transparent;
+}
+
 .tab-content {
   color: #242424;
   font-size: 1rem;
@@ -11595,9 +11601,65 @@ hr {
 }
 
 .tab-content .active {
-  font-weight: 400 !important;
   color: #242424 !important;
-  background-color: transparent;
+}
+
+/*---------------TABBED CARD---------------*/
+
+.profile-info {
+  position: relative;
+}
+
+.profile-info h2 {
+  font-size: 1.6rem;
+  margin: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .profile-info h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.profile-info p {
+  margin: 15px;
+}
+
+.profile-pic-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #d7e0ad;
+  background-image: url(/images/profilepic.jpg?a7d28bb880f5e6692ca50f1f4f8990fe);
+  background-size: contain;
+}
+
+.profile-pic-btn {
+  position: absolute;
+  margin-left: 120px;
+  bottom: 0;
+  background-color: #5BC43A;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic-btn .fas {
+  color: #ffffff;
+  font-size: 1.4rem;
 }
 
 

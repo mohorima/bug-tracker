@@ -28,6 +28,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 //this single-handedly attaches routes to all the methods in IssueController e.g. show, store etc
 Route::apiResource('user', UserController::class);
+//User Profile routes
+Route::get('profile', [UserController::class, 'profile']);
+Route::put('profile', [UserController::class, 'updateProfile']);
 
 /* CLIENT */
 Route::middleware('auth:api')->get('/client', function (Request $request) {
@@ -52,9 +55,12 @@ Route::get('assignee', [IssueController::class, 'assignee']);
 Route::middleware('auth:api')->get('/project', function (Request $request) {
     return $request->project();
 });
+
+//custom routes should be placed above resource routes, to work
+Route::get('project/member', [ProjectController::class, 'member']);
+Route::post('project/member', [ProjectController::class, 'storeMember']);
 Route::apiResource('project', ProjectController::class);
-Route::get('project-member', [ProjectController::class, 'member']);
-Route::post('project-member', [ProjectController::class, 'memberStore']);
+
 
 /* PERMISSION */
 Route::middleware('auth:api')->get('/permission', function (Request $request) {
