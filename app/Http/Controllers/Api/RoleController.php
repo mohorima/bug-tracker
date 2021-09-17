@@ -16,6 +16,8 @@ class RoleController extends Controller
 
     public function index()
     {
+        $this->authorize('viewAny', Role::class);
+
         $searchTerm = request('keywords');
 
         $role = Role::orderBy('id', 'ASC')
@@ -31,10 +33,9 @@ class RoleController extends Controller
 
     public function store(RoleRequest $request)
     {
-        return Role::create([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-        ]);
+        $this->authorize('create', Role::class);
+
+        return Role::create($request->all());
     }
 
     public function show($id)
@@ -42,15 +43,15 @@ class RoleController extends Controller
         //
     }
 
-    public function update(RoleRequest $request, $id)
+    public function update(RoleRequest $request, Role $role)
     {
-        $role = Role::findOrFail($id);
+        $this->authorize('update', $role);
         $role->update($request->all());
     }
 
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        $role = Role::findOrFail($id);
+        $this->authorize('delete', $role);
         $role->delete();
     }
 }

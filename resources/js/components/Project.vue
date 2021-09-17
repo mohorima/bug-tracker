@@ -5,33 +5,26 @@
                 <div
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
-                        <div class="input-group input-group-search">
-                            <div class="input-group-prepend">
-                                <div
-                                    class="input-group-text input-group-prepend-search"
-                                >
-                                    <i
-                                        class="fas fa-search"
-                                        aria-hidden="true"
-                                    ></i>
-                                </div>
+                    <div class="input-group input-group-search">
+                        <div class="input-group-prepend">
+                            <div
+                                class="input-group-text input-group-prepend-search"
+                            >
+                                <i class="fas fa-search" aria-hidden="true"></i>
                             </div>
-                            <input
-                                type="text"
-                                placeholder="Search"
-                                class="form-control search-box"
-                                v-model="keywords"
-                            />
                         </div>
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            class="form-control search-box"
+                            v-model="keywords"
+                        />
+                    </div>
 
-                        <button
-                            type="button"
-                            class="btn btn-new"
-                            @click="newModal"
-                        >
-                            <i class="fas fa-plus mr-2" aria-hidden="true"></i>
-                            New Project
-                        </button>
+                    <button type="button" class="btn btn-new" @click="newModal">
+                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                        New Project
+                    </button>
                 </div>
 
                 <div class="card card-table">
@@ -41,9 +34,9 @@
                                 <tr>
                                     <th class="th-sm" scope="col">Actions</th>
                                     <th class="th-lg" scope="col">Title</th>
+                                    <th class="th-sm" scope="col">Status</th>
                                     <th class="th-sm" scope="col">Duration</th>
                                     <th class="th-sm" scope="col">Cost</th>
-                                    <th class="th-sm" scope="col">Status</th>
                                     <th class="th-sm" scope="col">Tags</th>
                                     <th class="th-sm" scope="col">Client</th>
                                 </tr>
@@ -73,10 +66,24 @@
                                             title="Delete"
                                         >
                                             <i
-                                                class="fas fa-trash table-fa"
+                                                class="fas fa-trash mr-3 table-fa"
                                                 aria-hidden="true"
                                             ></i>
                                         </a>
+                                        <router-link
+                                            :to="{
+                                                name: 'project-member',
+                                                params: {
+                                                    projectId: project.id,
+                                                    projectTitle: project.title,
+                                                },
+                                            }"
+                                        >
+                                            <i
+                                                class="fas fa-user table-fa"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </router-link>
                                     </th>
                                     <td>
                                         <div class="text-title">
@@ -85,21 +92,6 @@
                                         <div class="text-small">
                                             {{ project.description }}
                                         </div>
-                                    </td>
-                                    <td>
-                                    <span class="badge bg-light text-faded">
-                                            START
-                                        </span>
-                                        {{ project.startDate }}<br />
-                                        <span class="badge bg-light text-faded mt-1">
-                                            END
-                                        </span>
-                                        {{ project.endDate }}
-                                        <br />
-                                        {{ estimatedHours(project.estHours) }}
-                                    </td>
-                                    <td>
-                                        <strong> $ {{ project.cost }} </strong>
                                     </td>
                                     <td>
                                         <span
@@ -138,7 +130,23 @@
                                             >COMPLETED</span
                                         >
                                     </td>
-
+                                    <td>
+                                        <span class="badge bg-light text-faded">
+                                            START
+                                        </span>
+                                        {{ project.startDate }}<br />
+                                        <span
+                                            class="badge bg-light text-faded mt-1"
+                                        >
+                                            END
+                                        </span>
+                                        {{ project.endDate }}
+                                        <br />
+                                        {{ estimatedHours(project.estHours) }}
+                                    </td>
+                                    <td>
+                                        <strong> $ {{ project.cost }} </strong>
+                                    </td>
                                     <td>
                                         <span class="badge bg-light text-dark">
                                             {{ projectTags(project.tag) }}

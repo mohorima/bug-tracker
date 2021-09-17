@@ -29,8 +29,6 @@ class ProjectController extends Controller
             })
             ->latest()
             ->paginate();
-
-        //$clients = Client::select('id', 'company')->get();
     }
 
     public function store(ProjectRequest $request)
@@ -40,21 +38,9 @@ class ProjectController extends Controller
         //add record (user_id & project_id) in project_user pivot table
 
         $user = User::findOrFail(auth()->user()->id);
-        return $user->projects()->sync(
-            Project::create([
-                'title' => $request->input('title'),
-                'description' => $request->input('description'),
-                'startDate' => $request->input('startDate'),
-                'endDate' => $request->input('endDate'),
-                'billingType' => $request->input('billingType'),
-                'cost' => $request->input('cost'),
-                'estHours' => $request->input('estHours'),
-                'tag' => $request->input('tag'),
-                'status' => $request->input('status'),
-                'client_id' => $request->input('client_id'),
-            ])->id,
-            false
-        );
+        return $user
+            ->projects()
+            ->sync(Project::create($request->all())->id, false);
     }
 
     public function show($id)
@@ -62,17 +48,40 @@ class ProjectController extends Controller
         //
     }
 
-    public function update(ProjectRequest $request, $id)
+    public function update(ProjectRequest $request, Project $project)
     {
-        $project = Project::findOrFail($id);
         $project->update($request->all());
     }
 
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        $project = Project::findOrFail($id);
         $project->delete();
 
         return ['msg' => 'Project deleted'];
+    }
+
+    public function member()
+    {
+        $searchTerm = request('keywords');
+
+        return User::with('role')
+            ->where('id', '!=', auth()->id())
+            ->when($searchTerm, function ($query, $searchTerm) {
+                return $query
+                    ->where('name', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('email', 'LIKE', '%' . $searchTerm . '%');
+            })
+            ->latest()
+            ->paginate(25);
+    }
+
+    public function memberStore()
+    {
+        //get project_id and all selected user_id from project_user array
+
+        $project = Project::findOrFail(request('id'));
+        $project->users()->sync(request('project_user'));
+
+        //$project->users()->sync(request('project_user'), false);
     }
 }

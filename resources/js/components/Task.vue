@@ -495,7 +495,7 @@ export default {
 
         loadCollaborators() {
             axios
-                .get("/api/user")
+                .get("/api/assignee")
                 .then(({ data }) => (this.collaborators = data.data))
                 .catch((error) => console.log(error));
         },

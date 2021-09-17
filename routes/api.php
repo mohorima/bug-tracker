@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+//this single-handedly attaches routes to all the methods in IssueController e.g. show, store etc
 Route::apiResource('user', UserController::class);
 
 /* CLIENT */
@@ -44,8 +45,6 @@ Route::apiResource('invoice', InvoiceController::class);
 Route::middleware('auth:api')->get('/issue', function (Request $request) {
     return $request->issue();
 });
-
-//this single-handedly attaches routes to all the methods in IssueController e.g. show, store etc
 Route::apiResource('issue', IssueController::class);
 Route::get('assignee', [IssueController::class, 'assignee']);
 
@@ -54,6 +53,8 @@ Route::middleware('auth:api')->get('/project', function (Request $request) {
     return $request->project();
 });
 Route::apiResource('project', ProjectController::class);
+Route::get('project-member', [ProjectController::class, 'member']);
+Route::post('project-member', [ProjectController::class, 'memberStore']);
 
 /* PERMISSION */
 Route::middleware('auth:api')->get('/permission', function (Request $request) {

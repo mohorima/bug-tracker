@@ -10951,7 +10951,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
-  background-color: #f7f5f2;
+  background-color: #ffffff;
 }
 
 #app {
@@ -10965,8 +10965,8 @@ h3 {
   margin: 0;
   padding: 0;
   font-weight: 600;
-  font-size: 1.5rem;
-  color: #4b4b4b;
+  font-size: 1.3rem;
+  color: #596152;
 }
 
 @media screen and (max-width: 992px) {
@@ -10978,12 +10978,12 @@ h3 {
 h5 {
   letter-spacing: 0.04rem;
   font-weight: 600;
-  font-size: 1.09rem;
-  color: #74a813;
+  font-size: 1.08rem;
+  color: #5BC43A;
 }
 
 .fancy-text {
-  color: #74a813;
+  color: #5BC43A;
   font-weight: 600;
   font-size: 1.5rem;
   letter-spacing: 0.03rem;
@@ -10991,7 +10991,7 @@ h5 {
 }
 
 h6 {
-  color: #74a813;
+  color: #5BC43A;
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.03rem;
@@ -11001,7 +11001,7 @@ h6 {
 .text-title {
   font-size: 1rem;
   font-weight: 500;
-  color: #615261;
+  color: #596152;
   width: 210px;
   word-wrap: break-word;
   word-break: keep-all;
@@ -11024,6 +11024,118 @@ h6 {
   text-transform: uppercase;
 }
 
+/*---------------------NAVIGATION---------------------*/
+
+.sidenav {
+  min-height: 100vh;
+  background-color: #fbfaf9;
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidenav .nav-logo {
+  margin: 1rem 1.6rem;
+  height: 30px;
+}
+
+.sidenav .nav-link {
+  text-decoration: none;
+  color: #596152;
+  padding: 1rem 1.6rem;
+  border-radius: 0 30px 30px 0;
+  margin-right: 30px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.04rem;
+  transition: all 250ms ease;
+}
+
+.sidenav .nav-link:hover {
+  color: #5BC43A;
+  font-weight: 600 !important;
+}
+
+.sidenav .nav-link:hover .link-fa {
+  color: #5BC43A;
+}
+
+.active {
+  font-weight: 600 !important;
+  color: #fbfaf9 !important;
+  background-color: #596152;
+}
+
+.active .link-fa {
+  color: #fbfaf9 !important;
+}
+
+.sidebar-heading {
+  text-decoration: none;
+  color: #596152;
+  padding: 1rem 1.6rem;
+  border-radius: 0 30px 30px 0;
+  margin-right: 30px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.04rem;
+  transition: all 250ms ease;
+  cursor: pointer;
+}
+
+.sidebar-heading:hover {
+  color: #5BC43A;
+  font-weight: 600 !important;
+}
+
+.sidebar-heading:hover .link-fa {
+  color: #5BC43A;
+}
+
+#main {
+  margin-left: 300px;
+  transition: 0.5s;
+}
+
+/* Position and style the close button (top right corner) */
+
+.closebtn {
+  color: #fbfaf9;
+  padding: 1rem 1.6rem;
+  font-size: 24px;
+}
+
+.closebtn:hover {
+  color: #d7e0ad;
+}
+
+.navbar .opennav-btn {
+  color: #5BC43A !important;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 0 !important;
+}
+
+.navbar .opennav-btn:hover {
+  color: #4b4b4b !important;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-width: 992px) {
+  .sidenav {
+    width: 0;
+  }
+
+  #main {
+    margin-left: 0;
+  }
+}
+
 /*---------------------DASHBOARD---------------------*/
 
 .dashboard-card {
@@ -11036,7 +11148,6 @@ h6 {
   border-radius: 1rem;
   background-color: #fbfaf9;
   border: none;
-  box-shadow: 0px 0px 15px -6px #e9e9e9;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
@@ -11121,7 +11232,7 @@ h6 {
   padding: 9px 12px !important;
   height: auto !important;
   font-weight: 600 !important;
-  color: #74a813 !important;
+  color: #5BC43A !important;
   text-transform: uppercase;
   display: block;
   content: "Browse";
@@ -11141,7 +11252,7 @@ h6 {
   resize: none;
   background-color: #fbfaf9;
   border: none;
-  padding: 1rem;
+  padding: 1.3rem;
 }
 
 .search-box:focus {
@@ -11153,7 +11264,6 @@ h6 {
 
 .input-group-search {
   width: 300px;
-  box-shadow: 0px 0px 15px -6px #e9e9e9;
 }
 
 .input-group-search:focus-within {
@@ -11168,9 +11278,8 @@ h6 {
 .input-group-prepend-search {
   background-color: #fbfaf9;
   border: none;
-  box-shadow: 0px 0px 15px -6px #e9e9e9;
   border-radius: 15px 0 0 15px;
-  color: #74a813;
+  color: #5BC43A;
 }
 
 /*---------------------MODAL---------------------*/
@@ -11193,7 +11302,7 @@ h6 {
   font-weight: 500;
   min-width: 140px;
   border-radius: 1.5rem;
-  background-color: #74a813;
+  background-color: #5BC43A;
   color: white;
   text-transform: uppercase;
 }
@@ -11209,7 +11318,7 @@ h6 {
 }
 
 .btn-new {
-  color: #74a813;
+  color: #5BC43A;
   font-weight: 500;
   display: flex;
   flex-direction: row;
@@ -11223,7 +11332,7 @@ h6 {
 }
 
 .btn-icon {
-  color: #74a813;
+  color: #5BC43A;
 }
 
 .btn-icon:focus {
@@ -11266,17 +11375,17 @@ h6 {
 .table-fa {
   font-size: 1.04rem;
   text-decoration: none;
-  color: #74a813;
+  color: #5BC43A;
 }
 
 .back-fa {
   font-size: 1.8rem;
   text-decoration: none;
-  color: #74a813;
+  color: #5BC43A;
 }
 
 .back-fa:hover {
-  color: #45630b;
+  color: #408929;
 }
 
 .link-fa {
@@ -11292,13 +11401,13 @@ h6 {
 
 table {
   margin: 0 !important;
-  color: #615261 !important;
+  color: #596152 !important;
   border-collapse: separate;
   border-spacing: 0 10px;
 }
 
 thead {
-  color: #615261;
+  color: #596152;
 }
 
 th:first-child {
@@ -11316,7 +11425,7 @@ td:last-child {
 .table tbody th,
 .table tbody td {
   border: none;
-  padding: 20px 10px;
+  padding: 20px 12px;
   background-color: white;
 }
 
@@ -11355,112 +11464,11 @@ td:last-child {
 }
 
 .breadcrumb-item a {
-  color: #74a813;
+  color: #5BC43A;
 }
 
 hr {
   border-top: 1px solid rgba(149, 182, 138, 0.137);
-}
-
-/*---------------------NAVIGATION---------------------*/
-
-.sidenav {
-  min-height: 100vh;
-  background-color: #4b4b4b;
-  height: 100%;
-  width: 300px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  transition: 0.5s;
-}
-
-.sidenav .nav-logo {
-  margin: 1rem 1.6rem;
-  height: 30px;
-}
-
-.sidenav .nav-link {
-  text-decoration: none;
-  color: #f7f5f2;
-  padding: 1rem 1.6rem;
-  border-radius: 0 30px 30px 0;
-  margin-right: 30px;
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.04rem;
-  transition: all 250ms ease;
-}
-
-.sidenav .nav-link:hover {
-  color: #74a813;
-  background-color: #fbfaf9;
-}
-
-.sidenav .nav-link:hover .link-fa {
-  color: #d7e0ad;
-}
-
-.active {
-  font-weight: 600 !important;
-  color: #74a813 !important;
-  background-color: #fbfaf9;
-}
-
-.active .link-fa {
-  color: #74a813 !important;
-}
-
-.sidebar-heading {
-  padding: 0.1rem 1.5rem;
-  margin-top: 1.2rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: #f7f5f2;
-  cursor: pointer;
-}
-
-#main {
-  margin-left: 300px;
-  transition: 0.5s;
-}
-
-/* Position and style the close button (top right corner) */
-
-.closebtn {
-  color: #fbfaf9;
-  padding: 1rem 1.6rem;
-  font-size: 24px;
-}
-
-.closebtn:hover {
-  color: #d7e0ad;
-}
-
-.navbar .opennav-btn {
-  color: #74a813 !important;
-  cursor: pointer;
-  font-size: 24px;
-  padding: 0 !important;
-}
-
-.navbar .opennav-btn:hover {
-  color: #4b4b4b !important;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-
-@media screen and (max-width: 992px) {
-  .sidenav {
-    width: 0;
-  }
-
-  #main {
-    margin-left: 0;
-  }
 }
 
 /*---------------BOOTSTRAP-PAGINATION---------------*/
@@ -11474,7 +11482,7 @@ hr {
 }
 
 .page-link {
-  color: #74a813 !important;
+  color: #5BC43A !important;
 }
 
 .page-item.active .page-link {
@@ -11502,7 +11510,7 @@ hr {
 
 .login h1,
 .login h3 {
-  color: #74a813;
+  color: #5BC43A;
 }
 
 .login h3 {
@@ -11511,7 +11519,7 @@ hr {
 }
 
 .login label {
-  color: #74a813;
+  color: #5BC43A;
 }
 
 .login .forgot-pwd {
@@ -11523,7 +11531,7 @@ hr {
 .login .forgot-pwd a {
   font-size: 0.8rem;
   letter-spacing: 0.03rem;
-  color: #74a813;
+  color: #5BC43A;
   font-weight: 600;
 }
 
@@ -11552,6 +11560,44 @@ hr {
   letter-spacing: 0.03rem;
   color: #a8a8a8;
   font-weight: 300;
+}
+
+/*---------------TABBED CARD---------------*/
+
+.tab-header {
+  background-color: #f7f5f2;
+  border-bottom: none;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.tab-header a {
+  color: #596152;
+}
+
+.tab-card .nav-tabs .nav-link {
+  border: none;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding: 1.2rem 2rem;
+  text-transform: uppercase;
+}
+
+.tab-card .nav-tabs .nav-link.active,
+.tab-card .nav-tabs .nav-item.show .nav-link {
+  background-color: #fbfaf9;
+}
+
+.tab-content {
+  color: #242424;
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+.tab-content .active {
+  font-weight: 400 !important;
+  color: #242424 !important;
+  background-color: transparent;
 }
 
 

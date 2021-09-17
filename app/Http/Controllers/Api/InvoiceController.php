@@ -16,6 +16,8 @@ class InvoiceController extends Controller
 
     public function index()
     {
+        $this->authorize('viewAny', Invoice::class);
+
         $searchTerm = request('keywords');
         return Invoice::with('project')
             ->when($searchTerm, function ($query, $searchTerm) {
@@ -31,6 +33,8 @@ class InvoiceController extends Controller
 
     public function store(InvoiceRequest $request)
     {
+        $this->authorize('create', Invoice::class);
+
         $number = auth()->user()->id;
         $prefix = str_pad($number, 4, '0', STR_PAD_LEFT);
 
@@ -52,15 +56,16 @@ class InvoiceController extends Controller
         //
     }
 
-    public function update(InvoiceRequest $request, $id)
+    public function update(InvoiceRequest $request, Invoice $invoice)
     {
-        $invoice = Invoice::findOrFail($id);
+        $this->authorize('update', $invoice);
+
         $invoice->update($request->all());
     }
 
-    public function destroy($id)
+    public function destroy(Invoice $invoice)
     {
-        $invoice = Invoice::findOrFail($id);
+        $this->authorize('delete', $invoice);
         $invoice->delete();
 
         return ['msg' => 'Invoice deleted'];

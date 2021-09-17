@@ -62,10 +62,13 @@
     </ul>
 
 
-    <h6 class="sidebar-heading d-flex justify-content-between"  data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
-      <span>Users</span>
+    <span class="sidebar-heading d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
+        <span>
+            <i class="fas fa-user-friends mr-3 link-fa"></i>
+            Users
+        </span>
       <i class="fas fa-angle-down ml-2"></i>
-    </h6>
+    </span>
 
     <div  class="collapse" id="collapseUsers">
 
@@ -73,7 +76,7 @@
 
         <li class="nav-item">
             <router-link to="/user" class="nav-link">
-                <i class="fas fa-user-friends mr-3 link-fa"></i>
+                <i class="fas fa-user mr-3 link-fa"></i>
                 Users
             </router-link>
         </li> 

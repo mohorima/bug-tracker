@@ -51,7 +51,9 @@ class IssueController extends Controller
 
     public function assignee()
     {
-        return User::latest()->paginate(25);
+        return User::where('id', '!=', auth()->id())
+            ->latest()
+            ->paginate(25);
     }
 
     /**
@@ -69,7 +71,7 @@ class IssueController extends Controller
             'severity' => $request->input('severity'),
             'dueDate' => $request->input('dueDate'),
             'status' => $request->input('status'),
-            'user_id' => auth()->user()->id,
+            'user_id' => auth()->id(),
             'project_id' => $request->input('project_id'),
             'assignee_id' => $request->input('assignee_id'),
         ]);
@@ -93,9 +95,8 @@ class IssueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(IssueRequest $request, $id)
+    public function update(IssueRequest $request, Issue $issue)
     {
-        $issue = Issue::findOrFail($id);
         $issue->update($request->all());
     }
 
@@ -105,9 +106,8 @@ class IssueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Issue $issue)
     {
-        $issue = Issue::findOrFail($id);
         $issue->delete();
 
         return ['msg' => 'Issue deleted'];

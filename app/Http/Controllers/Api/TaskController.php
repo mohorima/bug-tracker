@@ -40,7 +40,7 @@ class TaskController extends Controller
             'status' => $request->input('status'),
             'startDate' => $request->input('startDate'),
             'endDate' => $request->input('endDate'),
-            'user_id' => auth()->user()->id,
+            'user_id' => auth()->id(),
             'project_id' => $request->input('project_id'),
             'collaborator_id' => $request->input('collaborator_id'),
         ]);
@@ -51,15 +51,15 @@ class TaskController extends Controller
         //
     }
 
-    public function update(TaskRequest $request, $id)
+    public function update(TaskRequest $request, Task $task)
     {
-        $task = Task::findOrFail($id);
+        $this->authorize('update', $task);
         $task->update($request->all());
     }
 
-    public function destroy($id)
+    public function destroy(Task $task)
     {
-        $task = Task::findOrFail($id);
+        $this->authorize('delete', $task);
         $task->delete();
 
         return ['msg' => 'Task deleted'];

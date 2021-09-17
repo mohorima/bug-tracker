@@ -34,7 +34,7 @@
                                 <tr>
                                     <th class="th-sm" scope="col">Actions</th>
                                     <th class="th-lg" scope="col">Company</th>
-                                    <th class="th-sm" scope="col">Address</th>
+                                    <th class="th-lg" scope="col">Address</th>
                                     <th class="th-lg" scope="col">Contact</th>
                                     <th class="th-sm" scope="col">Website</th>
                                 </tr>

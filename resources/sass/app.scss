@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     font-family: "Poppins", sans-serif;
-    background-color: $shadow-grey;
+    background-color: #ffffff;
 }
 
 #app {
@@ -34,8 +34,8 @@ h3 {
     margin: 0;
     padding: 0;
     font-weight: 600;
-    font-size: 1.5rem;
-    color: $dark-main-clr;
+    font-size: 1.3rem;
+    color: $dark-grey;
 
     @media screen and (max-width: 992px) {
         font-size: 1.2rem;
@@ -45,7 +45,7 @@ h3 {
 h5 {
     letter-spacing: 0.04rem;
     font-weight: 600;
-    font-size: 1.09rem;
+    font-size: 1.08rem;
     color: $main-clr;
 }
 
@@ -87,6 +87,117 @@ h6 {
 .to-uppercase {
     text-transform: uppercase;
 }
+
+/*---------------------NAVIGATION---------------------*/
+
+.sidenav {
+    min-height: 100vh;
+    background-color: $light-grey;
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    .nav-logo {
+        margin: 1rem 1.6rem;
+        height: 30px;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: $dark-grey;
+        padding: 1rem 1.6rem;
+        border-radius: 0 30px 30px 0;
+        margin-right: 30px;
+        font-size: 0.8rem;
+        font-weight: 400;
+        letter-spacing: 0.04rem;
+        transition: all 250ms ease;
+
+        &:hover {
+            color: $main-clr;
+            font-weight: 600 !important;
+
+            .link-fa {
+                color: $main-clr;
+            }
+        }
+    }
+}
+
+.active {
+    font-weight: 600 !important;
+    color: $light-grey !important;
+    background-color: $dark-grey;
+
+    .link-fa {
+        color: $light-grey !important;
+    }
+}
+
+.sidebar-heading {
+    text-decoration: none;
+    color: $dark-grey;
+    padding: 1rem 1.6rem;
+    border-radius: 0 30px 30px 0;
+    margin-right: 30px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.04rem;
+    transition: all 250ms ease;
+    cursor: pointer;
+
+    &:hover {
+        color: $main-clr;
+        font-weight: 600 !important;
+
+        .link-fa {
+            color: $main-clr;
+        }
+    }
+}
+
+#main {
+    margin-left: 300px;
+    transition: 0.5s;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+    color: $light-grey;
+    padding: 1rem 1.6rem;
+    font-size: 24px;
+
+    &:hover {
+        color: $light-main-clr;
+    }
+}
+
+.navbar .opennav-btn {
+    color: $main-clr !important;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 0 !important;
+
+    &:hover {
+        color: $dark-main-clr !important;
+    }
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-width: 992px) {
+    .sidenav {
+        width: 0;
+    }
+
+    #main {
+        margin-left: 0;
+    }
+}
+
 /*---------------------DASHBOARD---------------------*/
 
 .dashboard-card {
@@ -98,8 +209,8 @@ h6 {
     border-radius: 1rem;
     background-color: $light-grey;
     border: none;
-    -webkit-box-shadow: 0px 0px 15px -6px #e9e9e9;
-    box-shadow: 0px 0px 15px -6px #e9e9e9;
+    //-webkit-box-shadow: 0px 0px 15px -6px #e2e2e2;
+    //box-shadow: 0px 0px 15px -6px #e2e2e2;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
@@ -197,7 +308,7 @@ h6 {
     resize: none;
     background-color: $light-grey;
     border: none;
-    padding: 1rem;
+    padding: 1.3rem;
 
     &:focus {
         border: none;
@@ -208,8 +319,6 @@ h6 {
 }
 .input-group-search {
     width: 300px;
-    -webkit-box-shadow: 0px 0px 15px -6px #e9e9e9;
-    box-shadow: 0px 0px 15px -6px #e9e9e9;
 }
 .input-group-search:focus-within {
     border: none;
@@ -222,8 +331,6 @@ h6 {
 .input-group-prepend-search {
     background-color: $light-grey;
     border: none;
-    -webkit-box-shadow: 0px 0px 15px -6px #e9e9e9;
-    box-shadow: 0px 0px 15px -6px #e9e9e9;
     border-radius: 15px 0 0 15px;
     color: $main-clr;
 }
@@ -359,7 +466,7 @@ td:last-child {
 .table tbody th,
 .table tbody td {
     border: none;
-    padding: 20px 10px;
+    padding: 20px 12px;
     background-color: white;
 }
 .table thead th {
@@ -404,104 +511,6 @@ td:last-child {
 
 hr {
     border-top: 1px solid rgba(149, 182, 138, 0.137);
-}
-
-/*---------------------NAVIGATION---------------------*/
-.sidenav {
-    min-height: 100vh;
-    background-color: $dark-main-clr;
-    height: 100%;
-    width: 300px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    transition: 0.5s;
-
-    .nav-logo {
-        margin: 1rem 1.6rem;
-        height: 30px;
-    }
-
-    .nav-link {
-        text-decoration: none;
-        color: $shadow-grey;
-        padding: 1rem 1.6rem;
-        border-radius: 0 30px 30px 0;
-        margin-right: 30px;
-        font-size: 0.8rem;
-        font-weight: 400;
-        letter-spacing: 0.04rem;
-        transition: all 250ms ease;
-
-        &:hover {
-            color: $main-clr;
-            background-color: $light-grey;
-
-            .link-fa {
-                color: $light-main-clr;
-            }
-        }
-    }
-}
-
-.active {
-    font-weight: 600 !important;
-    color: $main-clr !important;
-    background-color: $light-grey;
-
-    .link-fa {
-        color: $main-clr !important;
-    }
-}
-
-.sidebar-heading {
-    padding: 0.1rem 1.5rem;
-    margin-top: 1.2rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.05rem;
-    text-transform: uppercase;
-    font-weight: 400;
-    color: $shadow-grey;
-    cursor: pointer;
-}
-
-#main {
-    margin-left: 300px;
-    transition: 0.5s;
-}
-
-/* Position and style the close button (top right corner) */
-.closebtn {
-    color: $light-grey;
-    padding: 1rem 1.6rem;
-    font-size: 24px;
-
-    &:hover {
-        color: $light-main-clr;
-    }
-}
-
-.navbar .opennav-btn {
-    color: $main-clr !important;
-    cursor: pointer;
-    font-size: 24px;
-    padding: 0 !important;
-
-    &:hover {
-        color: $dark-main-clr !important;
-    }
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-width: 992px) {
-    .sidenav {
-        width: 0;
-    }
-
-    #main {
-        margin-left: 0;
-    }
 }
 
 /*---------------BOOTSTRAP-PAGINATION---------------*/
@@ -586,5 +595,40 @@ hr {
         letter-spacing: 0.03rem;
         color: $grey;
         font-weight: 300;
+    }
+}
+
+/*---------------TABBED CARD---------------*/
+.tab-header {
+    background-color: $shadow-grey;
+    border-bottom: none;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    a {
+        color: $dark-grey;
+    }
+}
+.tab-card {
+    .nav-tabs .nav-link {
+        border: none;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        padding: 1.2rem 2rem;
+        text-transform: uppercase;
+    }
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-item.show .nav-link {
+        background-color: $light-grey;
+    }
+}
+.tab-content {
+    color: $black;
+    font-size: 1rem;
+    padding: 2rem;
+
+    .active {
+        font-weight: 400 !important;
+        color: $black !important;
+        background-color: transparent;
     }
 }

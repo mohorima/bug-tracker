@@ -44,9 +44,8 @@ class UserController extends Controller
         //
     }
 
-    public function update(UserRequest $request, $id)
+    public function update(UserRequest $request, User $user)
     {
-        $user = User::findOrFail($id);
         $user->update([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
@@ -54,9 +53,8 @@ class UserController extends Controller
         ]);
     }
 
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user = User::findOrFail($id);
         $user->delete();
     }
 }

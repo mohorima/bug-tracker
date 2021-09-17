@@ -16,6 +16,8 @@ class PermissionController extends Controller
 
     public function index()
     {
+        $this->authorize('viewAny', Permission::class);
+
         $searchTerm = request('keywords');
 
         return Permission::when($searchTerm, function ($query, $searchTerm) {
@@ -27,10 +29,9 @@ class PermissionController extends Controller
 
     public function store(PermissionRequest $request)
     {
-        return Permission::create([
-            'slug' => $request->input('slug'),
-            'description' => $request->input('description'),
-        ]);
+        $this->authorize('create', Permission::class);
+
+        return Permission::create($request->all());
     }
 
     public function show($id)
@@ -38,15 +39,16 @@ class PermissionController extends Controller
         //
     }
 
-    public function update(PermissionRequest $request, $id)
+    public function update(PermissionRequest $request, Permission $permission)
     {
-        $permission = Permission::findOrFail($id);
+        $this->authorize('update', $permission);
+
         $permission->update($request->all());
     }
 
-    public function destroy($id)
+    public function destroy(Permission $permission)
     {
-        $permission = Permission::findOrFail($id);
+        $this->authorize('delete', $permission);
         $permission->delete();
     }
 }

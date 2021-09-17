@@ -16,6 +16,8 @@ class ClientController extends Controller
 
     public function index()
     {
+        $this->authorize('viewAny', Client::class);
+
         $searchTerm = request('keywords');
         return Client::when($searchTerm, function ($query, $searchTerm) {
             return $query
@@ -28,16 +30,8 @@ class ClientController extends Controller
 
     public function store(ClientRequest $request)
     {
-        return Client::create([
-            'company' => $request->input('company'),
-            'owner' => $request->input('owner'),
-            'address' => $request->input('address'),
-            'country' => $request->input('country'),
-            'contactPerson' => $request->input('contactPerson'),
-            'email' => $request->input('email'),
-            'phone' => $request->input('phone'),
-            'website' => $request->input('website'),
-        ]);
+        $this->authorize('create', Client::class);
+        return Client::create($request->all());
     }
 
     public function show($id)
@@ -45,15 +39,15 @@ class ClientController extends Controller
         //
     }
 
-    public function update(ClientRequest $request, $id)
+    public function update(ClientRequest $request, Client $client)
     {
-        $client = Client::findOrFail($id);
+        $this->authorize('update', $client);
         $client->update($request->all());
     }
 
-    public function destroy($id)
+    public function destroy(Client $client)
     {
-        $client = Client::findOrFail($id);
+        $this->authorize('delete', $client);
         $client->delete();
 
         return ['msg' => 'Client deleted'];

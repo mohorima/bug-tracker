@@ -44,6 +44,14 @@ let routes = [
         },
     },
     {
+        path: "/project-member/:projectId/:projectTitle",
+        name: "project-member",
+        component: require("./components/ProjectUser.vue").default,
+        meta: {
+            title: "Project Members",
+        },
+    },
+    {
         path: "/permission",
         component: require("./components/Permission.vue").default,
         meta: {
