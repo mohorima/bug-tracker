@@ -5,33 +5,49 @@
                 <div
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
-                        <div class="input-group input-group-search">
-                            <div class="input-group-prepend">
-                                <div
-                                    class="input-group-text input-group-prepend-search"
+                    <div class="input-group input-group-search">
+                        <div class="input-group-prepend">
+                            <div
+                                class="input-group-text input-group-prepend-search"
+                            >
+                                <svg
+                                    width="19"
+                                    height="19"
+                                    viewBox="0 0 19 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
                                 >
-                                    <i
-                                        class="fas fa-search"
-                                        aria-hidden="true"
-                                    ></i>
-                                </div>
+                                    <circle
+                                        cx="8.02778"
+                                        cy="8.02778"
+                                        r="7.02778"
+                                        stroke="#596152"
+                                        stroke-width="2"
+                                    />
+                                    <line
+                                        x1="17.4747"
+                                        y1="17"
+                                        x2="14.1667"
+                                        y2="13.692"
+                                        stroke="#596152"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
                             </div>
-                            <input
-                                type="text"
-                                placeholder="Search"
-                                class="form-control search-box"
-                                v-model="keywords"
-                            />
                         </div>
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            class="form-control search-box"
+                            v-model="keywords"
+                        />
+                    </div>
 
-                        <button
-                            type="button"
-                            class="btn btn-new"
-                            @click="newModal"
-                        >
-                            <i class="fas fa-plus mr-2" aria-hidden="true"></i>
-                            New Task
-                        </button>
+                    <button type="button" class="btn btn-new" @click="newModal">
+                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                        New Task
+                    </button>
                 </div>
 
                 <div class="card card-table">
@@ -43,7 +59,7 @@
                                     <th class="th-lg" scope="col">Subject</th>
                                     <th class="th-sm" scope="col">Priority</th>
                                     <th class="th-sm" scope="col">Status</th>
-                                    <th class="th-sm" scope="col">Duration</th>
+                                    <th class="th-sm" scope="col">Deadline</th>
                                     <th class="th-sm" scope="col">Project</th>
                                     <th class="th-sm" scope="col">Users</th>
                                 </tr>
@@ -77,52 +93,40 @@
                                         </a>
                                     </th>
                                     <td>
-                                        <div class="text-title">
-                                            {{ task.subject }}
-                                        </div>
+                                        {{ task.subject }}
                                         <div class="text-small">
                                             {{ task.description }}
                                         </div>
                                     </td>
                                     <td>
                                         <span
-                                            v-if="task.priority === 'low'"
-                                            class="badge bg-primary text-white"
-                                            >LOW
-                                        </span>
-                                        <span
-                                            v-else-if="
-                                                task.priority === 'medium'
-                                            "
-                                            class="badge bg-warning text-dark"
-                                            >MEDIUM
-                                        </span>
-                                        <span
-                                            v-else-if="task.priority === 'high'"
-                                            class="badge bg-danger text-white"
-                                            >HIGH
+                                            class="badge to-uppercase"
+                                            :class="{
+                                                'bg-primary text-white':
+                                                    task.priority === 'low',
+                                                'bg-warning text-dark':
+                                                    task.priority === 'medium',
+                                                'bg-danger text-white':
+                                                    task.priority === 'high',
+                                            }"
+                                        >
+                                            {{ task.priority }}
                                         </span>
                                     </td>
                                     <td>
                                         <span
-                                            class="badge text-white"
+                                            class="badge text-white to-uppercase"
                                             :class="{
-                                                'bg-primary':
-                                                    task.status === 'active',
                                                 'bg-success':
+                                                    task.status === 'active',
+                                                'bg-secondary':
                                                     task.status != 'active',
                                             }"
                                         >
-                                            {{
-                                                task.status === "active"
-                                                    ? "ACTIVE"
-                                                    : "CLOSED"
-                                            }}
+                                            {{ task.status }}
                                         </span>
                                     </td>
                                     <td>
-                                        {{ task.startDate }}
-                                        <br />
                                         {{ task.endDate }}
                                     </td>
                                     <td>{{ task.project.title }}</td>

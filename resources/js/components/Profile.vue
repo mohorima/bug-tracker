@@ -1,19 +1,32 @@
 <template>
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-lg-4 profile-info d-flex justify-content-center align-items-center flex-lg-column mb-5">
+        <div class="row justify-content-center align-items-start">
+            <div
+                class="col-lg-4 profile-info d-flex justify-content-center align-items-center flex-lg-column mb-5"
+            >
                 <div class="profile-pic-section mr-2">
                     <div class="profile-pic"></div>
                     <div class="profile-pic-btn">
-                        <i class="fas fa-plus" aria-hidden="true"></i>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true"
+                            role="img"
+                            width="26"
+                            height="26"
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M19 13a1 1 0 0 0-1 1v.38l-1.48-1.48a2.79 2.79 0 0 0-3.93 0l-.7.7l-2.48-2.48a2.85 2.85 0 0 0-3.93 0L4 12.6V7a1 1 0 0 1 1-1h7a1 1 0 0 0 0-2H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-5a1 1 0 0 0-1-1zM5 20a1 1 0 0 1-1-1v-3.57l2.9-2.9a.79.79 0 0 1 1.09 0l3.17 3.17l4.3 4.3zm13-1a.89.89 0 0 1-.18.53L13.31 15l.7-.7a.77.77 0 0 1 1.1 0L18 17.21zm4.71-14.71l-3-3a1 1 0 0 0-.33-.21a1 1 0 0 0-.76 0a1 1 0 0 0-.33.21l-3 3a1 1 0 0 0 1.42 1.42L18 4.41V10a1 1 0 0 0 2 0V4.41l1.29 1.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42z"
+                                fill="#fafaf8"
+                            />
+                        </svg>
                     </div>
                 </div>
                 <div class="text-center">
-                    <h2>John Smith Kine</h2>
-                    <span class="badge bg-light text-dark">
-                        Admin
-                    </span>
-                    <p>johnsmith@gmail.com</p>
+                    <h2>{{ this.form.name }}</h2>
+                    <p>{{ this.form.email }}</p>
                 </div>
             </div>
             <div class="col-lg-8">
@@ -44,7 +57,7 @@
                                 role="tab"
                                 aria-controls="profile"
                                 aria-selected="false"
-                                >Profile</a
+                                >Settings</a
                             >
                         </li>
                     </ul>
@@ -63,7 +76,105 @@
                             role="tabpanel"
                             aria-labelledby="profile-tab"
                         >
-                            Profile
+                            <form class="input-form">
+                                <div class="form-group row">
+                                    <label
+                                        class="col-md-3 col-form-label"
+                                        for="name"
+                                        >Name
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <div class="col-md-9">
+                                        <input
+                                            id="name"
+                                            v-model="form.name"
+                                            type="text"
+                                            name="name"
+                                            class="form-control"
+                                            placeholder="Name"
+                                        />
+                                        <HasError :form="form" field="name" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label
+                                        class="col-md-3 col-form-label"
+                                        for="email"
+                                        >Email
+                                        <strong class="text-danger"> *</strong>
+                                    </label>
+
+                                    <div class="col-md-9">
+                                        <input
+                                            id="email"
+                                            v-model="form.email"
+                                            type="email"
+                                            name="email"
+                                            class="form-control"
+                                            placeholder="Email"
+                                        />
+                                        <HasError :form="form" field="email" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label
+                                        class="col-md-3 col-form-label"
+                                        for="bio"
+                                        >Biography
+                                    </label>
+
+                                    <div class="col-md-9">
+                                        <textarea
+                                            id="bio"
+                                            class="form-control"
+                                            name="bio"
+                                            rows="3"
+                                            cols="50"
+                                            v-model="form.bio"
+                                        >
+                                        </textarea>
+                                        <HasError :form="form" field="bio" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label
+                                        class="col-md-3 col-form-label"
+                                        for="photo"
+                                        >Upload Photo
+                                    </label>
+
+                                    <div class="col-md-9">
+                                        <div class="custom-file">
+                                            <input
+                                                type="file"
+                                                class="custom-file-input"
+                                                id="customFile"
+                                                name="photo"
+                                            />
+                                            <label
+                                                class="custom-file-label"
+                                                for="customFile"
+                                            >
+                                                Choose file
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="d-flex justify-content-center align-items-center"
+                                >
+                                    <button
+                                        type="submit"
+                                        class="btn btn-submit mt-3"
+                                    >
+                                        <i class="fas fa-pen-nib mr-2"></i>
+                                        Update
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -73,9 +184,34 @@
 </template>
 
 <script>
+import Form from "vform";
+import { HasError, AlertError } from "vform/src/components/bootstrap4";
+
 export default {
-    mounted() {
-        console.log("Component mounted.");
+    components: {
+        HasError,
+        AlertError,
+    },
+
+    data: () => ({
+        form: new Form({
+            id: "",
+            name: "",
+            email: "",
+            password: "",
+            bio: "",
+            photo: "",
+        }),
+    }),
+
+    methods: {
+        loadProfile() {
+            axios.get("api/profile").then(({ data }) => this.form.fill(data));
+        },
+    },
+
+    created() {
+        this.loadProfile();
     },
 };
 </script>

@@ -30,11 +30,21 @@ body {
 }
 
 /*---------------------TEXT---------------------*/
+h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    color: $black;
+    @media screen and (max-width: 992px) {
+        font-size: 1.4rem;
+    }
+}
 h3 {
     margin: 0;
     padding: 0;
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 22px;
     color: $dark-grey;
 
     @media screen and (max-width: 992px) {
@@ -92,7 +102,7 @@ h6 {
 
 .sidenav {
     min-height: 100vh;
-    background-color: $light-grey;
+    background-color: #ffffff;
     height: 100%;
     width: 300px;
     position: fixed;
@@ -100,79 +110,56 @@ h6 {
     left: 0;
     overflow-x: hidden;
     transition: 0.5s;
+    padding: 25px 35px;
 
     .nav-logo {
-        margin: 1rem 1.6rem;
-        height: 30px;
+        margin-bottom: 42px;
     }
 
-    .nav-link {
+    .nav-link,
+    .sidebar-heading {
+        cursor: pointer;
         text-decoration: none;
         color: $dark-grey;
-        padding: 1rem 1.6rem;
-        border-radius: 0 30px 30px 0;
-        margin-right: 30px;
-        font-size: 0.8rem;
-        font-weight: 400;
+        padding: 14px 25px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
         letter-spacing: 0.04rem;
         transition: all 250ms ease;
 
         &:hover {
             color: $main-clr;
-            font-weight: 600 !important;
-
-            .link-fa {
-                color: $main-clr;
+            svg > path {
+                fill: $main-clr;
             }
+        }
+
+        svg {
+            margin-right: 17px;
         }
     }
 }
 
 .active {
-    font-weight: 600 !important;
     color: $light-grey !important;
     background-color: $dark-grey;
-
-    .link-fa {
-        color: $light-grey !important;
-    }
-}
-
-.sidebar-heading {
-    text-decoration: none;
-    color: $dark-grey;
-    padding: 1rem 1.6rem;
-    border-radius: 0 30px 30px 0;
-    margin-right: 30px;
-    font-size: 0.8rem;
-    font-weight: 400;
-    letter-spacing: 0.04rem;
-    transition: all 250ms ease;
-    cursor: pointer;
-
-    &:hover {
-        color: $main-clr;
-        font-weight: 600 !important;
-
-        .link-fa {
-            color: $main-clr;
-        }
+    svg > path {
+        fill: $light-grey;
     }
 }
 
 #main {
     margin-left: 300px;
     transition: 0.5s;
+    background-color: $light-grey;
+    min-height: 100vh;
 }
 
 /* Position and style the close button (top right corner) */
-.closebtn {
-    color: $light-grey;
-    padding: 1rem 1.6rem;
-    font-size: 24px;
-
-    &:hover {
-        color: $light-main-clr;
+.closebtn:hover {
+    circle {
+        fill: $main-clr;
     }
 }
 
@@ -190,11 +177,37 @@ h6 {
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-width: 992px) {
     .sidenav {
-        width: 0;
+        z-index: -10;
     }
 
     #main {
         margin-left: 0;
+        z-index: 10;
+    }
+}
+
+/*---------------------TOP NAV---------------------*/
+
+.username {
+    color: $black !important;
+    font-size: 15px !important;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        text-decoration: none;
+        color: $main-clr !important;
+    }
+}
+.user-pic {
+    border-radius: 17px;
+    width: 40px;
+    height: 40px;
+    margin: 0 12px;
+    background-color: $black;
+    object-fit: cover;
+    img {
+        border-radius: 17px;
     }
 }
 
@@ -206,11 +219,9 @@ h6 {
 
 /*---------------------FORM---------------------*/
 .card {
-    border-radius: 1rem;
-    background-color: $light-grey;
+    background-color: #ffffff;
     border: none;
-    //-webkit-box-shadow: 0px 0px 15px -6px #e2e2e2;
-    //box-shadow: 0px 0px 15px -6px #e2e2e2;
+    border-radius: 17px;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
@@ -304,16 +315,16 @@ h6 {
 
 .search-box {
     min-width: 200px;
-    border-radius: 15px;
+    border-radius: 17px;
     resize: none;
-    background-color: $light-grey;
+    background-color: #ffffff;
     border: none;
-    padding: 1.3rem;
+    padding: 1.3rem 1.3rem 1.3rem 0.5rem;
 
     &:focus {
         border: none;
         outline: none;
-        border-radius: 15px;
+        border-radius: 17px;
         box-shadow: none;
     }
 }
@@ -323,16 +334,17 @@ h6 {
 .input-group-search:focus-within {
     border: none;
     outline: none;
-    border-radius: 15px;
+    border-radius: 17px;
     box-shadow: $light-main-clr 0 0 0 0.07rem !important;
     color: $black;
     background-color: white !important;
 }
 .input-group-prepend-search {
-    background-color: $light-grey;
+    background-color: #ffffff;
     border: none;
-    border-radius: 15px 0 0 15px;
+    border-radius: 17px 0 0 17px;
     color: $main-clr;
+    padding-left: 1.3rem;
 }
 
 /*---------------------MODAL---------------------*/
@@ -346,12 +358,13 @@ h6 {
 }
 
 /*---------------------BUTTON---------------------*/
-.btn-submit {
-    padding: 0.7rem 1.2rem;
+.btn-submit,
+.btn-new {
+    padding: 0.6rem 1.3rem;
     letter-spacing: 0.05rem;
     font-weight: 500;
     min-width: 140px;
-    border-radius: 1.5rem;
+    border-radius: 17px;
     background-color: $main-clr;
     color: white;
     text-transform: uppercase;
@@ -363,17 +376,14 @@ h6 {
 
     &:hover {
         color: white;
-        background: $dark-main-clr;
+        background: $dark-grey;
     }
 }
 
 .btn-new {
-    color: $main-clr;
-    font-weight: 500;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    min-width: 140px;
+    text-transform: capitalize;
 }
 
 .btn-control {
@@ -439,42 +449,40 @@ h6 {
 
 /*---------------------TABLE---------------------*/
 .card-table {
-    border-radius: 15px;
+    border-radius: 17px;
     padding: 0.7rem 1.4rem 1.6rem 1.4rem;
 }
 table {
     margin: 0 !important;
-    color: $dark-grey !important;
+    color: $black !important;
     border-collapse: separate;
     border-spacing: 0 10px;
+    font-size: 15px;
 }
 
-thead {
-    color: $dark-grey;
-}
 th:first-child {
     padding-left: 30px !important;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 td:last-child {
     padding-right: 30px !important;
-    border-bottom-right-radius: 7px;
-    border-top-right-radius: 7px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .table tbody th,
 .table tbody td {
     border: none;
     padding: 20px 12px;
-    background-color: white;
+    background-color: rgba(250, 250, 248, 0.71);
 }
 .table thead th {
+    color: $dark-grey;
     border-bottom: none;
     border-top: none;
     font-size: 0.8rem;
     letter-spacing: 0.04rem;
-    //font-weight: 400;
     vertical-align: middle;
 }
 
@@ -487,30 +495,7 @@ td:last-child {
 }
 
 .table-hover tbody tr:hover {
-    -webkit-box-shadow: 0px 0px 15px -8px #d4d4d4;
-    box-shadow: 0px 0px 15px -8px #d4d4d4;
-}
-
-/*---------------------BREADCRUMBS---------------------*/
-
-.breadcrumb {
     background-color: $light-grey;
-}
-
-.breadcrumb-item {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.04rem;
-    text-transform: uppercase;
-    color: $dark-main-clr;
-
-    a {
-        color: $main-clr;
-    }
-}
-
-hr {
-    border-top: 1px solid rgba(149, 182, 138, 0.137);
 }
 
 /*---------------BOOTSTRAP-PAGINATION---------------*/
@@ -583,8 +568,8 @@ hr {
         }
     }
     .card {
-        background-color: $shadow-grey;
-        border: 1px solid #a8239d3f;
+        background-color: #ffffff;
+        border: 1px solid $light-main-clr;
         padding: 8px 35px 25px 35px;
         box-shadow: none;
     }
@@ -600,15 +585,20 @@ hr {
 
 /*---------------TABBED CARD---------------*/
 .tab-header {
-    background-color: $shadow-grey;
+    background-color: #ffffff;
     border-bottom: none;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    letter-spacing: 0.05rem;
     a {
         color: $dark-grey;
     }
 }
 .tab-card {
+    background-color: #ffffff;
+    padding: 0 2rem;
+    border: 1px solid $light-main-clr;
+
     .nav-tabs .nav-link {
         border: none;
         border-top-left-radius: 1rem;
@@ -618,18 +608,20 @@ hr {
     }
     .nav-tabs .nav-link.active,
     .nav-tabs .nav-item.show .nav-link {
-        background-color: $light-grey;
+        background-color: #ffffff;
+        border-bottom: 2px solid $main-clr;
     }
     .active {
-        font-weight: 400 !important;
+        font-weight: 600 !important;
         color: $main-clr !important;
         background-color: transparent;
     }
 }
 .tab-content {
+    background-color: transparent;
     color: $black;
     font-size: 1rem;
-    padding: 2rem;
+    padding: 2rem 10px;
     .active {
         color: $black !important;
     }
@@ -639,12 +631,7 @@ hr {
 .profile-info {
     position: relative;
     h2 {
-        font-size: 1.6rem;
-        margin: 20px;
-        text-align: center;
-        @media screen and (max-width: 992px) {
-            font-size: 1.5rem;
-        }
+        margin: 30px 10px 15px 10px;
     }
     p {
         margin: 15px;
@@ -660,10 +647,11 @@ hr {
     margin-bottom: 10px;
 }
 .profile-pic {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    background-color: $light-main-clr;
+    object-fit: cover;
+    background-color: $grey;
     background-image: url("../public/images/profilepic.jpg");
     background-size: contain;
 }
@@ -671,9 +659,9 @@ hr {
     position: absolute;
     margin-left: 120px;
     bottom: 0;
-    background-color: $main-clr;
-    width: 50px;
-    height: 50px;
+    background-color: $black;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     display: flex;
     justify-content: center;

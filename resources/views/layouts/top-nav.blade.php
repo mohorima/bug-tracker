@@ -14,9 +14,11 @@
             <ul class="navbar-nav ml-auto mt-sm-3 mt-lg-0">
                 <!-- Authentication Links -->
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="fas fa-user-circle mr-2 link-fa"></i>
+                    <a id="navbarDropdown" class="username dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ ucwords(Auth::user()->name) }}
+                        <div class="user-pic">
+                            <img src="{{ asset('/images/profile-pic-sm.jpg') }}" alt="">
+                        </div>
                     </a>
 
                     @auth

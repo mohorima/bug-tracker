@@ -40,7 +40,7 @@ let routes = [
         path: "/profile",
         component: require("./components/Profile.vue").default,
         meta: {
-            title: "User Profile",
+            title: "Your Profile",
         },
     },
     {
@@ -133,19 +133,21 @@ $(".container .toggle-button").on("click", function () {
 /* Set the width of the side navigation to 300px and the left margin of the page content to 300px */
 $("#hamburger").on("click", function () {
     $("#mySidenav").css({
-        width: "300px",
+        "z-index": "1",
     });
     $("#main").css({
         "margin-left": "300px",
+        "z-index": "1",
     });
 });
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 $("#closesidenav").on("click", function () {
     $("#mySidenav").css({
-        width: "0",
+        "z-index": "-10",
     });
     $("#main").css({
         "margin-left": "0",
+        "z-index": "10",
     });
 });

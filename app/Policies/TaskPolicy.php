@@ -54,7 +54,7 @@ class TaskPolicy
     public function update(User $user, Task $task)
     {
         return in_array($user->role_id, [Role::IS_ADMIN, Role::IS_MANAGER]) ||
-            $task->user_id == auth()->id();
+            $task->user_id == auth('api')->id();
     }
 
     /**

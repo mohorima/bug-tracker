@@ -10,7 +10,30 @@
                             <div
                                 class="input-group-text input-group-prepend-search"
                             >
-                                <i class="fas fa-search" aria-hidden="true"></i>
+                                <svg
+                                    width="19"
+                                    height="19"
+                                    viewBox="0 0 19 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <circle
+                                        cx="8.02778"
+                                        cy="8.02778"
+                                        r="7.02778"
+                                        stroke="#596152"
+                                        stroke-width="2"
+                                    />
+                                    <line
+                                        x1="17.4747"
+                                        y1="17"
+                                        x2="14.1667"
+                                        y2="13.692"
+                                        stroke="#596152"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
                             </div>
                         </div>
                         <input
@@ -22,7 +45,7 @@
                     </div>
 
                     <button type="button" class="btn btn-new" @click="newModal">
-                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                        <i class="fas fa-plus mr-3" aria-hidden="true"></i>
                         New Project
                     </button>
                 </div>
@@ -131,12 +154,12 @@
                                         >
                                     </td>
                                     <td>
-                                        <span class="badge bg-light text-faded">
+                                        <span class="badge bg-white text-faded">
                                             START
                                         </span>
                                         {{ project.startDate }}<br />
                                         <span
-                                            class="badge bg-light text-faded mt-1"
+                                            class="badge bg-white text-faded mt-1"
                                         >
                                             END
                                         </span>
@@ -148,7 +171,7 @@
                                         <strong> $ {{ project.cost }} </strong>
                                     </td>
                                     <td>
-                                        <span class="badge bg-light text-dark">
+                                        <span class="badge bg-white text-dark">
                                             {{ projectTags(project.tag) }}
                                         </span>
                                     </td>

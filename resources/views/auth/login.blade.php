@@ -3,7 +3,8 @@
 @section('content')
 <div class="container">
     <div class="login">
-        <h1>Bugtrack</h1>
+        <!-- <h1>Bugtrack</h1> -->
+        <img src="{{ asset('/images/logo-vertical.svg') }}" alt="" width="200px">
         <h3>Project & Issue Management</h3>
 
         <div class="col-lg-6">

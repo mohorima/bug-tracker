@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -60,7 +61,10 @@ class UserController extends Controller
 
     public function profile()
     {
-        //
+        return auth('api')->user();
+        // return User::where('id', auth('api')->id())
+        //     ->with('role')
+        //     ->get();
     }
 
     public function updateProfile(UserRequest $request, User $user)
@@ -68,7 +72,7 @@ class UserController extends Controller
         $user->update([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
-            'role_id' => $request->input('role_id'),
+            'bio' => $request->input('bio'),
         ]);
     }
 }
