@@ -130,24 +130,30 @@ $(".container .toggle-button").on("click", function () {
 });
 
 //SIDE-NAV
-/* Set the width of the side navigation to 300px and the left margin of the page content to 300px */
-$("#hamburger").on("click", function () {
-    $("#mySidenav").css({
-        "z-index": "1",
-    });
-    $("#main").css({
-        "margin-left": "300px",
-        "z-index": "1",
-    });
+
+let sidenav = document.querySelector(".sidenav");
+let main = document.querySelector("#main");
+let closebtn = document.querySelector(".closebtn");
+
+closebtn.addEventListener("click", () => {
+    sidenav.classList.toggle("minimize");
+    main.classList.toggle("enlarge");
+    closebtn.classList.toggle("rotate");
 });
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-$("#closesidenav").on("click", function () {
-    $("#mySidenav").css({
-        "z-index": "-10",
-    });
-    $("#main").css({
-        "margin-left": "0px",
-        "z-index": "10",
-    });
-});
+// While viewport is max 992px wide, minimize side-nav
+const mediaQuery = window.matchMedia("(max-width: 992px)");
+
+function handleViewportChange(e) {
+    // Check if the media query is true
+    if (e.matches) {
+        sidenav.classList.toggle("minimize");
+        main.classList.toggle("enlarge");
+        closebtn.classList.toggle("rotate");
+    }
+}
+
+// Register event listener
+mediaQuery.addListener(handleViewportChange);
+// Initial check
+handleViewportChange(mediaQuery);

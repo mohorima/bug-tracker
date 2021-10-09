@@ -123,6 +123,9 @@ h6 {
     .nav-logo {
         margin-bottom: 42px;
     }
+    .hide-lg {
+        display: none;
+    }
 
     .nav-link,
     .sidebar-heading {
@@ -147,13 +150,12 @@ h6 {
             margin-right: 17px;
         }
     }
-}
-
-.active {
-    color: $light-grey !important;
-    background-color: $dark-grey;
-    svg > path {
-        fill: $light-grey;
+    .active {
+        color: $light-grey !important;
+        background-color: $dark-grey;
+        svg > path {
+            fill: $light-grey;
+        }
     }
 }
 
@@ -164,52 +166,49 @@ h6 {
     min-height: 100vh;
 }
 
-/* Position and style the close button (top right corner) */
-.closebtn:hover {
-    circle {
-        fill: $main-clr;
-    }
+@mixin enlarge {
+    margin-left: 90px;
 }
-
-.navbar .opennav-btn {
-    color: $main-clr !important;
-    cursor: pointer;
-    font-size: 24px;
-    padding: 0 !important;
-
-    &:hover {
-        color: $dark-main-clr !important;
-    }
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-width: 992px) {
-    .sidenav {
-        z-index: 10;
-        width: 90px;
-        padding: 25px 15px;
-        .nav-link,
-        .sidebar-heading {
-            width: 60px;
-            text-align: center;
-            padding: 14px 15px;
-            transition: all 250ms ease;
-            svg {
-                margin-right: 0;
-            }
-            .hide {
-                display: none;
-            }
+@mixin min-nav {
+    width: 90px;
+    padding: 25px 15px;
+    .nav-link,
+    .sidebar-heading {
+        width: 60px;
+        text-align: center;
+        padding: 14px 15px;
+        transition: all 250ms ease;
+        svg {
+            margin-right: 0;
         }
     }
-
-    #main {
-        margin-left: 90px;
-        z-index: 10;
+    .hide {
+        display: none;
     }
+    .hide-lg {
+        display: block;
+        margin: auto;
+    }
+}
+
+#main.enlarge {
+    @include enlarge;
+}
+.minimize {
+    @include min-nav;
+}
+.rotate {
+    transform: rotate(180deg);
 }
 
 /*---------------------TOP NAV---------------------*/
+
+.closebtn {
+    transition: all 500ms ease-in-out;
+    &:hover > circle {
+        fill: $main-clr;
+    }
+}
 
 .username {
     color: $black !important;
@@ -350,20 +349,23 @@ h6 {
     }
 }
 
-.custom-file-label {
+@mixin file-label {
     padding: 9px 12px !important;
     height: auto !important;
-    font-weight: 500 !important;
-    color: #888888 !important;
     border: none !important;
     box-shadow: $shadow-grey 0 0 0 0.05rem !important;
     border-radius: 0.3rem !important;
     margin: 0 !important;
 }
 
+.custom-file-label {
+    @include file-label;
+    font-weight: 500 !important;
+    color: #888888 !important;
+}
+
 .custom-file-label::after {
-    padding: 9px 12px !important;
-    height: auto !important;
+    @include file-label;
     font-weight: 600 !important;
     color: $main-clr !important;
     text-transform: uppercase;
@@ -371,10 +373,6 @@ h6 {
     content: "Browse";
     background-color: $light-grey;
     border-left: inherit;
-    border: none !important;
-    box-shadow: $shadow-grey 0 0 0 0.05rem !important;
-    border-radius: 0.3rem !important;
-    margin: 0 !important;
 }
 
 /*---------------------SEARCH---------------------*/
@@ -715,7 +713,7 @@ td:last-child {
     }
 }
 
-/*---------------TABBED CARD---------------*/
+/*---------------PROFILE PIC---------------*/
 .profile-info {
     position: relative;
     h2 {

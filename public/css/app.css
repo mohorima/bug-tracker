@@ -11067,6 +11067,10 @@ h6 {
   margin-bottom: 42px;
 }
 
+.sidenav .hide-lg {
+  display: none;
+}
+
 .sidenav .nav-link,
 .sidenav .sidebar-heading {
   cursor: pointer;
@@ -11095,12 +11099,12 @@ h6 {
   margin-right: 17px;
 }
 
-.active {
+.sidenav .active {
   color: #fafaf8 !important;
   background-color: #596152;
 }
 
-.active svg > path {
+.sidenav .active svg > path {
   fill: #fafaf8;
 }
 
@@ -11111,57 +11115,50 @@ h6 {
   min-height: 100vh;
 }
 
-/* Position and style the close button (top right corner) */
-
-.closebtn:hover circle {
-  fill: #62ba0a;
+#main.enlarge {
+  margin-left: 90px;
 }
 
-.navbar .opennav-btn {
-  color: #62ba0a !important;
-  cursor: pointer;
-  font-size: 24px;
-  padding: 0 !important;
+.minimize {
+  width: 90px;
+  padding: 25px 15px;
 }
 
-.navbar .opennav-btn:hover {
-  color: #4b4b4b !important;
+.minimize .nav-link,
+.minimize .sidebar-heading {
+  width: 60px;
+  text-align: center;
+  padding: 14px 15px;
+  transition: all 250ms ease;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+.minimize .nav-link svg,
+.minimize .sidebar-heading svg {
+  margin-right: 0;
+}
 
-@media screen and (max-width: 992px) {
-  .sidenav {
-    z-index: 10;
-    width: 90px;
-    padding: 25px 15px;
-  }
+.minimize .hide {
+  display: none;
+}
 
-  .sidenav .nav-link,
-  .sidenav .sidebar-heading {
-    width: 60px;
-    text-align: center;
-    padding: 14px 15px;
-    transition: all 250ms ease;
-  }
+.minimize .hide-lg {
+  display: block;
+  margin: auto;
+}
 
-  .sidenav .nav-link svg,
-  .sidenav .sidebar-heading svg {
-    margin-right: 0;
-  }
-
-  .sidenav .nav-link .hide,
-  .sidenav .sidebar-heading .hide {
-    display: none;
-  }
-
-  #main {
-    margin-left: 90px;
-    z-index: 10;
-  }
+.rotate {
+  transform: rotate(180deg);
 }
 
 /*---------------------TOP NAV---------------------*/
+
+.closebtn {
+  transition: all 500ms ease-in-out;
+}
+
+.closebtn:hover > circle {
+  fill: #62ba0a;
+}
 
 .username {
   color: #4b4b4b !important;
@@ -11324,17 +11321,21 @@ h6 {
 .custom-file-label {
   padding: 9px 12px !important;
   height: auto !important;
-  font-weight: 500 !important;
-  color: #888888 !important;
   border: none !important;
   box-shadow: #fbfaf9 0 0 0 0.05rem !important;
   border-radius: 0.3rem !important;
   margin: 0 !important;
+  font-weight: 500 !important;
+  color: #888888 !important;
 }
 
 .custom-file-label::after {
   padding: 9px 12px !important;
   height: auto !important;
+  border: none !important;
+  box-shadow: #fbfaf9 0 0 0 0.05rem !important;
+  border-radius: 0.3rem !important;
+  margin: 0 !important;
   font-weight: 600 !important;
   color: #62ba0a !important;
   text-transform: uppercase;
@@ -11342,10 +11343,6 @@ h6 {
   content: "Browse";
   background-color: #fafaf8;
   border-left: inherit;
-  border: none !important;
-  box-shadow: #fbfaf9 0 0 0 0.05rem !important;
-  border-radius: 0.3rem !important;
-  margin: 0 !important;
 }
 
 /*---------------------SEARCH---------------------*/
@@ -11721,7 +11718,7 @@ td:last-child {
   color: #4b4b4b !important;
 }
 
-/*---------------TABBED CARD---------------*/
+/*---------------PROFILE PIC---------------*/
 
 .profile-info {
   position: relative;

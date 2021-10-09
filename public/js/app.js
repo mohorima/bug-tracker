@@ -7003,28 +7003,30 @@ $(".container .toggle-button").on("click", function () {
   $('.container input[type="checkbox"]').prop("checked", this.checked);
 }); //SIDE-NAV
 
-/* Set the width of the side navigation to 300px and the left margin of the page content to 300px */
+var sidenav = document.querySelector(".sidenav");
+var main = document.querySelector("#main");
+var closebtn = document.querySelector(".closebtn");
+closebtn.addEventListener("click", function () {
+  sidenav.classList.toggle("minimize");
+  main.classList.toggle("enlarge");
+  closebtn.classList.toggle("rotate");
+}); // While viewport is max 992px wide, minimize side-nav
 
-$("#hamburger").on("click", function () {
-  $("#mySidenav").css({
-    "z-index": "1"
-  });
-  $("#main").css({
-    "margin-left": "300px",
-    "z-index": "1"
-  });
-});
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+var mediaQuery = window.matchMedia("(max-width: 992px)");
 
-$("#closesidenav").on("click", function () {
-  $("#mySidenav").css({
-    "z-index": "-10"
-  });
-  $("#main").css({
-    "margin-left": "0px",
-    "z-index": "10"
-  });
-});
+function handleViewportChange(e) {
+  // Check if the media query is true
+  if (e.matches) {
+    sidenav.classList.toggle("minimize");
+    main.classList.toggle("enlarge");
+    closebtn.classList.toggle("rotate");
+  }
+} // Register event listener
+
+
+mediaQuery.addListener(handleViewportChange); // Initial check
+
+handleViewportChange(mediaQuery);
 
 /***/ }),
 
