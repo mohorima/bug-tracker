@@ -1,12 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid mt-2">
+<nav class="navbar navbar-expand-lg navbar-light top-navbar">
+    <div class="container-fluid">
         <div class="d-flex align-items-center">
             <i id="hamburger" class="fas fa-bars mr-4 opennav-btn" onclick="openNav()"></i>            
             <h3>@{{ $route.meta.title ? $route.meta.title : "BugTrack" }}</h3>
         </div>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="username dropdown-toggle">
+                <div class="user-pic">
+                <img src="{{ asset('/images/profile-pic-sm.jpg') }}" alt="">
+            </div>
+            </div>
+            
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">

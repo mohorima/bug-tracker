@@ -6,33 +6,35 @@
                     class="d-flex justify-content-between align-items-center mb-4"
                 >
                     <div class="input-group input-group-search">
-                        <div
-                            class="input-group-text input-group-prepend-search"
-                        >
-                            <svg
-                                width="19"
-                                height="19"
-                                viewBox="0 0 19 19"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
+                        <div class="input-group-prepend">
+                            <div
+                                class="input-group-text input-group-prepend-search"
                             >
-                                <circle
-                                    cx="8.02778"
-                                    cy="8.02778"
-                                    r="7.02778"
-                                    stroke="#596152"
-                                    stroke-width="2"
-                                />
-                                <line
-                                    x1="17.4747"
-                                    y1="17"
-                                    x2="14.1667"
-                                    y2="13.692"
-                                    stroke="#596152"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                />
-                            </svg>
+                                <svg
+                                    width="19"
+                                    height="19"
+                                    viewBox="0 0 19 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <circle
+                                        cx="8.02778"
+                                        cy="8.02778"
+                                        r="7.02778"
+                                        stroke="#596152"
+                                        stroke-width="2"
+                                    />
+                                    <line
+                                        x1="17.4747"
+                                        y1="17"
+                                        x2="14.1667"
+                                        y2="13.692"
+                                        stroke="#596152"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
                         </div>
                         <input
                             type="text"
@@ -43,8 +45,10 @@
                     </div>
 
                     <button type="button" class="btn btn-new" @click="newModal">
-                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
-                        New Issue
+                        <i class="fas fa-plus" aria-hidden="true"></i>
+                        <div class="hide ml-3">
+                            New Issue
+                        </div>
                     </button>
                 </div>
 

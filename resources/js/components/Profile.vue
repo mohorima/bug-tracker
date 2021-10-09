@@ -57,7 +57,7 @@
                                 role="tab"
                                 aria-controls="profile"
                                 aria-selected="false"
-                                >Settings</a
+                                >Profile</a
                             >
                         </li>
                     </ul>

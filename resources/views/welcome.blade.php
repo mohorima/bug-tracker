@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Bugtrack') }}</title>
 
     <!-- Icons -->
-    <link rel="icon" href="{{ asset('/images/logo.svg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('/images/logo-sm.svg') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -25,7 +25,7 @@
         <main>
             <div class="container">
                 <div class="login">
-                    <h1>Bugtrack</h1>
+                    <img src="{{ asset('/images/logo-vertical.svg') }}" alt="" width="200px">
                     <h3>Project & Issue Management</h3>
                     @if (Route::has('login'))
                         @auth

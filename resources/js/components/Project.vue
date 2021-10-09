@@ -45,8 +45,10 @@
                     </div>
 
                     <button type="button" class="btn btn-new" @click="newModal">
-                        <i class="fas fa-plus mr-3" aria-hidden="true"></i>
-                        New Project
+                        <i class="fas fa-plus" aria-hidden="true"></i>
+                        <div class="hide ml-3">
+                            New Project
+                        </div>
                     </button>
                 </div>
 
@@ -202,14 +204,14 @@
                             class="modal-title"
                             id="addRecordLabel"
                         >
-                            Update the Project
+                            Update Project
                         </h5>
                         <h5
                             v-show="!editMode"
                             class="modal-title"
                             id="addRecordLabel"
                         >
-                            Add New Project
+                            New Project
                         </h5>
                         <button
                             type="button"
@@ -217,10 +219,7 @@
                             data-dismiss="modal"
                             aria-label="Close"
                         >
-                            <i
-                                class="fas fa-times-circle"
-                                aria-hidden="true"
-                            ></i>
+                            <i class="fas fa-times"></i>
                         </button>
                     </div>
 
@@ -515,10 +514,22 @@
                                 type="submit"
                                 class="btn btn-submit"
                             >
-                                <i
-                                    class="fas fa-save mr-2"
+                                <svg
+                                    class="mr-2"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
                                     aria-hidden="true"
-                                ></i>
+                                    role="img"
+                                    width="22"
+                                    height="22"
+                                    preserveAspectRatio="xMidYMid meet"
+                                    viewBox="0 0 32 32"
+                                >
+                                    <path
+                                        d="M27.71 9.29l-5-5A1 1 0 0 0 22 4H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V10a1 1 0 0 0-.29-.71zM12 6h8v4h-8zm8 20h-8v-8h8zm2 0v-8a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8H6V6h4v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6.41l4 4V26z"
+                                        fill="#f8f8f8"
+                                    />
+                                </svg>
                                 Create
                             </button>
                         </div>

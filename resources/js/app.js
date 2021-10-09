@@ -147,7 +147,7 @@ $("#closesidenav").on("click", function () {
         "z-index": "-10",
     });
     $("#main").css({
-        "margin-left": "0",
+        "margin-left": "0px",
         "z-index": "10",
     });
 });

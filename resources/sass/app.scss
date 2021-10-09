@@ -23,6 +23,13 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: #ffffff;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+    }
+}
 
 #app {
     padding-left: 0 !important;
@@ -55,8 +62,9 @@ h3 {
 h5 {
     letter-spacing: 0.04rem;
     font-weight: 600;
-    font-size: 1.08rem;
-    color: $main-clr;
+    font-size: 16px;
+    color: $black;
+    text-transform: uppercase;
 }
 
 .fancy-text {
@@ -177,11 +185,26 @@ h6 {
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-width: 992px) {
     .sidenav {
-        z-index: -10;
+        z-index: 10;
+        width: 90px;
+        padding: 25px 15px;
+        .nav-link,
+        .sidebar-heading {
+            width: 60px;
+            text-align: center;
+            padding: 14px 15px;
+            transition: all 250ms ease;
+            svg {
+                margin-right: 0;
+            }
+            .hide {
+                display: none;
+            }
+        }
     }
 
     #main {
-        margin-left: 0;
+        margin-left: 90px;
         z-index: 10;
     }
 }
@@ -211,10 +234,49 @@ h6 {
     }
 }
 
+.top-navbar {
+    padding: 18px 1rem;
+    .navbar-toggler,
+    .username {
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
 /*---------------------DASHBOARD---------------------*/
 
 .dashboard-card {
-    background-color: white !important;
+    padding: 30px;
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 72px;
+        letter-spacing: 0.02em;
+        color: $dark-grey;
+    }
+}
+.dash-link-sm {
+    text-decoration: none;
+    font-weight: 600;
+    color: $main-clr;
+    margin-left: 7px;
+    svg {
+        margin-left: 10px;
+        transition: all 150ms ease;
+    }
+    &:hover {
+        color: $dark-grey;
+        svg {
+            margin-left: 15px;
+            path {
+                fill: $dark-grey;
+            }
+        }
+    }
 }
 
 /*---------------------FORM---------------------*/
@@ -226,6 +288,10 @@ h6 {
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+}
+.close > .fa-times {
+    color: $black !important;
+    font-size: 19px;
 }
 .title-2 {
     font-size: 1.1rem;
@@ -242,10 +308,10 @@ h6 {
 
 .input-form {
     label {
-        font-size: 0.8rem;
+        font-size: 13px;
         letter-spacing: 0.03rem;
-        color: $grey;
-        font-weight: 600;
+        color: #686868;
+        font-weight: 400;
     }
 
     input[type="text"],
@@ -320,6 +386,7 @@ h6 {
     background-color: #ffffff;
     border: none;
     padding: 1.3rem 1.3rem 1.3rem 0.5rem;
+    height: 45px;
 
     &:focus {
         border: none;
@@ -349,19 +416,30 @@ h6 {
 
 /*---------------------MODAL---------------------*/
 .modal-content {
-    border-radius: 1rem;
-    padding: 1rem;
+    border-radius: 23px;
 }
-.modal-footer,
+.modal-footer {
+    border: none;
+    padding: 0 35px 35px 35px;
+}
 .modal-header {
     border: none;
+    padding: 18px 35px;
+    background-color: $light-grey;
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+}
+.modal-body {
+    padding: 35px 35px 15px 35px;
 }
 
 /*---------------------BUTTON---------------------*/
 .btn-submit,
 .btn-new {
     padding: 0.6rem 1.3rem;
+    height: 45px;
     letter-spacing: 0.05rem;
+    line-height: 0;
     font-weight: 500;
     min-width: 140px;
     border-radius: 17px;
@@ -382,8 +460,17 @@ h6 {
 
 .btn-new {
     display: flex;
+    flex-direction: row;
     align-items: center;
     text-transform: capitalize;
+    margin: 0;
+
+    @media screen and (max-width: 768px) {
+        min-width: 30px;
+        .hide {
+            display: none;
+        }
+    }
 }
 
 .btn-control {
@@ -475,7 +562,7 @@ td:last-child {
 .table tbody td {
     border: none;
     padding: 20px 12px;
-    background-color: rgba(250, 250, 248, 0.71);
+    background-color: rgba(250, 250, 248, 0.603);
 }
 .table thead th {
     color: $dark-grey;
@@ -585,7 +672,6 @@ td:last-child {
 
 /*---------------TABBED CARD---------------*/
 .tab-header {
-    background-color: #ffffff;
     border-bottom: none;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
@@ -595,9 +681,7 @@ td:last-child {
     }
 }
 .tab-card {
-    background-color: #ffffff;
-    padding: 0 2rem;
-    border: 1px solid $light-main-clr;
+    background: transparent;
 
     .nav-tabs .nav-link {
         border: none;
@@ -605,6 +689,7 @@ td:last-child {
         border-top-right-radius: 1rem;
         padding: 1.2rem 2rem;
         text-transform: uppercase;
+        background: #f0f0ea;
     }
     .nav-tabs .nav-link.active,
     .nav-tabs .nav-item.show .nav-link {
@@ -618,10 +703,13 @@ td:last-child {
     }
 }
 .tab-content {
-    background-color: transparent;
+    background-color: #ffffff;
     color: $black;
     font-size: 1rem;
-    padding: 2rem 10px;
+    padding: 2rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     .active {
         color: $black !important;
     }

@@ -45,8 +45,10 @@
                     </div>
 
                     <button type="button" class="btn btn-new" @click="newModal">
-                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
-                        New Invoice
+                        <i class="fas fa-plus" aria-hidden="true"></i>
+                        <div class="hide ml-3">
+                            New Invoice
+                        </div>
                     </button>
                 </div>
 
@@ -135,7 +137,9 @@
                                             BILL
                                         </span>
                                         {{ invoice.billDate }}<br />
-                                        <span class="badge bg-light text-faded mt-1">
+                                        <span
+                                            class="badge bg-light text-faded mt-1"
+                                        >
                                             DUE
                                         </span>
                                         {{ invoice.dueDate }}

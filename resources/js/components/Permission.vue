@@ -45,8 +45,10 @@
                     </div>
 
                     <button type="button" class="btn btn-new" @click="newModal">
-                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
-                        New Permission
+                        <i class="fas fa-plus" aria-hidden="true"></i>
+                        <div class="hide ml-3">
+                            New Permission
+                        </div>
                     </button>
                 </div>
 

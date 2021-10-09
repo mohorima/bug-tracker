@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Bugtrack') }}</title>
 
     <!-- Icons -->
-    <link rel="icon" href="{{ asset('/images/logo.svg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('/images/logo-sm.svg') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

@@ -10,8 +10,8 @@
     <title>@yield('title','Bugtrack')</title>
 
     <!-- Icons -->
-    <link rel="icon" href="{{ asset('/images/logo.svg') }}" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/e74b9436ab.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{{ asset('/images/logo-sm.svg') }}" type="image/x-icon">
+    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -23,9 +23,7 @@
 
 <body>
     <div id="app" class="container-fluid">
-
         <div>
-
             {{-- side navigation --}}
             @include('layouts.side-nav')
 
@@ -35,7 +33,7 @@
                 @include('layouts.top-nav')
 
                 {{-- content --}}
-                <main class="py-4 px-3">
+                <main class="py-3 px-3">
                     <!-- route outlet -->
                     <!-- component matched by the route will render here -->
                     <router-view></router-view>
@@ -47,6 +45,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/e74b9436ab.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>
