@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;
 
-0,400;0,500;0,600;0,700;1,400&display=swap);
+0,400;0,500;0,600;0,700;0,800;1,400&display=swap);
 @charset "UTF-8";
 
 :root {
@@ -11025,7 +11025,7 @@ h6 {
 .text-title {
   font-size: 1rem;
   font-weight: 500;
-  color: #596152;
+  color: #4b4b4b;
   width: 210px;
   word-wrap: break-word;
   word-break: keep-all;
@@ -11040,15 +11040,31 @@ h6 {
   text-overflow: ellipsis;
 }
 
-.text-main {
-  color: #4b4b4b;
+strong {
+  font-weight: 600;
 }
 
 .to-uppercase {
   text-transform: uppercase;
 }
 
+.text-main {
+  color: #4b4b4b;
+}
+
+.green {
+  color: #62ba0a;
+}
+
 /*---------------------NAVIGATION---------------------*/
+
+.nav-logo {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 31px;
+  text-transform: uppercase;
+  color: #4b4b4b;
+}
 
 .sidenav {
   min-height: 100vh;
@@ -11065,10 +11081,6 @@ h6 {
 
 .sidenav .nav-logo {
   margin-bottom: 42px;
-}
-
-.sidenav .hide-lg {
-  display: none;
 }
 
 .sidenav .nav-link,
@@ -11137,13 +11149,13 @@ h6 {
   margin-right: 0;
 }
 
-.minimize .hide {
-  display: none;
+.minimize .nav-logo {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.minimize .hide-lg {
-  display: block;
-  margin: auto;
+.minimize .hide {
+  display: none;
 }
 
 .rotate {
@@ -11153,10 +11165,13 @@ h6 {
 /*---------------------TOP NAV---------------------*/
 
 .closebtn {
+  cursor: pointer;
+  margin-right: 20px;
+  margin-left: -45px;
   transition: all 500ms ease-in-out;
 }
 
-.closebtn:hover > circle {
+.closebtn:hover > svg > circle {
   fill: #62ba0a;
 }
 
@@ -11488,6 +11503,18 @@ h6 {
   border-radius: 6px;
 }
 
+.badge-lg {
+  font-size: 0.9rem;
+  font-weight: 400;
+  background-color: #ecece9;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 /*---------------------ICONS---------------------*/
 
 .fas,
@@ -11559,20 +11586,29 @@ td:last-child {
   border-bottom: none;
   border-top: none;
   font-size: 0.8rem;
+  font-weight: 600;
   letter-spacing: 0.04rem;
   vertical-align: middle;
 }
 
 .th-sm {
-  min-width: 120px !important;
+  min-width: 140px !important;
 }
 
 .th-lg {
   min-width: 230px;
 }
 
+.th-3-btn {
+  min-width: 150px !important;
+}
+
 .table-hover tbody tr:hover {
   background-color: #fafaf8;
+}
+
+.add-member {
+  text-align: center;
 }
 
 /*---------------BOOTSTRAP-PAGINATION---------------*/
@@ -11612,14 +11648,8 @@ td:last-child {
   }
 }
 
-.login h1,
 .login h3 {
-  color: #62ba0a;
-}
-
-.login h3 {
-  margin: 30px 5px;
-  font-size: 1.4rem;
+  margin: 10px 5px 30px 5px;
 }
 
 .login label {

@@ -25,8 +25,7 @@
         <main>
             <div class="container">
                 <div class="login">
-                    <img src="{{ asset('/images/logo-vertical.svg') }}" alt="" width="200px">
-                    <h3>Project & Issue Management</h3>
+                    <img src="{{ asset('/images/logo-vertical.svg') }}" alt="" width="200px" class="mb-5">
                     @if (Route::has('login'))
                         @auth
                             <a href="{{ url('/home') }}">

@@ -3,8 +3,8 @@
     <ul class="nav flex-column">
   
         <li class="nav-logo">
-            <img src="{{ asset('/images/logo.svg') }}" alt="logo" height="30px" class="hide">
-            <img src="{{ asset('/images/logo-sm.svg') }}" alt="logo" height="30px" class="hide-lg">
+            <img src="{{ asset('/images/logo-sm.svg') }}" alt="logo" height="30px">
+            <span class="hide">BUG<span class="green">TRACK</span></span>
         </li>
     
         <li class="">
@@ -125,7 +125,7 @@
         </ul>
     </div>
     
-    
+    <div class="new-issue-btn"></div>
 </div>
   
   

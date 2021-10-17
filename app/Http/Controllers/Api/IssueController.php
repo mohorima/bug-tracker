@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\IssueRequest;
 use App\Models\Issue;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -52,6 +53,7 @@ class IssueController extends Controller
     public function assignee()
     {
         return User::where('id', '!=', auth()->id())
+            ->whereNotIn('role_id', [Role::IS_ADMIN])
             ->latest()
             ->paginate(25);
     }

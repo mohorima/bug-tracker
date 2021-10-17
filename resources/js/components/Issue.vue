@@ -104,10 +104,26 @@
                                             data-placement="top"
                                             title="Edit"
                                         >
-                                            <i
-                                                class="fas fa-pen-nib mr-3 table-fa"
-                                                aria-hidden="true"
-                                            ></i>
+                                            <svg
+                                                class="mr-2"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <rect
+                                                    width="24"
+                                                    height="24"
+                                                    rx="7"
+                                                    fill="#4FC03C"
+                                                />
+                                                <path
+                                                    d="M11.4949 6.85894L15.9245 11.2897L11.4949 6.85894V6.85894ZM18.5123 6.17494C18.6308 6.29242 18.7248 6.4323 18.7888 6.58644C18.8528 6.74058 18.8855 6.9059 18.8851 7.0728C18.8846 7.2397 18.8509 7.40483 18.7861 7.55861C18.7212 7.71239 18.6264 7.85173 18.5072 7.96854L9.06926 17.4065L3.89999 18.8847L5.37693 13.7167L14.8149 4.27747C14.9318 4.15864 15.0712 4.06415 15.2249 3.99947C15.3786 3.93478 15.5436 3.90117 15.7103 3.90058C15.8771 3.89999 16.0423 3.93244 16.1965 3.99604C16.3506 4.05964 16.4906 4.15314 16.6085 4.27114L18.5135 6.1762L18.5123 6.17494Z"
+                                                    stroke="white"
+                                                    stroke-width="1.33333"
+                                                />
+                                            </svg>
                                         </a>
                                         <a
                                             href=""
@@ -118,10 +134,25 @@
                                             data-placement="top"
                                             title="Delete"
                                         >
-                                            <i
-                                                class="fas fa-trash table-fa"
-                                                aria-hidden="true"
-                                            ></i>
+                                            <svg
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <rect
+                                                    width="24"
+                                                    height="24"
+                                                    rx="7"
+                                                    fill="#4FC03C"
+                                                />
+                                                <path
+                                                    d="M13.648 9.93334V16.3333M7.19999 7.80001H16.8V18.4667H7.19999V7.80001ZM4.53333 7.80001H19.4667H4.53333ZM9.18826 4.60001H14.5216V7.80001H9.18826V4.60001ZM10.448 9.93334V16.3333V9.93334Z"
+                                                    stroke="white"
+                                                    stroke-width="1.33333"
+                                                />
+                                            </svg>
                                         </a>
                                     </th>
                                     <td>
@@ -449,7 +480,7 @@
                                         class="col-form-label"
                                         for="assignee_id"
                                     >
-                                        Assignee ID
+                                        Assignee
                                         <strong class="text-danger"> *</strong>
                                     </label>
 

@@ -20,7 +20,9 @@ class RoleController extends Controller
 
         $searchTerm = request('keywords');
 
-        $role = Role::orderBy('id', 'ASC')
+        $role = Role::with('permissions')
+            ->orderBy('id', 'ASC')
+            ->where('name', '!=', 'Admin')
             ->when($searchTerm, function ($query, $searchTerm) {
                 return $query->where('name', 'LIKE', '%' . $searchTerm . '%');
             })
@@ -36,6 +38,14 @@ class RoleController extends Controller
         $this->authorize('create', Role::class);
 
         return Role::create($request->all());
+    }
+
+    public function storePermission()
+    {
+        $this->authorize('create', Role::class);
+
+        $role = Role::findOrFail(request('id'));
+        $role->permissions()->sync(request('permission_id'));
     }
 
     public function show($id)

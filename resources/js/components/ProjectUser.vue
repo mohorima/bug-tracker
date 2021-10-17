@@ -56,7 +56,7 @@
                                     {{ $route.params.projectTitle }}
                                 </span>
                             </h5>
-                            
+
                             <button type="submit" class="btn btn-submit mt-3">
                                 <i
                                     class="fas fa-save mr-2"
@@ -141,6 +141,7 @@ export default {
                 .then(({ data }) => (this.users = data.data))
                 .catch((error) => console.log(error));
         },
+
         createProjectMember() {
             this.form.id = this.$route.params.projectId;
             //set form id property to route projectId parameter

@@ -127,14 +127,17 @@
 
             <div class="col-lg-3">
                 <p>Discovered New Bugs?</p>
-                <router-link to="/issue">
-                    <button type="button" class="btn btn-new">
-                        <i class="fas fa-plus" aria-hidden="true"></i>
-                        <div class="hide ml-3">
-                            New Issue
-                        </div>
-                    </button>
-                </router-link>
+                <div class="d-flex align-items-center justify-content-between">
+                    <img src="/images/dashboard-pic.png" width="80px" />
+                    <router-link to="/issue">
+                        <button type="button" class="btn btn-new">
+                            <i class="fas fa-plus" aria-hidden="true"></i>
+                            <div class="hide ml-3">
+                                New Issue
+                            </div>
+                        </button>
+                    </router-link>
+                </div>
             </div>
         </div>
     </div>

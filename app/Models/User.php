@@ -35,12 +35,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    //user:role M:1
-    public function role()
-    {
-        return $this->belongsTo(Role::class, 'role_id');
-    }
-
     //task:user M:1
     public function tasks()
     {
@@ -78,4 +72,20 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Project::class)->withTimestamps();
     }
+
+    //Roles & Permissions
+
+    //user:role M:1
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
+
+    // public function permissions()
+    // {
+    //     return $this->role->map->permissions
+    //         ->flatten()
+    //         ->pluck('slug')
+    //         ->unique();
+    // }
 }

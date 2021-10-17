@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use App\Models\Client;
 use App\Models\Project;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,8 +65,8 @@ class ProjectController extends Controller
     {
         $searchTerm = request('keywords');
 
-        return User::with('role')
-            ->where('id', '!=', auth()->id())
+        return User::where('id', '!=', auth()->id())
+            ->whereNotIn('role_id', [Role::IS_ADMIN, Role::IS_MANAGER])
             ->when($searchTerm, function ($query, $searchTerm) {
                 return $query
                     ->where('name', 'LIKE', '%' . $searchTerm . '%')

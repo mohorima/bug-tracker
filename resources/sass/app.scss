@@ -1,5 +1,5 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
 
 // Variables
 @import "variables";
@@ -86,7 +86,7 @@ h6 {
 .text-title {
     font-size: 1rem;
     font-weight: 500;
-    color: $dark-grey;
+    color: $black;
     width: 210px;
     word-wrap: break-word;
     word-break: keep-all;
@@ -99,15 +99,27 @@ h6 {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.text-main {
-    color: $black;
+strong {
+    font-weight: 600;
 }
 .to-uppercase {
     text-transform: uppercase;
 }
+.text-main {
+    color: $black;
+}
+.green {
+    color: $main-clr;
+}
 
 /*---------------------NAVIGATION---------------------*/
-
+.nav-logo {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 31px;
+    text-transform: uppercase;
+    color: $black;
+}
 .sidenav {
     min-height: 100vh;
     background-color: #ffffff;
@@ -123,10 +135,6 @@ h6 {
     .nav-logo {
         margin-bottom: 42px;
     }
-    .hide-lg {
-        display: none;
-    }
-
     .nav-link,
     .sidebar-heading {
         cursor: pointer;
@@ -182,12 +190,12 @@ h6 {
             margin-right: 0;
         }
     }
+    .nav-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
     .hide {
         display: none;
-    }
-    .hide-lg {
-        display: block;
-        margin: auto;
     }
 }
 
@@ -204,8 +212,11 @@ h6 {
 /*---------------------TOP NAV---------------------*/
 
 .closebtn {
+    cursor: pointer;
+    margin-right: 20px;
+    margin-left: -45px;
     transition: all 500ms ease-in-out;
-    &:hover > circle {
+    &:hover > svg > circle {
         fill: $main-clr;
     }
 }
@@ -500,6 +511,17 @@ h6 {
     font-weight: 500;
     letter-spacing: 0.03rem;
     border-radius: 6px;
+
+    &-lg {
+        font-size: 0.9rem;
+        font-weight: 400;
+        background-color: #ecece9;
+    }
+}
+.badges{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 /*---------------------ICONS---------------------*/
 .fas,
@@ -567,20 +589,29 @@ td:last-child {
     border-bottom: none;
     border-top: none;
     font-size: 0.8rem;
+    font-weight: 600;
     letter-spacing: 0.04rem;
     vertical-align: middle;
 }
 
 .th-sm {
-    min-width: 120px !important;
+    min-width: 140px !important;
 }
 
 .th-lg {
     min-width: 230px;
 }
 
+.th-3-btn {
+    min-width: 150px !important;
+}
+
 .table-hover tbody tr:hover {
     background-color: $light-grey;
+}
+
+.add-member {
+    text-align: center;
 }
 
 /*---------------BOOTSTRAP-PAGINATION---------------*/
@@ -617,14 +648,8 @@ td:last-child {
         margin: 45px 0;
     }
 
-    h1,
     h3 {
-        color: $main-clr;
-    }
-
-    h3 {
-        margin: 30px 5px;
-        font-size: 1.4rem;
+        margin: 10px 5px 30px 5px;
     }
 
     label {

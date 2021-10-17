@@ -2602,6 +2602,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2851,6 +2882,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log("Component mounted.");
@@ -2907,6 +2941,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.es.js");
 /* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3995,6 +4060,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4378,6 +4474,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4433,7 +4560,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     createPermission: function createPermission() {
-      this.form.post("/api/permission").then(function () {
+      axios.post("/api/permission", this.form).then(function () {
         $("#addRecord").modal("hide");
         Fire.$emit("reloadRecords");
       })["catch"](function (error) {
@@ -4719,6 +4846,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5836,6 +5998,150 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5847,11 +6153,17 @@ __webpack_require__.r(__webpack_exports__);
     return {
       editMode: false,
       roles: [],
+      permissions: [],
       keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         name: "",
         description: ""
+      }),
+      formPermission: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
+        id: "",
+        name: "",
+        permission_id: []
       })
     };
   },
@@ -5876,15 +6188,30 @@ __webpack_require__.r(__webpack_exports__);
       $("#addRecord").modal("show");
       this.form.fill(role);
     },
-    loadRoles: function loadRoles() {
+    //modal for adding permissionss
+    newPermissionModal: function newPermissionModal(role) {
       var _this = this;
+
+      this.formPermission.clear();
+      this.formPermission.reset();
+      this.loadRoles();
+      this.loadPermissions();
+      $("#addPermission").modal("show");
+      this.formPermission.id = role.id;
+      this.formPermission.name = role.name;
+      role.permissions.forEach(function (value) {
+        _this.formPermission.permission_id.push(value.id);
+      });
+    },
+    loadRoles: function loadRoles() {
+      var _this2 = this;
 
       axios.get("/api/role", {
         params: {
           keywords: this.keywords
         }
       }).then(function (response) {
-        return _this.roles = response.data.roles;
+        return _this2.roles = response.data.roles;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -5913,14 +6240,33 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         return console.log(error);
       });
+    },
+    //assign permissions to roles
+    loadPermissions: function loadPermissions() {
+      var _this3 = this;
+
+      axios.get("/api/permission").then(function (_ref) {
+        var data = _ref.data;
+        return _this3.permissions = data.data;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    createRolePermission: function createRolePermission() {
+      this.formPermission.post("/api/role/permission").then(function () {
+        $("#addPermission").modal("hide");
+        Fire.$emit("reloadRecords");
+      })["catch"](function (error) {
+        return console.log(error);
+      });
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this4 = this;
 
     this.loadRoles();
     Fire.$on("reloadRecords", function () {
-      _this2.loadRoles();
+      _this4.loadRoles();
     });
   }
 });
@@ -5940,6 +6286,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.es.js");
 /* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6507,6 +6884,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.es.js");
 /* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -44465,10 +44873,38 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-pen-nib mr-3 table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "mr-2",
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M11.4949 6.85894L15.9245 11.2897L11.4949 6.85894V6.85894ZM18.5123 6.17494C18.6308 6.29242 18.7248 6.4323 18.7888 6.58644C18.8528 6.74058 18.8855 6.9059 18.8851 7.0728C18.8846 7.2397 18.8509 7.40483 18.7861 7.55861C18.7212 7.71239 18.6264 7.85173 18.5072 7.96854L9.06926 17.4065L3.89999 18.8847L5.37693 13.7167L14.8149 4.27747C14.9318 4.15864 15.0712 4.06415 15.2249 3.99947C15.3786 3.93478 15.5436 3.90117 15.7103 3.90058C15.8771 3.89999 16.0423 3.93244 16.1965 3.99604C16.3506 4.05964 16.4906 4.15314 16.6085 4.27114L18.5135 6.1762L18.5123 6.17494Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       ),
                       _vm._v(" "),
@@ -44489,10 +44925,37 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-trash table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M13.648 9.93334V16.3333M7.19999 7.80001H16.8V18.4667H7.19999V7.80001ZM4.53333 7.80001H19.4667H4.53333ZM9.18826 4.60001H14.5216V7.80001H9.18826V4.60001ZM10.448 9.93334V16.3333V9.93334Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       )
                     ]),
@@ -46448,33 +46911,39 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-3" },
-        [
-          _c("p", [_vm._v("Discovered New Bugs?")]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/issue" } }, [
-            _c(
-              "button",
-              { staticClass: "btn btn-new", attrs: { type: "button" } },
-              [
-                _c("i", {
-                  staticClass: "fas fa-plus",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "hide ml-3" }, [
-                  _vm._v(
-                    "\n                        New Issue\n                    "
-                  )
-                ])
-              ]
-            )
-          ])
-        ],
-        1
-      )
+      _c("div", { staticClass: "col-lg-3" }, [
+        _c("p", [_vm._v("Discovered New Bugs?")]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "d-flex align-items-center justify-content-between" },
+          [
+            _c("img", {
+              attrs: { src: "/images/dashboard-pic.png", width: "80px" }
+            }),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/issue" } }, [
+              _c(
+                "button",
+                { staticClass: "btn btn-new", attrs: { type: "button" } },
+                [
+                  _c("i", {
+                    staticClass: "fas fa-plus",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "hide ml-3" }, [
+                    _vm._v(
+                      "\n                            New Issue\n                        "
+                    )
+                  ])
+                ]
+              )
+            ])
+          ],
+          1
+        )
+      ])
     ])
   ])
 }
@@ -46679,10 +47148,38 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-pen-nib mr-3 table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "mr-2",
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M11.4949 6.85894L15.9245 11.2897L11.4949 6.85894V6.85894ZM18.5123 6.17494C18.6308 6.29242 18.7248 6.4323 18.7888 6.58644C18.8528 6.74058 18.8855 6.9059 18.8851 7.0728C18.8846 7.2397 18.8509 7.40483 18.7861 7.55861C18.7212 7.71239 18.6264 7.85173 18.5072 7.96854L9.06926 17.4065L3.89999 18.8847L5.37693 13.7167L14.8149 4.27747C14.9318 4.15864 15.0712 4.06415 15.2249 3.99947C15.3786 3.93478 15.5436 3.90117 15.7103 3.90058C15.8771 3.89999 16.0423 3.93244 16.1965 3.99604C16.3506 4.05964 16.4906 4.15314 16.6085 4.27114L18.5135 6.1762L18.5123 6.17494Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       ),
                       _vm._v(" "),
@@ -46703,10 +47200,37 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-trash table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M13.648 9.93334V16.3333M7.19999 7.80001H16.8V18.4667H7.19999V7.80001ZM4.53333 7.80001H19.4667H4.53333ZM9.18826 4.60001H14.5216V7.80001H9.18826V4.60001ZM10.448 9.93334V16.3333V9.93334Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       )
                     ]),
@@ -47852,10 +48376,38 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-pen-nib mr-3 table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "mr-2",
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M11.4949 6.85894L15.9245 11.2897L11.4949 6.85894V6.85894ZM18.5123 6.17494C18.6308 6.29242 18.7248 6.4323 18.7888 6.58644C18.8528 6.74058 18.8855 6.9059 18.8851 7.0728C18.8846 7.2397 18.8509 7.40483 18.7861 7.55861C18.7212 7.71239 18.6264 7.85173 18.5072 7.96854L9.06926 17.4065L3.89999 18.8847L5.37693 13.7167L14.8149 4.27747C14.9318 4.15864 15.0712 4.06415 15.2249 3.99947C15.3786 3.93478 15.5436 3.90117 15.7103 3.90058C15.8771 3.89999 16.0423 3.93244 16.1965 3.99604C16.3506 4.05964 16.4906 4.15314 16.6085 4.27114L18.5135 6.1762L18.5123 6.17494Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       ),
                       _vm._v(" "),
@@ -47876,10 +48428,37 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-trash table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M13.648 9.93334V16.3333M7.19999 7.80001H16.8V18.4667H7.19999V7.80001ZM4.53333 7.80001H19.4667H4.53333ZM9.18826 4.60001H14.5216V7.80001H9.18826V4.60001ZM10.448 9.93334V16.3333V9.93334Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       )
                     ]),
@@ -48814,7 +49393,7 @@ var staticRenderFns = [
       { staticClass: "col-form-label", attrs: { for: "assignee_id" } },
       [
         _vm._v(
-          "\n                                    Assignee ID\n                                    "
+          "\n                                    Assignee\n                                    "
         ),
         _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
       ]
@@ -48973,10 +49552,38 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-pen-nib mr-3 table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "mr-2",
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M11.4949 6.85894L15.9245 11.2897L11.4949 6.85894V6.85894ZM18.5123 6.17494C18.6308 6.29242 18.7248 6.4323 18.7888 6.58644C18.8528 6.74058 18.8855 6.9059 18.8851 7.0728C18.8846 7.2397 18.8509 7.40483 18.7861 7.55861C18.7212 7.71239 18.6264 7.85173 18.5072 7.96854L9.06926 17.4065L3.89999 18.8847L5.37693 13.7167L14.8149 4.27747C14.9318 4.15864 15.0712 4.06415 15.2249 3.99947C15.3786 3.93478 15.5436 3.90117 15.7103 3.90058C15.8771 3.89999 16.0423 3.93244 16.1965 3.99604C16.3506 4.05964 16.4906 4.15314 16.6085 4.27114L18.5135 6.1762L18.5123 6.17494Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       ),
                       _vm._v(" "),
@@ -48997,10 +49604,37 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-trash table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M13.648 9.93334V16.3333M7.19999 7.80001H16.8V18.4667H7.19999V7.80001ZM4.53333 7.80001H19.4667H4.53333ZM9.18826 4.60001H14.5216V7.80001H9.18826V4.60001ZM10.448 9.93334V16.3333V9.93334Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       )
                     ]),
@@ -49852,10 +50486,38 @@ var render = function() {
                             }
                           },
                           [
-                            _c("i", {
-                              staticClass: "fas fa-pen-nib mr-3 table-fa",
-                              attrs: { "aria-hidden": "true" }
-                            })
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "mr-2",
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  viewBox: "0 0 24 24",
+                                  fill: "none",
+                                  xmlns: "http://www.w3.org/2000/svg"
+                                }
+                              },
+                              [
+                                _c("rect", {
+                                  attrs: {
+                                    width: "24",
+                                    height: "24",
+                                    rx: "7",
+                                    fill: "#4FC03C"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M11.4949 6.85894L15.9245 11.2897L11.4949 6.85894V6.85894ZM18.5123 6.17494C18.6308 6.29242 18.7248 6.4323 18.7888 6.58644C18.8528 6.74058 18.8855 6.9059 18.8851 7.0728C18.8846 7.2397 18.8509 7.40483 18.7861 7.55861C18.7212 7.71239 18.6264 7.85173 18.5072 7.96854L9.06926 17.4065L3.89999 18.8847L5.37693 13.7167L14.8149 4.27747C14.9318 4.15864 15.0712 4.06415 15.2249 3.99947C15.3786 3.93478 15.5436 3.90117 15.7103 3.90058C15.8771 3.89999 16.0423 3.93244 16.1965 3.99604C16.3506 4.05964 16.4906 4.15314 16.6085 4.27114L18.5135 6.1762L18.5123 6.17494Z",
+                                    stroke: "white",
+                                    "stroke-width": "1.33333"
+                                  }
+                                })
+                              ]
+                            )
                           ]
                         ),
                         _vm._v(" "),
@@ -49876,10 +50538,38 @@ var render = function() {
                             }
                           },
                           [
-                            _c("i", {
-                              staticClass: "fas fa-trash mr-3 table-fa",
-                              attrs: { "aria-hidden": "true" }
-                            })
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "mr-2",
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  viewBox: "0 0 24 24",
+                                  fill: "none",
+                                  xmlns: "http://www.w3.org/2000/svg"
+                                }
+                              },
+                              [
+                                _c("rect", {
+                                  attrs: {
+                                    width: "24",
+                                    height: "24",
+                                    rx: "7",
+                                    fill: "#4FC03C"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M13.648 9.93334V16.3333M7.19999 7.80001H16.8V18.4667H7.19999V7.80001ZM4.53333 7.80001H19.4667H4.53333ZM9.18826 4.60001H14.5216V7.80001H9.18826V4.60001ZM10.448 9.93334V16.3333V9.93334Z",
+                                    stroke: "white",
+                                    "stroke-width": "1.33333"
+                                  }
+                                })
+                              ]
+                            )
                           ]
                         ),
                         _vm._v(" "),
@@ -49897,9 +50587,12 @@ var render = function() {
                             }
                           },
                           [
-                            _c("i", {
-                              staticClass: "fas fa-user table-fa",
-                              attrs: { "aria-hidden": "true" }
+                            _c("img", {
+                              attrs: {
+                                src: "/images/add-member.svg",
+                                width: "25px",
+                                title: "add member"
+                              }
                             })
                           ]
                         )
@@ -50880,8 +51573,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
-          _vm._v("Actions")
+        _c("th", { staticClass: "th-sm th-3-btn", attrs: { scope: "col" } }, [
+          _vm._v(
+            "\n                                    Actions\n                                "
+          )
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "th-lg", attrs: { scope: "col" } }, [
@@ -51419,10 +52114,38 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-pen-nib mr-3 table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "mr-2",
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M11.4949 6.85894L15.9245 11.2897L11.4949 6.85894V6.85894ZM18.5123 6.17494C18.6308 6.29242 18.7248 6.4323 18.7888 6.58644C18.8528 6.74058 18.8855 6.9059 18.8851 7.0728C18.8846 7.2397 18.8509 7.40483 18.7861 7.55861C18.7212 7.71239 18.6264 7.85173 18.5072 7.96854L9.06926 17.4065L3.89999 18.8847L5.37693 13.7167L14.8149 4.27747C14.9318 4.15864 15.0712 4.06415 15.2249 3.99947C15.3786 3.93478 15.5436 3.90117 15.7103 3.90058C15.8771 3.89999 16.0423 3.93244 16.1965 3.99604C16.3506 4.05964 16.4906 4.15314 16.6085 4.27114L18.5135 6.1762L18.5123 6.17494Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       ),
                       _vm._v(" "),
@@ -51443,17 +52166,124 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-trash table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "mr-2",
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M13.648 9.93334V16.3333M7.19999 7.80001H16.8V18.4667H7.19999V7.80001ZM4.53333 7.80001H19.4667H4.53333ZM9.18826 4.60001H14.5216V7.80001H9.18826V4.60001ZM10.448 9.93334V16.3333V9.93334Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "",
+                            "data-toggle": "tooltip",
+                            "data-placement": "top",
+                            title: "add permission"
+                          },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.newPermissionModal(role)
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              attrs: {
+                                width: "25",
+                                height: "25",
+                                viewBox: "0 0 42 42",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("circle", {
+                                attrs: {
+                                  cx: "21",
+                                  cy: "21",
+                                  r: "20",
+                                  stroke: "#8C8C8C",
+                                  "stroke-dasharray": "2 2"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M25.8721 24.8203C26.5811 24.4395 27.3926 24.2227 28.2568 24.2227H28.2598C28.3477 24.2227 28.3887 24.1172 28.3242 24.0586C27.4254 23.252 26.3987 22.6005 25.2861 22.1309C25.2744 22.125 25.2627 22.1221 25.251 22.1162C27.0703 20.7949 28.2539 18.6475 28.2539 16.2246C28.2539 12.2109 25.0078 8.95898 21.0029 8.95898C16.998 8.95898 13.7549 12.2109 13.7549 16.2246C13.7549 18.6475 14.9385 20.7949 16.7607 22.1162C16.749 22.1221 16.7373 22.125 16.7256 22.1309C15.416 22.6846 14.2412 23.4785 13.2305 24.4922C12.2256 25.4953 11.4255 26.6844 10.875 27.9932C10.3333 29.2748 10.041 30.6479 10.0137 32.0391C10.0129 32.0703 10.0184 32.1014 10.0298 32.1306C10.0412 32.1597 10.0584 32.1862 10.0802 32.2086C10.1021 32.231 10.1282 32.2488 10.157 32.2609C10.1858 32.2731 10.2168 32.2793 10.248 32.2793H12.0029C12.1289 32.2793 12.2344 32.1768 12.2373 32.0508C12.2959 29.7891 13.2012 27.6709 14.8037 26.0654C16.459 24.4043 18.6621 23.4902 21.0059 23.4902C22.667 23.4902 24.2607 23.9502 25.6348 24.8115C25.6701 24.8337 25.7106 24.8462 25.7522 24.8477C25.7939 24.8493 25.8352 24.8398 25.8721 24.8203ZM21.0059 21.2637C19.6641 21.2637 18.4014 20.7393 17.4492 19.7871C16.9807 19.3199 16.6094 18.7645 16.3564 18.1531C16.1035 17.5417 15.9741 16.8863 15.9756 16.2246C15.9756 14.8799 16.5 13.6143 17.4492 12.6621C18.3984 11.71 19.6611 11.1855 21.0059 11.1855C22.3506 11.1855 23.6103 11.71 24.5625 12.6621C25.031 13.1294 25.4024 13.6847 25.6553 14.2961C25.9082 14.9075 26.0376 15.5629 26.0361 16.2246C26.0361 17.5693 25.5117 18.835 24.5625 19.7871C23.6103 20.7393 22.3477 21.2637 21.0059 21.2637ZM31.7812 28.2363H29.3203V25.7754C29.3203 25.6465 29.2148 25.541 29.0859 25.541H27.4453C27.3164 25.541 27.2109 25.6465 27.2109 25.7754V28.2363H24.75C24.6211 28.2363 24.5156 28.3418 24.5156 28.4707V30.1113C24.5156 30.2402 24.6211 30.3457 24.75 30.3457H27.2109V32.8066C27.2109 32.9355 27.3164 33.041 27.4453 33.041H29.0859C29.2148 33.041 29.3203 32.9355 29.3203 32.8066V30.3457H31.7812C31.9102 30.3457 32.0156 30.2402 32.0156 30.1113V28.4707C32.0156 28.3418 31.9102 28.2363 31.7812 28.2363Z",
+                                  fill: "#62BA0A"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       )
                     ]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(role.name))]),
+                    _c("td", [
+                      _vm._v(
+                        "\n                                    " +
+                          _vm._s(role.name) +
+                          "\n                                    "
+                      ),
+                      _c("div", { staticClass: "text-small" }, [
+                        _vm._v(
+                          "\n                                        " +
+                            _vm._s(role.description) +
+                            "\n                                    "
+                        )
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(role.description))])
+                    _c("td", [
+                      _c(
+                        "div",
+                        { staticClass: "badges" },
+                        _vm._l(role.permissions, function(permission) {
+                          return _c("span", { staticClass: "badge badge-lg" }, [
+                            _vm._v(
+                              "\n                                            " +
+                                _vm._s(permission.slug) +
+                                "\n                                        "
+                            )
+                          ])
+                        }),
+                        0
+                      )
+                    ])
                   ])
                 }),
                 0
@@ -51697,6 +52527,146 @@ var render = function() {
           ]
         )
       ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "addPermission",
+          tabindex: "-1",
+          "aria-labelledby": "addPermissionLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog modal-dialog-centered modal-md" },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "h5",
+                  {
+                    staticClass: "modal-title",
+                    attrs: { id: "addPermissionLabel" }
+                  },
+                  [
+                    _c("span", { staticClass: "green" }, [
+                      _vm._v(_vm._s(_vm.formPermission.name))
+                    ]),
+                    _vm._v(
+                      "\n                        Permissions\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(3)
+              ]),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  staticClass: "input-form",
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.createRolePermission()
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "modal-body" },
+                    _vm._l(_vm.permissions, function(permission) {
+                      return _c(
+                        "div",
+                        { staticClass: "form-group form-check" },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "d-flex align-items-center" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.formPermission.permission_id,
+                                    expression: "formPermission.permission_id"
+                                  }
+                                ],
+                                staticClass: "mr-3",
+                                attrs: {
+                                  type: "checkbox",
+                                  name: "permission_id"
+                                },
+                                domProps: {
+                                  value: permission.id,
+                                  checked: Array.isArray(
+                                    _vm.formPermission.permission_id
+                                  )
+                                    ? _vm._i(
+                                        _vm.formPermission.permission_id,
+                                        permission.id
+                                      ) > -1
+                                    : _vm.formPermission.permission_id
+                                },
+                                on: {
+                                  change: function($event) {
+                                    var $$a = _vm.formPermission.permission_id,
+                                      $$el = $event.target,
+                                      $$c = $$el.checked ? true : false
+                                    if (Array.isArray($$a)) {
+                                      var $$v = permission.id,
+                                        $$i = _vm._i($$a, $$v)
+                                      if ($$el.checked) {
+                                        $$i < 0 &&
+                                          _vm.$set(
+                                            _vm.formPermission,
+                                            "permission_id",
+                                            $$a.concat([$$v])
+                                          )
+                                      } else {
+                                        $$i > -1 &&
+                                          _vm.$set(
+                                            _vm.formPermission,
+                                            "permission_id",
+                                            $$a
+                                              .slice(0, $$i)
+                                              .concat($$a.slice($$i + 1))
+                                          )
+                                      }
+                                    } else {
+                                      _vm.$set(
+                                        _vm.formPermission,
+                                        "permission_id",
+                                        $$c
+                                      )
+                                    }
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", [_vm._v(_vm._s(permission.slug))])
+                            ]
+                          )
+                        ]
+                      )
+                    }),
+                    0
+                  ),
+                  _vm._v(" "),
+                  _vm._m(4)
+                ]
+              )
+            ])
+          ]
+        )
+      ]
     )
   ])
 }
@@ -51711,13 +52681,13 @@ var staticRenderFns = [
           _vm._v("Actions")
         ]),
         _vm._v(" "),
-        _c("th", { staticClass: "th-lg", attrs: { scope: "col" } }, [
+        _c("th", { staticClass: "th-sm", attrs: { scope: "col" } }, [
           _vm._v("Name")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "th-lg", attrs: { scope: "col" } }, [
           _vm._v(
-            "\n                                    Description\n                                "
+            "\n                                    Permissions\n                                "
           )
         ])
       ])
@@ -51757,6 +52727,46 @@ var staticRenderFns = [
         _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "modal",
+          "aria-label": "Close"
+        }
+      },
+      [
+        _c("i", {
+          staticClass: "fas fa-times-circle",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-submit", attrs: { type: "submit" } },
+        [
+          _c("i", {
+            staticClass: "fas fa-save mr-2",
+            attrs: { "aria-hidden": "true" }
+          }),
+          _vm._v("\n                            Add\n                        ")
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -51911,10 +52921,38 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-pen-nib mr-3 table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "mr-2",
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M11.4949 6.85894L15.9245 11.2897L11.4949 6.85894V6.85894ZM18.5123 6.17494C18.6308 6.29242 18.7248 6.4323 18.7888 6.58644C18.8528 6.74058 18.8855 6.9059 18.8851 7.0728C18.8846 7.2397 18.8509 7.40483 18.7861 7.55861C18.7212 7.71239 18.6264 7.85173 18.5072 7.96854L9.06926 17.4065L3.89999 18.8847L5.37693 13.7167L14.8149 4.27747C14.9318 4.15864 15.0712 4.06415 15.2249 3.99947C15.3786 3.93478 15.5436 3.90117 15.7103 3.90058C15.8771 3.89999 16.0423 3.93244 16.1965 3.99604C16.3506 4.05964 16.4906 4.15314 16.6085 4.27114L18.5135 6.1762L18.5123 6.17494Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       ),
                       _vm._v(" "),
@@ -51935,10 +52973,37 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-trash table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M13.648 9.93334V16.3333M7.19999 7.80001H16.8V18.4667H7.19999V7.80001ZM4.53333 7.80001H19.4667H4.53333ZM9.18826 4.60001H14.5216V7.80001H9.18826V4.60001ZM10.448 9.93334V16.3333V9.93334Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       )
                     ]),
@@ -52044,7 +53109,7 @@ var render = function() {
           "div",
           { staticClass: "modal-dialog modal-dialog-centered modal-lg" },
           [
-            _c("div", { staticClass: "modal-content px-2" }, [
+            _c("div", { staticClass: "modal-content" }, [
               _c("div", { staticClass: "modal-header" }, [
                 _c(
                   "h5",
@@ -52982,10 +54047,38 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-pen-nib mr-3 table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "mr-2",
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M11.4949 6.85894L15.9245 11.2897L11.4949 6.85894V6.85894ZM18.5123 6.17494C18.6308 6.29242 18.7248 6.4323 18.7888 6.58644C18.8528 6.74058 18.8855 6.9059 18.8851 7.0728C18.8846 7.2397 18.8509 7.40483 18.7861 7.55861C18.7212 7.71239 18.6264 7.85173 18.5072 7.96854L9.06926 17.4065L3.89999 18.8847L5.37693 13.7167L14.8149 4.27747C14.9318 4.15864 15.0712 4.06415 15.2249 3.99947C15.3786 3.93478 15.5436 3.90117 15.7103 3.90058C15.8771 3.89999 16.0423 3.93244 16.1965 3.99604C16.3506 4.05964 16.4906 4.15314 16.6085 4.27114L18.5135 6.1762L18.5123 6.17494Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       ),
                       _vm._v(" "),
@@ -53006,10 +54099,37 @@ var render = function() {
                           }
                         },
                         [
-                          _c("i", {
-                            staticClass: "fas fa-trash table-fa",
-                            attrs: { "aria-hidden": "true" }
-                          })
+                          _c(
+                            "svg",
+                            {
+                              attrs: {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  width: "24",
+                                  height: "24",
+                                  rx: "7",
+                                  fill: "#4FC03C"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M13.648 9.93334V16.3333M7.19999 7.80001H16.8V18.4667H7.19999V7.80001ZM4.53333 7.80001H19.4667H4.53333ZM9.18826 4.60001H14.5216V7.80001H9.18826V4.60001ZM10.448 9.93334V16.3333V9.93334Z",
+                                  stroke: "white",
+                                  "stroke-width": "1.33333"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       )
                     ]),
