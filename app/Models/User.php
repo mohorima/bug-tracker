@@ -35,6 +35,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * The attributes transformed by accessor.
+     *
+     * @var array
+     */
+    protected $appends = ['permissions'];
+
+
+
     //task:user M:1
     public function tasks()
     {
@@ -81,11 +90,20 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class, 'role_id');
     }
 
-    // public function permissions()
-    // {
-    //     return $this->role->map->permissions
-    //         ->flatten()
-    //         ->pluck('slug')
-    //         ->unique();
-    // }
+    public function permissions()
+    {
+        return $this->role->permissions
+            ->flatten()
+            ->pluck('slug')
+            ->unique();
+    }
+
+    //Permission accessor, add this on top --> protected $appends = ['permissions'];
+    public function getPermissionsAttribute()
+    {
+        return $this->role->permissions
+            ->flatten()
+            ->pluck('slug')
+            ->unique();
+    }
 }

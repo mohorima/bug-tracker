@@ -18,9 +18,7 @@ class TaskController extends Controller
     {
         $searchTerm = request('keywords');
 
-        return Task::with('project')
-            ->with('user')
-            ->with('collaborator')
+        return Task::with(['project', 'user', 'collaborator'])
             ->when($searchTerm, function ($query, $searchTerm) {
                 return $query
                     ->where('subject', 'LIKE', '%' . $searchTerm . '%')

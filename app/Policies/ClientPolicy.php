@@ -12,6 +12,18 @@ class ClientPolicy
     use HandlesAuthorization;
 
     /**
+     * Always allow Admin user.
+     * never directly return $user->role_id == Role::IS_ADMIN, or rest of the functions won't run
+     */
+
+    public function before(User $user)
+    {
+        if ($user->role_id == Role::IS_ADMIN) {
+            return true;
+        }
+    }
+
+    /**
      * Determine whether the user can view any models.
      *
      * @param  \App\Models\User  $user
@@ -19,7 +31,7 @@ class ClientPolicy
      */
     public function viewAny(User $user)
     {
-        return in_array($user->role_id, [Role::IS_ADMIN, Role::IS_MANAGER]);
+        return $user->permissions->contains('view_all_client');
     }
 
     /**
@@ -42,7 +54,7 @@ class ClientPolicy
      */
     public function create(User $user)
     {
-        return in_array($user->role_id, [Role::IS_ADMIN, Role::IS_MANAGER]);
+        return $user->permissions->contains('create_client');
     }
 
     /**
@@ -54,7 +66,7 @@ class ClientPolicy
      */
     public function update(User $user, Client $client)
     {
-        return in_array($user->role_id, [Role::IS_ADMIN, Role::IS_MANAGER]);
+        return $user->permissions->contains('update_client');
     }
 
     /**
@@ -66,7 +78,7 @@ class ClientPolicy
      */
     public function delete(User $user, Client $client)
     {
-        return $user->role_id == Role::IS_ADMIN;
+        return $user->permissions->contains('delete_client');
     }
 
     /**

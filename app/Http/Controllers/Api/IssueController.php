@@ -30,8 +30,7 @@ class IssueController extends Controller
         $searchTerm = request('keywords');
         $orderTermAsc = request('orderTermAsc');
         $orderTermDesc = request('orderTermDesc');
-        return Issue::with('project')
-            ->with('assignee')
+        return Issue::with(['project', 'assignee'])
             ->when($searchTerm, function ($query, $searchTerm) {
                 return $query
                     ->where('title', 'LIKE', '%' . $searchTerm . '%')
