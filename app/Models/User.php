@@ -90,14 +90,6 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class, 'role_id');
     }
 
-    public function permissions()
-    {
-        return $this->role->permissions
-            ->flatten()
-            ->pluck('slug')
-            ->unique();
-    }
-
     //Permission accessor, add this on top --> protected $appends = ['permissions'];
     public function getPermissionsAttribute()
     {

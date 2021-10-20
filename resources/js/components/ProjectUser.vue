@@ -53,9 +53,10 @@
                             <h5>
                                 Add Members to Project
                                 <span class="text-dark">
-                                    {{ $route.params.projectTitle }}
+                                    {{ project.title }}
                                 </span>
                             </h5>
+                            <a href="" @click.prevent="showMember()">open</a>
 
                             <button type="submit" class="btn btn-submit mt-3">
                                 <i
@@ -120,6 +121,7 @@ export default {
     data: () => ({
         users: [],
         keywords: null,
+        project: [],
         form: new Form({
             id: "",
             project_user: [],
@@ -133,6 +135,21 @@ export default {
     },
 
     methods: {
+        loadAssignedMember() {
+            axios
+                .get(
+                    "/api/project/assigned-member/" +
+                        this.$route.params.projectId
+                )
+                .then(({ data }) => (this.project = data))
+                .then(() =>
+                    this.project.users.forEach((value) => {
+                        this.form.project_user.push(value.id);
+                    })
+                )
+                .catch((error) => console.log(error));
+        },
+
         loadUsers() {
             axios
                 .get("/api/project/member", {
@@ -149,7 +166,6 @@ export default {
             this.form
                 .post("/api/project/member")
                 .then(() => {
-                    Fire.$emit("reloadRecords");
                     //redirect to projects
                     this.$router.push("/project");
                 })
@@ -158,10 +174,9 @@ export default {
     },
 
     mounted() {
+        
+        this.loadAssignedMember();
         this.loadUsers();
-        Fire.$on("reloadRecords", () => {
-            this.loadUsers();
-        });
     },
 };
 </script>

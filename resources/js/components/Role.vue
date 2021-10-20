@@ -421,20 +421,6 @@ export default {
             this.form.fill(role);
         },
 
-        //modal for adding permissionss
-        newPermissionModal(role) {
-            this.formPermission.clear();
-            this.formPermission.reset();
-            this.loadRoles();
-            this.loadPermissions();
-            $("#addPermission").modal("show");
-            this.formPermission.id = role.id;
-            this.formPermission.name = role.name;
-            role.permissions.forEach((value) => {
-                this.formPermission.permission_id.push(value.id);
-            });
-        },
-
         loadRoles() {
             axios
                 .get("/api/role", { params: { keywords: this.keywords } })
@@ -473,7 +459,22 @@ export default {
                 .catch((error) => console.log(error));
         },
 
-        //assign permissions to roles
+        //Assign Permissions to Roles
+        //modal for adding permissions
+
+        newPermissionModal(role) {
+            this.formPermission.clear();
+            this.formPermission.reset();
+            this.loadRoles();
+            this.loadPermissions();
+            $("#addPermission").modal("show");
+            this.formPermission.id = role.id;
+            this.formPermission.name = role.name;
+            role.permissions.forEach((value) => {
+                this.formPermission.permission_id.push(value.id);
+            });
+        },
+
         loadPermissions() {
             axios
                 .get("/api/permission")

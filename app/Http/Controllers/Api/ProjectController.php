@@ -61,6 +61,11 @@ class ProjectController extends Controller
         return ['msg' => 'Project deleted'];
     }
 
+    public function assignedMember($id)
+    {
+        return Project::with('users')->findOrFail($id);
+    }
+
     public function member()
     {
         $searchTerm = request('keywords');

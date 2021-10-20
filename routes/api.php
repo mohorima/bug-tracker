@@ -41,6 +41,10 @@ Route::get('assignee', [IssueController::class, 'assignee']);
 
 /* PROJECT */
 //custom routes should be placed above resource routes, to work
+Route::get('project/assigned-member/{id}', [
+    ProjectController::class,
+    'assignedMember',
+]);
 Route::get('project/member', [ProjectController::class, 'member']);
 Route::post('project/member', [ProjectController::class, 'storeMember']);
 Route::apiResource('project', ProjectController::class);

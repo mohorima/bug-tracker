@@ -134,7 +134,6 @@
                                                 name: 'project/member',
                                                 params: {
                                                     projectId: project.id,
-                                                    projectTitle: project.title,
                                                 },
                                             }"
                                         >

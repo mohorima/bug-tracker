@@ -15,17 +15,6 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    hi
-                    <p>
-                       @foreach($users as $user)
-                            <p>{{ $user->id }}</p>
-                            <p>{{ $user->name }}</p>
-                            <p>{{ $user->role->name }}</p>
-                            <p>{{ $user->permissions()->contains('update_user') }}</p>
-                            <p>{{ $user->permissions }}</p>
-                            <hr>
-                        @endforeach
-                    </p>
                 </div>
             </div>
         </div>

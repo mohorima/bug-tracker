@@ -5424,7 +5424,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -5693,6 +5692,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -5705,6 +5705,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       users: [],
       keywords: null,
+      project: [],
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         project_user: []
@@ -5717,41 +5718,50 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    loadUsers: function loadUsers() {
+    loadAssignedMember: function loadAssignedMember() {
       var _this = this;
+
+      axios.get("/api/project/assigned-member/" + this.$route.params.projectId).then(function (_ref) {
+        var data = _ref.data;
+        return _this.project = data;
+      }).then(function () {
+        return _this.project.users.forEach(function (value) {
+          _this.form.project_user.push(value.id);
+        });
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    loadUsers: function loadUsers() {
+      var _this2 = this;
 
       axios.get("/api/project/member", {
         params: {
           keywords: this.keywords
         }
-      }).then(function (_ref) {
-        var data = _ref.data;
-        return _this.users = data.data;
+      }).then(function (_ref2) {
+        var data = _ref2.data;
+        return _this2.users = data.data;
       })["catch"](function (error) {
         return console.log(error);
       });
     },
     createProjectMember: function createProjectMember() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.form.id = this.$route.params.projectId; //set form id property to route projectId parameter
 
       this.form.post("/api/project/member").then(function () {
-        Fire.$emit("reloadRecords"); //redirect to projects
-
-        _this2.$router.push("/project");
+        //redirect to projects
+        _this3.$router.push("/project");
       })["catch"](function (error) {
         return console.log(error);
       });
     }
   },
   mounted: function mounted() {
-    var _this3 = this;
-
+    this.loadAssignedMember();
     this.loadUsers();
-    Fire.$on("reloadRecords", function () {
-      _this3.loadUsers();
-    });
   }
 });
 
@@ -6188,30 +6198,15 @@ __webpack_require__.r(__webpack_exports__);
       $("#addRecord").modal("show");
       this.form.fill(role);
     },
-    //modal for adding permissionss
-    newPermissionModal: function newPermissionModal(role) {
-      var _this = this;
-
-      this.formPermission.clear();
-      this.formPermission.reset();
-      this.loadRoles();
-      this.loadPermissions();
-      $("#addPermission").modal("show");
-      this.formPermission.id = role.id;
-      this.formPermission.name = role.name;
-      role.permissions.forEach(function (value) {
-        _this.formPermission.permission_id.push(value.id);
-      });
-    },
     loadRoles: function loadRoles() {
-      var _this2 = this;
+      var _this = this;
 
       axios.get("/api/role", {
         params: {
           keywords: this.keywords
         }
       }).then(function (response) {
-        return _this2.roles = response.data.roles;
+        return _this.roles = response.data.roles;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -6241,7 +6236,22 @@ __webpack_require__.r(__webpack_exports__);
         return console.log(error);
       });
     },
-    //assign permissions to roles
+    //Assign Permissions to Roles
+    //modal for adding permissions
+    newPermissionModal: function newPermissionModal(role) {
+      var _this2 = this;
+
+      this.formPermission.clear();
+      this.formPermission.reset();
+      this.loadRoles();
+      this.loadPermissions();
+      $("#addPermission").modal("show");
+      this.formPermission.id = role.id;
+      this.formPermission.name = role.name;
+      role.permissions.forEach(function (value) {
+        _this2.formPermission.permission_id.push(value.id);
+      });
+    },
     loadPermissions: function loadPermissions() {
       var _this3 = this;
 
@@ -7352,7 +7362,7 @@ var routes = [{
     title: "Projects"
   }
 }, {
-  path: "/project/member/:projectId/:projectTitle",
+  path: "/project/member/:projectId",
   name: "project/member",
   component: __webpack_require__(/*! ./components/ProjectUser.vue */ "./resources/js/components/ProjectUser.vue").default,
   meta: {
@@ -50580,8 +50590,7 @@ var render = function() {
                               to: {
                                 name: "project/member",
                                 params: {
-                                  projectId: project.id,
-                                  projectTitle: project.title
+                                  projectId: project.id
                                 }
                               }
                             }
@@ -51830,11 +51839,25 @@ var render = function() {
                     _c("span", { staticClass: "text-dark" }, [
                       _vm._v(
                         "\n                                " +
-                          _vm._s(_vm.$route.params.projectTitle) +
+                          _vm._s(_vm.project.title) +
                           "\n                            "
                       )
                     ])
                   ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.showMember()
+                        }
+                      }
+                    },
+                    [_vm._v("open")]
+                  ),
                   _vm._v(" "),
                   _vm._m(0)
                 ]
