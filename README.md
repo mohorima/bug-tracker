@@ -1,6 +1,7 @@
 <p align="center"><a href="https://github.com/mohorima/bug-tracker" target="_blank"><h1>BugTrack</h1></a></p>
 <p align="center">
     <h3>https://bug-track-moho.herokuapp.com/</h3>
+    <i>Login credentials are given below</i>
 </p>
 
 ## About Repository
