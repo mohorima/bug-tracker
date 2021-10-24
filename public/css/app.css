@@ -11687,7 +11687,7 @@ td:last-child {
   background-color: transparent;
   color: #ffffff;
   width: 420px;
-  border: 1px solid #ffffff83;
+  border: 1px solid #ffffff3d;
   padding: 15px 27px 35px 27px;
   box-shadow: none;
 }
@@ -11704,7 +11704,7 @@ td:last-child {
 }
 
 .login label {
-  color: #ffffff;
+  color: #ffffffbe;
 }
 
 .login .forgot-pwd {
@@ -11729,6 +11729,12 @@ td:last-child {
 
 .login .login-btn button {
   width: 70%;
+  font-weight: 600 !important;
+  letter-spacing: 0.1rem;
+}
+
+.login .login-btn button:hover {
+  background-color: #6ad103;
 }
 
 /*---------------TABBED CARD---------------*/

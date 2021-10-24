@@ -682,7 +682,7 @@ td:last-child {
         background-color: transparent;
         color: #ffffff;
         width: 420px;
-        border: 1px solid #ffffff83;
+        border: 1px solid #ffffff3d;
         padding: 15px 27px 35px 27px;
         box-shadow: none;
     }
@@ -697,7 +697,7 @@ td:last-child {
         text-transform: uppercase;
     }
     label {
-        color: #ffffff;
+        color: #ffffffbe;
     }
     .forgot-pwd {
         display: flex;
@@ -718,6 +718,11 @@ td:last-child {
         margin-bottom: -80px;
         button {
             width: 70%;
+            font-weight: 600 !important;
+            letter-spacing: 0.1rem;
+            &:hover{
+                background-color: #6ad103;
+            }
         }
     }
 }

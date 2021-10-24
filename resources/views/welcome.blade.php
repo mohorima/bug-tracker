@@ -24,7 +24,7 @@
 
         <main>
             <div class="container">
-                <div class="login">
+                <div class="d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
                     <img src="{{ asset('/images/logo-vertical.svg') }}" alt="" width="200px" class="mb-5">
                     @if (Route::has('login'))
                         @auth
@@ -42,9 +42,6 @@
                             </a>
                         @endauth
                     @endif
-                </div>
-                <div>
-                    hello
                 </div>
             </div>
         </main>
