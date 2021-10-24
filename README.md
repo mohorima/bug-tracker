@@ -23,15 +23,15 @@ The following features have been utilized for maximum functionality:
 
 Here are pre-existing log-in credentials, log in as ADMIN to create new users, and assign them role & permissions.
 
-### Admin user
+#### Admin user
 -   email - rima@gmail.com
 -   password - rima1234
 
-### Manager user
+#### Manager user
 -   email - davidsmith@gmail.com
 -   password - david1234
 
-### Normal user
+#### Normal user
 -   email - janebrown@gmail.com
 -   password - jane1234
 
