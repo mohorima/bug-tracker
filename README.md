@@ -1,5 +1,7 @@
 <p align="center"><a href="https://github.com/mohorima/bug-tracker" target="_blank"><h1>BugTrack</h1></a></p>
-<p align="center"><h3>A Multi-purpose Project & Issue Management Web Application</h3></p>
+<p align="center">
+    <h3>https://bug-track-moho.herokuapp.com/</h3>
+</p>
 
 ## About Repository
 
