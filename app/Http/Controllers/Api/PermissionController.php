@@ -24,7 +24,7 @@ class PermissionController extends Controller
             return $query->where('slug', 'LIKE', '%' . $searchTerm . '%');
         })
             ->latest()
-            ->paginate(20);
+            ->paginate(50);
     }
 
     public function store(PermissionRequest $request)

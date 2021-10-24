@@ -1,5 +1,5 @@
 <p align="center"><a href="https://github.com/mohorima/bug-tracker" target="_blank"><h1>BugTrack</h1></a></p>
-<p align="center"><h3>A Multi-purpose Web Application</h3></p>
+<p align="center"><h3>A Multi-purpose Project & Issue Management Web Application</h3></p>
 
 ## About Repository
 
@@ -19,6 +19,21 @@ The following features have been utilized for maximum functionality:
 -   Multi-level User Access.
 -   Charts & Audit Log.
 
+## Login Credentials
+
+Here are pre-existing log-in credentials, log in as ADMIN to create new users, and assign them role & permissions.
+
+# ADMIN USER
+-   email - rima@gmail.com
+-   password - rima1234
+
+# Manager USER
+-   email - davidsmith@gmail.com
+-   password - david1234
+
+# Normal USER
+-   email - janebrown@gmail.com
+-   password - jane1234
 
 ## License
 
