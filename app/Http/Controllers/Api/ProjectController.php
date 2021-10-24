@@ -8,6 +8,7 @@ use App\Models\Client;
 use App\Models\Project;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,16 +21,34 @@ class ProjectController extends Controller
 
     public function index()
     {
+        //$this->authorize('viewAny', Project::class);
+
         $searchTerm = request('keywords');
 
-        return Project::with('client')
-            ->when($searchTerm, function ($query, $searchTerm) {
-                return $query
-                    ->where('title', 'LIKE', '%' . $searchTerm . '%')
-                    ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
-            })
-            ->latest()
-            ->paginate();
+        if (
+            in_array(Auth::user()->role_id, [Role::IS_ADMIN, Role::IS_MANAGER])
+        ) {
+            $project = Project::with('client')
+                ->when($searchTerm, function ($query, $searchTerm) {
+                    return $query
+                        ->where('title', 'LIKE', '%' . $searchTerm . '%')
+                        ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
+                })
+                ->latest()
+                ->paginate();
+        } else {
+            $project = Project::assigneduser()
+                ->with('client')
+                ->when($searchTerm, function ($query, $searchTerm) {
+                    return $query
+                        ->where('title', 'LIKE', '%' . $searchTerm . '%')
+                        ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
+                })
+                ->latest()
+                ->paginate();
+        }
+
+        return $project;
     }
 
     public function store(ProjectRequest $request)
@@ -38,7 +57,9 @@ class ProjectController extends Controller
         //find the current logged in user
         //add record (user_id & project_id) in project_user pivot table
 
-        $user = User::findOrFail(auth()->user()->id);
+        $this->authorize('create', Project::class);
+
+        $user = User::findOrFail(auth()->id());
         return $user
             ->projects()
             ->sync(Project::create($request->all())->id, false);
@@ -51,11 +72,13 @@ class ProjectController extends Controller
 
     public function update(ProjectRequest $request, Project $project)
     {
+        $this->authorize('update', $project);
         $project->update($request->all());
     }
 
     public function destroy(Project $project)
     {
+        $this->authorize('delete', $project);
         $project->delete();
 
         return ['msg' => 'Project deleted'];
@@ -63,11 +86,14 @@ class ProjectController extends Controller
 
     public function assignedMember($id)
     {
+        $this->authorize('create', Project::class);
         return Project::with('users')->findOrFail($id);
     }
 
     public function member()
     {
+        $this->authorize('create', Project::class);
+
         $searchTerm = request('keywords');
 
         return User::where('id', '!=', auth()->id())
@@ -85,9 +111,9 @@ class ProjectController extends Controller
     {
         //get project_id and all selected user_id from project_user array
 
+        $this->authorize('create', Project::class);
+
         $project = Project::findOrFail(request('id'));
         $project->users()->sync(request('project_user'));
-
-        //$project->users()->sync(request('project_user'), false);
     }
 }

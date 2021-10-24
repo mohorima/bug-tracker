@@ -20,7 +20,7 @@ class TaskPolicy
 
     public function viewAny(User $user)
     {
-        return $user->permissions->contains('view_all_task');
+        //return $user->permissions->contains('view_all_task');
     }
 
     public function view(User $user, Task $task)
@@ -30,7 +30,7 @@ class TaskPolicy
 
     public function create(User $user)
     {
-        return $user->permissions->contains('create_task');
+        //return $user->permissions->contains('create_task');
     }
 
     public function update(User $user, Task $task)

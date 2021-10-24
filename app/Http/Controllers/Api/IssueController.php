@@ -8,6 +8,7 @@ use App\Models\Issue;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IssueController extends Controller
 {
@@ -30,23 +31,44 @@ class IssueController extends Controller
         $searchTerm = request('keywords');
         $orderTermAsc = request('orderTermAsc');
         $orderTermDesc = request('orderTermDesc');
-        return Issue::with(['project', 'assignee'])
-            ->when($searchTerm, function ($query, $searchTerm) {
-                return $query
-                    ->where('title', 'LIKE', '%' . $searchTerm . '%')
-                    ->orWhere('severity', 'LIKE', '%' . $searchTerm . '%')
-                    ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
-            })
-            ->when($orderTermAsc, function ($query, $orderTermAsc) {
-                return $query->orderBy($orderTermAsc, 'ASC');
-            })
-            ->when($orderTermDesc, function ($query, $orderTermDesc) {
-                return $query->orderBy($orderTermDesc, 'desc');
-            })
-            ->latest()
-            ->paginate(25);
 
-        //orderBy('id', 'ASC')
+        if (Auth::user()->role_id == Role::IS_ADMIN) {
+            $issue = Issue::with(['project', 'assignee'])
+                ->when($searchTerm, function ($query, $searchTerm) {
+                    return $query
+                        ->where('title', 'LIKE', '%' . $searchTerm . '%')
+                        ->orWhere('severity', 'LIKE', '%' . $searchTerm . '%')
+                        ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
+                })
+                ->when($orderTermAsc, function ($query, $orderTermAsc) {
+                    return $query->orderBy($orderTermAsc, 'ASC');
+                })
+                ->when($orderTermDesc, function ($query, $orderTermDesc) {
+                    return $query->orderBy($orderTermDesc, 'desc');
+                })
+                ->latest()
+                ->paginate(25);
+        } else {
+            $issue = Issue::where('user_id', auth()->id())
+                ->orWhere('assignee_id', auth()->id())
+                ->with(['project', 'assignee'])
+                ->when($searchTerm, function ($query, $searchTerm) {
+                    return $query
+                        ->where('title', 'LIKE', '%' . $searchTerm . '%')
+                        ->orWhere('severity', 'LIKE', '%' . $searchTerm . '%')
+                        ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
+                })
+                ->when($orderTermAsc, function ($query, $orderTermAsc) {
+                    return $query->orderBy($orderTermAsc, 'ASC');
+                })
+                ->when($orderTermDesc, function ($query, $orderTermDesc) {
+                    return $query->orderBy($orderTermDesc, 'desc');
+                })
+                ->latest()
+                ->paginate(25);
+        }
+
+        return $issue;
     }
 
     public function assignee()
@@ -98,6 +120,7 @@ class IssueController extends Controller
      */
     public function update(IssueRequest $request, Issue $issue)
     {
+        $this->authorize('update', $issue);
         $issue->update($request->all());
     }
 
@@ -109,6 +132,7 @@ class IssueController extends Controller
      */
     public function destroy(Issue $issue)
     {
+        $this->authorize('delete', $issue);
         $issue->delete();
 
         return ['msg' => 'Issue deleted'];

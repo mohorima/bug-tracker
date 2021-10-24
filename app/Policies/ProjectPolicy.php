@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Database\Eloquent\Builder;
 
 class ProjectPolicy
 {
@@ -20,7 +21,7 @@ class ProjectPolicy
 
     public function viewAny(User $user)
     {
-        return $user->permissions->contains('view_all_project');
+        //return $user->permissions->contains('view_all_project');
     }
 
     public function view(User $user, Project $project)

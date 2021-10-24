@@ -18,6 +18,7 @@ class UserController extends Controller
 
     public function index()
     {
+        $this->authorize('viewAny', User::class);
         $searchTerm = request('keywords');
 
         return User::with('role')
@@ -32,6 +33,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
+        $this->authorize('create', User::class);
         return User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
@@ -47,6 +49,7 @@ class UserController extends Controller
 
     public function update(UserRequest $request, User $user)
     {
+        $this->authorize('update', $user);
         $user->update([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
@@ -56,6 +59,7 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
+        $this->authorize('delete', $user);
         $user->delete();
     }
 

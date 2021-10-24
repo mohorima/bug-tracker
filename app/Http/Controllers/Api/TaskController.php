@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TaskRequest;
+use App\Models\Role;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -18,15 +20,31 @@ class TaskController extends Controller
     {
         $searchTerm = request('keywords');
 
-        return Task::with(['project', 'user', 'collaborator'])
-            ->when($searchTerm, function ($query, $searchTerm) {
-                return $query
-                    ->where('subject', 'LIKE', '%' . $searchTerm . '%')
-                    ->orWhere('priority', 'LIKE', '%' . $searchTerm . '%')
-                    ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
-            })
-            ->latest()
-            ->paginate(25);
+        if (Auth::user()->role_id == Role::IS_ADMIN) {
+            $task = Task::with(['project', 'user', 'collaborator'])
+                ->when($searchTerm, function ($query, $searchTerm) {
+                    return $query
+                        ->where('subject', 'LIKE', '%' . $searchTerm . '%')
+                        ->orWhere('priority', 'LIKE', '%' . $searchTerm . '%')
+                        ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
+                })
+                ->latest()
+                ->paginate(25);
+        } else {
+            $task = Task::where('user_id', auth()->id())
+                ->orWhere('collaborator_id', auth()->id())
+                ->with(['project', 'user', 'collaborator'])
+                ->when($searchTerm, function ($query, $searchTerm) {
+                    return $query
+                        ->where('subject', 'LIKE', '%' . $searchTerm . '%')
+                        ->orWhere('priority', 'LIKE', '%' . $searchTerm . '%')
+                        ->orWhere('status', 'LIKE', '%' . $searchTerm . '%');
+                })
+                ->latest()
+                ->paginate(25);
+        }
+
+        return $task;
     }
 
     public function store(TaskRequest $request)

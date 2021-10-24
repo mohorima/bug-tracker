@@ -174,7 +174,6 @@ export default {
     },
 
     mounted() {
-        
         this.loadAssignedMember();
         this.loadUsers();
     },

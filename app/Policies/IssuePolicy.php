@@ -20,7 +20,7 @@ class IssuePolicy
 
     public function viewAny(User $user)
     {
-        return $user->permissions->contains('view_all_issue');
+        //return $user->permissions->contains('view_all_issue');
     }
 
     public function view(User $user, Issue $issue)
@@ -30,7 +30,7 @@ class IssuePolicy
 
     public function create(User $user)
     {
-        return $user->permissions->contains('create_issue');
+        //return $user->permissions->contains('create_issue');
     }
 
     public function update(User $user, Issue $issue)

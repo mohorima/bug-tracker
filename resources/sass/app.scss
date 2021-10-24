@@ -1,5 +1,5 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
 
 // Variables
 @import "variables";
@@ -518,7 +518,7 @@ strong {
         background-color: #ecece9;
     }
 }
-.badges{
+.badges {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -638,24 +638,67 @@ td:last-child {
 
 .login {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
+    display: flex;
 
-    @media screen and (max-height: 600px) {
-        margin: 45px 0;
+    @media screen and (max-width: 991px) {
+        background-color: $dark-grey;
+        flex-direction: column;
+        justify-content: space-evenly;
+        h4 {
+            display: none;
+        }
+        .login-logo > img {
+            width: 200px;
+        }
     }
 
-    h3 {
-        margin: 10px 5px 30px 5px;
+    .col-50 {
+        padding: 20px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        @media screen and (max-width: 991px) {
+            width: 100%;
+        }
     }
 
+    &-logo > img {
+        width: 300px;
+    }
+
+    &-form {
+        background-color: $dark-grey;
+    }
+
+    h4 {
+        color: #ffffffb6;
+        margin-bottom: 35px;
+    }
+
+    .card {
+        background-color: transparent;
+        color: #ffffff;
+        width: 420px;
+        border: 1px solid #ffffff83;
+        padding: 15px 27px 35px 27px;
+        box-shadow: none;
+    }
+    .card-header {
+        background-color: transparent;
+        border-bottom: none;
+        padding-bottom: 0;
+        font-size: 1.2rem;
+        letter-spacing: 0.03rem;
+        font-weight: 300;
+        color: #ffffffb6;
+        text-transform: uppercase;
+    }
     label {
-        color: $main-clr;
+        color: #ffffff;
     }
-
     .forgot-pwd {
         display: flex;
         justify-content: space-between;
@@ -664,7 +707,7 @@ td:last-child {
         a {
             font-size: 0.8rem;
             letter-spacing: 0.03rem;
-            color: $main-clr;
+            color: #ffffff;
             font-weight: 600;
         }
     }
@@ -672,24 +715,10 @@ td:last-child {
         display: flex;
         justify-content: center;
         width: 100%;
-        margin-bottom: -70px;
+        margin-bottom: -80px;
         button {
             width: 70%;
         }
-    }
-    .card {
-        background-color: #ffffff;
-        border: 1px solid $light-main-clr;
-        padding: 8px 35px 25px 35px;
-        box-shadow: none;
-    }
-    .card-header {
-        background-color: transparent;
-        border-bottom-color: #b6c0bf6b;
-        font-size: 1rem;
-        letter-spacing: 0.03rem;
-        color: $grey;
-        font-weight: 300;
     }
 }
 

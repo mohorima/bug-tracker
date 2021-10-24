@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
@@ -53,5 +54,12 @@ class Project extends Model
     public function users()
     {
         return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
+    public function scopeAssigneduser($query)
+    {
+        return $query->whereHas('users', function (Builder $query) {
+            $query->where('user_id', '=', auth()->id());
+        });
     }
 }
