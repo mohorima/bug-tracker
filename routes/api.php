@@ -36,8 +36,8 @@ Route::apiResource('client', ClientController::class);
 Route::apiResource('invoice', InvoiceController::class);
 
 /* ISSUE */
-Route::apiResource('issue', IssueController::class);
 Route::get('assignee', [IssueController::class, 'assignee']);
+Route::apiResource('issue', IssueController::class);
 
 /* PROJECT */
 //custom routes should be placed above resource routes, to work

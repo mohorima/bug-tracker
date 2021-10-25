@@ -20,17 +20,13 @@ class RoleController extends Controller
 
         $searchTerm = request('keywords');
 
-        $role = Role::with('permissions')
+        return Role::with('permissions')
             ->orderBy('id', 'ASC')
             ->where('name', '!=', 'Admin')
             ->when($searchTerm, function ($query, $searchTerm) {
                 return $query->where('name', 'LIKE', '%' . $searchTerm . '%');
             })
             ->get();
-
-        return response()->json([
-            'roles' => $role,
-        ]);
     }
 
     public function store(RoleRequest $request)

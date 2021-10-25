@@ -424,7 +424,7 @@ export default {
         loadRoles() {
             axios
                 .get("/api/role", { params: { keywords: this.keywords } })
-                .then((response) => (this.roles = response.data.roles))
+                .then(({ data }) => (this.roles = data))
                 .catch((error) => console.log(error));
         },
 
@@ -478,7 +478,7 @@ export default {
         loadPermissions() {
             axios
                 .get("/api/permission")
-                .then(({ data }) => (this.permissions = data.data))
+                .then(({ data }) => (this.permissions = data))
                 .catch((error) => console.log(error));
         },
 

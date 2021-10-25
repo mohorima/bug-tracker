@@ -25,7 +25,7 @@
                     <div
                         class="d-flex align-items-center justify-content-between"
                     >
-                        <h1>132</h1>
+                        <h1>{{ issues }}</h1>
                         <svg
                             width="60"
                             height="60"
@@ -68,7 +68,7 @@
                     <div
                         class="d-flex align-items-center justify-content-between"
                     >
-                        <h1>132</h1>
+                        <h1>{{ activeissues }}</h1>
                         <svg
                             width="60"
                             height="60"
@@ -108,7 +108,7 @@
                     <div
                         class="d-flex align-items-center justify-content-between"
                     >
-                        <h1>53</h1>
+                        <h1>{{ tasks }}</h1>
                         <svg
                             width="60"
                             height="60"
@@ -145,8 +145,27 @@
 
 <script>
 export default {
+    data: () => ({
+        issues: "",
+        activeissues: "",
+        tasks: "",
+    }),
+
+    methods: {
+        loadIssue() {
+            axios
+                .get("/api/dashboard")
+                .then((response) => {
+                    this.issues = response.data.issues;
+                    this.tasks = response.data.tasks;
+                    this.activeissues = response.data.activeissues;
+                })
+                .catch((error) => console.log(error));
+        },
+    },
+
     mounted() {
-        console.log("Component mounted.");
+        this.loadIssue();
     },
 };
 </script>

@@ -19,6 +19,7 @@ class InvoiceController extends Controller
         $this->authorize('viewAny', Invoice::class);
 
         $searchTerm = request('keywords');
+        
         return Invoice::with('project')
             ->when($searchTerm, function ($query, $searchTerm) {
                 return $query->where(

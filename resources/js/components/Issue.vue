@@ -645,7 +645,7 @@ export default {
         loadUsers() {
             axios
                 .get("/api/assignee")
-                .then(({ data }) => (this.users = data.data))
+                .then(({ data }) => (this.users = data))
                 .catch((error) => console.log(error));
         },
 

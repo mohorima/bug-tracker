@@ -73,10 +73,9 @@ class IssueController extends Controller
 
     public function assignee()
     {
-        return User::where('id', '!=', auth()->id())
-            ->whereNotIn('role_id', [Role::IS_ADMIN])
+        return User::whereNotIn('role_id', [Role::IS_ADMIN])
             ->latest()
-            ->paginate(25);
+            ->get();
     }
 
     /**

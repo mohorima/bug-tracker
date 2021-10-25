@@ -275,7 +275,7 @@ export default {
 
     data: () => ({
         editMode: false,
-        permissions: [],
+        permissions: {},
         keywords: null,
         form: new Form({
             id: "",
@@ -311,7 +311,7 @@ export default {
         loadPermissions() {
             axios
                 .get("/api/permission", { params: { keywords: this.keywords } })
-                .then(({ data }) => (this.permissions = data.data))
+                .then(({ data }) => (this.permissions = data))
                 .catch((error) => console.log(error));
         },
 

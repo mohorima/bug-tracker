@@ -209,7 +209,7 @@
                                 <label
                                     class="col-md-4 col-form-label"
                                     for="company"
-                                    >Company Name
+                                    >Company
                                     <strong class="text-danger"> *</strong>
                                 </label>
 

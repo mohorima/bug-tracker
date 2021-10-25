@@ -2886,8 +2886,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      issues: "",
+      activeissues: "",
+      tasks: ""
+    };
+  },
+  methods: {
+    loadIssue: function loadIssue() {
+      var _this = this;
+
+      axios.get("/api/dashboard").then(function (response) {
+        _this.issues = response.data.issues;
+        _this.tasks = response.data.tasks;
+        _this.activeissues = response.data.activeissues;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
+  },
   mounted: function mounted() {
-    console.log("Component mounted.");
+    this.loadIssue();
   }
 });
 
@@ -4184,7 +4204,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/assignee").then(function (_ref3) {
         var data = _ref3.data;
-        return _this3.users = data.data;
+        return _this3.users = data;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -4515,7 +4535,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       editMode: false,
-      permissions: [],
+      permissions: {},
       keywords: null,
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
@@ -4554,7 +4574,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (_ref) {
         var data = _ref.data;
-        return _this.permissions = data.data;
+        return _this.permissions = data;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -6205,8 +6225,9 @@ __webpack_require__.r(__webpack_exports__);
         params: {
           keywords: this.keywords
         }
-      }).then(function (response) {
-        return _this.roles = response.data.roles;
+      }).then(function (_ref) {
+        var data = _ref.data;
+        return _this.roles = data;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -6255,9 +6276,9 @@ __webpack_require__.r(__webpack_exports__);
     loadPermissions: function loadPermissions() {
       var _this3 = this;
 
-      axios.get("/api/permission").then(function (_ref) {
-        var data = _ref.data;
-        return _this3.permissions = data.data;
+      axios.get("/api/permission").then(function (_ref2) {
+        var data = _ref2.data;
+        return _this3.permissions = data;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -6838,7 +6859,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/assignee").then(function (_ref3) {
         var data = _ref3.data;
-        return _this3.collaborators = data.data;
+        return _this3.collaborators = data;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -46606,7 +46627,7 @@ var staticRenderFns = [
       "label",
       { staticClass: "col-md-4 col-form-label", attrs: { for: "company" } },
       [
-        _vm._v("Company Name\n                                "),
+        _vm._v("Company\n                                "),
         _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
       ]
     )
@@ -46736,7 +46757,7 @@ var render = function() {
               staticClass: "d-flex align-items-center justify-content-between"
             },
             [
-              _c("h1", [_vm._v("132")]),
+              _c("h1", [_vm._v(_vm._s(_vm.issues))]),
               _vm._v(" "),
               _c(
                 "svg",
@@ -46817,7 +46838,7 @@ var render = function() {
               staticClass: "d-flex align-items-center justify-content-between"
             },
             [
-              _c("h1", [_vm._v("132")]),
+              _c("h1", [_vm._v(_vm._s(_vm.activeissues))]),
               _vm._v(" "),
               _c(
                 "svg",
@@ -46893,7 +46914,7 @@ var render = function() {
               staticClass: "d-flex align-items-center justify-content-between"
             },
             [
-              _c("h1", [_vm._v("53")]),
+              _c("h1", [_vm._v(_vm._s(_vm.tasks))]),
               _vm._v(" "),
               _c(
                 "svg",

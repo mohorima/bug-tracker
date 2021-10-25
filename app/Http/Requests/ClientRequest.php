@@ -36,7 +36,7 @@ class ClientRequest extends FormRequest
             'contactPerson' => 'max:100|nullable',
             'email' => 'required|max:100|email',
             'phone' => 'required|digits_between:5,20',
-            'website' => 'max:15|nullable',
+            'website' => 'max:250|nullable',
         ];
     }
 }
