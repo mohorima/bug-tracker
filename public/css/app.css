@@ -11737,6 +11737,14 @@ td:last-child {
   background-color: #6ad103;
 }
 
+.login .info-txt {
+  font-size: 12px;
+  letter-spacing: 0.02rem;
+  color: #d8d8d6;
+  width: 420px;
+  text-align: center;
+}
+
 /*---------------TABBED CARD---------------*/
 
 .tab-header {

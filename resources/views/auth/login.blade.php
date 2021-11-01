@@ -63,6 +63,10 @@
                         </form>
                     </div>
                 </div>
+                <p class="mt-5 info-txt">
+                    Admin Login <br>
+                    email: <i>rima@gmail.com</i> | password: <i>rima1234</i> 
+                </p>
             </div>
 
     </div>
