@@ -11770,20 +11770,6 @@ td:last-child {
   }
 }
 
-.welcome {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-}
-
-.welcome img {
-  margin-bottom: 50px;
-  width: 300px;
-}
-
 /*---------------TABBED CARD---------------*/
 
 .tab-header {
