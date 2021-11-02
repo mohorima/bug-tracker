@@ -11639,22 +11639,6 @@ td:last-child {
   display: flex;
 }
 
-@media screen and (max-width: 991px) {
-  .login {
-    background-color: #596152;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-
-  .login h4 {
-    display: none;
-  }
-
-  .login .login-logo > img {
-    width: 200px;
-  }
-}
-
 .login .col-50 {
   padding: 20px;
   width: 50%;
@@ -11720,6 +11704,10 @@ td:last-child {
   font-weight: 600;
 }
 
+.login .forgot-pwd a:hover {
+  color: #6ad103 !important;
+}
+
 .login .login-btn {
   display: flex;
   justify-content: center;
@@ -11743,6 +11731,57 @@ td:last-child {
   color: #d8d8d6;
   width: 420px;
   text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+  .login {
+    background-color: #ffffff;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .login .login-form {
+    background-color: #ffffff;
+  }
+
+  .login h4 {
+    display: none;
+  }
+
+  .login label,
+  .login a {
+    color: #596152 !important;
+  }
+
+  .login .card-header {
+    color: #62be067c;
+  }
+
+  .login .card {
+    border: 1px solid #6ad1034d;
+  }
+
+  .login .login-logo > img {
+    width: 200px;
+  }
+
+  .login .info-txt {
+    color: #9c9c9c;
+  }
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.welcome img {
+  margin-bottom: 50px;
+  width: 300px;
 }
 
 /*---------------TABBED CARD---------------*/

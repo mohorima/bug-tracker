@@ -23,9 +23,8 @@
     <div id="app">
 
         <main>
-            <div class="container">
-                <div class="d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
-                    <img src="{{ asset('/images/logo-vertical.svg') }}" alt="" width="200px" class="mb-5">
+                <div class="welcome">
+                    <img src="{{ asset('/images/logo-vertical.svg') }}" alt="">
                     @if (Route::has('login'))
                         @auth
                             <a href="{{ url('/home') }}">
@@ -43,7 +42,6 @@
                         @endauth
                     @endif
                 </div>
-            </div>
         </main>
     </div>
 
