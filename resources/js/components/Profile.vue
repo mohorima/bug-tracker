@@ -92,6 +92,11 @@
                                             type="text"
                                             name="name"
                                             class="form-control"
+                                            :class="{
+                                                'is-invalid': form.errors.has(
+                                                    'name'
+                                                ),
+                                            }"
                                             placeholder="Name"
                                         />
                                         <HasError :form="form" field="name" />
@@ -112,6 +117,11 @@
                                             type="email"
                                             name="email"
                                             class="form-control"
+                                            :class="{
+                                                'is-invalid': form.errors.has(
+                                                    'email'
+                                                ),
+                                            }"
                                             placeholder="Email"
                                         />
                                         <HasError :form="form" field="email" />
@@ -132,6 +142,11 @@
                                             rows="3"
                                             cols="50"
                                             v-model="form.bio"
+                                            :class="{
+                                                'is-invalid': form.errors.has(
+                                                    'bio'
+                                                ),
+                                            }"
                                         >
                                         </textarea>
                                         <HasError :form="form" field="bio" />
@@ -158,9 +173,13 @@
                                                 class="custom-file-label"
                                                 for="customFile"
                                             >
-                                                {{ filename }}
+                                                {{ (!form.photo) ? filename : form.photo }}
                                             </label>
                                         </div>
+                                        <br />
+                                        <label>
+                                            <i>File size must not exceed 2mb</i>
+                                        </label>
                                     </div>
                                 </div>
 
@@ -214,26 +233,25 @@ export default {
         updateInfo() {
             this.form
                 .put("api/profile")
-                .then(() => {})
+                .then(() => {
+                    this.loadProfile();
+                })
                 .catch((error) => console.log(error));
         },
         updateProfile(e) {
             let file = e.target.files[0];
             let reader = new FileReader();
-            this.filename = file.name;
-            //let limit = 1024 * 1024 * 2;
-            // if (file["size"] > limit) {
-            //     swal({
-            //         type: "error",
-            //         title: "Oops...",
-            //         text: "You are uploading a large file",
-            //     });
-            //     return false;
-            // }
-            reader.onloadend = (file) => {
-                this.form.photo = reader.result;
-            };
-            reader.readAsDataURL(file);
+
+            let limit = 1024 * 1024 * 2;
+            if (file["size"] < limit) {
+                this.filename = file.name;
+                reader.onloadend = (file) => {
+                    this.form.photo = reader.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert("File size must be less than 2MB");
+            }
         },
     },
 

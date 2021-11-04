@@ -4830,6 +4830,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4860,30 +4879,32 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     updateInfo: function updateInfo() {
-      this.form.put("api/profile").then(function () {})["catch"](function (error) {
+      var _this2 = this;
+
+      this.form.put("api/profile").then(function () {
+        _this2.loadProfile();
+      })["catch"](function (error) {
         return console.log(error);
       });
     },
     updateProfile: function updateProfile(e) {
-      var _this2 = this;
+      var _this3 = this;
 
       var file = e.target.files[0];
       var reader = new FileReader();
-      this.filename = file.name; //let limit = 1024 * 1024 * 2;
-      // if (file["size"] > limit) {
-      //     swal({
-      //         type: "error",
-      //         title: "Oops...",
-      //         text: "You are uploading a large file",
-      //     });
-      //     return false;
-      // }
+      var limit = 1024 * 1024 * 2;
 
-      reader.onloadend = function (file) {
-        _this2.form.photo = reader.result;
-      };
+      if (file["size"] < limit) {
+        this.filename = file.name;
 
-      reader.readAsDataURL(file);
+        reader.onloadend = function (file) {
+          _this3.form.photo = reader.result;
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        alert("File size must be less than 2MB");
+      }
     }
   },
   created: function created() {
@@ -50193,6 +50214,9 @@ var render = function() {
                               }
                             ],
                             staticClass: "form-control",
+                            class: {
+                              "is-invalid": _vm.form.errors.has("name")
+                            },
                             attrs: {
                               id: "name",
                               type: "text",
@@ -50235,6 +50259,9 @@ var render = function() {
                               }
                             ],
                             staticClass: "form-control",
+                            class: {
+                              "is-invalid": _vm.form.errors.has("email")
+                            },
                             attrs: {
                               id: "email",
                               type: "email",
@@ -50284,6 +50311,9 @@ var render = function() {
                               }
                             ],
                             staticClass: "form-control",
+                            class: {
+                              "is-invalid": _vm.form.errors.has("bio")
+                            },
                             attrs: {
                               id: "bio",
                               name: "bio",
@@ -50344,12 +50374,20 @@ var render = function() {
                             [
                               _vm._v(
                                 "\n                                            " +
-                                  _vm._s(_vm.filename) +
+                                  _vm._s(
+                                    !_vm.form.photo
+                                      ? _vm.filename
+                                      : _vm.form.photo
+                                  ) +
                                   "\n                                        "
                               )
                             ]
                           )
-                        ])
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _vm._m(3)
                       ])
                     ]),
                     _vm._v(" "),
@@ -50466,6 +50504,12 @@ var staticRenderFns = [
         _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [_c("i", [_vm._v("File size must not exceed 2mb")])])
   }
 ]
 render._withStripped = true
@@ -52913,7 +52957,9 @@ var staticRenderFns = [
             staticClass: "fas fa-save mr-2",
             attrs: { "aria-hidden": "true" }
           }),
-          _vm._v("\n                            Add\n                        ")
+          _vm._v(
+            "\n                            Update\n                        "
+          )
         ]
       )
     ])

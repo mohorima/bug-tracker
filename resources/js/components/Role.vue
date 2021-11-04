@@ -358,7 +358,7 @@
                                     class="fas fa-save mr-2"
                                     aria-hidden="true"
                                 ></i>
-                                Add
+                                Update
                             </button>
                         </div>
                     </form>

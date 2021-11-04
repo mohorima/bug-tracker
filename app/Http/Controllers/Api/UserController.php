@@ -70,17 +70,10 @@ class UserController extends Controller
     public function updateProfile(UserRequest $request)
     {
         $user = auth('api')->user();
-
-        // $user->update([
-        //     'name' => $request->input('name'),
-        //     'email' => $request->input('email'),
-        //     'bio' => $request->input('bio'),
-        //     'photo' => $request->input('photo'),
-        // ]);
-
         $photoStr = $request->photo;
 
-        if ($photoStr) {
+        //run only if incoming photo is not the same as the one saved in db
+        if ($photoStr != $user->photo) {
             $semicolonPos = strpos($photoStr, ';');
             $photoExtension = substr($photoStr, 0, $semicolonPos);
             $name =
@@ -88,11 +81,21 @@ class UserController extends Controller
                 '.' .
                 explode('/', explode(':', $photoExtension)[1])[1];
 
-            Image::make($photoStr)->save(
+            \Image::make($photoStr)->save(
                 public_path('images/profile/') . $name
             );
         }
 
+        $user->update([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'bio' => $request->input('bio'),
+            'photo' => $name,
+        ]);
+
+        //$name is unique name for photo
+        //time() function returns the current time in the number of seconds since the Unix Epoch
+        //use Image Intervention package to convert photo string & save to folder public/images/profile/
         /*
         if request has photo
         explode() function converts a string to array, it takes two parameter
