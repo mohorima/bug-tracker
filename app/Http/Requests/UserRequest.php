@@ -34,7 +34,9 @@ class UserRequest extends FormRequest
                 Rule::unique('users')->ignore($this->id),
             ],
             'password' => 'sometimes|required|string|min:8',
-            'role_id' => 'required',
+            'role_id' => 'sometimes|required',
+            'bio' => 'max:255|nullable',
+            'photo' => 'nullable',
         ];
     }
 }

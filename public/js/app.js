@@ -4145,6 +4145,19 @@ __webpack_require__.r(__webpack_exports__);
       Fire.$emit("reloadRecords");
     }
   },
+
+  /*
+  beforeRouteEnter(to, from, next) {
+      next((vm) => {
+          // access to component instance via `vm`
+          if (from.meta.title == "Dashboard") {
+              console.log("hi");
+              vm.newModal();
+              //works but modal doesnt open
+          }
+      });
+  },
+  */
   methods: {
     changeOrderAsc: function changeOrderAsc(term) {
       this.orderTermDesc = null;
@@ -4815,6 +4828,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4824,6 +4839,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      filename: "Choose File",
       form: new vform__WEBPACK_IMPORTED_MODULE_0__.default({
         id: "",
         name: "",
@@ -4842,6 +4858,32 @@ __webpack_require__.r(__webpack_exports__);
         var data = _ref.data;
         return _this.form.fill(data);
       });
+    },
+    updateInfo: function updateInfo() {
+      this.form.put("api/profile").then(function () {})["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    updateProfile: function updateProfile(e) {
+      var _this2 = this;
+
+      var file = e.target.files[0];
+      var reader = new FileReader();
+      this.filename = file.name; //let limit = 1024 * 1024 * 2;
+      // if (file["size"] > limit) {
+      //     swal({
+      //         type: "error",
+      //         title: "Oops...",
+      //         text: "You are uploading a large file",
+      //     });
+      //     return false;
+      // }
+
+      reader.onloadend = function (file) {
+        _this2.form.photo = reader.result;
+      };
+
+      reader.readAsDataURL(file);
     }
   },
   created: function created() {
@@ -7226,6 +7268,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -7244,7 +7329,9 @@ __webpack_require__.r(__webpack_exports__);
         name: "",
         email: "",
         password: "",
-        role_id: ""
+        role_id: "",
+        bio: "",
+        photo: ""
       })
     };
   },
@@ -7286,8 +7373,9 @@ __webpack_require__.r(__webpack_exports__);
     loadRoles: function loadRoles() {
       var _this2 = this;
 
-      axios.get("/api/role").then(function (response) {
-        return _this2.roles = response.data.roles;
+      axios.get("/api/role").then(function (_ref2) {
+        var data = _ref2.data;
+        return _this2.roles = data;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -7322,6 +7410,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this3 = this;
 
     this.loadUsers();
+    this.loadRoles();
     Fire.$on("reloadRecords", function () {
       _this3.loadUsers();
     });
@@ -50220,9 +50309,78 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _vm._m(3),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-3 col-form-label",
+                          attrs: { for: "photo" }
+                        },
+                        [
+                          _vm._v(
+                            "Upload Photo\n                                "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-9" }, [
+                        _c("div", { staticClass: "custom-file" }, [
+                          _c("input", {
+                            staticClass: "custom-file-input",
+                            attrs: {
+                              type: "file",
+                              id: "customFile",
+                              name: "photo"
+                            },
+                            on: { change: _vm.updateProfile }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-file-label",
+                              attrs: { for: "customFile" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                            " +
+                                  _vm._s(_vm.filename) +
+                                  "\n                                        "
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _vm._m(4)
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-flex justify-content-center align-items-center"
+                      },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-submit mt-3",
+                            attrs: { type: "submit" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.updateInfo($event)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "fas fa-pen-nib mr-2" }),
+                            _vm._v(
+                              "\n                                    Update\n                                "
+                            )
+                          ]
+                        )
+                      ]
+                    )
                   ])
                 ]
               )
@@ -50306,58 +50464,6 @@ var staticRenderFns = [
       [
         _vm._v("Email\n                                    "),
         _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group row" }, [
-      _c(
-        "label",
-        { staticClass: "col-md-3 col-form-label", attrs: { for: "photo" } },
-        [_vm._v("Upload Photo\n                                ")]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-9" }, [
-        _c("div", { staticClass: "custom-file" }, [
-          _c("input", {
-            staticClass: "custom-file-input",
-            attrs: { type: "file", id: "customFile", name: "photo" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "custom-file-label", attrs: { for: "customFile" } },
-            [
-              _vm._v(
-                "\n                                            Choose file\n                                        "
-              )
-            ]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "d-flex justify-content-center align-items-center" },
-      [
-        _c(
-          "button",
-          { staticClass: "btn btn-submit mt-3", attrs: { type: "submit" } },
-          [
-            _c("i", { staticClass: "fas fa-pen-nib mr-2" }),
-            _vm._v(
-              "\n                                    Update\n                                "
-            )
-          ]
-        )
       ]
     )
   }
@@ -54496,7 +54602,58 @@ var render = function() {
                         ],
                         1
                       )
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-3 col-form-label",
+                          attrs: { for: "bio" }
+                        },
+                        [_vm._v("Biography\n                            ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-9" },
+                        [
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.bio,
+                                expression: "form.bio"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "bio",
+                              name: "bio",
+                              rows: "3",
+                              cols: "50"
+                            },
+                            domProps: { value: _vm.form.bio },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(_vm.form, "bio", $event.target.value)
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("HasError", {
+                            attrs: { form: _vm.form, field: "bio" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(6)
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "modal-footer" }, [
@@ -54663,6 +54820,37 @@ var staticRenderFns = [
         _c("strong", { staticClass: "text-danger" }, [_vm._v(" *")])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group row" }, [
+      _c(
+        "label",
+        { staticClass: "col-md-3 col-form-label", attrs: { for: "photo" } },
+        [_vm._v("Upload Photo\n                            ")]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-9" }, [
+        _c("div", { staticClass: "custom-file" }, [
+          _c("input", {
+            staticClass: "custom-file-input",
+            attrs: { type: "file", id: "customFile", name: "photo" }
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "custom-file-label", attrs: { for: "customFile" } },
+            [
+              _vm._v(
+                "\n                                        Choose item\n                                    "
+              )
+            ]
+          )
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true

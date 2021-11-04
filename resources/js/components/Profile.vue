@@ -149,6 +149,7 @@
                                         <div class="custom-file">
                                             <input
                                                 type="file"
+                                                @change="updateProfile"
                                                 class="custom-file-input"
                                                 id="customFile"
                                                 name="photo"
@@ -157,7 +158,7 @@
                                                 class="custom-file-label"
                                                 for="customFile"
                                             >
-                                                Choose file
+                                                {{ filename }}
                                             </label>
                                         </div>
                                     </div>
@@ -167,6 +168,7 @@
                                     class="d-flex justify-content-center align-items-center"
                                 >
                                     <button
+                                        @click.prevent="updateInfo"
                                         type="submit"
                                         class="btn btn-submit mt-3"
                                     >
@@ -194,6 +196,7 @@ export default {
     },
 
     data: () => ({
+        filename: "Choose File",
         form: new Form({
             id: "",
             name: "",
@@ -207,6 +210,30 @@ export default {
     methods: {
         loadProfile() {
             axios.get("api/profile").then(({ data }) => this.form.fill(data));
+        },
+        updateInfo() {
+            this.form
+                .put("api/profile")
+                .then(() => {})
+                .catch((error) => console.log(error));
+        },
+        updateProfile(e) {
+            let file = e.target.files[0];
+            let reader = new FileReader();
+            this.filename = file.name;
+            //let limit = 1024 * 1024 * 2;
+            // if (file["size"] > limit) {
+            //     swal({
+            //         type: "error",
+            //         title: "Oops...",
+            //         text: "You are uploading a large file",
+            //     });
+            //     return false;
+            // }
+            reader.onloadend = (file) => {
+                this.form.photo = reader.result;
+            };
+            reader.readAsDataURL(file);
         },
     },
 

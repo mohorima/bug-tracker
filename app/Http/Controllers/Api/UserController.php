@@ -38,6 +38,8 @@ class UserController extends Controller
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
+            'bio' => $request->input('bio'),
+            'photo' => $request->input('photo'),
             'role_id' => $request->input('role_id'),
         ]);
     }
@@ -53,6 +55,8 @@ class UserController extends Controller
         $user->update([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
+            'bio' => $request->input('bio'),
+            'photo' => $request->input('photo'),
             'role_id' => $request->input('role_id'),
         ]);
     }
@@ -63,20 +67,52 @@ class UserController extends Controller
         $user->delete();
     }
 
+    public function updateProfile(UserRequest $request)
+    {
+        $user = auth('api')->user();
+
+        // $user->update([
+        //     'name' => $request->input('name'),
+        //     'email' => $request->input('email'),
+        //     'bio' => $request->input('bio'),
+        //     'photo' => $request->input('photo'),
+        // ]);
+
+        $photoStr = $request->photo;
+
+        if ($photoStr) {
+            $semicolonPos = strpos($photoStr, ';');
+            $photoExtension = substr($photoStr, 0, $semicolonPos);
+            $name =
+                time() .
+                '.' .
+                explode('/', explode(':', $photoExtension)[1])[1];
+
+            Image::make($photoStr)->save(
+                public_path('images/profile/') . $name
+            );
+        }
+
+        /*
+        if request has photo
+        explode() function converts a string to array, it takes two parameter
+        explode('/', string) -->  split the string where there is '/' slash, and place each portion in array
+        explode('/', string)[1] --> take first element in array
+        substr('string', start, length) returns a part of a string
+        substr('hello world',3) --> returns 'lo world' i.e. string starting from 3rd position
+        substr('hello world', 0, 5) --> returns 'world' i.e. string starting from pos 0 and length 5
+        strpos('string', 'i') --> find the position of the 1st occurence of 'i' in string, returns a num
+        strpos($request->photo, ';') --> return position of first ; in photo string
+        */
+        /*
+        //strpos($request->photo, ';') pos of 1st ; in photo string
+        //substr($request->photo, 0, strpos($request->photo, ';')) portion of string from pos 0 to pos of first ;
+        //explode(':',substr($request->photo, 0, strpos($request->photo, ';')))[1] split portion of string at : and take 1st element in array
+        */
+    }
+
     public function profile()
     {
         return auth('api')->user();
-        // return User::where('id', auth('api')->id())
-        //     ->with('role')
-        //     ->get();
-    }
-
-    public function updateProfile(UserRequest $request, User $user)
-    {
-        $user->update([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'bio' => $request->input('bio'),
-        ]);
     }
 }

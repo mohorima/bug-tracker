@@ -274,6 +274,49 @@
                                     <HasError :form="form" field="role_id" />
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="bio"
+                                    >Biography
+                                </label>
+
+                                <div class="col-md-9">
+                                    <textarea
+                                        id="bio"
+                                        class="form-control"
+                                        name="bio"
+                                        rows="3"
+                                        cols="50"
+                                        v-model="form.bio"
+                                    >
+                                    </textarea>
+                                    <HasError :form="form" field="bio" />
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label
+                                    class="col-md-3 col-form-label"
+                                    for="photo"
+                                    >Upload Photo
+                                </label>
+
+                                <div class="col-md-9">
+                                    <div class="custom-file">
+                                        <input
+                                            type="file"
+                                            class="custom-file-input"
+                                            id="customFile"
+                                            name="photo"
+                                        />
+                                        <label
+                                            class="custom-file-label"
+                                            for="customFile"
+                                        >
+                                            Choose item
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="modal-footer">
@@ -330,6 +373,8 @@ export default {
             email: "",
             password: "",
             role_id: "",
+            bio: "",
+            photo: "",
         }),
     }),
 
@@ -367,7 +412,7 @@ export default {
         loadRoles() {
             axios
                 .get("/api/role")
-                .then((response) => (this.roles = response.data.roles))
+                .then(({ data }) => (this.roles = data))
                 .catch((error) => console.log(error));
         },
 
@@ -405,6 +450,7 @@ export default {
 
     created() {
         this.loadUsers();
+        this.loadRoles();
         Fire.$on("reloadRecords", () => {
             this.loadUsers();
         });

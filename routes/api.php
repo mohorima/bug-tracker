@@ -24,10 +24,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 /* USER */
-Route::apiResource('user', UserController::class);
 //User Profile routes
 Route::get('profile', [UserController::class, 'profile']);
 Route::put('profile', [UserController::class, 'updateProfile']);
+Route::apiResource('user', UserController::class);
+
 
 /* CLIENT */
 Route::apiResource('client', ClientController::class);

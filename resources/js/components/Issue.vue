@@ -584,6 +584,19 @@ export default {
         },
     },
 
+    /*
+    beforeRouteEnter(to, from, next) {
+        next((vm) => {
+            // access to component instance via `vm`
+            if (from.meta.title == "Dashboard") {
+                console.log("hi");
+                vm.newModal();
+                //works but modal doesnt open
+            }
+        });
+    },
+    */
+
     methods: {
         changeOrderAsc(term) {
             this.orderTermDesc = null;

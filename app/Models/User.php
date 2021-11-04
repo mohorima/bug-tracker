@@ -17,7 +17,14 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'role_id'];
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'role_id',
+        'bio',
+        'photo',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -41,8 +48,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $appends = ['permissions'];
-
-
 
     //task:user M:1
     public function tasks()
